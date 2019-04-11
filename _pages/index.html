@@ -1,0 +1,107 @@
+---
+layout: base
+permalink: /
+title: Home sweet home
+coverImageSectionHome: cover_home.png
+coverImageSectionCase: case-section.png
+coverImageSectionClient : glitch-1.png
+
+---
+<div class="barba-container" id="#fullpage" data-namespace="home">
+  <span class="scroll-indicator">Scroll Down</span>
+  <div class="home-container section slide-section" data-blob-x="100" data-blob-y="50">
+    <img class="home-container__cover" data-0="transform:translate3d(0px, 0%, 0px); opacity:1;" data-end="transform:translate3d(0px, -200%, 0px); opacity:0;" width="100%" srcset="
+    {{ site.baseurl }}/assets/img/_1500/{{page.coverImageSectionHome}},
+    {{ site.baseurl }}/assets/img/_1024/{{page.coverImageSectionHome}},
+    {{ site.baseurl }}/assets/img/_800/{{page.coverImageSectionHome}}"
+    src="{{ site.baseurl }}/assets/img/_1500/{{page.coverImageSectionHome}}" >
+    {% include blob.html %}
+
+    <div class="home-container__content container__cover">
+      <div class="col-lg-6 col-md-8 col-sm-12">
+        <h1 class="letter-animation"  data-0="transform:translate3d(0px, 0px, 0px); opacity:1;" data-end="transform:translate3d(0px, -350px, 0px); opacity:0;">
+          Arnaud Herr
+        </h1>
+        <h3 class="home-container__subtitle toStagger" data-0="transform:translate3d(0px,0px, 0px);" data-end="transform:translate3d(0px, -330px, 0px);">WEB DEVELOPER & WEB DESIGNER</h3>
+        <p class="home-container__content-text toStagger" data-0="transform:translate3d(0px,0px, 0px);" data-end="transform:translate3d(0px, -310px, 0px);">Hello, moi c'est Arnaud, je suis freelance Web designer & developer. J'aime élaborer des designs élégants, dans l'air du temps, ainsi que les développer.</p>
+        <a class="btn btn--white toStagger" data-0="transform:translate3d(0px,0px, 0px);" data-end="transform:translate3d(0px, 350px, 0px);" href="{{site.data.mainnav[1].navLink}}">Découvrir plus</a>
+      </div>
+
+    </div>
+    <!--<h2 class="big-title">
+      <span data-letter="H">H</span>
+			<span data-letter="E">E</span>
+			<span data-letter="L">L</span>
+			<span data-letter="L">L</span>
+			<span data-letter="O">O</span>
+    </h2>-->
+
+  </div>
+  <div class="portfolio-container section slide-section" data-color-pallette='[ "#FFAFB5","#FF9E84", "#FFC17A", "#80C4FF"]' data-blob-x="0" data-blob-y="100">
+    <img class="home-container__cover transition-left" data-100p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;"  data-200p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"   width="100%" srcset="
+    {{ site.baseurl }}/assets/img/_1500/{{page.coverImageSectionCase}},
+    {{ site.baseurl }}/assets/img/_1024/{{page.coverImageSectionCase}},
+    {{ site.baseurl }}/assets/img/_800/{{page.coverImageSectionCase}}"
+    src="{{ site.baseurl }}/assets/img/_1500/{{page.coverImageSectionCase}}" >
+    <div class="home-container__content container__cover">
+        <div class="slide-show__nav transition-left" data-0="transform:translate3d(-100%, 0px, 0px)" data-100p="transform:translate3d(0%, 0px, 0px)" data-200p="transform:translate3d(-100%,0px, 0px)">
+          <div class="prev-slick"><span><</span></div>
+          <div class="next-slick"><span>></span></div>
+        </div>
+        <div class="col-lg-5 col-sm-12">
+          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px, -250px, 0px)" data-100p="transform:translate3d(0px, 0px, 0px)" data-200p="transform:translate3d(0px, -250px, 0px)">Case</h2>
+          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px,  250px, 0px)" data-100p="transform:translate3d(0px, 0px, 0px)" data-200p="transform:translate3d(0px, 250px, 0px)">studies</h2>
+
+        </div>
+
+      {% for item in site.posts %}
+        {% if forloop.first %}<div class="holder vertical-slider case-list col-lg-7 col-sm-12" data-0="transform:scale(2);" data-100p="transform:scale(1);" data-200p="transform:scale(.2);">{% endif %}
+          <a href="{{item.url}}" class="case-list__item">
+
+            <svg class="case-list__item--svg"   class="item__svg" width="100%" height="100%" viewBox="0 0 568 544" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <path d="M475.256724,87.3805874 C518.806191,130.922514 534.370261,207.681994 525.690299,292.072533 C517.010336,376.463071 483.787032,468.484669 422.578331,495.268192 C361.519284,521.902085 272.325186,483.297902 200.790323,437.511546 C129.405114,391.72519 75.6791392,338.75666 38.5648168,258.406094 C1.3008398,178.055528 -19.2018303,70.4725539 25.245564,26.6313697 C69.6929582,-17.2098144 179.389726,2.84041995 269.781059,18.1025387 C360.322048,33.3646574 431.707257,43.6890318 475.256724,87.3805874 Z" class="item__clippath" id="path-1"></path>
+                    <filter x="-5.7%" y="-6.0%" width="111.4%" height="111.9%" filterUnits="objectBoundingBox" id="filter-3">
+                        <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                        <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                    </filter>
+                </defs>
+                <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="rememberit" transform="translate(20.000000, 20.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                            <use fill="#FE840E" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <image class="item__img" mask="url(#mask-2)" x="-271" y="-78" width="1089" height="582" xlink:href="{{ site.baseurl }}/assets/img/_1500/{{item.coverImage}}"></image>
+                    </g>
+                </g>
+            </svg>
+            <h3>{{item.title}}</h3>
+
+
+          </a>
+
+
+        {% if forloop.last %}</div>{% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+  <div class="client-container slide-section" data-color-pallette='[ "#FF85DF","#CFC0EF", "#A9D7EF", "#77FFCA"]' data-blob-x="95" data-blob-y="5">
+    <div class="home-container__cover"   data-100p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-200p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"></div>
+    <div class="client-container__content">
+      <h2 class="letter-animation col-sm-12 glitch">Clients</h2>
+      <ul class="col-sm-12">
+        <li class="col-lg-2 col-md-3 col-sm-6"><img  width="100%" src="/assets/img/_1500/strategie.png"></li>
+        <li class="col-lg-2 col-md-3 col-sm-6"><img  width="100%" src="/assets/img/_1500/kiff.png"></li>
+        <li class="col-lg-2 col-md-3 col-sm-6"><img  width="100%" src="/assets/img/_1500/apparences.png"></li>
+        <li class="col-lg-2 col-md-3 col-sm-6"><img  width="100%" src="/assets/img/_1500/hde.png" ></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
