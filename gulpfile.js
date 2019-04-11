@@ -27,7 +27,8 @@ var ghPages = require('gulp-gh-pages');
 var imgConfig = [
   {
     src: './assets/img/**/*',
-    dist: './_site/assets/img/',
+    dist: './dist/img/',
+    to:'./_site/assets/img/',
     params: {
       width : 1500,
       crop : false,
@@ -37,7 +38,8 @@ var imgConfig = [
   },
   {
     src: './assets/img/**/*',
-    dist: './_site/assets/img/',
+    dist: './dist/img/',
+    to:'./_site/assets/img/',
     params: {
       width : 1024,
       crop : false,
@@ -47,7 +49,8 @@ var imgConfig = [
   },
   {
     src: './assets/img/**/*',
-    dist: './_site/assets/img/',
+    dist: './dist/img/',
+    to:'./_site/assets/img/',
     params: {
       width : 800,
       crop : false,
@@ -119,6 +122,7 @@ gulp.task('images:thumbs', ['images:thumbs:delete'], function() {
         upscale : transform.params.upscale
       }))
       .pipe(gulp.dest(transform.dist + "_" + transform.params.width + "/"))
+      .pipe(gulp.dest(transform.to + "_" + transform.params.width + "/"))
     );
 
   });
@@ -141,6 +145,7 @@ gulp.task('build:js', function(){
       presets: ['@babel/env']
     }))
   .pipe(gulpUglify())
+  .pipe(gulp.dest('./dist/js/'))
   .pipe(gulp.dest('./_site/assets/js/'));
 });
 
@@ -154,11 +159,13 @@ gulp.task('build:css', function(){
   return gulp.src('./assets/scss/main.scss')
     .pipe(gulpSourcemaps.init())
     .pipe(gulpSass( {outputStyle: 'expanded'} ))
-    .pipe(gulp.dest('./_site/assets/css/'))
+    .pipe(gulp.dest('./assets/css/'))
     .pipe(gulpRename( {suffix: '.min'} ))
     .pipe(gulpPostcss( [autoprefixer(), cssnano()] ))
     .pipe(gulpSourcemaps.write())
     .pipe(gulp.dest('./_site/assets/css/'))
+    .pipe(gulp.dest('./dist/css/'))
+
     .pipe(browserSync.stream());
 });
 
@@ -167,7 +174,8 @@ gulp.task('build:css', function(){
 // -------------------------------------
 gulp.task('build:sound', function() {
     gulp.src('./assets/audio/**/*')
-    .pipe(gulp.dest('./_site/assets/audio/'));
+    .pipe(gulp.dest('./_site/assets/audio/'))
+    .pipe(gulp.dest('./dist/audio/'));
 });
 
 // -------------------------------------
