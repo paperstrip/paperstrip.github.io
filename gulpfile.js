@@ -121,8 +121,8 @@ gulp.task('images:thumbs', ['images:thumbs:delete'], function() {
         crop : transform.params.crop,
         upscale : transform.params.upscale
       }))
-      .pipe(gulp.dest(transform.dist + "_" + transform.params.width + "/"))
-      .pipe(gulp.dest(transform.to + "_" + transform.params.width + "/"))
+      .pipe(gulp.dest(transform.dist + "" + transform.params.width + "/"))
+      .pipe(gulp.dest(transform.to + "" + transform.params.width + "/"))
     );
 
   });
