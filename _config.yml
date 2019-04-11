@@ -49,7 +49,7 @@ exclude:
   - node_modules
   - assets # managed by Gulp
   - dist
-  - webpack.config.js
+  
 
 # Include from processing
 include:

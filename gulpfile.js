@@ -28,7 +28,7 @@ var imgConfig = [
   {
     src: './assets/img/**/*',
     dist: './dist/img/',
-    to:'./_site/assets/img/',
+    to:'./_site/dist/img/',
     params: {
       width : 1500,
       crop : false,
@@ -39,7 +39,7 @@ var imgConfig = [
   {
     src: './assets/img/**/*',
     dist: './dist/img/',
-    to:'./_site/assets/img/',
+    to:'./_site/dist/img/',
     params: {
       width : 1024,
       crop : false,
@@ -50,7 +50,7 @@ var imgConfig = [
   {
     src: './assets/img/**/*',
     dist: './dist/img/',
-    to:'./_site/assets/img/',
+    to:'./_site/dist/img/',
     params: {
       width : 800,
       crop : false,
@@ -139,14 +139,14 @@ gulp.task('build:js', function(){
   return gulp.src('./assets/js/main.js')
   .pipe(gulpPlumber())
   .pipe(webpackStream(webpackConfig, webpack))
-  .pipe(gulp.dest('./_site/assets/js/'))
+  .pipe(gulp.dest('./_site/dist/js/'))
   .pipe(gulpRename({ suffix: '.min' }))
   .pipe(babel({
       presets: ['@babel/env']
     }))
   .pipe(gulpUglify())
   .pipe(gulp.dest('./dist/js/'))
-  .pipe(gulp.dest('./_site/assets/js/'));
+  .pipe(gulp.dest('./_site/dist/js/'));
 });
 
 
@@ -163,7 +163,7 @@ gulp.task('build:css', function(){
     .pipe(gulpRename( {suffix: '.min'} ))
     .pipe(gulpPostcss( [autoprefixer(), cssnano()] ))
     .pipe(gulpSourcemaps.write())
-    .pipe(gulp.dest('./_site/assets/css/'))
+    .pipe(gulp.dest('./_site/dist/css/'))
     .pipe(gulp.dest('./dist/css/'))
 
     .pipe(browserSync.stream());
@@ -174,7 +174,7 @@ gulp.task('build:css', function(){
 // -------------------------------------
 gulp.task('build:sound', function() {
     gulp.src('./assets/audio/**/*')
-    .pipe(gulp.dest('./_site/assets/audio/'))
+    .pipe(gulp.dest('./_site/dist/audio/'))
     .pipe(gulp.dest('./dist/audio/'));
 });
 
