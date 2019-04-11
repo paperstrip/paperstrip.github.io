@@ -27,8 +27,8 @@ var ghPages = require('gulp-gh-pages');
 var imgConfig = [
   {
     src: './assets/img/**/*',
-    dist: './dist/img/',
-    to:'./_site/dist/img/',
+    dist: './src/img/',
+    to:'./_site/src/img/',
     params: {
       width : 1500,
       crop : false,
@@ -38,8 +38,8 @@ var imgConfig = [
   },
   {
     src: './assets/img/**/*',
-    dist: './dist/img/',
-    to:'./_site/dist/img/',
+    dist: './src/img/',
+    to:'./_site/src/img/',
     params: {
       width : 1024,
       crop : false,
@@ -49,8 +49,8 @@ var imgConfig = [
   },
   {
     src: './assets/img/**/*',
-    dist: './dist/img/',
-    to:'./_site/dist/img/',
+    dist: './src/img/',
+    to:'./_site/src/img/',
     params: {
       width : 800,
       crop : false,
@@ -139,14 +139,14 @@ gulp.task('build:js', function(){
   return gulp.src('./assets/js/main.js')
   .pipe(gulpPlumber())
   .pipe(webpackStream(webpackConfig, webpack))
-  .pipe(gulp.dest('./_site/dist/js/'))
+  .pipe(gulp.dest('./_site/src/js/'))
   .pipe(gulpRename({ suffix: '.min' }))
   .pipe(babel({
       presets: ['@babel/env']
     }))
   .pipe(gulpUglify())
-  .pipe(gulp.dest('./dist/js/'))
-  .pipe(gulp.dest('./_site/dist/js/'));
+  .pipe(gulp.dest('./src/js/'))
+  .pipe(gulp.dest('./_site/src/js/'));
 });
 
 
@@ -163,8 +163,8 @@ gulp.task('build:css', function(){
     .pipe(gulpRename( {suffix: '.min'} ))
     .pipe(gulpPostcss( [autoprefixer(), cssnano()] ))
     .pipe(gulpSourcemaps.write())
-    .pipe(gulp.dest('./_site/dist/css/'))
-    .pipe(gulp.dest('./dist/css/'))
+    .pipe(gulp.dest('./_site/src/css/'))
+    .pipe(gulp.dest('./src/css/'))
 
     .pipe(browserSync.stream());
 });
@@ -174,8 +174,8 @@ gulp.task('build:css', function(){
 // -------------------------------------
 gulp.task('build:sound', function() {
     gulp.src('./assets/audio/**/*')
-    .pipe(gulp.dest('./_site/dist/audio/'))
-    .pipe(gulp.dest('./dist/audio/'));
+    .pipe(gulp.dest('./_site/src/audio/'))
+    .pipe(gulp.dest('./src/audio/'));
 });
 
 // -------------------------------------
@@ -225,7 +225,7 @@ gulp.task('watch', ['browser-sync'], function(){
 
 
 gulp.task('deploy',["build"], function() {
-  return gulp.src('./_site/**/*')
+  return gulp.src('./src/**/*')
     .pipe(ghPages());
 
 });
