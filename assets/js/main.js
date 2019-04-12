@@ -213,12 +213,13 @@ function onReady(callback) {
 
 
 onReady(function() {
-  var audio = new Audio('../assets/audio/seba.mp3');
+  $(".letter-animation").lettering();
 
     var tl = new TimelineMax({
         repeat: 0,
         yoyo: false,
-        repeatDelay: 0.5
+        repeatDelay: 0.5,
+        onComplete: animationLetter
     });
 
     var polylion_staggerFrom = {
@@ -244,17 +245,14 @@ onReady(function() {
         ease: Power4.easeInOut
     });
 
-    $(".letter-animation").lettering();
 
     initSlider();
-    initScrollify();
-    animationLetter();
     var s = skrollr.init({forceHeight: false});
     if (s.isMobile()) {
       s.destroy();
     }
     else{
-      loop();
+      //loop();
 
     }
 
@@ -284,8 +282,13 @@ function initScrollify() {
         updateHash: false,
         before: function() {
           var x = document.getElementById("audio");
-          x.pause();
-          x.currentTime = 0;
+          if (x){
+            x.pause();
+            x.currentTime = 0;
+          }
+
+
+
 
           if (typeof audio != 'undefined' ){
             //intervallGlitch.clearInterval();
@@ -328,8 +331,10 @@ function initScrollify() {
                 $('.client-container').toggleClass('is-pixel');
                 $('#canvas').toggleClass('pixel');
                 var x = document.getElementById("audio");
+                if (x){
+                  x.play();
 
-                x.play();
+                }
 
               }, 500);
 
@@ -635,74 +640,7 @@ var ExpandTransition = Barba.BaseTransition.extend({
     }
 });
 
-var CardToCasestudy = Barba.BaseTransition.extend({
-    start: function() {
-        $('.main-nav').removeClass('active');
-        $('.btn-menu').removeClass('cross');
 
-        Promise
-            .all([this.newContainerLoading, this.beforeLeave()]) //Call Function = BeforeLeave
-            .then(this.beforeEnter.bind(this));
-    },
-    beforeLeave: function() {
-      //$('.holder').slick('unslick');
-      var tl = new TimelineMax({
-          repeat: 0,
-          yoyo: false,
-          delay:.9,
-          onComplete: function() {
-              deferred.resolve();
-          }
-
-      });
-
-      tl.staggerFromTo(".transition-left", 1,  {
-          x:"0%",
-          autoAlpha: 1,
-          ease: Power4.easeInOut
-      }, {
-          x:"-100%",
-          autoAlpha: 0,
-          ease: Power4.easeInOut
-      });
-
-
-
-
-        var deferred = Barba.Utils.deferred();
-
-        return deferred.promise;
-
-    },
-
-    beforeEnter: function() {
-      initScrollify();
-      mouse.x = window.innerWidth;
-      mouse.y = window.innerHeight;
-      colorPallete = ["#FFA4BC", "#C5D3FB", "#97F9FF"];
-      $(".letter-animation").lettering();
-      var tl = new TimelineMax({
-          repeat: 0,
-          yoyo: false,
-
-      });
-      tl.staggerFromTo(".portfolio-container__content--text", 1,  {
-          y:"100%",
-          autoAlpha: 0,
-          ease: Power4.easeInOut
-      }, {
-          y:"0%",
-          autoAlpha: 1,
-          ease: Power4.easeInOut
-      });
-      animationLetter();
-      $.scrollify.move(0);
-
-
-      this.done();
-
-    }
-});
 
 var Homepage = Barba.BaseView.extend({
     namespace: 'home',
@@ -731,34 +669,63 @@ var Homepage = Barba.BaseView.extend({
 
 // Don't forget to init the view!
 Homepage.init();
+
+var Works = Barba.BaseView.extend({
+    namespace: 'post',
+
+    onEnter: function() {
+        // The new Container is ready and attached to the DOM.
+        initScrollify();
+
+
+
+
+
+        console.log(this.namespace +" INIT");
+    },
+    onEnterCompleted: function() {
+      var breath = new TimelineMax({
+          repeat: 0,
+          yoyo: false,
+          delay:1,
+
+      })
+      breath.staggerFromTo('.breath-animation', 2, {
+          scaleX: 3,
+          opacity: 0,
+          scaleY: 3,
+
+          ease: Power4.easeInOut
+      }, {
+          scaleX: 1,
+          opacity: 1,
+          scaleY: 1,
+
+          ease: Power4.easeInOut
+      }, .2);
+      animationLetter();
+        // The Transition has just finished.
+
+    },
+    onLeave: function() {
+        // A new Transition toward a new page has just started.
+        console.log('leaving');
+      //  $.scrollify.instantPrevious();
+
+    },
+    onLeaveCompleted: function() {}
+});
+
+// Don't forget to init the view!
+Works.init();
 function isCasestudy(array) {
     var bool = array.includes("work",2);
     return bool;
 }
 Barba.Pjax.getTransition = function() {
-    var newPage = Barba.HistoryManager.currentStatus().url.split('/');
-    var prevPage = Barba.HistoryManager.prevStatus().url.split('/').pop();
 
-      if (prevPage === 'index.html' && isCasestudy(newPage) || prevPage === "" && isCasestudy(newPage)) {
-          console.log('cardToCasestudy');
-          return CardToCasestudy;
-      }
+    return ExpandTransition;
 
-      if (isCasestudy(prevPage) && newPage === 'index') {
-          console.log('casestudyToCard');
-
-      }
-
-      if (!isCasestudy(newPage)) {
-           console.log('page to page')
-           return ExpandTransition;
-
-      }
-
-      if (isCasestudy(prevPage) && isCasestudy(newPage)) {
-          console.log('case studies to case studies ');
-
-      }
 
 };
 Barba.Pjax.start();
