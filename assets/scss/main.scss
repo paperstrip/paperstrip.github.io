@@ -1,8 +1,7 @@
 // base
 @import "node_modules/bootstrap/scss/bootstrap-grid";
 
-$enable-flex:               true;
-$enable-grid-classes:       true;
+
 @import "global/mixin";
 @import "global/animation";
 
@@ -12,5 +11,3 @@ $enable-grid-classes:       true;
 @import "base/nav";
 @import "base/button";
 @import "base/slideshow";
-
- 

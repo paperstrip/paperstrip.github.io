@@ -3615,6 +3615,7 @@ ul li {
 @media all and (max-width: 1024px) {
   .home-container .home-container__content {
     padding: 0;
+    text-align: center;
   }
 }
 
@@ -3739,717 +3740,717 @@ ul li {
 }
 
 .wrapper-gooey:hover circle:nth-child(8) {
-  transform: translateX(119%) translateY(117%) scale(0);
+  transform: translateX(29%) translateY(8%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(9) {
-  transform: translateX(13%) translateY(124%) scale(0);
+  transform: translateX(36%) translateY(17%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(10) {
-  transform: translateX(46%) translateY(40%) scale(0);
+  transform: translateX(120%) translateY(88%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(11) {
-  transform: translateX(82%) translateY(41%) scale(0);
+  transform: translateX(83%) translateY(23%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(12) {
-  transform: translateX(60%) translateY(71%) scale(0);
+  transform: translateX(63%) translateY(70%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(13) {
-  transform: translateX(50%) translateY(3%) scale(0);
+  transform: translateX(94%) translateY(96%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(14) {
-  transform: translateX(115%) translateY(6%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(15) {
-  transform: translateX(69%) translateY(25%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(16) {
-  transform: translateX(56%) translateY(99%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(17) {
-  transform: translateX(34%) translateY(90%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(18) {
-  transform: translateX(39%) translateY(22%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(19) {
-  transform: translateX(4%) translateY(127%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(20) {
-  transform: translateX(29%) translateY(6%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(21) {
-  transform: translateX(63%) translateY(36%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(22) {
-  transform: translateX(44%) translateY(110%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(23) {
-  transform: translateX(84%) translateY(70%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(24) {
-  transform: translateX(72%) translateY(62%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(25) {
-  transform: translateX(110%) translateY(6%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(26) {
   transform: translateX(11%) translateY(40%) scale(0);
   transition: 2s ease-in;
 }
 
+.wrapper-gooey:hover circle:nth-child(15) {
+  transform: translateX(64%) translateY(82%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(16) {
+  transform: translateX(74%) translateY(32%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(17) {
+  transform: translateX(95%) translateY(1%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(18) {
+  transform: translateX(59%) translateY(115%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(19) {
+  transform: translateX(60%) translateY(127%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(20) {
+  transform: translateX(32%) translateY(85%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(21) {
+  transform: translateX(37%) translateY(18%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(22) {
+  transform: translateX(79%) translateY(10%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(23) {
+  transform: translateX(34%) translateY(8%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(24) {
+  transform: translateX(41%) translateY(64%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(25) {
+  transform: translateX(23%) translateY(115%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(26) {
+  transform: translateX(83%) translateY(111%) scale(0);
+  transition: 2s ease-in;
+}
+
 .wrapper-gooey:hover circle:nth-child(27) {
-  transform: translateX(1%) translateY(115%) scale(0);
+  transform: translateX(38%) translateY(103%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(28) {
-  transform: translateX(77%) translateY(127%) scale(0);
+  transform: translateX(18%) translateY(44%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(29) {
-  transform: translateX(100%) translateY(92%) scale(0);
+  transform: translateX(17%) translateY(120%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(30) {
-  transform: translateX(82%) translateY(13%) scale(0);
+  transform: translateX(92%) translateY(89%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(31) {
-  transform: translateX(67%) translateY(7%) scale(0);
+  transform: translateX(94%) translateY(115%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(32) {
-  transform: translateX(124%) translateY(61%) scale(0);
+  transform: translateX(87%) translateY(123%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(33) {
-  transform: translateX(100%) translateY(45%) scale(0);
+  transform: translateX(96%) translateY(120%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(34) {
-  transform: translateX(104%) translateY(44%) scale(0);
+  transform: translateX(98%) translateY(12%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(35) {
-  transform: translateX(22%) translateY(20%) scale(0);
+  transform: translateX(18%) translateY(39%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(36) {
-  transform: translateX(54%) translateY(19%) scale(0);
+  transform: translateX(70%) translateY(57%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(37) {
-  transform: translateX(62%) translateY(31%) scale(0);
+  transform: translateX(15%) translateY(112%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(38) {
-  transform: translateX(107%) translateY(81%) scale(0);
+  transform: translateX(60%) translateY(54%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(39) {
-  transform: translateX(104%) translateY(82%) scale(0);
+  transform: translateX(69%) translateY(37%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(40) {
-  transform: translateX(65%) translateY(12%) scale(0);
+  transform: translateX(87%) translateY(16%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(41) {
-  transform: translateX(84%) translateY(129%) scale(0);
+  transform: translateX(126%) translateY(94%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(42) {
-  transform: translateX(105%) translateY(75%) scale(0);
+  transform: translateX(57%) translateY(27%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(43) {
-  transform: translateX(4%) translateY(108%) scale(0);
+  transform: translateX(66%) translateY(91%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(44) {
-  transform: translateX(17%) translateY(57%) scale(0);
+  transform: translateX(72%) translateY(38%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(45) {
-  transform: translateX(33%) translateY(9%) scale(0);
+  transform: translateX(50%) translateY(28%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(46) {
-  transform: translateX(14%) translateY(5%) scale(0);
+  transform: translateX(108%) translateY(121%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(47) {
-  transform: translateX(96%) translateY(29%) scale(0);
+  transform: translateX(66%) translateY(19%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(48) {
-  transform: translateX(29%) translateY(88%) scale(0);
+  transform: translateX(70%) translateY(117%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(49) {
-  transform: translateX(88%) translateY(41%) scale(0);
+  transform: translateX(15%) translateY(8%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(50) {
-  transform: translateX(15%) translateY(92%) scale(0);
+  transform: translateX(30%) translateY(11%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(51) {
-  transform: translateX(92%) translateY(74%) scale(0);
+  transform: translateX(77%) translateY(95%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(52) {
-  transform: translateX(100%) translateY(23%) scale(0);
+  transform: translateX(71%) translateY(93%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(53) {
-  transform: translateX(112%) translateY(23%) scale(0);
+  transform: translateX(107%) translateY(125%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(54) {
-  transform: translateX(71%) translateY(31%) scale(0);
+  transform: translateX(56%) translateY(84%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(55) {
-  transform: translateX(16%) translateY(2%) scale(0);
+  transform: translateX(10%) translateY(118%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(56) {
-  transform: translateX(40%) translateY(88%) scale(0);
+  transform: translateX(91%) translateY(83%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(57) {
-  transform: translateX(69%) translateY(72%) scale(0);
+  transform: translateX(20%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(58) {
-  transform: translateX(103%) translateY(101%) scale(0);
+  transform: translateX(99%) translateY(69%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(59) {
-  transform: translateX(89%) translateY(9%) scale(0);
+  transform: translateX(11%) translateY(29%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(60) {
-  transform: translateX(82%) translateY(72%) scale(0);
+  transform: translateX(124%) translateY(19%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(61) {
-  transform: translateX(73%) translateY(122%) scale(0);
+  transform: translateX(91%) translateY(102%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(62) {
-  transform: translateX(1%) translateY(21%) scale(0);
+  transform: translateX(81%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(63) {
-  transform: translateX(4%) translateY(30%) scale(0);
+  transform: translateX(127%) translateY(35%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(64) {
-  transform: translateX(82%) translateY(11%) scale(0);
+  transform: translateX(46%) translateY(122%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(65) {
-  transform: translateX(54%) translateY(99%) scale(0);
+  transform: translateX(65%) translateY(77%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(66) {
-  transform: translateX(102%) translateY(84%) scale(0);
+  transform: translateX(78%) translateY(28%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(67) {
-  transform: translateX(112%) translateY(8%) scale(0);
+  transform: translateX(72%) translateY(3%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(68) {
-  transform: translateX(53%) translateY(35%) scale(0);
+  transform: translateX(48%) translateY(29%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(69) {
-  transform: translateX(20%) translateY(43%) scale(0);
+  transform: translateX(79%) translateY(42%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(70) {
-  transform: translateX(75%) translateY(68%) scale(0);
+  transform: translateX(111%) translateY(125%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(71) {
-  transform: translateX(16%) translateY(62%) scale(0);
+  transform: translateX(38%) translateY(33%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(72) {
-  transform: translateX(9%) translateY(6%) scale(0);
+  transform: translateX(70%) translateY(34%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(73) {
-  transform: translateX(66%) translateY(109%) scale(0);
+  transform: translateX(91%) translateY(100%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(74) {
-  transform: translateX(26%) translateY(86%) scale(0);
+  transform: translateX(130%) translateY(116%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(75) {
-  transform: translateX(102%) translateY(129%) scale(0);
+  transform: translateX(6%) translateY(93%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(76) {
-  transform: translateX(47%) translateY(70%) scale(0);
+  transform: translateX(24%) translateY(92%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(77) {
-  transform: translateX(46%) translateY(67%) scale(0);
+  transform: translateX(39%) translateY(22%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(78) {
-  transform: translateX(15%) translateY(20%) scale(0);
+  transform: translateX(126%) translateY(68%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(79) {
-  transform: translateX(2%) translateY(18%) scale(0);
+  transform: translateX(105%) translateY(113%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(80) {
-  transform: translateX(102%) translateY(116%) scale(0);
+  transform: translateX(61%) translateY(114%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(81) {
-  transform: translateX(87%) translateY(129%) scale(0);
+  transform: translateX(67%) translateY(46%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(82) {
-  transform: translateX(72%) translateY(110%) scale(0);
+  transform: translateX(37%) translateY(128%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(83) {
-  transform: translateX(28%) translateY(130%) scale(0);
+  transform: translateX(15%) translateY(11%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(84) {
-  transform: translateX(116%) translateY(126%) scale(0);
+  transform: translateX(57%) translateY(15%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(85) {
-  transform: translateX(67%) translateY(36%) scale(0);
+  transform: translateX(82%) translateY(16%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(86) {
-  transform: translateX(6%) translateY(83%) scale(0);
+  transform: translateX(12%) translateY(95%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(87) {
-  transform: translateX(117%) translateY(121%) scale(0);
+  transform: translateX(40%) translateY(46%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(88) {
-  transform: translateX(6%) translateY(103%) scale(0);
+  transform: translateX(91%) translateY(59%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(89) {
-  transform: translateX(57%) translateY(103%) scale(0);
+  transform: translateX(38%) translateY(84%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(90) {
-  transform: translateX(95%) translateY(20%) scale(0);
+  transform: translateX(114%) translateY(20%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(91) {
-  transform: translateX(86%) translateY(61%) scale(0);
+  transform: translateX(102%) translateY(109%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(92) {
-  transform: translateX(105%) translateY(1%) scale(0);
+  transform: translateX(56%) translateY(58%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(93) {
-  transform: translateX(76%) translateY(75%) scale(0);
+  transform: translateX(123%) translateY(113%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(94) {
-  transform: translateX(5%) translateY(36%) scale(0);
+  transform: translateX(14%) translateY(32%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(95) {
-  transform: translateX(31%) translateY(94%) scale(0);
+  transform: translateX(39%) translateY(77%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(96) {
-  transform: translateX(90%) translateY(67%) scale(0);
+  transform: translateX(83%) translateY(123%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(97) {
-  transform: translateX(15%) translateY(107%) scale(0);
+  transform: translateX(21%) translateY(42%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(98) {
-  transform: translateX(45%) translateY(33%) scale(0);
+  transform: translateX(44%) translateY(25%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(99) {
-  transform: translateX(116%) translateY(65%) scale(0);
+  transform: translateX(55%) translateY(65%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(100) {
-  transform: translateX(63%) translateY(44%) scale(0);
+  transform: translateX(116%) translateY(10%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(101) {
-  transform: translateX(83%) translateY(34%) scale(0);
+  transform: translateX(96%) translateY(29%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(102) {
-  transform: translateX(34%) translateY(97%) scale(0);
+  transform: translateX(20%) translateY(109%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(103) {
-  transform: translateX(23%) translateY(117%) scale(0);
+  transform: translateX(112%) translateY(50%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(104) {
-  transform: translateX(27%) translateY(80%) scale(0);
+  transform: translateX(13%) translateY(42%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(105) {
-  transform: translateX(76%) translateY(67%) scale(0);
+  transform: translateX(4%) translateY(78%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(106) {
-  transform: translateX(119%) translateY(92%) scale(0);
+  transform: translateX(95%) translateY(15%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(107) {
-  transform: translateX(84%) translateY(3%) scale(0);
+  transform: translateX(122%) translateY(5%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(108) {
-  transform: translateX(129%) translateY(106%) scale(0);
+  transform: translateX(61%) translateY(118%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(109) {
-  transform: translateX(35%) translateY(10%) scale(0);
+  transform: translateX(48%) translateY(111%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(110) {
-  transform: translateX(41%) translateY(71%) scale(0);
+  transform: translateX(65%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(111) {
-  transform: translateX(65%) translateY(71%) scale(0);
+  transform: translateX(95%) translateY(29%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(112) {
-  transform: translateX(72%) translateY(98%) scale(0);
+  transform: translateX(60%) translateY(34%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(113) {
-  transform: translateX(97%) translateY(90%) scale(0);
+  transform: translateX(18%) translateY(26%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(114) {
-  transform: translateX(92%) translateY(75%) scale(0);
+  transform: translateX(126%) translateY(119%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(115) {
-  transform: translateX(40%) translateY(109%) scale(0);
+  transform: translateX(61%) translateY(89%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(116) {
-  transform: translateX(128%) translateY(39%) scale(0);
+  transform: translateX(44%) translateY(46%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(117) {
-  transform: translateX(28%) translateY(90%) scale(0);
+  transform: translateX(28%) translateY(81%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(118) {
-  transform: translateX(52%) translateY(97%) scale(0);
+  transform: translateX(42%) translateY(96%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(119) {
-  transform: translateX(20%) translateY(62%) scale(0);
+  transform: translateX(61%) translateY(29%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(120) {
-  transform: translateX(66%) translateY(7%) scale(0);
+  transform: translateX(49%) translateY(16%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(121) {
-  transform: translateX(112%) translateY(26%) scale(0);
+  transform: translateX(99%) translateY(109%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(122) {
-  transform: translateX(86%) translateY(47%) scale(0);
+  transform: translateX(118%) translateY(26%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(123) {
-  transform: translateX(41%) translateY(123%) scale(0);
+  transform: translateX(77%) translateY(7%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(124) {
-  transform: translateX(71%) translateY(124%) scale(0);
+  transform: translateX(79%) translateY(93%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(125) {
-  transform: translateX(115%) translateY(4%) scale(0);
+  transform: translateX(96%) translateY(13%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(126) {
-  transform: translateX(78%) translateY(91%) scale(0);
+  transform: translateX(71%) translateY(37%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(127) {
-  transform: translateX(70%) translateY(49%) scale(0);
+  transform: translateX(5%) translateY(56%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(128) {
-  transform: translateX(17%) translateY(97%) scale(0);
+  transform: translateX(80%) translateY(35%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(129) {
-  transform: translateX(39%) translateY(56%) scale(0);
+  transform: translateX(17%) translateY(17%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(130) {
-  transform: translateX(127%) translateY(118%) scale(0);
+  transform: translateX(53%) translateY(13%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(131) {
-  transform: translateX(124%) translateY(102%) scale(0);
+  transform: translateX(120%) translateY(36%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(132) {
-  transform: translateX(38%) translateY(27%) scale(0);
+  transform: translateX(47%) translateY(100%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(133) {
-  transform: translateX(12%) translateY(118%) scale(0);
+  transform: translateX(42%) translateY(85%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(134) {
-  transform: translateX(98%) translateY(22%) scale(0);
+  transform: translateX(109%) translateY(98%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(135) {
-  transform: translateX(123%) translateY(70%) scale(0);
+  transform: translateX(67%) translateY(6%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(136) {
-  transform: translateX(119%) translateY(34%) scale(0);
+  transform: translateX(53%) translateY(4%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(137) {
-  transform: translateX(63%) translateY(50%) scale(0);
+  transform: translateX(59%) translateY(79%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(138) {
-  transform: translateX(87%) translateY(125%) scale(0);
+  transform: translateX(14%) translateY(114%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(139) {
-  transform: translateX(67%) translateY(125%) scale(0);
+  transform: translateX(31%) translateY(56%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(140) {
-  transform: translateX(29%) translateY(71%) scale(0);
+  transform: translateX(35%) translateY(49%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(141) {
-  transform: translateX(14%) translateY(73%) scale(0);
+  transform: translateX(27%) translateY(54%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(142) {
-  transform: translateX(52%) translateY(88%) scale(0);
+  transform: translateX(48%) translateY(22%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(143) {
-  transform: translateX(36%) translateY(127%) scale(0);
+  transform: translateX(69%) translateY(90%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(144) {
-  transform: translateX(107%) translateY(106%) scale(0);
+  transform: translateX(93%) translateY(7%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(145) {
-  transform: translateX(71%) translateY(120%) scale(0);
+  transform: translateX(20%) translateY(83%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(146) {
-  transform: translateX(31%) translateY(129%) scale(0);
+  transform: translateX(58%) translateY(27%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(147) {
-  transform: translateX(45%) translateY(97%) scale(0);
+  transform: translateX(14%) translateY(34%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(148) {
-  transform: translateX(119%) translateY(52%) scale(0);
+  transform: translateX(62%) translateY(39%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(149) {
-  transform: translateX(96%) translateY(39%) scale(0);
+  transform: translateX(115%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(150) {
-  transform: translateX(122%) translateY(59%) scale(0);
+  transform: translateX(63%) translateY(68%) scale(0);
   transition: 2s ease-in;
 }
 
@@ -4501,6 +4502,14 @@ circle {
 @media all and (max-width: 1024px) {
   .slide-section.portfolio-container .home-container__content {
     padding: 0;
+    text-align: center;
+    height: auto;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .slide-section.portfolio-container .home-container__content .letter-animation:last-child {
+    margin-bottom: 20px;
   }
 }
 
@@ -4578,6 +4587,19 @@ circle {
 .client-container.is-active.is-pixel {
 }
 
+.client-container.is-active.is-pixel .pixelized--heart {
+  display: block;
+}
+
+.client-container.is-active.is-pixel li {
+  transform-origin: center;
+  animation-play-state: running;
+}
+
+.client-container.is-active.is-pixel img {
+  display: none;
+}
+
 .client-container.is-active.is-pixel:before {
   opacity: 1;
 }
@@ -4590,7 +4612,7 @@ circle {
 
 .client-container.is-active.is-pixel .glitch:after {
   position: absolute;
-  color: orange;
+  color: #fd88e1;
   content: attr(aria-label);
   font-family: 'Press Start 2P', cursive;
   z-index: -1;
@@ -4599,7 +4621,7 @@ circle {
 
 .client-container.is-active.is-pixel .glitch:before {
   position: absolute;
-  color: cyan;
+  color: #15fdca;
   content: attr(aria-label);
   font-family: 'Press Start 2P', cursive;
   z-index: -1;
@@ -4607,7 +4629,7 @@ circle {
 }
 
 .client-container.is-active.is-pixel .glitch span {
-  color: yellow;
+  color: #151131;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -4617,9 +4639,9 @@ circle {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/_1500/pixel.png");
+  background: url("../img/1500/pixel.png");
   background-size: cover;
-  background-position: 0 0;
+  background-position: center;
   opacity: 0;
 }
 
@@ -4641,9 +4663,9 @@ circle {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/_1500/glitch.png");
+  background: url("../img/1500/glitch.png");
   background-size: cover;
-  background-position: 0 0;
+  background-position: center;
   opacity: 0;
 }
 
@@ -4654,10 +4676,10 @@ circle {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/_1500/glitch.png");
+  background: url("../img/1500/glitch.png");
   opacity: 1;
   background-size: cover;
-  background-position: 0 0;
+  background-position: center;
   mix-blend-mode: normal;
 }
 
@@ -4668,9 +4690,10 @@ circle {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/_1500/light-glitch.png");
+  background: url("../img/1500/light-glitch.png");
   opacity: 1;
   background-size: cover;
+  background-position: center;
   animation: animateScale 2.5s   linear infinite;
   transform-origin: center;
   animation-play-state: running;
@@ -4706,7 +4729,7 @@ circle {
   }
   40% {
     background-position: -5px 0;
-    background-image: url("../img/_1500/glitch-2.png");
+    background-image: url("../img/1500/glitch-2.png");
   }
   50% {
     background-position: -25px 0;
@@ -4716,7 +4739,7 @@ circle {
   }
   70% {
     background-position: 0 -20px;
-    background-image: url("../img/_1500/glitch.png");
+    background-image: url("../img/1500/glitch.png");
   }
   80% {
     background-position: -60px -20px;
@@ -4770,6 +4793,54 @@ circle {
   }
 }
 
+.client-container__content li {
+  max-width: 150px;
+  animation: rotatateHeart .6s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+.client-container__content li:nth-child(1) {
+  animation-delay: 0.125s;
+}
+
+.client-container__content li:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.client-container__content li:nth-child(3) {
+  animation-delay: 0.375s;
+}
+
+.client-container__content li:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+.client-container__content li:nth-child(5) {
+  animation-delay: 0.625s;
+}
+
+.client-container__content li:nth-child(6) {
+  animation-delay: 0.75s;
+}
+
+.client-container__content li:nth-child(7) {
+  animation-delay: 0.875s;
+}
+
+.client-container__content li:nth-child(8) {
+  animation-delay: 1s;
+}
+
+.client-container__content li:nth-child(9) {
+  animation-delay: 1.125s;
+}
+
+@media all and (max-width: 1024px) {
+  .client-container__content li {
+    width: auto;
+  }
+}
+
 .animate:not(.is-pixel) .glitch {
   position: relative;
   /* Animation provies a slight random skew. Check bottom of doc
@@ -4815,211 +4886,230 @@ box to be used for the random glitch effect. Also adds a very subtle
 skew to change the 'thickness' of the glitch.*/
 @keyframes glitch-anim {
   0% {
-    clip: rect(49px, 9999px, 17px, 0);
-    transform: skew(0.82deg);
+    clip: rect(32px, 9999px, 11px, 0);
+    transform: skew(0.11deg);
   }
   5% {
-    clip: rect(59px, 9999px, 54px, 0);
-    transform: skew(0.23deg);
+    clip: rect(56px, 9999px, 17px, 0);
+    transform: skew(0.85deg);
   }
   10% {
-    clip: rect(58px, 9999px, 61px, 0);
-    transform: skew(0.95deg);
+    clip: rect(45px, 9999px, 14px, 0);
+    transform: skew(0.55deg);
   }
   15% {
-    clip: rect(13px, 9999px, 92px, 0);
-    transform: skew(0.2deg);
+    clip: rect(81px, 9999px, 1px, 0);
+    transform: skew(0.66deg);
   }
   20% {
-    clip: rect(22px, 9999px, 60px, 0);
-    transform: skew(0.68deg);
+    clip: rect(58px, 9999px, 60px, 0);
+    transform: skew(0.84deg);
   }
   25% {
-    clip: rect(61px, 9999px, 9px, 0);
-    transform: skew(0.38deg);
+    clip: rect(95px, 9999px, 40px, 0);
+    transform: skew(0.06deg);
   }
   30% {
-    clip: rect(63px, 9999px, 45px, 0);
-    transform: skew(0.52deg);
+    clip: rect(37px, 9999px, 30px, 0);
+    transform: skew(0.13deg);
   }
   35% {
-    clip: rect(97px, 9999px, 54px, 0);
-    transform: skew(0.09deg);
+    clip: rect(64px, 9999px, 19px, 0);
+    transform: skew(0.73deg);
   }
   40% {
-    clip: rect(61px, 9999px, 10px, 0);
-    transform: skew(0.62deg);
+    clip: rect(41px, 9999px, 50px, 0);
+    transform: skew(0.84deg);
   }
   45% {
-    clip: rect(92px, 9999px, 28px, 0);
-    transform: skew(0.65deg);
+    clip: rect(100px, 9999px, 22px, 0);
+    transform: skew(0.08deg);
   }
   50% {
-    clip: rect(85px, 9999px, 23px, 0);
-    transform: skew(0.36deg);
+    clip: rect(55px, 9999px, 57px, 0);
+    transform: skew(0.64deg);
   }
   55% {
-    clip: rect(14px, 9999px, 30px, 0);
-    transform: skew(1deg);
+    clip: rect(96px, 9999px, 18px, 0);
+    transform: skew(0.7deg);
   }
   60% {
-    clip: rect(64px, 9999px, 22px, 0);
-    transform: skew(0.95deg);
+    clip: rect(96px, 9999px, 98px, 0);
+    transform: skew(0.8deg);
   }
   65% {
-    clip: rect(81px, 9999px, 95px, 0);
-    transform: skew(0.35deg);
+    clip: rect(1px, 9999px, 16px, 0);
+    transform: skew(0.29deg);
   }
   70% {
-    clip: rect(18px, 9999px, 48px, 0);
-    transform: skew(0.57deg);
+    clip: rect(54px, 9999px, 6px, 0);
+    transform: skew(0.76deg);
   }
   75% {
-    clip: rect(98px, 9999px, 79px, 0);
-    transform: skew(1deg);
+    clip: rect(77px, 9999px, 42px, 0);
+    transform: skew(0.93deg);
   }
   80% {
-    clip: rect(48px, 9999px, 35px, 0);
-    transform: skew(0.2deg);
+    clip: rect(76px, 9999px, 67px, 0);
+    transform: skew(0.48deg);
   }
   85% {
-    clip: rect(9px, 9999px, 52px, 0);
-    transform: skew(0.83deg);
+    clip: rect(77px, 9999px, 30px, 0);
+    transform: skew(0.55deg);
   }
   90% {
-    clip: rect(44px, 9999px, 38px, 0);
-    transform: skew(0.38deg);
+    clip: rect(44px, 9999px, 55px, 0);
+    transform: skew(0.06deg);
   }
   95% {
-    clip: rect(75px, 9999px, 64px, 0);
-    transform: skew(0.44deg);
+    clip: rect(51px, 9999px, 84px, 0);
+    transform: skew(0.43deg);
   }
   100% {
-    clip: rect(26px, 9999px, 3px, 0);
-    transform: skew(0.36deg);
+    clip: rect(62px, 9999px, 72px, 0);
+    transform: skew(0.41deg);
   }
 }
 
 @keyframes glitch-anim2 {
   0% {
-    clip: rect(33px, 9999px, 77px, 0);
-    transform: skew(0.39deg);
+    clip: rect(59px, 9999px, 15px, 0);
+    transform: skew(0.44deg);
   }
   5% {
-    clip: rect(91px, 9999px, 38px, 0);
-    transform: skew(0.99deg);
+    clip: rect(40px, 9999px, 21px, 0);
+    transform: skew(0.58deg);
   }
   10% {
-    clip: rect(74px, 9999px, 38px, 0);
-    transform: skew(0.89deg);
+    clip: rect(76px, 9999px, 3px, 0);
+    transform: skew(0.06deg);
   }
   15% {
-    clip: rect(33px, 9999px, 1px, 0);
-    transform: skew(0.36deg);
+    clip: rect(25px, 9999px, 21px, 0);
+    transform: skew(0.5deg);
   }
   20% {
-    clip: rect(55px, 9999px, 31px, 0);
-    transform: skew(0.28deg);
+    clip: rect(9px, 9999px, 98px, 0);
+    transform: skew(0.21deg);
   }
   25% {
-    clip: rect(74px, 9999px, 37px, 0);
-    transform: skew(0.27deg);
+    clip: rect(41px, 9999px, 41px, 0);
+    transform: skew(0.47deg);
   }
   30% {
-    clip: rect(46px, 9999px, 21px, 0);
-    transform: skew(0.73deg);
+    clip: rect(25px, 9999px, 90px, 0);
+    transform: skew(0.5deg);
   }
   35% {
-    clip: rect(47px, 9999px, 49px, 0);
-    transform: skew(0.69deg);
+    clip: rect(88px, 9999px, 94px, 0);
+    transform: skew(0.19deg);
   }
   40% {
-    clip: rect(22px, 9999px, 17px, 0);
-    transform: skew(0.31deg);
+    clip: rect(83px, 9999px, 98px, 0);
+    transform: skew(0.53deg);
   }
   45% {
-    clip: rect(53px, 9999px, 69px, 0);
-    transform: skew(0.54deg);
+    clip: rect(91px, 9999px, 32px, 0);
+    transform: skew(0.37deg);
   }
   50% {
-    clip: rect(63px, 9999px, 73px, 0);
-    transform: skew(0.4deg);
+    clip: rect(98px, 9999px, 13px, 0);
+    transform: skew(0.54deg);
   }
   55% {
-    clip: rect(36px, 9999px, 36px, 0);
-    transform: skew(0.1deg);
-  }
-  60% {
-    clip: rect(51px, 9999px, 21px, 0);
-    transform: skew(0.36deg);
-  }
-  65% {
-    clip: rect(46px, 9999px, 21px, 0);
-    transform: skew(0.74deg);
-  }
-  70% {
-    clip: rect(64px, 9999px, 54px, 0);
-    transform: skew(0.35deg);
-  }
-  75% {
-    clip: rect(77px, 9999px, 51px, 0);
-    transform: skew(0.59deg);
-  }
-  80% {
-    clip: rect(90px, 9999px, 50px, 0);
+    clip: rect(57px, 9999px, 24px, 0);
     transform: skew(0.2deg);
   }
-  85% {
-    clip: rect(46px, 9999px, 32px, 0);
-    transform: skew(0.39deg);
+  60% {
+    clip: rect(47px, 9999px, 92px, 0);
+    transform: skew(0.53deg);
   }
-  90% {
-    clip: rect(42px, 9999px, 72px, 0);
-    transform: skew(0.83deg);
+  65% {
+    clip: rect(38px, 9999px, 25px, 0);
+    transform: skew(0.8deg);
   }
-  95% {
-    clip: rect(6px, 9999px, 35px, 0);
+  70% {
+    clip: rect(86px, 9999px, 59px, 0);
+    transform: skew(0.44deg);
+  }
+  75% {
+    clip: rect(22px, 9999px, 22px, 0);
+    transform: skew(0.62deg);
+  }
+  80% {
+    clip: rect(32px, 9999px, 59px, 0);
     transform: skew(0.1deg);
   }
+  85% {
+    clip: rect(55px, 9999px, 71px, 0);
+    transform: skew(0.23deg);
+  }
+  90% {
+    clip: rect(4px, 9999px, 68px, 0);
+    transform: skew(0.96deg);
+  }
+  95% {
+    clip: rect(26px, 9999px, 83px, 0);
+    transform: skew(0.75deg);
+  }
   100% {
-    clip: rect(94px, 9999px, 95px, 0);
-    transform: skew(0.17deg);
+    clip: rect(3px, 9999px, 31px, 0);
+    transform: skew(0.11deg);
   }
 }
 
 @keyframes glitch-skew {
   0% {
-    transform: skew(3deg);
+    transform: skew(-3deg);
   }
   10% {
     transform: skew(-2deg);
   }
   20% {
-    transform: skew(1deg);
-  }
-  30% {
-    transform: skew(2deg);
-  }
-  40% {
-    transform: skew(-1deg);
-  }
-  50% {
-    transform: skew(-2deg);
-  }
-  60% {
-    transform: skew(1deg);
-  }
-  70% {
     transform: skew(-4deg);
   }
-  80% {
-    transform: skew(-2deg);
+  30% {
+    transform: skew(-1deg);
   }
-  90% {
+  40% {
     transform: skew(3deg);
   }
+  50% {
+    transform: skew(2deg);
+  }
+  60% {
+    transform: skew(5deg);
+  }
+  70% {
+    transform: skew(4deg);
+  }
+  80% {
+    transform: skew(-4deg);
+  }
+  90% {
+    transform: skew(2deg);
+  }
   100% {
-    transform: skew(1deg);
+    transform: skew(3deg);
+  }
+}
+
+.pixelized--heart {
+  display: none;
+  width: 1em;
+  height: 1em;
+  box-shadow: 1em 0em #F22613, 2em 0em #F22613, 4em 0em #F22613, 5em 0em #F22613,  0em 1em #F22613, 1em 1em #F22613, 2em 1em #F22613, 3em 1em #F22613, 4em 1em #F22613, 5em 1em #F22613, 6em 1em #F22613,  0em 2em #F22613, 1em 2em #F22613, 2em 2em #F22613, 3em 2em #F22613, 4em 2em #F22613, 5em 2em #F22613, 6em 2em #F22613,  1em 3em #F22613, 2em 3em #F22613, 3em 3em #F22613, 4em 3em #F22613, 5em 3em #F22613,  2em 4em #F22613, 3em 4em #F22613, 4em 4em #F22613,  3em 5em #F22613;
+}
+
+@keyframes rotatateHeart {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -5228,7 +5318,7 @@ skew to change the 'thickness' of the glitch.*/
   transform: translate(-50%, -50%) scale(1);
   width: 100%;
   height: 100%;
-  background: url("../img/_1500/menu-background.jpg");
+  background: url("../img/1500/menu-background.jpg");
   background-position: center;
   background-size: cover;
   z-index: -1;
@@ -5342,6 +5432,13 @@ skew to change the 'thickness' of the glitch.*/
   width: 100%;
   height: 100%;
   display: inline-block;
+  max-width: 100%;
+}
+
+@media all and (max-width: 1024px) {
+  .holder .case-list__item {
+    max-width: 500px;
+  }
 }
 
 .holder svg {

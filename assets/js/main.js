@@ -194,7 +194,7 @@ $('.btn-menu').click(function(e) {
 })
 /*===========================*/
 /*													 */
-/*								 					 */
+/*							 	 					 */
 /*INIT ON READY*/
 /*													 */
 /*													 */
@@ -254,7 +254,7 @@ onReady(function() {
       s.destroy();
     }
     else{
-      //loop();
+      loop();
 
     }
 
@@ -269,6 +269,7 @@ onReady(function() {
 /*===========================*/
 
 function initScrollify() {
+
   console.log('scrollify init');
     $.scrollify.destroy();
 
@@ -282,14 +283,22 @@ function initScrollify() {
         setHeights: true,
         updateHash: false,
         before: function() {
+          var x = document.getElementById("audio");
+          x.pause();
+          x.currentTime = 0;
 
           if (typeof audio != 'undefined' ){
             //intervallGlitch.clearInterval();
-            audio.pause();
+            console.log('Heere');
+
           }
           $('.client-container').removeClass('animate');
 
           $('.client-container').removeClass('is-active');
+          $('.client-container').removeClass('is-pixel');
+          $('#canvas').removeClass('pixel');
+
+
 
           if ($.scrollify.current().data('color-pallette')){
             colorPallete = $.scrollify.current().data('color-pallette');
@@ -312,14 +321,15 @@ function initScrollify() {
         after: function(){
           if ($.scrollify.current().hasClass('client-container')){
             $.scrollify.current().addClass('is-active');
-            var audio = new Audio('../assets/audio/seba.mp3');
 
              setTimeout(function () {
               $('.client-container').toggleClass('animate');
               setTimeout(function () {
                 $('.client-container').toggleClass('is-pixel');
                 $('#canvas').toggleClass('pixel');
-                audio.play();
+                var x = document.getElementById("audio");
+
+                x.play();
 
               }, 500);
 
