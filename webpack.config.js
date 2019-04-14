@@ -6,7 +6,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      xyz$: path.resolve(__dirname, 'path/to/file.js')
     }
   },
   module: {

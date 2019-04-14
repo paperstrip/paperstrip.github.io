@@ -17,7 +17,6 @@ var gulpPlumber     = require('gulp-plumber');
 var webpack         = require('webpack');
 var webpackStream   = require('webpack-stream');
 var webpackConfig   = require('./webpack.config.js');
-var ghPages = require('gulp-gh-pages');
 
 // -------------------------------------
 // config

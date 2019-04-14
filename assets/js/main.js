@@ -247,7 +247,7 @@ onReady(function() {
 
 
     initSlider();
-    var s = skrollr.init({forceHeight: false});
+   var s = skrollr.init({forceHeight: false});
     if (s.isMobile()) {
       s.destroy();
     }
@@ -269,16 +269,15 @@ onReady(function() {
 function initScrollify() {
 
   console.log('scrollify init');
-    $.scrollify.destroy();
 
     $.scrollify({
         section: ".slide-section",
         scrollSpeed: 800,
-        scrollbars: false,
+        scrollbars: true,
         easing: "easeOutExpo",
         touchScroll: true,
 
-        setHeights: true,
+        setHeights: false,
         updateHash: false,
         before: function() {
           var x = document.getElementById("audio");
@@ -377,6 +376,7 @@ function initHomePage() {
 }
 
 function initStagger() {
+  console.log('stagge');
     var toAnimate = new TimelineMax({delay:.5});
     toAnimate.staggerFromTo(".toStagger", 0.5, {
         ease: Power4.easeInOut,
@@ -411,6 +411,7 @@ function annimationBlob() {
 }
 
 function animationLetter() {
+  console.log('AnimeLetter');
     var toAnimate = new TimelineMax();
     toAnimate.staggerFromTo(".letter-animation span", 0.5, {
         ease: Back.easeOut.config(1.7),
@@ -481,7 +482,6 @@ function scrollSlideshow(){
   $('.vertical-slider').one('mousewheel', function(e) {
     var delta = e.originalEvent.wheelDelta;
     e.preventDefault();
-    $.scrollify.disable();
     if (delta < 0) {
 
 
@@ -490,11 +490,9 @@ function scrollSlideshow(){
 
         if (currentSlide == 0 ){
 
-          $.scrollify.enable();
           $.scrollify.instantNext();
         }
         else{
-          $.scrollify.disable();
         }
 
       })
@@ -504,11 +502,10 @@ function scrollSlideshow(){
       $('.vertical-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
 
         if (currentSlide == 0 ){
-          $.scrollify.enable();
-          $.scrollify.instantPrevious();
+        //  $.scrollify.enable();
         }
         else{
-          $.scrollify.disable();
+        //  $.scrollify.disable();
 
         }
 
@@ -536,7 +533,6 @@ var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
         $('.main-nav').removeClass('active');
         $('.btn-menu').removeClass('cross');
-        $.scrollify.move(0);
 
         Promise
             .all([this.newContainerLoading, this.beforeLeave()]) //Call Function = BeforeLeave
@@ -590,7 +586,6 @@ var ExpandTransition = Barba.BaseTransition.extend({
     start: function() {
         $('.main-nav').removeClass('active');
         $('.btn-menu').removeClass('cross');
-        $.scrollify.move(0);
 
         Promise
             .all([this.newContainerLoading, this.beforeLeave()]) //Call Function = BeforeLeave
@@ -602,6 +597,7 @@ var ExpandTransition = Barba.BaseTransition.extend({
           yoyo: false,
           onComplete: function() {
               deferred.resolve();
+              animationLetter();
           }
 
       });
@@ -655,7 +651,7 @@ var Homepage = Barba.BaseView.extend({
         // The Transition has just finished.
         initScrollify();
         initSlideShow();
-        animationLetter();
+        //animationLetter();
 
     },
     onLeave: function() {
