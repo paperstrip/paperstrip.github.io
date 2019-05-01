@@ -2,7 +2,7 @@
   background-image: linear-gradient(to right, #FF88A4 0%, #C9CFFF 51%, #97F9FF 100%);
   height: 40px;
   text-align: center;
-  padding: 10px 60px;
+  padding: 10px 40px;
   display: inline-flex;
   align-items:center;
   color: white;
@@ -10,7 +10,7 @@
   text-transform: uppercase;
   font-size: 12px;
   border-radius: 40px;
-  font-weight: bolder;
+  font-weight: 400;
   &.btn--blue{
     background: white;
     background-image: none;
@@ -22,16 +22,24 @@
       color: white;
     }
   }
+  &.btn--red {
+    background: #FF6C6C;
+    border:solid 2px #FF6C6C;
+    &:hover{
+      background: transparent;
+      color: #FF6C6C;
+    }
+  }
   &.btn--white{
-    background:white;
+    background:#7A6CFF;
     background-image: none;
-    color: #FFE8EE;
-    border: solid 2px #FFE8EE;
+    color: white;
+    border: solid 2px #7A6CFF;
     transition: color .3s ease,background .3s ease;
 
     &:hover{
-      background: #FFE8EE;
-      color: white;
+      background: transparent;
+      color: #7A6CFF;
     }
   }
 

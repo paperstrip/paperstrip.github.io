@@ -41,26 +41,9 @@ margin: 0;
   white-space: nowrap;
   align-items: center;
   justify-content: center;
+  color: white;
   @include mq('tablet'){
     display: none;
-  }
-  &:before{
-    width: 1px;
-    height: 20vh;
-    background-color: rgb(72, 72, 72);
-    position: relative;
-    content: "";
-    margin-bottom: 10px;
-
-  }
-  &:after{
-    width: 1px;
-    height: 20vh;
-    background-color: rgb(72, 72, 72);
-    position: relative;
-    content: "";
-    margin-top: 10px;
-
   }
 }
 #loading-screen{
@@ -136,7 +119,15 @@ margin: 0;
   top: 0;
   left: 0;
   background: #FFE8EE;
+  background-image: linear-gradient(-135deg, #FFE8EE 0%, #C9CFFF 52%, #97F9FF 100%);
+  color: #7A6CFF;
+  &:before{
+    display: none;
+  }
+  &:after{
+    background: #FFE8EE;
 
+  }
   .blob-svg {
     width: 150%;
     position: absolute;
@@ -155,6 +146,7 @@ margin: 0;
     padding: 7%;
     z-index: 4;
     display: flex;
+
     @include mq('tablet'){
       padding: 0;
       text-align: center;
@@ -162,23 +154,24 @@ margin: 0;
     h1{
       margin: 0;
       line-height: 1;
-      color: #292929;
+      color: #7A6CFF;
       letter-spacing: -1.6;
 
     }
     h3{
       font-weight: 400;
       font-size: 20px;
-      color: #292929;
-      margin-top: 10px;
+      color: #7A6CFF;
+      margin-top: 0;
       margin-bottom: 20px;
       letter-spacing: -0.2;
 
     }
     p{
       font-size: 12px;
-      color: #292929;
+      color: #7A6CFF;
       margin: 0;
+      line-height: 150%;
       margin-bottom: 40px;
     }
 
@@ -209,10 +202,9 @@ margin: 0;
 }
 .portfolio-container{
   .home-container__cover{
-    width:60%;
+    width:100%;
     left: 0;
     right: auto;
-    max-height: 100vh;
     @include mq('tablet'){
       width: 100%;
     }
@@ -325,15 +317,28 @@ margin: 0;
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
+  position: relative;
+  &:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../img/1500/rectange-pattern.png');
+    z-index: 1;
+
+  }
   &.portfolio-container{
     background-color: #E5F9FF;
+    background-image: linear-gradient(-135deg, #FFE8EE 0%, #C9CFFF 52%, #97F9FF 100%);
+
+    background-image: linear-gradient(-45deg, #2F1A51 0%, #662EFF 50%, #54FDD1 100%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     .btn{
-      margin-top: 20px;
+      margin-top: 40px;
+      background: #FF6C6C;
     }
     .home-container__content{
       position: absolute;
@@ -344,6 +349,11 @@ margin: 0;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      color: #FF6C6C;
+      h2{
+        color: #FF6C6C;
+
+      }
       @include mq('tablet'){
         padding: 0;
         text-align: center;
@@ -390,4 +400,48 @@ margin: 0;
 
 .toStagger{
   opacity:0;
+}
+
+.slide-section{
+  position: relative;
+  &:before{
+    position: absolute;
+    content:"";
+    display: block;
+    height: 25%;
+    background: red;
+    left: 7%;
+    top: 0;
+    width: 2px;
+    z-index: 6;
+  }
+  &:after{
+    position: absolute;
+    content:"";
+    display: block;
+    height: 25%;
+    background: red;
+    left: 7%;
+    bottom: 0;
+    width: 2px;
+
+    top: auto;
+    z-index: 6;
+  }
+  &.home-container{
+      &:before{
+        display: none;
+      }
+      &:after{
+        background: #7a6cff;
+      }
+  }
+  &.portfolio-container{
+    &:before{
+      display: #FF6C6C;
+    }
+    &:after{
+      background: #FF6C6C;
+    }
+  }
 }

@@ -3,13 +3,14 @@ layout: base
 permalink: /
 title: Home sweet home
 coverImageSectionHome: cover_home.png
-coverImageSectionCase: case-section.png
+coverImageSectionCase: blob.png
 coverImageSectionClient : glitch-1.png
 
 ---
 <div class="barba-container" id="#fullpage" data-namespace="home">
   <span class="scroll-indicator">Scroll Down</span>
-  <div class="home-container section slide-section" data-blob-x="100" data-blob-y="50">
+  <span class="dot-animation"></span>
+  <div class="home-container section slide-section skrollable-before" data-blob-x="100" data-blob-y="50">
     <img class="home-container__cover" data-0="transform:translate3d(0px, 0%, 0px); opacity:1;" data-end="transform:translate3d(0px, -200%, 0px); opacity:0;" width="100%" srcset="
     {{ site.baseurl }}/src/img/1500/{{page.coverImageSectionHome}},
     {{ site.baseurl }}/src/img/1024/{{page.coverImageSectionHome}},
@@ -37,8 +38,8 @@ coverImageSectionClient : glitch-1.png
     </h2>-->
 
   </div>
-  <div class="portfolio-container section slide-section" data-color-pallette='[ "#FFAFB5","#FF9E84", "#FFC17A", "#80C4FF"]' data-blob-x="0" data-blob-y="100">
-    <img class="home-container__cover transition-left" data-100p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;"  data-200p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"   width="100%" srcset="
+  <div class="box portfolio-container section slide-section skrollable skrollable-between" data-color-pallette='[ "#FFAFB5","#FF9E84", "#FFC17A", "#80C4FF"]' data-blob-x="0" data-blob-y="100">
+    <img class="home-container__cover transition-left skrollable skrollable-between" data-100p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;"  data-200p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"   width="100%" srcset="
     {{ site.baseurl }}/src/img/1500/{{page.coverImageSectionCase}},
     {{ site.baseurl }}/src/img/1024/{{page.coverImageSectionCase}},
     {{ site.baseurl }}/src/img/800/{{page.coverImageSectionCase}}"
@@ -48,15 +49,16 @@ coverImageSectionClient : glitch-1.png
           <div class="prev-slick"><span><</span></div>
           <div class="next-slick"><span>></span></div>
         </div>
-        <div class="col-lg-5 col-sm-12">
-          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px, -250px, 0px)" data-100p="transform:translate3d(0px, 0px, 0px)" data-200p="transform:translate3d(0px, -250px, 0px)">Case</h2>
-          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px,  250px, 0px)" data-100p="transform:translate3d(0px, 0px, 0px)" data-200p="transform:translate3d(0px, 250px, 0px)">studies</h2>
-          <a href="/work/" class="btn btn--blue toStagger">Voir plus</a>
+        <div class="col-lg-6 col-md-8 col-sm-12">
+          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px, -250px, 0px);opacity:1;" data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(250px, 0px, 0px);opacity:0;">Case</h2>
+          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px,  250px, 0px);opacity:1;" data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(-250px, 0px, 0px);opacity:0;">studies</h2>
+          <p class="home-container__content-text toStagger" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, -310px, 0px);">Hello, moi c'est Arnaud, je suis freelance Web designer & developer. J'aime élaborer des designs élégants, dans l'air du temps, ainsi que les développer.</p>
+          <a class="btn btn--red toStagger" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, 350px, 0px);" href="{{site.data.mainnav[1].navLink}}">Découvrir plus</a>
 
         </div>
 
       {% for item in site.posts %}
-        {% if forloop.first %}<div class="holder vertical-slider case-list col-lg-7 col-sm-12" data-0="transform:scale(2);" data-100p="transform:scale(1);" data-200p="transform:scale(.2);">{% endif %}
+        {% if forloop.first %}<div class="holder vertical-slider case-list col-lg-6 col-sm-12" data-0="transform:scale(2);" data-100p="transform:scale(1);" data-200p="transform:scale(.2);">{% endif %}
           <a href="{{item.url}}" class="case-list__item">
 
             <svg class="case-list__item--svg"   class="item__svg" width="100%" height="100%" viewBox="0 0 568 544" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -94,7 +96,13 @@ coverImageSectionClient : glitch-1.png
   <div class="client-container slide-section" data-color-pallette='[ "#FF85DF","#CFC0EF", "#A9D7EF", "#77FFCA"]' data-blob-x="95" data-blob-y="5">
     <div class="home-container__cover"   data-100p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-200p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"></div>
     <div class="client-container__content">
-      <h2 class="letter-animation col-sm-12 glitch">Clients</h2>
+      <div class="col-lg-6 col-md-8 col-sm-12">
+        <h2 class="letter-animation"  data-0="transform:translate3d(0px, 0px, 0px); opacity:1;" data-end="transform:translate3d(0px, -350px, 0px); opacity:0;">
+          Clients
+        </h2>
+        <p class="home-container__content-text toStagger" data-0="transform:translate3d(0px,0px, 0px);" data-end="transform:translate3d(0px, -310px, 0px);">Hello, moi c'est Arnaud, je suis freelance Web designer & developer. J'aime élaborer des designs élégants, dans l'air du temps, ainsi que les développer.</p>
+        <a class="btn btn--white toStagger" data-0="transform:translate3d(0px,0px, 0px);" data-end="transform:translate3d(0px, 350px, 0px);" href="{{site.data.mainnav[1].navLink}}">Découvrir plus</a>
+      </div>
       <ul>
 
         <li class="col-md-2 col-sm-2 col-xs-6"><img  width="100%" src="/src/img/1500/strategie.png"><span class="pixelized--heart"></span></li>

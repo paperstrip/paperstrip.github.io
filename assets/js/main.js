@@ -8,7 +8,6 @@ import scrollify from "jquery-scrollify";
 import anime from 'animejs/lib/anime.es.js';
 import skrollr from 'skrollr';
 import slick from "slick-carousel";
-import find from 'lodash';
 
 (function($) {
     function injector(t, splitter, klass, after) {
@@ -180,6 +179,33 @@ window.addEventListener("click", function(e) {
     mouse.y = e.clientY;
 
 }, false);
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+function hasScrolled(elm) {
+    var st = $(this).scrollTop();
+    console.log(elm)
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        elm.removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            elm.removeClass('nav-up').addClass('nav-down');
+        }
+    }
+
+    lastScrollTop = st;
+}
+
+
 /*===========================*/
 /*													 */
 /*													 */
@@ -213,6 +239,7 @@ function onReady(callback) {
 
 
 onReady(function() {
+
   $(".letter-animation").lettering();
 
     var tl = new TimelineMax({
@@ -247,14 +274,18 @@ onReady(function() {
 
 
     initSlider();
-   var s = skrollr.init({forceHeight: false});
+   /*var s = skrollr.init({
+     forceHeight: true,
+     box: '300p',
+
+   });
     if (s.isMobile()) {
       s.destroy();
     }
     else{
       //loop();
 
-    }
+    }*/
 
 });
 
@@ -270,7 +301,7 @@ function initScrollify() {
 
   console.log('scrollify init');
 
-    $.scrollify({
+  /*  $.scrollify({
         section: ".slide-section",
         scrollSpeed: 800,
         scrollbars: true,
@@ -344,7 +375,7 @@ function initScrollify() {
         }
 
 
-    });
+    });*/
 }
 
 function initHomePage() {
