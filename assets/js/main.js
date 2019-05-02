@@ -1,8 +1,11 @@
+
+
 import jquery from 'jquery';
 window.jQuery = jquery;
 window.$ = jquery;
 
 import Barba from 'barba.js'; // Or nothing if loaded via the browser
+import * as THREE from 'three/build/three.min.js';
 import TweenMax from "gsap/TweenMax";
 import scrollify from "jquery-scrollify";
 import anime from 'animejs/lib/anime.es.js';
@@ -80,7 +83,7 @@ Barba.Pjax.start();
 /*													 */
 /*													 */
 /*===========================*/
-
+/*
 const canvas = document.getElementById("canvas"),
     context = canvas.getContext("2d");
 var colorPallete = ["#FFA4BC", "#C5D3FB", "#97F9FF"];
@@ -178,7 +181,7 @@ window.addEventListener("click", function(e) {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 
-}, false);
+}, false);*/
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
@@ -772,3 +775,189 @@ Barba.Pjax.start();
 function initSlider() {
 
 }
+
+$('body').on('wheel', (function(e) {
+  var scrollCount = 0;
+  scroll = setTimeout(function(){scrollCount=0;}, 400);
+  if(scrollCount) return 0;
+    if (e.originalEvent.deltaY < 0) {
+      previousSlide();
+    } else {
+      nextSlide();
+    }
+
+}));
+
+function previousSlide(){
+  var offset;
+
+  if ($('.slide-section')[0]._gsTransform){
+    offset = $('.slide-section')[0]._gsTransform.yPercent
+  }
+  else{
+    offset = 0;
+  }
+  var breath = new TimelineMax({
+      repeat: 0,
+      yoyo: false
+  })
+  breath.staggerFromTo('.slide-section', 1, {
+    yPercent: offset,
+
+
+      ease: Power4.easeInOut
+  }, {
+    yPercent: offset + 100,
+
+
+      ease: Power4.easeInOut
+  }, 0);
+}
+function nextSlide(){
+  var offset;
+  for ( var i = 0, il = objects.length; i < il; i ++ ) {
+    var color = new THREE.Color('#FFFFFF');
+    var light2 = new THREE.Color('#662EFF');
+    var light1 = new THREE.Color('#2F1A51');
+    var light3 = new THREE.Color('#54FDD1');
+
+
+    TweenLite.to(objects[ i ].material.color, 1, {
+      r: color.r,
+      g: color.g,
+      b: color.b,
+    });
+  }
+  console.log(lights)
+    TweenLite.to(lights[0].color, 1, {
+      r: light1.r,
+      g: light1.g,
+      b: light1.b,
+
+    });
+    TweenLite.to(lights[ 1 ].color, 1, {
+      r: light2.r,
+      g: light2.g,
+      b: light2.b,
+
+    });
+
+    TweenLite.to(lights[ 2 ].color, 1, {
+      r: light3.r,
+      g: light3.g,
+      b: light3.b,
+
+    });
+
+  if ($('.slide-section')[0]._gsTransform){
+    offset = $('.slide-section')[0]._gsTransform.yPercent
+  }
+  else{
+    offset = 0;
+  }
+  var breath = new TimelineMax({
+      repeat: 0,
+      yoyo: false,
+      delay:1
+
+  })
+  breath.staggerFromTo('.slide-section', 1, {
+      yPercent: offset,
+
+
+      ease: Power4.easeInOut
+  }, {
+    yPercent: offset -100 ,
+
+
+      ease: Power4.easeInOut
+  }, 0);
+}
+
+
+			var container;
+			var camera, scene, renderer;
+			var objects;
+      var material;
+			var mouseX = 0, mouseY = 0;
+      var lights = [];
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+			initWebGl();
+			animateWebgl();
+			function initWebGl() {
+				container = document.getElementsByTagName( 'body' );
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.z = 3200;
+				scene = new THREE.Scene();
+
+
+        lights[0] = new THREE.DirectionalLight( 0xFAD8E2, 1 );
+        lights[0].position.set( 1, 0, 0 );
+        lights[1] = new THREE.DirectionalLight( 0x99F4FF, 1 );
+        lights[1].position.set( 0.75, 1, 0.5 );
+        lights[2] = new THREE.DirectionalLight( 0xFF91A3, 1 );
+        lights[2].position.set( -0.75, -1, 0.5 );
+        scene.add( lights[0] );
+        scene.add( lights[1] );
+        scene.add( lights[2] );
+
+        var lightAmbiance = new THREE.HemisphereLight( 0xFAD8E2,0xffffff, .2 );
+        scene.add( lightAmbiance );
+
+				objects = [];
+        material = new THREE.MeshPhongMaterial({
+         color: 0xFFFFFF,
+        });
+
+          var loader = new THREE.BufferGeometryLoader();
+				  loader.load( 'src/audio/obj.json', function ( geometry ) {
+					geometry.computeVertexNormals();
+					for ( var i = 0; i < 500; i ++ ) {
+						var mesh = new THREE.Mesh( new THREE.IcosahedronBufferGeometry( .8, 1 ), material );
+						mesh.position.x = Math.random() * 8000 - 4000;
+						mesh.position.y = Math.random() * 8000 - 4000;
+						mesh.position.z = Math.random() * 8000 - 4000;
+						mesh.rotation.x = Math.random() * 2 * Math.PI;
+						mesh.rotation.y = Math.random() * 2 * Math.PI;
+						mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 50 + 100;
+						objects.push( mesh );
+						scene.add( mesh );
+					}
+				} );
+				renderer = new THREE.WebGLRenderer({alpha: true });
+        renderer.setClearColor( 0x000000, 0 ); //default
+
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container[0].appendChild( renderer.domElement );
+				//
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+			function onWindowResize() {
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+			function onDocumentMouseMove( event ) {
+				mouseX = ( event.clientX - windowHalfX ) * 10;
+				mouseY = ( event.clientY - windowHalfY ) * 10;
+			}
+			//
+			function animateWebgl() {
+				requestAnimationFrame( animateWebgl );
+				render();
+			}
+			function render() {
+				camera.position.x += ( mouseX - camera.position.x ) * .05;
+				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				camera.lookAt( scene.position );
+				for ( var i = 0, il = objects.length; i < il; i ++ ) {
+					objects[ i ].rotation.x += 0.01;
+					objects[ i ].rotation.y += 0.02;
+				}
+				renderer.render( scene, camera );
+			}

@@ -3452,7 +3452,14 @@ body {
 .wrap {
   overflow: hidden;
   width: 100%;
+  height: 100vh;
   position: relative;
+}
+
+@media all and (max-width: 768px) {
+  .wrap {
+    height: auto;
+  }
 }
 
 ul {
@@ -3538,24 +3545,25 @@ ul li {
   z-index: 2;
 }
 
-#canvas {
+canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 1;
   filter: url("#goo");
+  background: transparent;
   cursor: none;
   pointer-events: none;
 }
 
-#canvas:hover {
+canvas:hover {
   cursor: none;
   pointer-events: none;
 }
 
-#canvas.pixel {
+canvas.pixel {
   filter: none;
   display: none;
 }
@@ -3735,717 +3743,717 @@ ul li {
 }
 
 .wrapper-gooey:hover circle:nth-child(8) {
-  transform: translateX(74%) translateY(130%) scale(0);
+  transform: translateX(90%) translateY(46%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(9) {
-  transform: translateX(58%) translateY(10%) scale(0);
+  transform: translateX(48%) translateY(111%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(10) {
-  transform: translateX(41%) translateY(87%) scale(0);
+  transform: translateX(70%) translateY(31%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(11) {
-  transform: translateX(70%) translateY(35%) scale(0);
+  transform: translateX(63%) translateY(43%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(12) {
-  transform: translateX(115%) translateY(102%) scale(0);
+  transform: translateX(123%) translateY(44%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(13) {
-  transform: translateX(79%) translateY(128%) scale(0);
+  transform: translateX(68%) translateY(70%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(14) {
-  transform: translateX(38%) translateY(124%) scale(0);
+  transform: translateX(68%) translateY(90%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(15) {
-  transform: translateX(65%) translateY(40%) scale(0);
+  transform: translateX(93%) translateY(61%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(16) {
-  transform: translateX(69%) translateY(22%) scale(0);
+  transform: translateX(11%) translateY(112%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(17) {
-  transform: translateX(7%) translateY(35%) scale(0);
+  transform: translateX(86%) translateY(7%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(18) {
-  transform: translateX(107%) translateY(108%) scale(0);
+  transform: translateX(119%) translateY(52%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(19) {
-  transform: translateX(18%) translateY(62%) scale(0);
+  transform: translateX(77%) translateY(27%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(20) {
-  transform: translateX(39%) translateY(51%) scale(0);
+  transform: translateX(62%) translateY(83%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(21) {
-  transform: translateX(105%) translateY(76%) scale(0);
+  transform: translateX(113%) translateY(103%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(22) {
-  transform: translateX(106%) translateY(39%) scale(0);
+  transform: translateX(126%) translateY(93%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(23) {
-  transform: translateX(125%) translateY(125%) scale(0);
+  transform: translateX(100%) translateY(103%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(24) {
-  transform: translateX(110%) translateY(33%) scale(0);
+  transform: translateX(31%) translateY(51%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(25) {
-  transform: translateX(37%) translateY(29%) scale(0);
+  transform: translateX(16%) translateY(73%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(26) {
-  transform: translateX(81%) translateY(77%) scale(0);
+  transform: translateX(110%) translateY(6%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(27) {
-  transform: translateX(43%) translateY(67%) scale(0);
+  transform: translateX(87%) translateY(58%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(28) {
-  transform: translateX(95%) translateY(64%) scale(0);
+  transform: translateX(85%) translateY(101%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(29) {
-  transform: translateX(10%) translateY(111%) scale(0);
+  transform: translateX(11%) translateY(69%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(30) {
-  transform: translateX(108%) translateY(11%) scale(0);
+  transform: translateX(5%) translateY(1%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(31) {
-  transform: translateX(100%) translateY(78%) scale(0);
+  transform: translateX(65%) translateY(102%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(32) {
-  transform: translateX(56%) translateY(24%) scale(0);
+  transform: translateX(123%) translateY(119%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(33) {
-  transform: translateX(61%) translateY(59%) scale(0);
+  transform: translateX(88%) translateY(54%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(34) {
-  transform: translateX(127%) translateY(37%) scale(0);
+  transform: translateX(87%) translateY(85%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(35) {
-  transform: translateX(99%) translateY(79%) scale(0);
+  transform: translateX(21%) translateY(91%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(36) {
-  transform: translateX(86%) translateY(111%) scale(0);
+  transform: translateX(81%) translateY(84%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(37) {
-  transform: translateX(17%) translateY(73%) scale(0);
+  transform: translateX(71%) translateY(35%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(38) {
-  transform: translateX(104%) translateY(33%) scale(0);
+  transform: translateX(84%) translateY(41%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(39) {
-  transform: translateX(55%) translateY(28%) scale(0);
+  transform: translateX(81%) translateY(11%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(40) {
-  transform: translateX(7%) translateY(35%) scale(0);
+  transform: translateX(90%) translateY(32%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(41) {
-  transform: translateX(44%) translateY(97%) scale(0);
+  transform: translateX(39%) translateY(64%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(42) {
-  transform: translateX(27%) translateY(51%) scale(0);
+  transform: translateX(89%) translateY(39%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(43) {
-  transform: translateX(23%) translateY(108%) scale(0);
+  transform: translateX(52%) translateY(87%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(44) {
-  transform: translateX(26%) translateY(96%) scale(0);
+  transform: translateX(86%) translateY(126%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(45) {
-  transform: translateX(26%) translateY(72%) scale(0);
+  transform: translateX(31%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(46) {
-  transform: translateX(2%) translateY(72%) scale(0);
+  transform: translateX(53%) translateY(108%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(47) {
-  transform: translateX(64%) translateY(84%) scale(0);
+  transform: translateX(89%) translateY(27%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(48) {
-  transform: translateX(2%) translateY(79%) scale(0);
+  transform: translateX(85%) translateY(74%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(49) {
-  transform: translateX(129%) translateY(11%) scale(0);
+  transform: translateX(3%) translateY(105%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(50) {
-  transform: translateX(54%) translateY(26%) scale(0);
+  transform: translateX(32%) translateY(67%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(51) {
-  transform: translateX(98%) translateY(18%) scale(0);
+  transform: translateX(31%) translateY(103%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(52) {
-  transform: translateX(49%) translateY(50%) scale(0);
+  transform: translateX(76%) translateY(19%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(53) {
-  transform: translateX(6%) translateY(54%) scale(0);
+  transform: translateX(37%) translateY(39%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(54) {
-  transform: translateX(114%) translateY(70%) scale(0);
+  transform: translateX(71%) translateY(126%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(55) {
-  transform: translateX(43%) translateY(38%) scale(0);
+  transform: translateX(10%) translateY(64%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(56) {
-  transform: translateX(52%) translateY(119%) scale(0);
+  transform: translateX(106%) translateY(3%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(57) {
-  transform: translateX(123%) translateY(31%) scale(0);
+  transform: translateX(73%) translateY(24%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(58) {
-  transform: translateX(125%) translateY(122%) scale(0);
+  transform: translateX(114%) translateY(76%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(59) {
-  transform: translateX(80%) translateY(37%) scale(0);
+  transform: translateX(27%) translateY(35%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(60) {
-  transform: translateX(9%) translateY(55%) scale(0);
+  transform: translateX(130%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(61) {
-  transform: translateX(23%) translateY(125%) scale(0);
+  transform: translateX(28%) translateY(92%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(62) {
-  transform: translateX(21%) translateY(56%) scale(0);
+  transform: translateX(22%) translateY(40%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(63) {
-  transform: translateX(16%) translateY(92%) scale(0);
+  transform: translateX(72%) translateY(99%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(64) {
-  transform: translateX(91%) translateY(53%) scale(0);
+  transform: translateX(119%) translateY(3%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(65) {
-  transform: translateX(114%) translateY(26%) scale(0);
+  transform: translateX(93%) translateY(55%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(66) {
-  transform: translateX(66%) translateY(53%) scale(0);
+  transform: translateX(7%) translateY(56%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(67) {
-  transform: translateX(76%) translateY(38%) scale(0);
+  transform: translateX(39%) translateY(33%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(68) {
-  transform: translateX(6%) translateY(99%) scale(0);
+  transform: translateX(125%) translateY(52%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(69) {
-  transform: translateX(127%) translateY(53%) scale(0);
+  transform: translateX(54%) translateY(39%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(70) {
-  transform: translateX(83%) translateY(60%) scale(0);
+  transform: translateX(41%) translateY(79%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(71) {
-  transform: translateX(107%) translateY(15%) scale(0);
+  transform: translateX(76%) translateY(41%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(72) {
-  transform: translateX(122%) translateY(76%) scale(0);
+  transform: translateX(96%) translateY(91%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(73) {
-  transform: translateX(89%) translateY(37%) scale(0);
+  transform: translateX(26%) translateY(122%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(74) {
-  transform: translateX(31%) translateY(92%) scale(0);
+  transform: translateX(92%) translateY(16%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(75) {
-  transform: translateX(66%) translateY(123%) scale(0);
+  transform: translateX(88%) translateY(68%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(76) {
-  transform: translateX(36%) translateY(28%) scale(0);
+  transform: translateX(100%) translateY(95%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(77) {
-  transform: translateX(94%) translateY(120%) scale(0);
+  transform: translateX(10%) translateY(121%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(78) {
-  transform: translateX(102%) translateY(3%) scale(0);
+  transform: translateX(38%) translateY(9%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(79) {
-  transform: translateX(85%) translateY(16%) scale(0);
+  transform: translateX(13%) translateY(121%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(80) {
-  transform: translateX(100%) translateY(24%) scale(0);
+  transform: translateX(53%) translateY(7%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(81) {
-  transform: translateX(16%) translateY(109%) scale(0);
+  transform: translateX(93%) translateY(50%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(82) {
-  transform: translateX(73%) translateY(34%) scale(0);
+  transform: translateX(67%) translateY(52%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(83) {
-  transform: translateX(127%) translateY(43%) scale(0);
+  transform: translateX(87%) translateY(113%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(84) {
-  transform: translateX(130%) translateY(57%) scale(0);
+  transform: translateX(80%) translateY(104%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(85) {
-  transform: translateX(121%) translateY(46%) scale(0);
+  transform: translateX(90%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(86) {
-  transform: translateX(79%) translateY(61%) scale(0);
+  transform: translateX(89%) translateY(39%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(87) {
-  transform: translateX(68%) translateY(89%) scale(0);
+  transform: translateX(23%) translateY(24%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(88) {
-  transform: translateX(87%) translateY(129%) scale(0);
+  transform: translateX(36%) translateY(91%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(89) {
-  transform: translateX(99%) translateY(47%) scale(0);
+  transform: translateX(5%) translateY(108%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(90) {
-  transform: translateX(16%) translateY(19%) scale(0);
+  transform: translateX(53%) translateY(95%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(91) {
-  transform: translateX(68%) translateY(6%) scale(0);
+  transform: translateX(23%) translateY(47%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(92) {
-  transform: translateX(15%) translateY(85%) scale(0);
+  transform: translateX(95%) translateY(85%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(93) {
-  transform: translateX(57%) translateY(34%) scale(0);
+  transform: translateX(56%) translateY(120%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(94) {
-  transform: translateX(100%) translateY(107%) scale(0);
+  transform: translateX(66%) translateY(101%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(95) {
-  transform: translateX(5%) translateY(88%) scale(0);
+  transform: translateX(51%) translateY(103%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(96) {
-  transform: translateX(102%) translateY(74%) scale(0);
+  transform: translateX(123%) translateY(29%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(97) {
-  transform: translateX(37%) translateY(111%) scale(0);
+  transform: translateX(91%) translateY(45%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(98) {
-  transform: translateX(17%) translateY(4%) scale(0);
+  transform: translateX(38%) translateY(121%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(99) {
-  transform: translateX(15%) translateY(38%) scale(0);
+  transform: translateX(107%) translateY(81%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(100) {
-  transform: translateX(38%) translateY(35%) scale(0);
+  transform: translateX(78%) translateY(115%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(101) {
-  transform: translateX(122%) translateY(79%) scale(0);
+  transform: translateX(92%) translateY(106%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(102) {
-  transform: translateX(128%) translateY(22%) scale(0);
+  transform: translateX(84%) translateY(56%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(103) {
-  transform: translateX(56%) translateY(64%) scale(0);
+  transform: translateX(16%) translateY(68%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(104) {
-  transform: translateX(99%) translateY(118%) scale(0);
+  transform: translateX(27%) translateY(81%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(105) {
-  transform: translateX(17%) translateY(45%) scale(0);
+  transform: translateX(7%) translateY(102%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(106) {
-  transform: translateX(26%) translateY(40%) scale(0);
+  transform: translateX(126%) translateY(86%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(107) {
-  transform: translateX(51%) translateY(67%) scale(0);
+  transform: translateX(9%) translateY(110%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(108) {
-  transform: translateX(40%) translateY(9%) scale(0);
+  transform: translateX(2%) translateY(38%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(109) {
-  transform: translateX(61%) translateY(48%) scale(0);
+  transform: translateX(6%) translateY(31%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(110) {
-  transform: translateX(38%) translateY(67%) scale(0);
+  transform: translateX(128%) translateY(48%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(111) {
-  transform: translateX(101%) translateY(79%) scale(0);
+  transform: translateX(63%) translateY(128%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(112) {
-  transform: translateX(5%) translateY(19%) scale(0);
+  transform: translateX(20%) translateY(84%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(113) {
-  transform: translateX(101%) translateY(33%) scale(0);
+  transform: translateX(68%) translateY(93%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(114) {
-  transform: translateX(23%) translateY(21%) scale(0);
+  transform: translateX(46%) translateY(2%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(115) {
-  transform: translateX(74%) translateY(19%) scale(0);
+  transform: translateX(118%) translateY(56%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(116) {
-  transform: translateX(102%) translateY(96%) scale(0);
+  transform: translateX(21%) translateY(122%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(117) {
-  transform: translateX(60%) translateY(9%) scale(0);
+  transform: translateX(14%) translateY(20%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(118) {
-  transform: translateX(127%) translateY(16%) scale(0);
+  transform: translateX(21%) translateY(23%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(119) {
-  transform: translateX(32%) translateY(107%) scale(0);
+  transform: translateX(80%) translateY(74%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(120) {
-  transform: translateX(9%) translateY(65%) scale(0);
+  transform: translateX(126%) translateY(46%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(121) {
-  transform: translateX(15%) translateY(107%) scale(0);
+  transform: translateX(101%) translateY(125%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(122) {
-  transform: translateX(54%) translateY(18%) scale(0);
+  transform: translateX(30%) translateY(109%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(123) {
-  transform: translateX(101%) translateY(81%) scale(0);
+  transform: translateX(123%) translateY(79%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(124) {
-  transform: translateX(51%) translateY(34%) scale(0);
+  transform: translateX(103%) translateY(98%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(125) {
-  transform: translateX(9%) translateY(63%) scale(0);
+  transform: translateX(104%) translateY(112%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(126) {
-  transform: translateX(48%) translateY(127%) scale(0);
+  transform: translateX(57%) translateY(18%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(127) {
-  transform: translateX(85%) translateY(48%) scale(0);
+  transform: translateX(85%) translateY(109%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(128) {
-  transform: translateX(12%) translateY(62%) scale(0);
+  transform: translateX(56%) translateY(42%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(129) {
-  transform: translateX(37%) translateY(124%) scale(0);
+  transform: translateX(58%) translateY(27%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(130) {
-  transform: translateX(103%) translateY(116%) scale(0);
+  transform: translateX(81%) translateY(26%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(131) {
-  transform: translateX(7%) translateY(73%) scale(0);
+  transform: translateX(83%) translateY(84%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(132) {
-  transform: translateX(20%) translateY(41%) scale(0);
+  transform: translateX(79%) translateY(87%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(133) {
-  transform: translateX(22%) translateY(15%) scale(0);
+  transform: translateX(96%) translateY(68%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(134) {
-  transform: translateX(114%) translateY(106%) scale(0);
+  transform: translateX(34%) translateY(67%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(135) {
-  transform: translateX(69%) translateY(92%) scale(0);
+  transform: translateX(69%) translateY(22%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(136) {
-  transform: translateX(3%) translateY(44%) scale(0);
+  transform: translateX(40%) translateY(34%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(137) {
-  transform: translateX(60%) translateY(58%) scale(0);
+  transform: translateX(109%) translateY(121%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(138) {
-  transform: translateX(2%) translateY(128%) scale(0);
+  transform: translateX(85%) translateY(102%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(139) {
-  transform: translateX(98%) translateY(13%) scale(0);
+  transform: translateX(48%) translateY(4%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(140) {
-  transform: translateX(3%) translateY(81%) scale(0);
+  transform: translateX(129%) translateY(42%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(141) {
-  transform: translateX(14%) translateY(64%) scale(0);
+  transform: translateX(100%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(142) {
-  transform: translateX(114%) translateY(130%) scale(0);
+  transform: translateX(87%) translateY(50%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(143) {
-  transform: translateX(85%) translateY(91%) scale(0);
+  transform: translateX(16%) translateY(107%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(144) {
-  transform: translateX(55%) translateY(43%) scale(0);
+  transform: translateX(117%) translateY(59%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(145) {
-  transform: translateX(18%) translateY(23%) scale(0);
+  transform: translateX(86%) translateY(91%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(146) {
-  transform: translateX(67%) translateY(82%) scale(0);
+  transform: translateX(42%) translateY(109%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(147) {
-  transform: translateX(88%) translateY(94%) scale(0);
+  transform: translateX(92%) translateY(45%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(148) {
-  transform: translateX(125%) translateY(3%) scale(0);
+  transform: translateX(58%) translateY(20%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(149) {
-  transform: translateX(103%) translateY(8%) scale(0);
+  transform: translateX(50%) translateY(124%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(150) {
-  transform: translateX(78%) translateY(63%) scale(0);
+  transform: translateX(44%) translateY(57%) scale(0);
   transition: 2s ease-in;
 }
 
@@ -4961,211 +4969,211 @@ box to be used for the random glitch effect. Also adds a very subtle
 skew to change the 'thickness' of the glitch.*/
 @keyframes glitch-anim {
   0% {
-    clip: rect(44px, 9999px, 71px, 0);
-    transform: skew(0.26deg);
+    clip: rect(39px, 9999px, 1px, 0);
+    transform: skew(0.32deg);
   }
   5% {
-    clip: rect(76px, 9999px, 35px, 0);
-    transform: skew(0.64deg);
+    clip: rect(11px, 9999px, 100px, 0);
+    transform: skew(0.77deg);
   }
   10% {
-    clip: rect(58px, 9999px, 65px, 0);
-    transform: skew(0.44deg);
+    clip: rect(30px, 9999px, 38px, 0);
+    transform: skew(0.17deg);
   }
   15% {
-    clip: rect(97px, 9999px, 25px, 0);
-    transform: skew(0.7deg);
+    clip: rect(34px, 9999px, 3px, 0);
+    transform: skew(0.03deg);
   }
   20% {
-    clip: rect(60px, 9999px, 52px, 0);
-    transform: skew(0.19deg);
+    clip: rect(51px, 9999px, 14px, 0);
+    transform: skew(0.59deg);
   }
   25% {
-    clip: rect(6px, 9999px, 51px, 0);
-    transform: skew(0.31deg);
+    clip: rect(27px, 9999px, 87px, 0);
+    transform: skew(0.65deg);
   }
   30% {
-    clip: rect(80px, 9999px, 31px, 0);
-    transform: skew(0.58deg);
+    clip: rect(98px, 9999px, 16px, 0);
+    transform: skew(0.82deg);
   }
   35% {
-    clip: rect(32px, 9999px, 72px, 0);
-    transform: skew(0.28deg);
+    clip: rect(52px, 9999px, 75px, 0);
+    transform: skew(0.65deg);
   }
   40% {
-    clip: rect(13px, 9999px, 77px, 0);
-    transform: skew(0.26deg);
+    clip: rect(22px, 9999px, 58px, 0);
+    transform: skew(0.13deg);
   }
   45% {
-    clip: rect(31px, 9999px, 78px, 0);
-    transform: skew(0.53deg);
+    clip: rect(87px, 9999px, 94px, 0);
+    transform: skew(0.39deg);
   }
   50% {
-    clip: rect(25px, 9999px, 15px, 0);
-    transform: skew(0.16deg);
+    clip: rect(86px, 9999px, 93px, 0);
+    transform: skew(0.76deg);
   }
   55% {
-    clip: rect(52px, 9999px, 19px, 0);
-    transform: skew(0.3deg);
+    clip: rect(64px, 9999px, 16px, 0);
+    transform: skew(0.05deg);
   }
   60% {
-    clip: rect(9px, 9999px, 99px, 0);
-    transform: skew(0.28deg);
+    clip: rect(37px, 9999px, 68px, 0);
+    transform: skew(0.54deg);
   }
   65% {
-    clip: rect(83px, 9999px, 28px, 0);
-    transform: skew(0.79deg);
+    clip: rect(89px, 9999px, 32px, 0);
+    transform: skew(0.41deg);
   }
   70% {
-    clip: rect(34px, 9999px, 24px, 0);
-    transform: skew(0.27deg);
+    clip: rect(95px, 9999px, 88px, 0);
+    transform: skew(0.56deg);
   }
   75% {
-    clip: rect(21px, 9999px, 100px, 0);
-    transform: skew(0.73deg);
+    clip: rect(2px, 9999px, 62px, 0);
+    transform: skew(0.26deg);
   }
   80% {
-    clip: rect(50px, 9999px, 63px, 0);
-    transform: skew(0.47deg);
+    clip: rect(26px, 9999px, 63px, 0);
+    transform: skew(0.16deg);
   }
   85% {
-    clip: rect(29px, 9999px, 43px, 0);
-    transform: skew(0.35deg);
+    clip: rect(38px, 9999px, 17px, 0);
+    transform: skew(0.32deg);
   }
   90% {
-    clip: rect(59px, 9999px, 50px, 0);
-    transform: skew(0.84deg);
+    clip: rect(9px, 9999px, 77px, 0);
+    transform: skew(0.37deg);
   }
   95% {
-    clip: rect(61px, 9999px, 49px, 0);
-    transform: skew(0.4deg);
+    clip: rect(80px, 9999px, 75px, 0);
+    transform: skew(0.46deg);
   }
   100% {
-    clip: rect(63px, 9999px, 16px, 0);
-    transform: skew(0.23deg);
+    clip: rect(14px, 9999px, 29px, 0);
+    transform: skew(0.21deg);
   }
 }
 
 @keyframes glitch-anim2 {
   0% {
-    clip: rect(40px, 9999px, 17px, 0);
-    transform: skew(0.03deg);
+    clip: rect(64px, 9999px, 98px, 0);
+    transform: skew(0.21deg);
   }
   5% {
-    clip: rect(63px, 9999px, 79px, 0);
-    transform: skew(0.39deg);
-  }
-  10% {
-    clip: rect(20px, 9999px, 1px, 0);
-    transform: skew(0.52deg);
-  }
-  15% {
-    clip: rect(13px, 9999px, 99px, 0);
-    transform: skew(0.31deg);
-  }
-  20% {
-    clip: rect(76px, 9999px, 25px, 0);
-    transform: skew(0.15deg);
-  }
-  25% {
-    clip: rect(30px, 9999px, 65px, 0);
-    transform: skew(0.6deg);
-  }
-  30% {
-    clip: rect(30px, 9999px, 46px, 0);
-    transform: skew(0.4deg);
-  }
-  35% {
-    clip: rect(81px, 9999px, 47px, 0);
-    transform: skew(0.69deg);
-  }
-  40% {
-    clip: rect(82px, 9999px, 16px, 0);
-    transform: skew(0.55deg);
-  }
-  45% {
-    clip: rect(8px, 9999px, 86px, 0);
-    transform: skew(0.55deg);
-  }
-  50% {
-    clip: rect(4px, 9999px, 74px, 0);
-    transform: skew(0.86deg);
-  }
-  55% {
-    clip: rect(3px, 9999px, 34px, 0);
-    transform: skew(0.41deg);
-  }
-  60% {
-    clip: rect(54px, 9999px, 65px, 0);
-    transform: skew(0.28deg);
-  }
-  65% {
-    clip: rect(39px, 9999px, 8px, 0);
-    transform: skew(0.61deg);
-  }
-  70% {
-    clip: rect(4px, 9999px, 35px, 0);
-    transform: skew(0.57deg);
-  }
-  75% {
-    clip: rect(55px, 9999px, 22px, 0);
-    transform: skew(0.83deg);
-  }
-  80% {
-    clip: rect(13px, 9999px, 88px, 0);
-    transform: skew(0.26deg);
-  }
-  85% {
-    clip: rect(56px, 9999px, 32px, 0);
+    clip: rect(78px, 9999px, 68px, 0);
     transform: skew(0.96deg);
   }
+  10% {
+    clip: rect(26px, 9999px, 65px, 0);
+    transform: skew(0.92deg);
+  }
+  15% {
+    clip: rect(60px, 9999px, 5px, 0);
+    transform: skew(0.26deg);
+  }
+  20% {
+    clip: rect(93px, 9999px, 60px, 0);
+    transform: skew(0.17deg);
+  }
+  25% {
+    clip: rect(26px, 9999px, 3px, 0);
+    transform: skew(0.35deg);
+  }
+  30% {
+    clip: rect(93px, 9999px, 45px, 0);
+    transform: skew(0.66deg);
+  }
+  35% {
+    clip: rect(35px, 9999px, 14px, 0);
+    transform: skew(0.35deg);
+  }
+  40% {
+    clip: rect(22px, 9999px, 89px, 0);
+    transform: skew(0.07deg);
+  }
+  45% {
+    clip: rect(77px, 9999px, 80px, 0);
+    transform: skew(0.98deg);
+  }
+  50% {
+    clip: rect(7px, 9999px, 34px, 0);
+    transform: skew(0.49deg);
+  }
+  55% {
+    clip: rect(66px, 9999px, 78px, 0);
+    transform: skew(0.56deg);
+  }
+  60% {
+    clip: rect(65px, 9999px, 55px, 0);
+    transform: skew(0.36deg);
+  }
+  65% {
+    clip: rect(21px, 9999px, 9px, 0);
+    transform: skew(0.65deg);
+  }
+  70% {
+    clip: rect(65px, 9999px, 73px, 0);
+    transform: skew(0.98deg);
+  }
+  75% {
+    clip: rect(34px, 9999px, 79px, 0);
+    transform: skew(0.79deg);
+  }
+  80% {
+    clip: rect(64px, 9999px, 67px, 0);
+    transform: skew(0.05deg);
+  }
+  85% {
+    clip: rect(88px, 9999px, 17px, 0);
+    transform: skew(0.99deg);
+  }
   90% {
-    clip: rect(5px, 9999px, 29px, 0);
-    transform: skew(0.45deg);
+    clip: rect(59px, 9999px, 34px, 0);
+    transform: skew(0.03deg);
   }
   95% {
-    clip: rect(86px, 9999px, 32px, 0);
-    transform: skew(0.06deg);
+    clip: rect(35px, 9999px, 75px, 0);
+    transform: skew(0.67deg);
   }
   100% {
-    clip: rect(34px, 9999px, 62px, 0);
-    transform: skew(0.02deg);
+    clip: rect(15px, 9999px, 15px, 0);
+    transform: skew(0.96deg);
   }
 }
 
 @keyframes glitch-skew {
   0% {
-    transform: skew(2deg);
+    transform: skew(-1deg);
   }
   10% {
-    transform: skew(3deg);
-  }
-  20% {
     transform: skew(0deg);
   }
+  20% {
+    transform: skew(2deg);
+  }
   30% {
-    transform: skew(5deg);
+    transform: skew(4deg);
   }
   40% {
     transform: skew(3deg);
   }
   50% {
-    transform: skew(2deg);
+    transform: skew(1deg);
   }
   60% {
-    transform: skew(3deg);
+    transform: skew(5deg);
   }
   70% {
     transform: skew(1deg);
   }
   80% {
-    transform: skew(2deg);
+    transform: skew(5deg);
   }
   90% {
-    transform: skew(-3deg);
+    transform: skew(-2deg);
   }
   100% {
-    transform: skew(5deg);
+    transform: skew(-2deg);
   }
 }
 
@@ -5551,6 +5559,7 @@ skew to change the 'thickness' of the glitch.*/
   left: 0;
   padding: 25px;
   z-index: 7;
+  width: 200px;
 }
 
 .logo-header.nav-up {

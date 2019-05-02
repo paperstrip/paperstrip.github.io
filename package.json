@@ -42,10 +42,12 @@
     "jquery": "^3.4.0",
     "jquery-scrollify": "^1.0.20",
     "letteringjs": "^0.7.0",
+    "noisejs": "^2.1.0",
     "scrollmagic": "^2.0.6",
     "skrollr": "^0.6.26",
     "slick-carousel": "^1.8.1",
-    "swiper": "^4.5.0"
+    "swiper": "^4.5.0",
+    "three": "^0.104.0"
   },
   "browserslist": [
     "last 2 versions"
