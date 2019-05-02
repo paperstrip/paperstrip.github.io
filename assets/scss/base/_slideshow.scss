@@ -152,7 +152,7 @@
 	padding-left: calc(7% - 40px);
 	border-top-right-radius: 40px;
 	border-bottom-right-radius: 40px;
-
+	display: none;
 
 	@include mq('mobile'){
 		border-top-right-radius: 10px;

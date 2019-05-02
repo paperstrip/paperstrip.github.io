@@ -269,8 +269,11 @@
 .client-container__content{
   padding: 0 7%;
   z-index: 4;
-  text-align: center;
   width: 100%;
+  color: white;
+  .btn{
+    margin-top: 40px;
+  }
   ul {
     margin-top: 40px;
     display: flex;

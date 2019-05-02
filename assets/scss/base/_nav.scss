@@ -5,7 +5,7 @@
   height: 20px;
   border: none;
   padding: 40px;
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   z-index: 99999;
@@ -100,7 +100,7 @@
   width: 100vw;
   height: 100vh;
   visibility: hidden;
-  position: fixed;
+  position: absolute;
   z-index: 99998;
   opacity: 0;
   top: 0;
@@ -337,7 +337,7 @@
 
 }
 .logo-header{
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   padding: 25px;
@@ -345,5 +345,22 @@
   &.nav-up{
     opacity: 0;
     transform: translateY(-100%);
+  }
+}
+
+.main-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: all .4s ease;
+  opacity: 1;
+
+  &.nav-up{
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }

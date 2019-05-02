@@ -184,8 +184,8 @@ var lastScrollTop = 0;
 var delta = 5;
 var navbarHeight = $('header').outerHeight();
 function hasScrolled(elm) {
-    var st = $(this).scrollTop();
-    console.log(elm)
+    var st = $(window).scrollTop();
+    console.log(st)
     // Make sure they scroll more than delta
     if(Math.abs(lastScrollTop - st) <= delta)
         return;
@@ -199,6 +199,7 @@ function hasScrolled(elm) {
         // Scroll Up
         if(st + $(window).height() < $(document).height()) {
             elm.removeClass('nav-up').addClass('nav-down');
+
         }
     }
 
@@ -286,6 +287,17 @@ onReady(function() {
       //loop();
 
     }*/
+    $(window).scroll(function(event){
+        didScroll = true;
+        console.log('scroll')
+    });
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled($('.main-header'));
+            didScroll = false;
+        }
+    }, 250);
 
 });
 

@@ -12,14 +12,15 @@
   border-radius: 40px;
   font-weight: 400;
   &.btn--blue{
-    background: white;
+    background:#7A6CFF;
     background-image: none;
-    color: #E5F9FF;
-    border: solid 2px #E5F9FF;
+    color: white;
+    border: solid 2px #7A6CFF;
     transition: color .3s ease,background .3s ease;
+
     &:hover{
-      background: #E5F9FF;
-      color: white;
+      background: transparent;
+      color: #7A6CFF;
     }
   }
   &.btn--red {
@@ -31,15 +32,15 @@
     }
   }
   &.btn--white{
-    background:#7A6CFF;
+    background:white;
     background-image: none;
-    color: white;
-    border: solid 2px #7A6CFF;
+    color: black;
+    border: solid 2px white;
     transition: color .3s ease,background .3s ease;
 
     &:hover{
       background: transparent;
-      color: #7A6CFF;
+      color: white;
     }
   }
 
