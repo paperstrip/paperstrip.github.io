@@ -4,6 +4,8 @@ layout: base
 title: Apparences
 summary: Le guide de la chirurgie et de la médecine esthétique, de la beauté et du bien-être.
 coverImage: polysea.jpg
+dataCover: apparences-data-cover.jpg
+
 projectImage: polysea_bck.png
 
 ---

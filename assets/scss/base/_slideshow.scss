@@ -144,20 +144,15 @@
 }
 .slide-show__nav{
 
-	background: rgba(255,255,255,.5);
+	background: rgba(255,255,255,1);
 	position: absolute;
 	bottom: 0;
-	left: 0;
-	z-index: 6;
-	padding-left: calc(7% - 40px);
-	border-top-right-radius: 40px;
-	border-bottom-right-radius: 40px;
-	display: none;
+	right: 0;
+	z-index: 20;
 
-	@include mq('mobile'){
-		border-top-right-radius: 10px;
-		border-bottom-right-radius: 10px;
-	}
+	//display: none;
+
+
 	.prev-slick,.next-slick{
 		width: 80px;
 		height: 80px;

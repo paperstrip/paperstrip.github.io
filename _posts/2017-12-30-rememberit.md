@@ -6,6 +6,8 @@ summary: Un moyen simple de créer des albums photos collaboratifs de vos souven
 coverImage: rememberit.jpg
 projectImage: rememberit_bck.png
 
+dataCover: rememberit-data-cover.jpg
+
 ---
 <div class="barba-container portfolio-container" data-namespace="post">
   <div class="project-container breath-animation">

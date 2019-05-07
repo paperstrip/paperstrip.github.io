@@ -38,28 +38,23 @@ coverImageSectionClient : glitch-1.png
     </h2>-->
 
   </div>
-  <div class="box portfolio-container section slide-section skrollable skrollable-between" data-color-pallette='[ "#FFAFB5","#FF9E84", "#FFC17A", "#80C4FF"]' data-blob-x="0" data-blob-y="100">
+  <div class="box portfolio-container section slide-section skrollable skrollable-between" data-color-pallette='[ "#FFAFB5","#FF9E84", "#FFC17A", "#80C4FF"]' data-blob-x="0" data-blob-y="100" style="background-image:url('src/img/1500/{{site.posts.last.dataCover}}')">
     <img class="home-container__cover transition-left skrollable skrollable-between" data-100p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;"  data-200p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"   width="100%" srcset="
     {{ site.baseurl }}/src/img/1500/{{page.coverImageSectionCase}},
     {{ site.baseurl }}/src/img/1024/{{page.coverImageSectionCase}},
     {{ site.baseurl }}/src/img/800/{{page.coverImageSectionCase}}"
     src="{{ site.baseurl }}/src/img/1500/{{page.coverImageSectionCase}}" >
+    <div class="slide-show__nav transition-left" data-0="transform:translate3d(-100%, 0px, 0px)" data-100p="transform:translate3d(0%, 0px, 0px)" data-200p="transform:translate3d(-100%,0px, 0px)">
+      <div class="prev-slick"><span><</span></div>
+      <div class="next-slick"><span>></span></div>
+    </div>
     <div class="home-container__content container__cover">
-        <div class="slide-show__nav transition-left" data-0="transform:translate3d(-100%, 0px, 0px)" data-100p="transform:translate3d(0%, 0px, 0px)" data-200p="transform:translate3d(-100%,0px, 0px)">
-          <div class="prev-slick"><span><</span></div>
-          <div class="next-slick"><span>></span></div>
-        </div>
-        <div class="col-lg-6 col-md-8 col-sm-12">
-          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px, -250px, 0px);opacity:1;" data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(250px, 0px, 0px);opacity:0;">Case</h2>
-          <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px,  250px, 0px);opacity:1;" data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(-250px, 0px, 0px);opacity:0;">studies</h2>
-          <p class="home-container__content-text toStagger" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, -310px, 0px);">Hello, moi c'est Arnaud, je suis freelance Web designer & developer. J'aime élaborer des designs élégants, dans l'air du temps, ainsi que les développer.</p>
-          <a class="btn btn--red toStagger" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, 350px, 0px);" href="{{site.data.mainnav[1].navLink}}">Découvrir plus</a>
 
-        </div>
+
 
       {% for item in site.posts %}
         {% if forloop.first %}<div class="holder vertical-slider case-list col-lg-6 col-sm-12" data-0="transform:scale(2);" data-100p="transform:scale(1);" data-200p="transform:scale(.2);">{% endif %}
-          <a href="{{item.url}}" class="case-list__item">
+          <!--<a href="{{item.url}}" class="case-list__item">
 
             <svg class="case-list__item--svg"   class="item__svg" width="100%" height="100%" viewBox="0 0 568 544" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
@@ -86,7 +81,12 @@ coverImageSectionClient : glitch-1.png
             <h3>{{item.title}}</h3>
 
 
-          </a>
+          </a>-->
+          <div class="col-lg-6 col-md-8 col-sm-12 case-list__item" data-cover="{{item.dataCover}}">
+            <h2 class="letter-animation transition-left" data-0="transform:translate3d(0px,  250px, 0px);opacity:1;" data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(-250px, 0px, 0px);opacity:0;">{{item.title}}</h2>
+            <p class="home-container__content-text toStagger" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, -310px, 0px);">{{item.summary}}</p>
+            <a class="btn btn--red toStagger" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, 350px, 0px);" href="{{site.data.mainnav[1].navLink}}">Découvrir plus</a>
+          </div>
 
 
         {% if forloop.last %}</div>{% endif %}
