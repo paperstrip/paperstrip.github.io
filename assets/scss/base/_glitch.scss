@@ -43,83 +43,7 @@
   //background: url('../img/1500/background-client.jpg');
   background-size: 100%;
 
-  &.is-active{
-    &:after{
-      opacity: 1;
-      transition-delay: 1s;
-    }
-  &.is-pixel{
-    @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-    .pixelized--heart{
-      display: block;
 
-
-    }
-    li{
-      transform-origin: center;
-      animation-play-state: running;
-    }
-    img{
-      display: none;
-    }
-    &:before{
-      opacity: 1;
-
-    }
-    .glitch{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &:after{
-        position: absolute;
-        color:#fd88e1 ;
-        content: attr(aria-label);
-        font-family: 'Press Start 2P', cursive;
-        z-index: -1;
-        top: 5px;
-
-      }
-      &:before{
-        position: absolute;
-        color: #15fdca;
-        content: attr(aria-label);
-        font-family: 'Press Start 2P', cursive;
-        z-index: -1;
-        margin-left: -5px
-
-
-      }
-      span{
-        color:#151131;
-        font-family: 'Press Start 2P', cursive;
-
-      }
-    }
-    .home-container__cover{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('../img/1500/pixel.png');
-      background-size: cover;
-      background-position: center;
-
-      opacity: 0;
-      &:before{
-        display: none
-
-      }
-      &:after{
-
-        display: none;
-
-
-      }
-    }
-  }
-
-  }
   .letter-animation{
     color: white;
   }
@@ -163,315 +87,72 @@
       animation-play-state: running;
       z-index: -1;
 
-
-
     }
   }
 
-  &.animate{
-    .home-container__cover{
-      &:before{
-        opacity: .5;
-        mix-blend-mode: hard-light;
-        animation: animate .2s   linear forwards;
-        animation-iteration-count: 4;
-
-      }
-      &:after{
-        animation-play-state: paused;
-      }
-    }
-
-  }
 }
-
-@keyframes animate
-{
-	0%
-	{
-    mix-blend-mode: hard-light;
-    opacity: .5;
-
-		background-position: 0 0;
-		filter: hue-rotate(0deg);
-	}
-	10%
-	{
-		background-position: 5px 0;
-	}
-	20%
-	{
-		background-position: -5px 0;
-	}
-	30%
-	{
-		background-position: 15px 0;
-	}
-	40%
-	{
-		background-position: -5px 0;
-    background-image: url('../img/1500/glitch-2.png');
-
-	}
-	50%
-	{
-		background-position: -25px 0;
-	}
-	60%
-	{
-		background-position: -50px 0;
-	}
-	70%
-	{
-		background-position: 0 -20px;
-    background-image: url('../img/1500/glitch.png');
-
-	}
-	80%
-	{
-		background-position: -60px -20px;
-	}
-	81%
-	{
-		background-position: 0 0;
-    mix-blend-mode: hard-light;
-    opacity: .5;
-	}
-	100%
-	{
-		background-position: 0 0;
-		filter: hue-rotate(360deg);
-    mix-blend-mode: normal;
-    opacity: 1;
-	}
-}
-
-@keyframes animateScale{
-  0%{
-    transform: scale(1);
-    opacity: 1;
-
-  }
-  50%{
-
-    transform: scale(1.1);
-    opacity: .9;
-
-  }
-  100%{
-
-    transform: scale(1);
-    opacity: 1;
-
-
-  }
-}
-.client-container__content{
-  padding: 0 7%;
-  z-index: 4;
-  width: 100%;
-  color: white;
-  .btn{
-    margin-top: 40px;
-  }
-  ul {
-    margin-top: 40px;
+.agencies-list{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  z-index: 8;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  .agencies-list__item{
+    padding: 40px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-  }
-  @include mq('tablet'){
-    padding: 0;
-  }
-  li{
-    max-width: 150px;
-    animation: rotatateHeart .6s infinite ease-in-out ;
-    animation-play-state: paused;
-    @for $i from 1 through 9 {
-
-        &:nth-child(#{$i}) {
-          // Delay the animation. Delay increases as items loop.
-          animation-delay: $i * (1s / 8);
-        }
-
+    position: relative;
+    &:first-child{
+      background: black;
+      height: 30%;
+      .arrow-up {
+        border-bottom: 100px solid #FF8AE0;
+      }
     }
-    @include mq('tablet'){
-      width: auto;
+    &:nth-child(2){
+      background: white;
+      height: calc(40% + 65px);
+
+      .arrow-up {
+        border-bottom: 100px solid #BDC7ED;
+
+      }
     }
-  }
-}
+    &:nth-child(3){
+      background: black;
+      height: calc(40% + 205px);
 
-
-@mixin glitchCopy {
-		content: attr(aria-label);
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-}
-
-.animate:not(.is-pixel) .glitch {
-	position: relative;
-	/* Animation provies a slight random skew. Check bottom of doc
-	for more information on how to random skew. */
-	animation: glitch-skew 1s infinite linear alternate-reverse;
-
-	// Creates a copy before our text.
-	&::before{
-		// Duplicates our text with the mixin.
-		@include glitchCopy;
-		// Scoots text slightly to the left for the color offset.
-		left: 2px;
-		// Creates the color 'shadow' that happens on the glitch.
-		text-shadow: -2px 0 #ff00c1;
-		/* Creates an initial clip for our glitch. This works in
-		a typical top,right,bottom,left fashion and creates a mask
-		to only show a certain part of the glitch at a time. */
-		clip: rect(44px, 450px, 56px, 0);
-		/* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
-		with an alternating animation to keep things fresh. */
-    transition: color .4s ease;
-
-		animation: glitch-anim 5s infinite linear alternate-reverse;
-	}
-
-	// Creates a copy after our text. Note comments from ::before.
-	&::after {
-		@include glitchCopy;
-    transition: color .4s ease;
-		left: -2px;
-		text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-		animation: glitch-anim2 1s infinite linear alternate-reverse;
-	}
-}
-
-/* Creates an animation with 20 steaps. For each step, it calculates
-a percentage for the specific step. It then generates a random clip
-box to be used for the random glitch effect. Also adds a very subtle
-skew to change the 'thickness' of the glitch.*/
-@keyframes glitch-anim {
-  $steps: 20;
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
-			transform: skew((random(100) / 100) + deg);
+      .arrow-up {
+        border-bottom: 100px solid #17FFCC;
+      }
     }
   }
 }
+.arrow-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
 
-// Same deal, just duplicated for ultra randomness.
-@keyframes glitch-anim2 {
-  $steps: 20;
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
-			transform: skew((random(100) / 100) + deg);
-    }
-  }
-}
+  justify-content: flex-end;
+  transform-origin: top center;
+  transform:  translateX(-50%) rotate(-45deg);
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
 
-// Does the same deal as before, but now only skews. Used for main text.
-@keyframes glitch-skew {
-  $steps: 10;
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      transform: skew((random(10) - 5) + deg);
-    }
-  }
-}
-
-
-.pixelized--heart {
-  display: none;
-  width: 1em;
-  height: 1em;
-  box-shadow:
-	1em 0em #F22613,
-	2em 0em #F22613,
-	4em 0em #F22613,
-	5em 0em #F22613,
-
-	0em 1em #F22613,
-	1em 1em #F22613,
-	2em 1em #F22613,
-	3em 1em #F22613,
-	4em 1em #F22613,
-	5em 1em #F22613,
-	6em 1em #F22613,
-
-	0em 2em #F22613,
-	1em 2em #F22613,
-	2em 2em #F22613,
-	3em 2em #F22613,
-	4em 2em #F22613,
-	5em 2em #F22613,
-	6em 2em #F22613,
-
-	1em 3em #F22613,
-	2em 3em #F22613,
-	3em 3em #F22613,
-	4em 3em #F22613,
-	5em 3em #F22613,
-
-	2em 4em #F22613,
-	3em 4em #F22613,
-	4em 4em #F22613,
-
-	3em 5em #F22613;
-
-  @include mq('mobile'){
-    width: .1em;
-    height: .1em;
-    box-shadow:
-  	.1em 0em #F22613,
-  	.2em 0em #F22613,
-  	.4em 0em #F22613,
-  	.5em 0em #F22613,
-
-  	.0em .1em #F22613,
-  	.1em .1em #F22613,
-  	.2em .1em #F22613,
-  	.3em .1em #F22613,
-  	.4em .1em #F22613,
-  	.5em .1em #F22613,
-  	.6em .1em #F22613,
-
-  	.0em .2em #F22613,
-  	.1em .2em #F22613,
-  	.2em .2em #F22613,
-  	.3em .2em #F22613,
-  	.4em .2em #F22613,
-  	.5em .2em #F22613,
-  	.6em .2em #F22613,
-
-  	.1em .3em #F22613,
-  	.2em .3em #F22613,
-  	.3em .3em #F22613,
-  	.4em .3em #F22613,
-  	.5em .3em #F22613,
-
-  	.2em .4em #F22613,
-  	.3em .4em #F22613,
-  	.4em .4em #F22613,
-
-  	.3em .5em #F22613;
-
-  }
-
-
-}
-
-@keyframes rotatateHeart{
-  0%{
-    transform: translateY(0);
-  }
-  50%{
-    transform:  translateY(-40px);
-  }
-  100%{
-    transform: translateY(0);
-
+  border-bottom: 100px solid red;
+  span{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    transform: translateX(-50%);
+    color: white;
   }
 }

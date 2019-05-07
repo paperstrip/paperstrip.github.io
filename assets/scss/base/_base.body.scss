@@ -218,7 +218,7 @@ canvas{
     min-height: 100%;
     left: 0;
     right: auto;
-    @include mq('tablet'){
+    @include mq('mobile'){
       width: 100%;
       display: none;
     }
@@ -343,7 +343,7 @@ canvas{
   &.portfolio-container{
     background-color: #E5F9FF;
     background: url('../img/1500/background-case.jpg');
-    background-position: center;
+    background-position: 80% center;
     background-size: cover;
   //  background-image: linear-gradient(-45deg, #2F1A51 0%, #662EFF 50%, #54FDD1 100%);
     position: relative;

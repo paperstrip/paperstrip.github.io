@@ -18,8 +18,10 @@
 		display: inline-block;
 		max-width: 100%;
 		@include mq('tablet'){
-			max-width: 500px;
 
+		}
+		@include mq('mobile'){
+			text-align: center;
 		}
 	}
 
