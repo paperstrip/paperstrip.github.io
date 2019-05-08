@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: My template site
-description: A nice description full of keywords
+title: Arnaud Herr 
+description: Freelance developpeur web, web designeur basé en belgique
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://paperstrip.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -49,7 +49,7 @@ exclude:
   - node_modules
   - assets # managed by Gulp
   - dist
-  
+
 
 # Include from processing
 include:

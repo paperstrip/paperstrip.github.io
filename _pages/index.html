@@ -1,24 +1,23 @@
 ---
 layout: base
 permalink: /
-title: Home sweet home
+title: Home
 coverImageSectionHome: cover_home.png
 coverImageSectionCase: blob.png
 coverImageSectionClient : glitch-1.png
 
 ---
-<div class="barba-container" id="#fullpage" data-namespace="home">
-  <span class="scroll-indicator">Scroll Down</span>
-  <span class="dot-animation"></span>
-  <div class="home-container section slide-section skrollable-before" data-blob-x="100" data-blob-y="50">
-    <img class="home-container__cover" data-0="transform:translate3d(0px, 0%, 0px); opacity:1;" data-end="transform:translate3d(0px, -200%, 0px); opacity:0;" width="100%" srcset="
+<div class="barba-container" id="luxy" data-namespace="home">
+
+  <div class="home-container section slide-section">
+    <img class="home-container__cover"   width="100%" srcset="
     {{ site.baseurl }}/src/img/1500/{{page.coverImageSectionHome}},
     {{ site.baseurl }}/src/img/1024/{{page.coverImageSectionHome}},
     {{ site.baseurl }}/src/img/800/{{page.coverImageSectionHome}}"
     src="{{ site.baseurl }}/src/img/1500/{{page.coverImageSectionHome}}" >
     {% include blob.html %}
 
-    <div class="home-container__content container__cover">
+    <div class="home-container__content container__cover ">
       <div class="col-lg-6 col-md-8 col-sm-12">
         <h1 class="letter-animation"  data-0="transform:translate3d(0px, 0px, 0px); opacity:1;" data-end="transform:translate3d(0px, -350px, 0px); opacity:0;">
           Arnaud Herr

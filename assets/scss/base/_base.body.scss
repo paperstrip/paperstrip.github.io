@@ -12,10 +12,15 @@ body
 
 
 }
+body::-webkit-scrollbar { width: 0 !important }
+body { overflow: -moz-scrollbars-none; }
+body { -ms-overflow-style: none; }
+
+
 .wrap{
   overflow: hidden;
   width: 100%;
-  position: relative;
+  position: absolute;
   @include mq('mobile'){
     height: auto;
   }
@@ -312,7 +317,7 @@ canvas{
       }
 .letter-animation{
   position: relative;
-  font-size: calc(60px + 32 * ((100vw - 700px)/ 1300));
+  font-size: calc(40px + 32 * ((100vw - 700px)/ 1300));
   margin: 0;
   line-height: 1;
   color: #292929;
