@@ -534,13 +534,13 @@ function initSlideShow(){
       var coverUrlCurrent = $('.case-list__item').eq(currentSlide).data('cover');
       var coverUrlNext = $('.case-list__item').eq(nextSlide).data('cover');
       if (mobileAndTabletcheck() == true) {
-        $('.portfolio-container').css("background-image", "url('src/img/1500/"+coverUrlNext+"')");
+        $('.effect-background').css("background-image", "url('src/img/1500/"+coverUrlCurrent+"')");
       }
       else {
         var myAnimation = new hoverEffect({
-          parent: document.querySelector('.portfolio-container'),
-          image1: 'src/img/1500/' + coverUrlCurrent,
-          image2: 'src/img/1500/' + coverUrlNext,
+          parent: document.querySelector('.effect-background'),
+          image1: 'src/img/1500/' + coverUrlNext,
+          image2: 'src/img/1500/' + coverUrlCurrent,
           displacementImage: 'src/img/1500/distorsion.jpg'
         });
       }
@@ -989,8 +989,7 @@ function nextSlide(){
         initWebGl();
         animateWebgl();
       }
-			initWebGl();
-			animateWebgl();
+
 			function initWebGl() {
 				container = document.getElementsByTagName( 'body' );
 				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
