@@ -8,7 +8,6 @@ import Barba from 'barba.js'; // Or nothing if loaded via the browser
 import * as THREE from 'three/build/three.min.js';
 import TweenMax from "gsap/TweenMax";
 import anime from 'animejs/lib/anime.es.js';
-import skrollr from 'skrollr';
 import slick from "slick-carousel";
 import luxy from "luxy.js";
 
@@ -164,26 +163,14 @@ onReady(function() {
     });
 
 
-    initSlider();
-   /*var s = skrollr.init({
-     forceHeight: true,
-     box: '300p',
 
-   });
-    if (s.isMobile()) {
-      s.destroy();
-    }
-    else{
-      //loop();
-
-    }*/
     $(window).scroll(function(event){
         didScroll = true;
     });
 
     setInterval(function() {
         if (didScroll) {
-            hasScrolled($('.main-header'));
+            hasScrolled($('.main-header,.scroll-indicator,.dot-animation'));
             didScroll = false;
         }
     }, 250);
@@ -304,6 +291,108 @@ function initHomePage() {
     }, .2);
 
     //animationLetter();
+    initNavigationHold();
+    var container;
+    var camera, scene, renderer;
+    var objects;
+    var material;
+    var mouseX = 0, mouseY = 0;
+    var lights = [];
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    if (mobileAndTabletcheck() == true) {
+
+    }
+    else {
+      initWebGl();
+      animateWebgl();
+    }
+
+    function initWebGl() {
+      container = document.getElementsByClassName( 'home-container' );
+      camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+      camera.position.z = 3200;
+      scene = new THREE.Scene();
+
+
+      lights[0] = new THREE.DirectionalLight( 0xFAD8E2, 1 );
+      lights[0].position.set( 1, 0, 0 );
+      lights[1] = new THREE.DirectionalLight( 0xF9C7C7, 1 );
+      lights[1].position.set( 0.75, 1, 0.5 );
+      lights[2] = new THREE.DirectionalLight( 0xFF91A3, 1 );
+      lights[2].position.set( -0.75, -1, 0.5 );
+      lights[3] = new THREE.DirectionalLight( 0xFFFFFF, 1 );
+      lights[3].position.set( 1, 1, 1 );
+      lights[3] = new THREE.DirectionalLight( 0xFFFFFF, 1 );
+      lights[3].position.set( 0, 0, 0 );
+      scene.add( lights[0] );
+      scene.add( lights[1] );
+      scene.add( lights[2] );
+      scene.add( lights[3] );
+
+
+      var lightAmbiance = new THREE.HemisphereLight( 0xFAD8E2,0xFFF4F8, .2 );
+      scene.add( lightAmbiance );
+
+    objects = [];
+      material = new THREE.MeshPhongMaterial({
+       color: 0xFFF4F8,
+      });
+
+        var loader = new THREE.BufferGeometryLoader();
+        loader.load( 'src/audio/obj.json', function ( geometry ) {
+        geometry.computeVertexNormals();
+        for ( var i = 0; i < 200; i ++ ) {
+          var mesh = new THREE.Mesh( new THREE.IcosahedronBufferGeometry( .8, 1 ), material );
+          mesh.position.x = Math.random() * 8000 - 4000;
+          mesh.position.y = Math.random() * 8000 - 4000;
+          mesh.position.z = Math.random() * 8000 - 4000;
+          mesh.rotation.x = Math.random() * 2 * Math.PI;
+          mesh.rotation.y = Math.random() * 2 * Math.PI;
+          mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 50 + 100;
+          objects.push( mesh );
+          scene.add( mesh );
+        }
+      } );
+      renderer = new THREE.WebGLRenderer({alpha: true });
+      renderer.domElement.id = 'canvasBlob';
+
+      renderer.setClearColor( 0x000000, 0 ); //default
+
+      renderer.setPixelRatio( window.devicePixelRatio );
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      container[0].appendChild( renderer.domElement );
+      //
+      window.addEventListener( 'resize', onWindowResize, false );
+    }
+    function onWindowResize() {
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+    function onDocumentMouseMove( event ) {
+      mouseX = ( event.clientX - windowHalfX ) * 10;
+      mouseY = ( event.clientY - windowHalfY ) * 10;
+    }
+    //
+    function animateWebgl() {
+      requestAnimationFrame( animateWebgl );
+      render();
+    }
+    function render() {
+      camera.position.x += ( mouseX - camera.position.x ) * .005;
+      camera.position.y += ( - mouseY - camera.position.y ) * .005;
+      camera.lookAt( scene.position );
+      for ( var i = 0, il = objects.length; i < il; i ++ ) {
+        objects[ i ].rotation.x += 0.01;
+        objects[ i ].rotation.y += 0.02;
+      }
+      renderer.render( scene, camera );
+    }
 
 }
 
@@ -317,7 +406,7 @@ function initStagger() {
         ease: Power4.easeInOut,
         opacity: 1,
         yPercent: 0
-    }, 0.05);
+    }, 0.5);
 }
 
 
@@ -411,12 +500,18 @@ function initSlideShow(){
         $('.effect-background').css("background-image", "url('src/img/1500/"+coverUrlNext+"')");
       }
       else {
-        var myAnimation = new hoverEffect({
+        if ($('.effect-background').find('canvas').length >= 2 ){
+          $('.effect-background canvas').eq(0).remove();
+        }
+        $('.effect-background').css("background-image", "url('src/img/1500/"+coverUrlNext+"')");
+
+        /*var myAnimation = new hoverEffect({
           parent: document.querySelector('.effect-background'),
           image1: 'src/img/1500/' + coverUrlCurrent,
           image2: 'src/img/1500/' + coverUrlNext,
           displacementImage: 'src/img/1500/distorsion.jpg'
-        });
+        });*/
+
       }
 
   });
@@ -477,7 +572,7 @@ var FadeTransition = Barba.BaseTransition.extend({
           ease: Power4.easeInOut
       });
       $(".letter-animation").lettering();
-      initSlider();
+
       this.done();
 
     }
@@ -530,7 +625,7 @@ var ExpandTransition = Barba.BaseTransition.extend({
           ease: Power4.easeInOut
       });
       $(".letter-animation").lettering();
-      initSlider();
+
       this.done();
 
     }
@@ -624,9 +719,6 @@ Barba.Pjax.getTransition = function() {
 };
 Barba.Pjax.start();
 
-function initSlider() {
-
-}
 
 $('body').on('wheel', (function(e) {
   var scrollCount = 0;
@@ -640,267 +732,151 @@ $('body').on('wheel', (function(e) {
 
 }));
 
-/*$(window).on('scroll', function(){
-  var s = $(window).scrollTop(),
-      d = $(document).height(),
-      c = $(window).height();
 
-  var scrollPercent = (s / (d - c));
-  var offset;
-  var defaultLight1 = new THREE.Color( "#FAD8E2" );
-  var defaultLight2 = new THREE.Color( "#FEEEF3" );
-  var defaultLight3 = new THREE.Color( "#FF91A3" );
-  var light2 = new THREE.Color('#662EFF');
-  var light1 = new THREE.Color('#2F1A51');
-  var light3 = new THREE.Color('#54FDD1');
+function initNavigationHold() {
 
-  var tl = new TimelineLite( {paused: true}  );
-  tl.to(lights[0].color, 0, {
-    r: defaultLight1.r,
-    g: defaultLight1.g,
-    b: defaultLight1.b,
+  var mouseTimer;
+  function mouseDown() {
 
+      mouseUp();
+      $('#bam').addClass('is-pushing');
+      mouseTimer = window.setTimeout(execMouseDown,800); //set timeout to fire in 2 seconds when the user presses mouse button down
+  }
+
+  function mouseUp() {
+      $('#bam').removeClass('is-pushing');
+      if (mouseTimer) window.clearTimeout(mouseTimer);  //cancel timer when mouse button is released
+  }
+
+  function execMouseDown() {
+    $('#bam').removeClass('is-pushing');
+    nextSlide();
+    mouseUp();
+  }
+
+  var div = document.getElementById("bam");
+  var fired = false;
+  var startEventType = 'mousedown',
+    endEventType   = 'mouseup';
+
+    if (mobileAndTabletcheck() == true) {
+        startEventType = 'touchstart';
+        endEventType   = 'touchend';
+        $('#bam').addClass('is-mobile');
+    }
+  div.addEventListener(startEventType, mouseDown);
+  div.addEventListener(endEventType, mouseUp);  //listen for mouse up event on body, not just the element you originally clicked on
+
+  document.body.addEventListener("keydown", function(event){
+    if(event.keyCode===32){
+     //enter key was pressed
+     if(!fired) {
+        fired = true;
+        // do something
+        mouseDown();
+
+      }
+     console.log('pressed');
+    }
   });
-  tl.to(lights[1].color, .8, {
-    r: defaultLight2.r,
-    g: defaultLight2.g,
-    b: defaultLight2.b,
+    document.body.addEventListener("keyup", function(event){
+      if(event.keyCode==32){
+       //enter key was pressed
+       fired = false;
 
-  });
-  tl.to(lights[2].color, .8, {
-    r: defaultLight3.r,
-    g: defaultLight3.g,
-    b: defaultLight3.b,
+       mouseUp();
+      }
 
-  });
-  tl.to(lights[0].color, .8, {
-    r: light1.r,
-    g: light1.g,
-    b: light1.b,
+    });  //listen for mouse up event on body, not just the element you originally clicked on
 
-  });
-  tl.to(lights[1].color, 1, {
-    r: light2.r,
-    g: light2.g,
-    b: light2.b,
+}
 
-  });
-  tl.to(lights[ 2 ].color, 1, {
-    r: light3.r,
-    g: light3.g,
-    b: light3.b,
-
-  });
-  tl.to(lights[0].color, .8, {
-    r: new THREE.Color('#516382').r,
-    g: new THREE.Color('#516382').g,
-    b: new THREE.Color('#516382').b,
-
-  });
-  tl.to(lights[1].color, .8, {
-    r: new THREE.Color('#FF8AE0').r,
-    g: new THREE.Color('#FF8AE0').g,
-    b: new THREE.Color('#FF8AE0').b,
-
-  });
-  tl.to(lights[ 2 ].color, .8, {
-    r: new THREE.Color('#373E58').r,
-    g: new THREE.Color('#373E58').g,
-    b: new THREE.Color('#373E58').b,
-
-  });
-
-  console.log(scrollPercent)
-  tl.progress(scrollPercent);
-})
-
+/*$(window).on('wheel', (function(e) {
+  e.preventDefault();
+  var scrollCount = 0;
+  scroll = setTimeout(function(){scrollCount=0;}, 600);
+  if(scrollCount) return 0;
+  scrollCount=1;
+  if (e.originalEvent.deltaY < 0) {
+    previousSlide();
+  } else {
+    nextSlide()
+  }
+}));
+*/
 function previousSlide(){
   var offset;
+  var rapport;
 
   if ($('.slide-section')[0]._gsTransform){
     offset = $('.slide-section')[0]._gsTransform.yPercent
   }
   else{
     offset = 0;
+
   }
   var breath = new TimelineMax({
       repeat: 0,
       yoyo: false
   })
-  breath.staggerFromTo('.slide-section', 1, {
+  breath.staggerFromTo('.slide-section', .4, {
     yPercent: offset,
 
 
       ease: Power4.easeInOut
   }, {
-    yPercent: offset + 100,
+    yPercent: offset + rapport,
 
 
       ease: Power4.easeInOut
-  }, 0);
+  });
 }
 function nextSlide(){
-  var offset;
-  for ( var i = 0, il = objects.length; i < il; i ++ ) {
-    var color = new THREE.Color('#FFFFFF');
-    var light2 = new THREE.Color('#662EFF');
-    var light1 = new THREE.Color('#2F1A51');
-    var light3 = new THREE.Color('#54FDD1');
+  if (! $('.wrap').hasClass('normal-scroll')){
+    var offset;
+    var rapport;
+    if ($('.slide-section')[0]._gsTransform && $('.slide-section')[0]._gsTransform.yPercent === ($('.slide-section').length-1)*-100 ){
+      setTimeout(function () {
+        $('.wrap').addClass('normal-scroll');
+        window.scrollTo(0, $('.slide-section').last().offset().top ,{duration:0})
 
+      }, 1000);
 
-    TweenLite.to(objects[ i ].material.color, 1, {
-      r: color.r,
-      g: color.g,
-      b: color.b,
-    });
-  }
-  console.log(lights)
-    TweenLite.to(lights[0].color, 1, {
-      r: light1.r,
-      g: light1.g,
-      b: light1.b,
-
-    });
-    TweenLite.to(lights[ 1 ].color, 1, {
-      r: light2.r,
-      g: light2.g,
-      b: light2.b,
-
-    });
-
-    TweenLite.to(lights[ 2 ].color, 1, {
-      r: light3.r,
-      g: light3.g,
-      b: light3.b,
-
-    });
-
-  if ($('.slide-section')[0]._gsTransform){
-    offset = $('.slide-section')[0]._gsTransform.yPercent
-  }
-  else{
-    offset = 0;
-  }
-  var breath = new TimelineMax({
-      repeat: 0,
-      yoyo: false,
-      delay:1
-
-  })
-  breath.staggerFromTo('.slide-section', 1, {
-      yPercent: offset,
-
-
-      ease: Power4.easeInOut
-  }, {
-    yPercent: offset -100 ,
-
-
-      ease: Power4.easeInOut
-  }, 0);
-}*/
-
-
-			var container;
-			var camera, scene, renderer;
-			var objects;
-      var material;
-			var mouseX = 0, mouseY = 0;
-      var lights = [];
-			var windowHalfX = window.innerWidth / 2;
-			var windowHalfY = window.innerHeight / 2;
-			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-      if (mobileAndTabletcheck() == true) {
-
+    }
+    else{
+      rapport = -100;
+      $('.wrap').removeClass('normal-scroll');
+      if ($('.slide-section')[0]._gsTransform){
+        offset = $('.slide-section')[0]._gsTransform.yPercent
       }
-      else {
-        initWebGl();
-        animateWebgl();
+      else{
+        offset = 0;
       }
+       console.log(offset);
+      var breath = new TimelineMax({
+          repeat: 0,
+          yoyo: false,
 
-			function initWebGl() {
-				container = document.getElementsByClassName( 'home-container' );
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.z = 3200;
-				scene = new THREE.Scene();
-
-
-        lights[0] = new THREE.DirectionalLight( 0xFAD8E2, 1 );
-        lights[0].position.set( 1, 0, 0 );
-        lights[1] = new THREE.DirectionalLight( 0x99F4FF, 1 );
-        lights[1].position.set( 0.75, 1, 0.5 );
-        lights[2] = new THREE.DirectionalLight( 0xFF91A3, 1 );
-        lights[2].position.set( -0.75, -1, 0.5 );
-        lights[3] = new THREE.DirectionalLight( 0xFFFFFF, 1 );
-        lights[3].position.set( 1, 1, 1 );
-        lights[3] = new THREE.DirectionalLight( 0xFFFFFF, 1 );
-        lights[3].position.set( 0, 0, 0 );
-        scene.add( lights[0] );
-        scene.add( lights[1] );
-        scene.add( lights[2] );
-        scene.add( lights[3] );
+      })
+      breath.staggerFromTo('.slide-section', 1, {
+          yPercent: offset,
 
 
-        var lightAmbiance = new THREE.HemisphereLight( 0xFAD8E2,0xFFF4F8, .2 );
-        scene.add( lightAmbiance );
+          ease: Power4.easeInOut
+      }, {
+        yPercent: offset + rapport ,
 
-			objects = [];
-        material = new THREE.MeshPhongMaterial({
-         color: 0xFFF4F8,
-        });
 
-          var loader = new THREE.BufferGeometryLoader();
-				  loader.load( 'src/audio/obj.json', function ( geometry ) {
-					geometry.computeVertexNormals();
-					for ( var i = 0; i < 200; i ++ ) {
-						var mesh = new THREE.Mesh( new THREE.IcosahedronBufferGeometry( .8, 1 ), material );
-						mesh.position.x = Math.random() * 8000 - 4000;
-						mesh.position.y = Math.random() * 8000 - 4000;
-						mesh.position.z = Math.random() * 8000 - 4000;
-						mesh.rotation.x = Math.random() * 2 * Math.PI;
-						mesh.rotation.y = Math.random() * 2 * Math.PI;
-						mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 5 + 100;
-						objects.push( mesh );
-						scene.add( mesh );
-					}
-				} );
-				renderer = new THREE.WebGLRenderer({alpha: true });
-        renderer.domElement.id = 'canvasBlob';
+          ease: Power4.easeInOut
+      }, 0);
+    }
+    }
 
-        renderer.setClearColor( 0x000000, 0 ); //default
 
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container[0].appendChild( renderer.domElement );
-				//
-				window.addEventListener( 'resize', onWindowResize, false );
-			}
-			function onWindowResize() {
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-				renderer.setSize( window.innerWidth, window.innerHeight );
-			}
-			function onDocumentMouseMove( event ) {
-				mouseX = ( event.clientX - windowHalfX ) * 10;
-				mouseY = ( event.clientY - windowHalfY ) * 10;
-			}
-			//
-			function animateWebgl() {
-				requestAnimationFrame( animateWebgl );
-				render();
-			}
-			function render() {
-				camera.position.x += ( mouseX - camera.position.x ) * .005;
-				camera.position.y += ( - mouseY - camera.position.y ) * .005;
-				camera.lookAt( scene.position );
-				for ( var i = 0, il = objects.length; i < il; i ++ ) {
-					objects[ i ].rotation.x += 0.01;
-					objects[ i ].rotation.y += 0.02;
-				}
-				renderer.render( scene, camera );
-			}
+}
+
+
+
 
 
 
