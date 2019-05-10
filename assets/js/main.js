@@ -306,9 +306,10 @@ function initHomePage() {
 
     }
     else {
-      initWebGl();
-      animateWebgl();
+
     }
+    initWebGl();
+    animateWebgl();
 
     function initWebGl() {
       container = document.getElementsByClassName( 'home-container' );
@@ -345,7 +346,7 @@ function initHomePage() {
         loader.load( 'src/audio/obj.json', function ( geometry ) {
         geometry.computeVertexNormals();
         for ( var i = 0; i < 200; i ++ ) {
-          var mesh = new THREE.Mesh( new THREE.IcosahedronBufferGeometry( .8, 1 ), material );
+          var mesh = new THREE.Mesh( new THREE.SphereGeometry( .8, 32, 32 ), material );
           mesh.position.x = Math.random() * 8000 - 4000;
           mesh.position.y = Math.random() * 8000 - 4000;
           mesh.position.z = Math.random() * 8000 - 4000;
@@ -358,7 +359,10 @@ function initHomePage() {
       } );
       renderer = new THREE.WebGLRenderer({alpha: true });
       renderer.domElement.id = 'canvasBlob';
-
+      const svg = '<svg class="goes-effect" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 60 -9"/></filter></defs></svg>',
+      blob = new Blob([svg], { type: 'image/svg+xml' }),
+      url = URL.createObjectURL(blob);
+      renderer.domElement.style.filter = `url('${url}#goo')`;
       renderer.setClearColor( 0x000000, 0 ); //default
 
       renderer.setPixelRatio( window.devicePixelRatio );

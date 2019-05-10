@@ -243,6 +243,13 @@ canvas{
 #canvasBlob{
   filter: url("#goo");
 }
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+
+  #canvasBlob{
+    filter: blur(5px)!important;
+  }
+}}
 .goes-effect{
   display: none;
 }
