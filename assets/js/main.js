@@ -481,7 +481,19 @@ function initSlideShow(){
   });
   // On before slide change
   slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    var letters = $('.case-list__item').eq(currentSlide).find('.letter-animation span');
+    var toAnimate = new TimelineMax();
+    toAnimate.staggerFromTo(letters, 0.5, {
+        ease: Back.easeOut.config(1.7),
+        opacity: 0,
 
+        bottom: 0
+    }, {
+        ease: Back.easeOut.config(1.7),
+        opacity: 1,
+
+        bottom:80
+    }, 0.05);
     var morphingCase = anime({
         targets: ".item__clippath",
         d: [{
@@ -500,6 +512,32 @@ function initSlideShow(){
   slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
       var coverUrlCurrent = $('.case-list__item').eq(currentSlide).data('cover');
       var coverUrlNext = $('.case-list__item').eq(nextSlide).data('cover');
+      var letters = $('.case-list__item').eq(nextSlide).find('.letter-animation span');
+      var toStagger = $('.case-list__item').eq(nextSlide).find('.toStagger');
+
+      var toAnimate = new TimelineMax();
+      var toAnimateStagger = new TimelineMax();
+
+      toAnimate.staggerFromTo(letters, 0.5, {
+          ease: Back.easeOut.config(1.7),
+          opacity: 0,
+
+          bottom: -80
+      }, {
+          ease: Back.easeOut.config(1.7),
+          opacity: 1,
+
+          bottom: 0
+      }, 0.05);
+      toAnimateStagger.staggerFromTo(toStagger, 0.8, {
+          ease: Back.easeOut.config(1.7),
+          opacity: 0,
+          yPercent: 100
+      }, {
+          ease: Back.easeOut.config(1.7),
+          opacity: 1,
+          yPercent: 0
+      }, 0.5);
       if (mobileAndTabletcheck() == true) {
         $('.effect-background').css("background-image", "url('src/img/1500/"+coverUrlNext+"')");
       }
