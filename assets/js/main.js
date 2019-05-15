@@ -8,9 +8,204 @@ import Barba from 'barba.js'; // Or nothing if loaded via the browser
 import * as THREE from 'three/build/three.min.js';
 import TweenMax from "gsap/TweenMax";
 import anime from 'animejs/lib/anime.es.js';
+import scrollify from 'jquery-scrollify';
+
 import slick from "slick-carousel";
 import luxy from "luxy.js";
 
+function WebGlTransition(opts) {
+    var vertex = `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+    `;
+
+    var fragment = `
+        varying vec2 vUv;
+
+        uniform sampler2D texture;
+        uniform sampler2D texture2;
+        uniform sampler2D disp;
+
+        // uniform float time;
+        // uniform float _rot;
+        uniform float dispFactor;
+        uniform float effectFactor;
+
+        // vec2 rotate(vec2 v, float a) {
+        //  float s = sin(a);
+        //  float c = cos(a);
+        //  mat2 m = mat2(c, -s, s, c);
+        //  return m * v;
+        // }
+
+        void main() {
+
+            vec2 uv = vUv;
+
+            // uv -= 0.5;
+            // vec2 rotUV = rotate(uv, _rot);
+            // uv += 0.5;
+
+            vec4 disp = texture2D(disp, uv);
+
+            vec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r*effectFactor), uv.y);
+            vec2 distortedPosition2 = vec2(uv.x - (1.0 - dispFactor) * (disp.r*effectFactor), uv.y);
+
+            vec4 _texture = texture2D(texture, distortedPosition);
+            vec4 _texture2 = texture2D(texture2, distortedPosition2);
+
+            vec4 finalTexture = mix(_texture, _texture2, dispFactor);
+
+            gl_FragColor = finalTexture;
+            // gl_FragColor = disp;
+        }
+    `;
+    this.opts = opts
+    var parent = this.opts.parent || console.warn("no parent");
+    var dispImage = this.opts.displacementImage || console.warn("displacement image missing");
+    var image1 = this.opts.image1 || console.warn("first image missing");
+    var image2 = this.opts.image2 || console.warn("second image missing");
+
+    var intensity = this.opts.intensity || 1;
+    var speedIn = this.opts.speedIn || 1.6;
+    var speedOut = this.opts.speedOut || 1.2;
+    var userHover = (this.opts.hover === undefined) ? true : this.opts.hover;
+    var easing = this.opts.easing ||  Power4.easeInOut;
+
+
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.OrthographicCamera(
+        parent.offsetWidth / -2,
+        parent.offsetWidth / 2,
+        parent.offsetHeight / 2,
+        parent.offsetHeight / -2,
+        1,
+        1000
+    );
+
+    camera.position.z = 1;
+
+    var renderer = new THREE.WebGLRenderer({
+        antialias: false,
+        alpha: true
+    });
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(0xffffff, 0.0);
+    renderer.setSize(parent.offsetWidth, parent.offsetHeight);
+    parent.appendChild(renderer.domElement);
+
+    // var addToGPU = function(t) {
+    //     renderer.setTexture2D(t, 0);
+    // };
+
+    var loader = new THREE.TextureLoader();
+    loader.crossOrigin = "";
+    var texture1 = loader.load(this.opts.image1);
+    var texture2 = loader.load(this.opts.image2);
+
+    var disp = loader.load(dispImage);
+    disp.wrapS = disp.wrapT = THREE.RepeatWrapping;
+
+    texture1.magFilter = texture2.magFilter = THREE.LinearFilter;
+    texture1.minFilter = texture2.minFilter = THREE.LinearFilter;
+
+    texture1.anisotropy = renderer.getMaxAnisotropy();
+    texture2.anisotropy = renderer.getMaxAnisotropy();
+
+    var mat = new THREE.ShaderMaterial({
+        uniforms: {
+            effectFactor: { type: "f", value: intensity },
+            dispFactor: { type: "f", value: 0.0 },
+            texture: { type: "t", value: texture1 },
+            texture2: { type: "t", value: texture2 },
+            disp: { type: "t", value: disp }
+        },
+
+        vertexShader: vertex,
+        fragmentShader: fragment,
+        transparent: true,
+        opacity: 1.0
+    });
+
+    var geometry = new THREE.PlaneBufferGeometry(
+        parent.offsetWidth,
+        parent.offsetHeight,
+        1
+    );
+
+    var object = new THREE.Mesh(geometry, mat);
+    scene.add(object);
+
+
+    this.animationFluid = function() {
+      TweenMax.to(mat.uniforms.dispFactor, 4, {
+          value: 1,
+          ease:  Power0.easeNone,
+          repeat:-1,
+          yoyo:false
+      });
+    }
+    this.transitionActive = function() {
+      loader = new THREE.TextureLoader();
+      loader.crossOrigin = "";
+      texture1 = loader.load(this.opts.image1);
+      texture2 = loader.load(this.opts.image2);
+
+      disp = loader.load(dispImage);
+      disp.wrapS = disp.wrapT = THREE.RepeatWrapping;
+
+      texture1.magFilter = texture2.magFilter = THREE.LinearFilter;
+      texture1.minFilter = texture2.minFilter = THREE.LinearFilter;
+
+      texture1.anisotropy = renderer.getMaxAnisotropy();
+      texture2.anisotropy = renderer.getMaxAnisotropy();
+
+      mat = new THREE.ShaderMaterial({
+          uniforms: {
+              effectFactor: { type: "f", value: intensity },
+              dispFactor: { type: "f", value: 0.0 },
+              texture: { type: "t", value: texture1 },
+              texture2: { type: "t", value: texture2 },
+              disp: { type: "t", value: disp }
+          },
+
+          vertexShader: vertex,
+          fragmentShader: fragment,
+          transparent: true,
+          opacity: 1.0
+      });
+
+      geometry = new THREE.PlaneBufferGeometry(
+          parent.offsetWidth,
+          parent.offsetHeight,
+          1
+      );
+      object = new THREE.Mesh(geometry, mat);
+      scene.add(object);
+      TweenMax.to(mat.uniforms.dispFactor, speedIn, {
+          value: 1,
+          ease: easing
+      });
+    }
+
+
+    window.addEventListener("resize", function(e) {
+        renderer.setSize(parent.offsetWidth, parent.offsetHeight);
+    });
+
+
+
+    var animate = function() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    };
+    animate();
+};
 (function($) {
     function injector(t, splitter, klass, after) {
         var text = t.text(),
@@ -142,7 +337,6 @@ function onReady(callback) {
 
 onReady(function() {
   /*luxy.init({
-    wrapperSpeed:  0.1
 
   });*/
   $(".letter-animation").lettering();
@@ -189,81 +383,18 @@ function initScrollify() {
 
   console.log('scrollify init');
 
-  /*  $.scrollify({
+   $.scrollify({
         section: ".slide-section",
         scrollSpeed: 800,
-        scrollbars: true,
+        scrollbars: false,
         easing: "easeOutExpo",
         touchScroll: true,
 
         setHeights: false,
         updateHash: false,
-        before: function() {
-          var x = document.getElementById("audio");
-          if (x){
-            x.pause();
-            x.currentTime = 0;
-          }
 
 
-
-
-          if (typeof audio != 'undefined' ){
-            //intervallGlitch.clearInterval();
-            console.log('Heere');
-
-          }
-          $('.client-container').removeClass('animate');
-
-          $('.client-container').removeClass('is-active');
-          $('.client-container').removeClass('is-pixel');
-          $('#canvas').removeClass('pixel');
-
-
-
-          if ($.scrollify.current().data('color-pallette')){
-            colorPallete = $.scrollify.current().data('color-pallette');
-
-          }
-          else{
-            colorPallete = ["#FFA4BC", "#C5D3FB", "#97F9FF"];
-          }
-          if (typeof $.scrollify.current().data('blob-x') !== 'undefined' ){
-            mouse.x = (window.innerWidth / 100) * ($.scrollify.current().data('blob-x'));
-            mouse.y = (window.innerHeight / 100) * ($.scrollify.current().data('blob-y'));
-          }
-          else{
-            mouse.x = window.innerWidth;
-            mouse.y = window.innerHeight;
-          }
-
-
-        },
-        after: function(){
-          if ($.scrollify.current().hasClass('client-container')){
-            $.scrollify.current().addClass('is-active');
-
-             setTimeout(function () {
-              $('.client-container').toggleClass('animate');
-              setTimeout(function () {
-                $('.client-container').toggleClass('is-pixel');
-                $('#canvas').toggleClass('pixel');
-                var x = document.getElementById("audio");
-                if (x){
-                  x.play();
-
-                }
-
-              }, 500);
-
-
-
-            }, 5000);
-          }
-        }
-
-
-    });*/
+    });
 }
 
 function initHomePage() {
@@ -337,10 +468,10 @@ function initHomePage() {
       var lightAmbiance = new THREE.HemisphereLight( 0xFAD8E2,0xFFF4F8, .2 );
       scene.add( lightAmbiance );
 
-    objects = [];
-      material = new THREE.MeshPhongMaterial({
-       color: 0xFFF4F8,
-      });
+      objects = [];
+        material = new THREE.MeshPhongMaterial({
+         color: 0xFFF4F8,
+        });
 
         var loader = new THREE.BufferGeometryLoader();
         loader.load( 'src/audio/obj.json', function ( geometry ) {
@@ -453,7 +584,8 @@ function animationLetter() {
 
 function initSlideShow(){
   const slider = $('.vertical-slider');
-
+  var coverUrlCurrent;
+  var coverUrlNext;
   slider.slick({
     vertical: true,
     horizontalSwiping: true,
@@ -463,6 +595,8 @@ function initSlideShow(){
     nextArrow: $('.next-slick'),
     dots:true,
     infinite: false,
+    autoplay: true,
+    autoplaySpeed: 10000,
     waitForAnimate:true,
     arrows: true,
     onAfterChange: function(slide, index){
@@ -480,7 +614,7 @@ function initSlideShow(){
 
   });
   // On before slide change
-  slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  $('.vertical-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     var letters = $('.case-list__item').eq(currentSlide).find('.letter-animation span');
     var toAnimate = new TimelineMax();
     toAnimate.staggerFromTo(letters, 0.5, {
@@ -509,9 +643,15 @@ function initSlideShow(){
         delay:0
     });
   });
-  slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-      var coverUrlCurrent = $('.case-list__item').eq(currentSlide).data('cover');
-      var coverUrlNext = $('.case-list__item').eq(nextSlide).data('cover');
+  var myAnimation = new WebGlTransition({
+      parent: document.querySelector('.effect-background'),
+      image1: 'src/img/1500/' + $('.case-list__item').eq(0).data('cover'),
+      image2: 'src/img/1500/' + $('.case-list__item').eq(1).data('cover'),
+      displacementImage: 'src/img/1500/ripple.jpg'
+    });
+  $('.vertical-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+       coverUrlCurrent = $('.case-list__item').eq(currentSlide).data('cover');
+       coverUrlNext = $('.case-list__item').eq(nextSlide).data('cover');
       var letters = $('.case-list__item').eq(nextSlide).find('.letter-animation span');
       var toStagger = $('.case-list__item').eq(nextSlide).find('.toStagger');
 
@@ -545,16 +685,15 @@ function initSlideShow(){
         if ($('.effect-background').find('canvas').length >= 2 ){
           $('.effect-background canvas').eq(0).remove();
         }
-        $('.effect-background').css("background-image", "url('src/img/1500/"+coverUrlNext+"')");
+        //$('.effect-background').css("background-image", "url('src/img/1500/"+coverUrlNext+"')");
 
-        /*var myAnimation = new hoverEffect({
-          parent: document.querySelector('.effect-background'),
-          image1: 'src/img/1500/' + coverUrlCurrent,
-          image2: 'src/img/1500/' + coverUrlNext,
-          displacementImage: 'src/img/1500/distorsion.jpg'
-        });*/
+      /*  ;*/
+
 
       }
+      myAnimation.opts['image1'] = "src/img/1500/"+coverUrlCurrent;
+      myAnimation.opts['image2'] = "src/img/1500/"+coverUrlNext;
+      myAnimation.transitionActive();
 
   });
 
@@ -599,7 +738,7 @@ var FadeTransition = Barba.BaseTransition.extend({
     },
 
     beforeEnter: function() {
-      initScrollify();
+      //initScrollify();
 
       var tl = new TimelineMax({
           repeat: 0,
@@ -618,8 +757,18 @@ var FadeTransition = Barba.BaseTransition.extend({
       this.done();
 
     }
+
 });
 var ExpandTransition = Barba.BaseTransition.extend({
+  valid : function() {
+
+            var prev = Barba.HistoryManager.prevStatus();
+            var next = Barba.HistoryManager.currentStatus();
+
+        console.log(prev.namespace + ' to ' + next.namespace);
+
+        return  next.namespace === 'home' ;
+    },
     start: function() {
         $('.main-nav').removeClass('active');
         $('.btn-menu').removeClass('cross');
@@ -632,18 +781,22 @@ var ExpandTransition = Barba.BaseTransition.extend({
       var tl = new TimelineMax({
           repeat: 0,
           yoyo: false,
+
           onComplete: function() {
               deferred.resolve();
               animationLetter();
           }
 
       });
-      tl.staggerFromTo("#loading-screen", 1, {
-          autoAlpha: 0,
-          ease: Power4.easeInOut
-      }, {
+      tl.staggerFromTo("#loading-screen,.loading-screen-after", .8, {
           autoAlpha: 1,
+          yPercent: 100,
           ease: Power4.easeInOut
+
+      }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        ease: Power4.easeInOut
       });
 
         var deferred = Barba.Utils.deferred();
@@ -653,17 +806,21 @@ var ExpandTransition = Barba.BaseTransition.extend({
     },
 
     beforeEnter: function() {
-      initScrollify();
+      //initScrollify();
       var tl = new TimelineMax({
           repeat: 0,
           yoyo: false,
 
       });
-      tl.staggerFromTo("#loading-screen", 1, {
+      tl.staggerFromTo(".loading-screen-after,#loading-screen", .8, {
           autoAlpha: 1,
+          yPercent: 0,
+
           ease: Power4.easeInOut
       }, {
-          autoAlpha: 0,
+          autoAlpha: 1,
+          yPercent: -100,
+
           ease: Power4.easeInOut
       });
       $(".letter-animation").lettering();
@@ -673,6 +830,68 @@ var ExpandTransition = Barba.BaseTransition.extend({
     }
 });
 
+var CaseStudySibling = Barba.BaseTransition.extend({
+
+    start: function() {
+        $('.main-nav').removeClass('active');
+        $('.btn-menu').removeClass('cross');
+
+        Promise
+            .all([this.newContainerLoading, this.beforeLeave()]) //Call Function = BeforeLeave
+            .then(this.beforeEnter.bind(this));
+    },
+    beforeLeave: function() {
+      var tl = new TimelineMax({
+          repeat: 0,
+          yoyo: false,
+
+          onComplete: function() {
+              deferred.resolve();
+              animationLetter();
+          }
+
+      });
+      tl.staggerFromTo(".home-container__cover,.slide-show__nav,.slick-dots", .8, {
+          autoAlpha: 1,
+          ease: Power4.easeInOut
+
+      }, {
+        autoAlpha: 0,
+        ease: Power4.easeInOut
+      });
+
+
+        var deferred = Barba.Utils.deferred();
+
+        return deferred.promise;
+
+    },
+
+    beforeEnter: function() {
+      //initScrollify();
+    /*  var tl = new TimelineMax({
+          repeat: 0,
+          yoyo: false,
+
+      });
+      tl.staggerFromTo(".loading-screen-after,#loading-screen", .8, {
+          autoAlpha: 1,
+          yPercent: 0,
+
+          ease: Power4.easeInOut
+      }, {
+          autoAlpha: 1,
+          yPercent: -100,
+
+          ease: Power4.easeInOut
+      });*/
+      //$(".letter-animation").lettering();
+
+      this.done();
+
+    }
+
+});
 
 
 var Homepage = Barba.BaseView.extend({
@@ -686,7 +905,7 @@ var Homepage = Barba.BaseView.extend({
     },
     onEnterCompleted: function() {
         // The Transition has just finished.
-        initScrollify();
+       //initScrollify();
         initSlideShow();
         //animationLetter();
 
@@ -704,11 +923,9 @@ Homepage.init();
 
 var Works = Barba.BaseView.extend({
     namespace: 'post',
-
     onEnter: function() {
         // The new Container is ready and attached to the DOM.
-        initScrollify();
-
+        //initScrollify();
 
 
 
@@ -716,6 +933,14 @@ var Works = Barba.BaseView.extend({
         console.log(this.namespace +" INIT");
     },
     onEnterCompleted: function() {
+      var myAnimation = new WebGlTransition({
+          parent: document.querySelector('.effect-background'),
+          image1: '../../src/img/1500/' + $('.case-list__item').data('cover'),
+          image2: '../../src/img/1500/' + $('.case-list__item').data('cover'),
+          displacementImage: '../../src/img/1500/clouds.jpg'
+        });
+      myAnimation.animationFluid();
+
       var breath = new TimelineMax({
           repeat: 0,
           yoyo: false,
@@ -743,21 +968,25 @@ var Works = Barba.BaseView.extend({
         // A new Transition toward a new page has just started.
       //  $.scrollify.instantPrevious();
 
+
     },
     onLeaveCompleted: function() {}
 });
 
 // Don't forget to init the view!
 Works.init();
-function isCasestudy(array) {
-    var bool = array.includes("work",2);
-    return bool;
-}
+
+let lastClickEl;
+Barba.Dispatcher.on('linkClicked', (el) => {
+  lastClickEl = el;
+});
+
 Barba.Pjax.getTransition = function() {
+  if (lastClickEl.classList.contains('work-detail-link')) {
+    return CaseStudySibling;
 
-    return ExpandTransition;
-
-
+  }
+  return ExpandTransition;
 };
 Barba.Pjax.start();
 
@@ -916,192 +1145,3 @@ function nextSlide(){
 
 
 }
-
-
-
-
-
-
-
-      var hoverEffect = function(opts) {
-          var vertex = `
-              varying vec2 vUv;
-              void main() {
-                vUv = uv;
-                gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-              }
-          `;
-
-          var fragment = `
-              varying vec2 vUv;
-
-              uniform sampler2D texture;
-              uniform sampler2D texture2;
-              uniform sampler2D disp;
-
-              // uniform float time;
-              // uniform float _rot;
-              uniform float dispFactor;
-              uniform float effectFactor;
-
-              // vec2 rotate(vec2 v, float a) {
-              //  float s = sin(a);
-              //  float c = cos(a);
-              //  mat2 m = mat2(c, -s, s, c);
-              //  return m * v;
-              // }
-
-              void main() {
-
-                  vec2 uv = vUv;
-
-                  // uv -= 0.5;
-                  // vec2 rotUV = rotate(uv, _rot);
-                  // uv += 0.5;
-
-                  vec4 disp = texture2D(disp, uv);
-
-                  vec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r*effectFactor), uv.y);
-                  vec2 distortedPosition2 = vec2(uv.x - (1.0 - dispFactor) * (disp.r*effectFactor), uv.y);
-
-                  vec4 _texture = texture2D(texture, distortedPosition);
-                  vec4 _texture2 = texture2D(texture2, distortedPosition2);
-
-                  vec4 finalTexture = mix(_texture, _texture2, dispFactor);
-
-                  gl_FragColor = finalTexture;
-                  // gl_FragColor = disp;
-              }
-          `;
-
-          var parent = opts.parent || console.warn("no parent");
-          var dispImage = opts.displacementImage || console.warn("displacement image missing");
-          var image1 = opts.image1 || console.warn("first image missing");
-          var image2 = opts.image2 || console.warn("second image missing");
-          var intensity = opts.intensity || 1;
-          var speedIn = opts.speedIn || 1.6;
-          var speedOut = opts.speedOut || 1.2;
-          var userHover = (opts.hover === undefined) ? true : opts.hover;
-          var easing = opts.easing || Expo.easeOut;
-
-
-
-          var scene = new THREE.Scene();
-          var camera = new THREE.OrthographicCamera(
-              parent.offsetWidth / -2,
-              parent.offsetWidth / 2,
-              parent.offsetHeight / 2,
-              parent.offsetHeight / -2,
-              1,
-              1000
-          );
-
-          camera.position.z = 1;
-
-          var renderer = new THREE.WebGLRenderer({
-              antialias: false,
-              alpha: true
-          });
-
-          renderer.setPixelRatio(window.devicePixelRatio);
-          renderer.setClearColor(0xffffff, 0.0);
-          renderer.setSize(parent.offsetWidth, parent.offsetHeight);
-          parent.appendChild(renderer.domElement);
-
-          // var addToGPU = function(t) {
-          //     renderer.setTexture2D(t, 0);
-          // };
-
-          var loader = new THREE.TextureLoader();
-          loader.crossOrigin = "";
-          var texture1 = loader.load(image1);
-          var texture2 = loader.load(image2);
-
-          var disp = loader.load(dispImage);
-          disp.wrapS = disp.wrapT = THREE.RepeatWrapping;
-
-          texture1.magFilter = texture2.magFilter = THREE.LinearFilter;
-          texture1.minFilter = texture2.minFilter = THREE.LinearFilter;
-
-          texture1.anisotropy = renderer.getMaxAnisotropy();
-          texture2.anisotropy = renderer.getMaxAnisotropy();
-
-          var mat = new THREE.ShaderMaterial({
-              uniforms: {
-                  effectFactor: { type: "f", value: intensity },
-                  dispFactor: { type: "f", value: 0.0 },
-                  texture: { type: "t", value: texture1 },
-                  texture2: { type: "t", value: texture2 },
-                  disp: { type: "t", value: disp }
-              },
-
-              vertexShader: vertex,
-              fragmentShader: fragment,
-              transparent: true,
-              opacity: 1.0
-          });
-
-          var geometry = new THREE.PlaneBufferGeometry(
-              parent.offsetWidth,
-              parent.offsetHeight,
-              1
-          );
-          var object = new THREE.Mesh(geometry, mat);
-          scene.add(object);
-
-          var addEvents = function(){
-              var evtIn = "mouseenter";
-              var evtOut = "mouseleave";
-              if (mobileAndTabletcheck()) {
-                  evtIn = "touchstart";
-                  evtOut = "touchend";
-              }
-              TweenMax.to(mat.uniforms.dispFactor, speedIn, {
-                  value: 1,
-                  ease: easing
-              });
-            /*  parent.addEventListener(evtIn, function(e) {
-                  TweenMax.to(mat.uniforms.dispFactor, speedIn, {
-                      value: 1,
-                      ease: easing
-                  });
-              });*/
-
-              /*parent.addEventListener(evtOut, function(e) {
-                  TweenMax.to(mat.uniforms.dispFactor, speedOut, {
-                      value: 0,
-                      ease: easing
-                  });
-              });*/
-          };
-
-          if (userHover) {
-              addEvents();
-          }
-
-          window.addEventListener("resize", function(e) {
-              renderer.setSize(parent.offsetWidth, parent.offsetHeight);
-          });
-
-
-          this.next = function(){
-              TweenMax.to(mat.uniforms.dispFactor, speedIn, {
-                  value: 1,
-                  ease: easing
-              });
-          }
-
-          this.previous = function(){
-              TweenMax.to(mat.uniforms.dispFactor, speedOut, {
-                  value: 0,
-                  ease: easing
-              });
-          };
-
-          var animate = function() {
-              requestAnimationFrame(animate);
-
-              renderer.render(scene, camera);
-          };
-          animate();
-      };

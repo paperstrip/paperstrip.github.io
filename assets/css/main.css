@@ -3640,7 +3640,16 @@ html {
 
 @media all and (max-width: 1024px) {
   .slick-dots {
-    margin-right: 1.5%;
+    margin-right: 0;
+    margin: 0 auto;
+    width: 100%;
+    top: auto;
+    transform: none;
+    bottom: 20px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
   }
 }
 
@@ -3649,10 +3658,26 @@ html {
   padding: 2.5px 0;
 }
 
+@media all and (max-width: 1024px) {
+  .slick-dots li {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+  }
+}
+
 .slick-dots li.slick-active button:after {
   opacity: 1;
   height: 2px;
   width: 120%;
+}
+
+@media all and (max-width: 1024px) {
+  .slick-dots li.slick-active button:after {
+    width: 10px;
+    height: 10px;
+    background: white;
+  }
 }
 
 .slick-dots li button {
@@ -3667,6 +3692,14 @@ html {
   text-indent: -9999px;
 }
 
+@media all and (max-width: 1024px) {
+  .slick-dots li button {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+}
+
 .slick-dots li button:after {
   position: absolute;
   content: "";
@@ -3678,6 +3711,16 @@ html {
   transition: all .2s ease;
 }
 
+@media all and (max-width: 1024px) {
+  .slick-dots li button:after {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-radius: 100%;
+    border: solid 1px white;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -3685,7 +3728,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #F1F1F1;
+  background-color: white;
+  background-image: radial-gradient(ellipse farthest-corner at 20% 40%, #586A8C 23%, #120B1E 100%);
   font-family: 'Poppins', sans-serif;
   touch-action: manipulation;
 }
@@ -3805,7 +3849,6 @@ body {
   overflow: hidden;
   width: 100%;
   position: absolute;
-  height: 100vh;
 }
 
 .wrap.normal-scroll {
@@ -3862,12 +3905,25 @@ ul li {
 #loading-screen {
   position: fixed;
   z-index: 99999;
-  background: #FFE8EE;
+  background-image: linear-gradient(-135deg, #ffe8ee, #c9cfff 52%, #97f9ff);
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loading-screen .loading-screen-after {
+  position: absolute;
+  z-index: -1;
+  background: white;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: block;
   align-items: center;
   justify-content: center;
 }
@@ -4058,6 +4114,15 @@ canvas.pixel {
   z-index: 5;
 }
 
+@media all and (max-width: 1024px) {
+  .case-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .big-title {
   font-size: 10vw;
 }
@@ -4116,717 +4181,717 @@ canvas.pixel {
 }
 
 .wrapper-gooey:hover circle:nth-child(8) {
-  transform: translateX(51%) translateY(82%) scale(0);
+  transform: translateX(128%) translateY(38%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(9) {
-  transform: translateX(115%) translateY(60%) scale(0);
+  transform: translateX(4%) translateY(84%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(10) {
-  transform: translateX(125%) translateY(6%) scale(0);
+  transform: translateX(34%) translateY(122%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(11) {
-  transform: translateX(70%) translateY(111%) scale(0);
+  transform: translateX(11%) translateY(127%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(12) {
-  transform: translateX(76%) translateY(126%) scale(0);
+  transform: translateX(90%) translateY(19%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(13) {
-  transform: translateX(103%) translateY(51%) scale(0);
+  transform: translateX(58%) translateY(16%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(14) {
-  transform: translateX(105%) translateY(35%) scale(0);
+  transform: translateX(73%) translateY(52%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(15) {
-  transform: translateX(100%) translateY(97%) scale(0);
+  transform: translateX(87%) translateY(110%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(16) {
-  transform: translateX(79%) translateY(32%) scale(0);
+  transform: translateX(117%) translateY(3%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(17) {
-  transform: translateX(20%) translateY(116%) scale(0);
+  transform: translateX(115%) translateY(82%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(18) {
-  transform: translateX(3%) translateY(43%) scale(0);
+  transform: translateX(45%) translateY(105%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(19) {
-  transform: translateX(9%) translateY(7%) scale(0);
+  transform: translateX(89%) translateY(124%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(20) {
-  transform: translateX(33%) translateY(75%) scale(0);
+  transform: translateX(66%) translateY(59%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(21) {
-  transform: translateX(93%) translateY(107%) scale(0);
+  transform: translateX(130%) translateY(65%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(22) {
-  transform: translateX(105%) translateY(48%) scale(0);
+  transform: translateX(57%) translateY(119%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(23) {
-  transform: translateX(100%) translateY(34%) scale(0);
+  transform: translateX(112%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(24) {
-  transform: translateX(18%) translateY(90%) scale(0);
+  transform: translateX(121%) translateY(124%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(25) {
-  transform: translateX(64%) translateY(3%) scale(0);
+  transform: translateX(43%) translateY(5%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(26) {
-  transform: translateX(64%) translateY(125%) scale(0);
+  transform: translateX(48%) translateY(24%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(27) {
-  transform: translateX(15%) translateY(117%) scale(0);
+  transform: translateX(60%) translateY(121%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(28) {
-  transform: translateX(69%) translateY(63%) scale(0);
+  transform: translateX(54%) translateY(130%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(29) {
-  transform: translateX(10%) translateY(129%) scale(0);
+  transform: translateX(15%) translateY(13%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(30) {
-  transform: translateX(51%) translateY(45%) scale(0);
+  transform: translateX(52%) translateY(60%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(31) {
-  transform: translateX(97%) translateY(100%) scale(0);
+  transform: translateX(86%) translateY(13%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(32) {
-  transform: translateX(79%) translateY(125%) scale(0);
+  transform: translateX(68%) translateY(38%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(33) {
-  transform: translateX(1%) translateY(22%) scale(0);
+  transform: translateX(70%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(34) {
-  transform: translateX(109%) translateY(53%) scale(0);
+  transform: translateX(84%) translateY(86%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(35) {
-  transform: translateX(81%) translateY(46%) scale(0);
+  transform: translateX(19%) translateY(85%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(36) {
-  transform: translateX(64%) translateY(39%) scale(0);
+  transform: translateX(20%) translateY(67%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(37) {
-  transform: translateX(29%) translateY(118%) scale(0);
+  transform: translateX(93%) translateY(107%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(38) {
-  transform: translateX(85%) translateY(97%) scale(0);
+  transform: translateX(40%) translateY(8%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(39) {
-  transform: translateX(105%) translateY(119%) scale(0);
+  transform: translateX(64%) translateY(124%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(40) {
-  transform: translateX(58%) translateY(99%) scale(0);
+  transform: translateX(31%) translateY(33%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(41) {
-  transform: translateX(67%) translateY(91%) scale(0);
+  transform: translateX(87%) translateY(69%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(42) {
-  transform: translateX(26%) translateY(72%) scale(0);
+  transform: translateX(69%) translateY(92%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(43) {
-  transform: translateX(33%) translateY(10%) scale(0);
+  transform: translateX(54%) translateY(42%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(44) {
-  transform: translateX(118%) translateY(79%) scale(0);
+  transform: translateX(56%) translateY(35%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(45) {
-  transform: translateX(86%) translateY(82%) scale(0);
+  transform: translateX(96%) translateY(7%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(46) {
-  transform: translateX(103%) translateY(61%) scale(0);
+  transform: translateX(56%) translateY(107%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(47) {
-  transform: translateX(130%) translateY(109%) scale(0);
+  transform: translateX(116%) translateY(96%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(48) {
-  transform: translateX(29%) translateY(78%) scale(0);
+  transform: translateX(65%) translateY(11%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(49) {
-  transform: translateX(78%) translateY(113%) scale(0);
+  transform: translateX(106%) translateY(44%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(50) {
-  transform: translateX(93%) translateY(62%) scale(0);
+  transform: translateX(1%) translateY(71%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(51) {
-  transform: translateX(41%) translateY(78%) scale(0);
+  transform: translateX(85%) translateY(68%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(52) {
-  transform: translateX(95%) translateY(76%) scale(0);
+  transform: translateX(107%) translateY(40%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(53) {
-  transform: translateX(47%) translateY(65%) scale(0);
+  transform: translateX(93%) translateY(105%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(54) {
-  transform: translateX(51%) translateY(34%) scale(0);
+  transform: translateX(64%) translateY(79%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(55) {
-  transform: translateX(62%) translateY(98%) scale(0);
+  transform: translateX(105%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(56) {
-  transform: translateX(82%) translateY(125%) scale(0);
+  transform: translateX(32%) translateY(24%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(57) {
-  transform: translateX(125%) translateY(47%) scale(0);
+  transform: translateX(127%) translateY(50%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(58) {
-  transform: translateX(50%) translateY(58%) scale(0);
+  transform: translateX(116%) translateY(81%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(59) {
-  transform: translateX(119%) translateY(15%) scale(0);
+  transform: translateX(19%) translateY(2%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(60) {
-  transform: translateX(12%) translateY(32%) scale(0);
+  transform: translateX(35%) translateY(85%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(61) {
-  transform: translateX(1%) translateY(57%) scale(0);
+  transform: translateX(118%) translateY(69%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(62) {
-  transform: translateX(30%) translateY(100%) scale(0);
+  transform: translateX(58%) translateY(72%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(63) {
-  transform: translateX(49%) translateY(72%) scale(0);
+  transform: translateX(2%) translateY(79%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(64) {
-  transform: translateX(72%) translateY(99%) scale(0);
+  transform: translateX(30%) translateY(37%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(65) {
-  transform: translateX(128%) translateY(20%) scale(0);
+  transform: translateX(21%) translateY(16%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(66) {
-  transform: translateX(25%) translateY(14%) scale(0);
+  transform: translateX(30%) translateY(58%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(67) {
-  transform: translateX(120%) translateY(38%) scale(0);
+  transform: translateX(107%) translateY(123%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(68) {
-  transform: translateX(107%) translateY(74%) scale(0);
+  transform: translateX(93%) translateY(92%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(69) {
-  transform: translateX(43%) translateY(92%) scale(0);
+  transform: translateX(15%) translateY(71%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(70) {
-  transform: translateX(73%) translateY(96%) scale(0);
+  transform: translateX(130%) translateY(94%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(71) {
-  transform: translateX(22%) translateY(68%) scale(0);
+  transform: translateX(129%) translateY(32%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(72) {
-  transform: translateX(97%) translateY(111%) scale(0);
+  transform: translateX(100%) translateY(36%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(73) {
-  transform: translateX(71%) translateY(97%) scale(0);
+  transform: translateX(3%) translateY(50%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(74) {
-  transform: translateX(98%) translateY(16%) scale(0);
+  transform: translateX(43%) translateY(88%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(75) {
-  transform: translateX(75%) translateY(125%) scale(0);
+  transform: translateX(56%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(76) {
-  transform: translateX(36%) translateY(99%) scale(0);
+  transform: translateX(67%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(77) {
-  transform: translateX(124%) translateY(41%) scale(0);
+  transform: translateX(34%) translateY(29%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(78) {
-  transform: translateX(39%) translateY(10%) scale(0);
+  transform: translateX(83%) translateY(60%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(79) {
-  transform: translateX(9%) translateY(91%) scale(0);
+  transform: translateX(10%) translateY(117%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(80) {
-  transform: translateX(107%) translateY(84%) scale(0);
+  transform: translateX(11%) translateY(94%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(81) {
-  transform: translateX(37%) translateY(1%) scale(0);
+  transform: translateX(117%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(82) {
-  transform: translateX(11%) translateY(76%) scale(0);
+  transform: translateX(29%) translateY(90%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(83) {
-  transform: translateX(89%) translateY(10%) scale(0);
+  transform: translateX(40%) translateY(65%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(84) {
-  transform: translateX(4%) translateY(125%) scale(0);
+  transform: translateX(16%) translateY(28%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(85) {
-  transform: translateX(50%) translateY(9%) scale(0);
+  transform: translateX(102%) translateY(79%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(86) {
-  transform: translateX(107%) translateY(65%) scale(0);
+  transform: translateX(88%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(87) {
-  transform: translateX(41%) translateY(35%) scale(0);
+  transform: translateX(13%) translateY(14%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(88) {
-  transform: translateX(64%) translateY(5%) scale(0);
+  transform: translateX(4%) translateY(44%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(89) {
-  transform: translateX(112%) translateY(42%) scale(0);
+  transform: translateX(40%) translateY(93%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(90) {
-  transform: translateX(9%) translateY(54%) scale(0);
+  transform: translateX(40%) translateY(125%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(91) {
-  transform: translateX(78%) translateY(97%) scale(0);
+  transform: translateX(106%) translateY(35%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(92) {
-  transform: translateX(101%) translateY(47%) scale(0);
+  transform: translateX(81%) translateY(67%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(93) {
-  transform: translateX(94%) translateY(119%) scale(0);
+  transform: translateX(110%) translateY(53%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(94) {
-  transform: translateX(124%) translateY(58%) scale(0);
+  transform: translateX(84%) translateY(123%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(95) {
-  transform: translateX(97%) translateY(42%) scale(0);
+  transform: translateX(14%) translateY(77%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(96) {
-  transform: translateX(55%) translateY(9%) scale(0);
+  transform: translateX(119%) translateY(17%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(97) {
-  transform: translateX(52%) translateY(123%) scale(0);
+  transform: translateX(80%) translateY(82%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(98) {
-  transform: translateX(34%) translateY(78%) scale(0);
+  transform: translateX(56%) translateY(14%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(99) {
-  transform: translateX(20%) translateY(25%) scale(0);
+  transform: translateX(126%) translateY(96%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(100) {
-  transform: translateX(83%) translateY(50%) scale(0);
+  transform: translateX(72%) translateY(125%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(101) {
-  transform: translateX(7%) translateY(38%) scale(0);
+  transform: translateX(31%) translateY(87%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(102) {
-  transform: translateX(69%) translateY(1%) scale(0);
+  transform: translateX(112%) translateY(10%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(103) {
-  transform: translateX(58%) translateY(98%) scale(0);
+  transform: translateX(7%) translateY(53%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(104) {
-  transform: translateX(118%) translateY(62%) scale(0);
+  transform: translateX(128%) translateY(26%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(105) {
-  transform: translateX(99%) translateY(78%) scale(0);
+  transform: translateX(37%) translateY(41%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(106) {
-  transform: translateX(42%) translateY(47%) scale(0);
+  transform: translateX(28%) translateY(35%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(107) {
-  transform: translateX(37%) translateY(46%) scale(0);
+  transform: translateX(17%) translateY(107%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(108) {
-  transform: translateX(16%) translateY(95%) scale(0);
+  transform: translateX(31%) translateY(80%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(109) {
-  transform: translateX(65%) translateY(36%) scale(0);
+  transform: translateX(125%) translateY(49%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(110) {
-  transform: translateX(98%) translateY(58%) scale(0);
+  transform: translateX(118%) translateY(58%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(111) {
-  transform: translateX(75%) translateY(98%) scale(0);
+  transform: translateX(22%) translateY(106%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(112) {
-  transform: translateX(84%) translateY(129%) scale(0);
+  transform: translateX(50%) translateY(58%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(113) {
-  transform: translateX(19%) translateY(76%) scale(0);
+  transform: translateX(44%) translateY(107%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(114) {
-  transform: translateX(76%) translateY(98%) scale(0);
+  transform: translateX(64%) translateY(98%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(115) {
-  transform: translateX(25%) translateY(32%) scale(0);
+  transform: translateX(35%) translateY(71%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(116) {
-  transform: translateX(125%) translateY(84%) scale(0);
+  transform: translateX(22%) translateY(1%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(117) {
-  transform: translateX(5%) translateY(35%) scale(0);
+  transform: translateX(51%) translateY(20%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(118) {
-  transform: translateX(13%) translateY(29%) scale(0);
+  transform: translateX(64%) translateY(66%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(119) {
-  transform: translateX(86%) translateY(38%) scale(0);
+  transform: translateX(30%) translateY(129%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(120) {
-  transform: translateX(92%) translateY(90%) scale(0);
+  transform: translateX(1%) translateY(112%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(121) {
-  transform: translateX(27%) translateY(109%) scale(0);
+  transform: translateX(111%) translateY(85%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(122) {
-  transform: translateX(117%) translateY(49%) scale(0);
+  transform: translateX(6%) translateY(5%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(123) {
-  transform: translateX(21%) translateY(88%) scale(0);
+  transform: translateX(13%) translateY(92%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(124) {
-  transform: translateX(45%) translateY(73%) scale(0);
+  transform: translateX(120%) translateY(107%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(125) {
-  transform: translateX(55%) translateY(81%) scale(0);
+  transform: translateX(50%) translateY(18%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(126) {
-  transform: translateX(77%) translateY(53%) scale(0);
+  transform: translateX(64%) translateY(106%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(127) {
-  transform: translateX(47%) translateY(73%) scale(0);
+  transform: translateX(92%) translateY(41%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(128) {
-  transform: translateX(21%) translateY(98%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(129) {
-  transform: translateX(17%) translateY(57%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(130) {
-  transform: translateX(60%) translateY(98%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(131) {
-  transform: translateX(118%) translateY(106%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(132) {
-  transform: translateX(128%) translateY(62%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(133) {
-  transform: translateX(67%) translateY(77%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(134) {
-  transform: translateX(31%) translateY(120%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(135) {
-  transform: translateX(57%) translateY(9%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(136) {
-  transform: translateX(9%) translateY(19%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(137) {
-  transform: translateX(23%) translateY(111%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(138) {
-  transform: translateX(55%) translateY(56%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(139) {
-  transform: translateX(20%) translateY(12%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(140) {
-  transform: translateX(9%) translateY(6%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(141) {
-  transform: translateX(49%) translateY(127%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(142) {
-  transform: translateX(68%) translateY(12%) scale(0);
-  transition: 2s ease-in;
-}
-
-.wrapper-gooey:hover circle:nth-child(143) {
   transform: translateX(102%) translateY(38%) scale(0);
   transition: 2s ease-in;
 }
 
+.wrapper-gooey:hover circle:nth-child(129) {
+  transform: translateX(44%) translateY(14%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(130) {
+  transform: translateX(4%) translateY(73%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(131) {
+  transform: translateX(45%) translateY(85%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(132) {
+  transform: translateX(56%) translateY(117%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(133) {
+  transform: translateX(35%) translateY(114%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(134) {
+  transform: translateX(77%) translateY(54%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(135) {
+  transform: translateX(99%) translateY(3%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(136) {
+  transform: translateX(70%) translateY(4%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(137) {
+  transform: translateX(1%) translateY(95%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(138) {
+  transform: translateX(90%) translateY(86%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(139) {
+  transform: translateX(53%) translateY(78%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(140) {
+  transform: translateX(76%) translateY(106%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(141) {
+  transform: translateX(100%) translateY(34%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(142) {
+  transform: translateX(4%) translateY(2%) scale(0);
+  transition: 2s ease-in;
+}
+
+.wrapper-gooey:hover circle:nth-child(143) {
+  transform: translateX(85%) translateY(121%) scale(0);
+  transition: 2s ease-in;
+}
+
 .wrapper-gooey:hover circle:nth-child(144) {
-  transform: translateX(67%) translateY(26%) scale(0);
+  transform: translateX(25%) translateY(28%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(145) {
-  transform: translateX(103%) translateY(57%) scale(0);
+  transform: translateX(127%) translateY(31%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(146) {
-  transform: translateX(112%) translateY(112%) scale(0);
+  transform: translateX(70%) translateY(48%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(147) {
-  transform: translateX(54%) translateY(89%) scale(0);
+  transform: translateX(69%) translateY(107%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(148) {
-  transform: translateX(38%) translateY(104%) scale(0);
+  transform: translateX(22%) translateY(51%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(149) {
-  transform: translateX(80%) translateY(64%) scale(0);
+  transform: translateX(47%) translateY(72%) scale(0);
   transition: 2s ease-in;
 }
 
 .wrapper-gooey:hover circle:nth-child(150) {
-  transform: translateX(83%) translateY(41%) scale(0);
+  transform: translateX(31%) translateY(46%) scale(0);
   transition: 2s ease-in;
 }
 
@@ -4881,13 +4946,19 @@ circle {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  transition: background-image 1s ease;
+  position: relative;
+}
+
+.slide-section.portfolio-container.open-project {
+  background-image: linear-gradient(-45deg, #2F1A51 0%, #662EFF 100%, #54FDD1 100%);
 }
 
 .slide-section.portfolio-container .effect-background {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-position: right center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   top: 0;
@@ -5011,6 +5082,13 @@ circle {
 
 .slide-section.portfolio-container:after {
   background: #FF6C6C;
+}
+
+.case-list__item-detail {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .client-container {
@@ -5410,7 +5488,8 @@ circle {
   transform: translate(-50%, -50%) scale(1);
   width: 100%;
   height: 100%;
-  background: url("../img/1500/menu-background.jpg");
+  background: #7a6cff;
+  background-image: linear-gradient(-135deg, #FFE8EE 0%, #C9CFFF 52%, #97F9FF 100%);
   background-position: center;
   background-size: cover;
   z-index: -1;
@@ -5426,7 +5505,8 @@ circle {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: white;
+  background: #7a6cff;
+  background-image: linear-gradient(135deg, #FFE8EE 0%, #C9CFFF 52%, #97F9FF 100%);
   z-index: -2;
   opacity: 0;
   transition: all 0s .6s ease;

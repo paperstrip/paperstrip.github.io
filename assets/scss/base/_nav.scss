@@ -227,7 +227,10 @@
     transform: translate(-50%,-50%) scale(1);
     width:100%;
     height: 100%;
-    background: url('../img/1500/menu-background.jpg');
+    background:#7a6cff;
+    background-image: linear-gradient(-135deg, #FFE8EE 0%, #C9CFFF 52%, #97F9FF 100%);
+
+
 
     background-position: center;
     background-size: cover;
@@ -244,7 +247,9 @@
     transform: translate(-50%,-50%);
     width:100%;
     height: 100%;
-    background: white;
+    background: #7a6cff;
+    background-image: linear-gradient(135deg, #FFE8EE 0%, #C9CFFF 52%, #97F9FF 100%);
+
     z-index: -2;
     opacity: 0;
     transition: all 0s .6s ease;

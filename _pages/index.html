@@ -23,7 +23,7 @@ coverImageSectionClient : glitch-1.png
     </g>
 </svg>
 </div>
-  <div class="home-container section slide-section">
+  <div class="home-container section slide-section luxy-el" data-speed-y="-50" data-offset="0">
     <img class="home-container__cover"   width="100%" srcset="
     {{ site.baseurl }}/src/img/1500/{{page.coverImageSectionHome}},
     {{ site.baseurl }}/src/img/1024/{{page.coverImageSectionHome}},
@@ -32,7 +32,7 @@ coverImageSectionClient : glitch-1.png
     {% include blob.html %}
 
     <div class="home-container__content container__cover ">
-      <div class="col-lg-6 col-md-8 col-sm-12">
+      <div class="col-lg-6 col-md-8 col-sm-12 luxy-el" data-speed-y="-50" data-offset="50">
         <h1 class="letter-animation"  data-0="transform:translate3d(0px, 0px, 0px); opacity:1;" data-end="transform:translate3d(0px, -350px, 0px); opacity:0;">
           Arnaud Herr
         </h1>
@@ -51,7 +51,7 @@ coverImageSectionClient : glitch-1.png
     </h2>-->
 
   </div>
-  <div class="portfolio-container section slide-section skrollable skrollable-between" id="portfolio-home" data-color-pallette='[ "#FFAFB5","#FF9E84", "#FFC17A", "#80C4FF"]' data-blob-x="0" data-blob-y="100">
+  <div class="portfolio-container section slide-section" id="portfolio-home" data-color-pallette='[ "#FFAFB5","#FF9E84", "#FFC17A", "#80C4FF"]' data-blob-x="0" data-blob-y="100">
     <div  class="effect-background"  style="background-image:url('src/img/1500/{{site.posts.first.dataCover}}')"></div>
     <img class="home-container__cover transition-left skrollable skrollable-between" data-100p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;"  data-200p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"   width="100%" srcset="
     {{ site.baseurl }}/src/img/1500/{{page.coverImageSectionCase}},
@@ -97,9 +97,9 @@ coverImageSectionClient : glitch-1.png
 
           </a>-->
           <div class="col-lg-6 col-md-8 col-sm-12 case-list__item" data-cover="{{item.dataCover}}">
-            <h2 class="letter-animation col-sm-12 transition-left" data-0="transform:translate3d(0px,  250px, 0px);opacity:1;" data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(-250px, 0px, 0px);opacity:0;">{{item.title}}</h2>
+            <h2 class="letter-animation col-sm-12 transition-left">{{item.title}}</h2>
             <p class="home-container__content-text toStagger col-lg-6 col-md-8 col-sm-12 " data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, -310px, 0px);">{{item.summary}}</p>
-            <a class="btn btn--red toStagger" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, 350px, 0px);" href="{{site.data.mainnav[1].navLink}}">Découvrir plus</a>
+            <a class="btn btn--red toStagger work-detail-link" data-0="transform:translate3d(0px,0px, 0px);"  data-100p="transform:translate3d(0px, 0px, 0px);opacity:1;" data-200p="transform:translate3d(0px, 350px, 0px);" href="{{item.url}}">Découvrir plus</a>
           </div>
 
 
@@ -107,7 +107,7 @@ coverImageSectionClient : glitch-1.png
       {% endfor %}
     </div>
   </div>
-  <div class="client-container slide-section" data-color-pallette='[ "#FF85DF","#CFC0EF", "#A9D7EF", "#77FFCA"]' data-blob-x="95" data-blob-y="5">
+  <!--<div class="client-container slide-section" data-color-pallette='[ "#FF85DF","#CFC0EF", "#A9D7EF", "#77FFCA"]' data-blob-x="95" data-blob-y="5">
     <div class="home-container__cover"   data-100p="transform:translate3d(0, 0%, 0px) scale(2); opacity:0;" data-200p="transform:translate3d(0px, 0%, 0px) scale(1); opacity:1;" data-0="transform:translate3d(0px, -200%, 0px) scale(1); opacity:0;"></div>
     <div class="client-container__content">
       <div class="col-lg-6 col-md-8 col-sm-12">
@@ -127,5 +127,5 @@ coverImageSectionClient : glitch-1.png
     <audio id="audio">
       <source src="{{ site.baseurl }}/src/audio/seba.mp3" type="audio/mp3">
     </audio>
-  </div>
+  </div>-->
 </div>

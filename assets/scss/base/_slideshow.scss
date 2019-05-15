@@ -185,17 +185,37 @@
 	transform: translateY(-50%);
 	display: block!important;
 	@include mq('tablet'){
-		margin-right: 1.5%;
+		margin-right: 0;
+		margin: 0 auto;
+		width: 100%;
+		top: auto;
+		transform: none;
+		bottom: 20px;
+		display: flex!important;
+		align-items: center;
+		justify-content: center;
+		align-self: flex-end;
 	}
 	li{
 		width: 100%;
 		padding: 2.5px 0;
+		@include mq('tablet'){
+			width: 30px;
+			height: 30px;
+			padding: 10px;
+		}
 		&.slick-active{
 			button{
 				&:after{
 					opacity: 1;
 					height: 2px;
 					width: 120%;
+					@include mq('tablet'){
+						width: 10px;
+						height: 10px;
+						background: white;
+
+					}
 				}
 			}
 		}
@@ -209,6 +229,13 @@
 			justify-content: flex-end;
 			outline: none;
 			text-indent: -9999px;
+			@include mq('tablet'){
+				width: 100%;
+				height: 100%;
+				justify-content: center;
+
+
+			}
 			&:after{
 				position: absolute;
 				content: "";
@@ -218,6 +245,14 @@
 				height: 1px;
 				opacity: .6;
 				transition: all .2s ease;
+				@include mq('tablet'){
+					width: 10px;
+					height: 10px;
+					background: transparent;
+					border-radius: 100%;
+					border:solid 1px white;
+
+				}
 			}
 		}
 	}
