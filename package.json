@@ -1,0 +1,30 @@
+{
+  "name": "parcel-static-site-starter",
+  "version": "1.0.0",
+  "description": "A simple toolchain to build your simple static website in the right way",
+  "main": "index.js",
+  "scripts": {
+    "reset": "rimraf dist && rimraf .cache",
+    "start": "rimraf dist && parcel serve src/index.html",
+    "build": "rimraf dist && parcel build src/index.html --public-url ./",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Naman Gupta",
+  "license": "ISC",
+  "devDependencies": {
+    "@barba/core": "^2.9.7",
+    "@barba/router": "^2.1.10",
+    "@parcel/transformer-sass": "^2.12.0",
+    "autoprefixer": "^10.4.19",
+    "gh-pages": "^6.1.1",
+    "gsap": "^3.12.5",
+    "jquery": "^3.7.1",
+    "lenis": "^1.1.1",
+    "parcel": "^2.12.0",
+    "parcel-bundler": "^1.12.5",
+    "postcss": "^8.4.38",
+    "postcss-modules": "^6.0.0",
+    "rimraf": "^5.0.7",
+    "sass": "^1.77.4"
+  }
+}
