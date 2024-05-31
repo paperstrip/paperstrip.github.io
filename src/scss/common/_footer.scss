@@ -1,0 +1,223 @@
+body#homeIndex {
+  .footer__header {
+    margin-bottom: 50vh;
+    @include mq("tablet") {
+      overflow: hidden;
+      height: 100vh;
+      height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 75vh;
+    }
+    .fake-map {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      @include mq("tablet") {
+        width: 100%;
+      }
+    }
+    .map {
+      display: block;
+      @include mq("tablet") {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.main-footer.container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  .general-contact{
+    white-space: nowrap;
+  }
+  .footer__header {
+    margin-bottom: 0;
+
+    pointer-events: none;
+
+    .fake-map {
+      h2 {
+        padding: 0 calc(var(--margin) * 8);
+        margin-bottom: calc(var(--margin) * 2);
+        @include mq("tablet") {
+          padding: 0;
+          text-align: center;
+        }
+      }
+      .pin {
+        svg {
+          width: 60px;
+          height: auto;
+          margin-left: calc(var(--margin) * 12);
+        }
+      }
+    }
+    .map {
+      width: calc(var(--margin) * 39);
+      height: auto;
+      overflow: hidden;
+      display: none;
+      @include mq("tablet") {
+        width: 100%;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .pin-spacer {
+    pointer-events: none;
+  }
+
+  .contact {
+    padding-left: calc(var(--margin) * 1);
+    padding-right: calc(var(--margin) * 1);
+
+    .contact__informations {
+      display: flex;
+      flex-wrap: wrap;
+      .info__item {
+        @include mq("laptop") {
+          text-align: right;
+        }
+        &:nth-child(1) {
+          flex: 0 0 calc(var(--margin) * 8);
+          max-width: calc(var(--margin) * 8);
+          margin-left: calc(var(--margin) * 2);
+          display: flex;
+          align-items: flex-end;
+          @include mq("laptop") {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-left: 0;
+            align-items: flex-end;
+            justify-content: flex-end;
+          }
+        }
+        &:nth-child(2) {
+          flex: 0 0 calc(var(--margin) * 16);
+          max-width: calc(var(--margin) * 16);
+          margin-left: calc(var(--margin) * 8);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          @include mq("laptop") {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-left: 0;
+            margin-bottom: -20%;
+          }
+          .btn {
+            margin-top: calc(var(--margin) * 4);
+            margin-bottom: 0;
+          }
+        }
+        &:nth-child(3) {
+          flex: 0 0 calc(var(--margin) * 10);
+          max-width: calc(var(--margin) * 10);
+          margin-left: calc(var(--margin) * 2);
+          margin-bottom: 0;
+          margin-top: auto;
+          @include mq("laptop") {
+            margin-left: 0;
+          }
+          .cover-image {
+            width: 100%;
+            padding-bottom: 56.666%;
+          }
+        }
+      }
+    }
+  }
+
+  .footer__colophon {
+    display: flex;
+    justify-content: space-between;
+    margin-top: calc(var(--margin) * 3);
+    flex-wrap: wrap;
+    padding-left: calc(var(--margin) * 3);
+    @include mq("laptop") {
+      padding-left: calc(var(--margin) * 1);
+      padding-right: calc(var(--margin) * 1);
+    }
+    .colophon__left {
+      margin-top: var(--margin);
+      @include mq("laptop") {
+        width: 100%;
+      }
+
+      p {
+        opacity: 0.5;
+        color: var(--color);
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        text-align: left;
+        text-transform: lowercase;
+        margin: 0;
+        padding: 0;
+        a {
+          text-transform: lowercase;
+          font-weight: 300;
+          text-decoration: none;
+          color: var(--color);
+        }
+      }
+      .colophon__legals {
+        display: flex;
+        flex-wrap: wrap;
+        @include mq("laptop") {
+          width: 100%;
+          justify-content: space-between;
+        }
+        a.privacy-policy-link {
+          opacity: 0.5;
+          color: var(--color);
+          font-size: 12px;
+          font-weight: 300;
+          letter-spacing: 0px;
+          text-align: left;
+          text-transform: lowercase;
+          margin: 0;
+          padding: 0;
+          display: inline-block;
+          margin-right: calc(var(--margin) * 2);
+        }
+      }
+    }
+    .colophon__right {
+      margin-top: var(--margin);
+      @include mq("tablet") {
+        width: 100%;
+        margin-top: calc(var(--margin) * 2);
+        .baseline {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+body#homeIndex {
+  footer {
+    margin-top: 100vh;
+    @include mq("tablet") {
+      margin-top: 0;
+    }
+    .footer__header {
+      display: block;
+    }
+  }
+}

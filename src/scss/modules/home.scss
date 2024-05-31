@@ -1,0 +1,10 @@
+body#homeIndex {
+  footer {
+    //display: none;
+  }
+}
+@import "home/_home-introduction";
+@import "home/_home-about";
+@import "home/_home-thematiques";
+@import "home/_home-labs";
+@import "home/_home-contact";

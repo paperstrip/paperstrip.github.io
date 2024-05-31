@@ -1,0 +1,25 @@
+:root {
+  --bg: #194035;
+  --color: var(--color);
+}
+
+body {
+  background-color: var(--color);
+  color: var(--color);
+  text-align: center;
+  border-radius: 20px;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+}
+
+main {
+  background-color: red;
+}
+
+@media only screen and (width <= 600px) {
+  main {
+    font-size: 10vw;
+  }
+}
+/*# sourceMappingURL=index.b10d73a7.css.map */
