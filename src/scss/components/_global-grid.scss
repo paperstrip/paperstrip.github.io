@@ -1,0 +1,13 @@
+.container--full{
+  padding: var(--body-margin);
+  display: flex;
+  width: 100%;
+  .container__inner{
+    min-height: 100%;
+    width: 100%;
+    border-radius: var(--box-radius);
+    background-color: var(--dark-green);
+    padding: calc(var(--margin)*2);
+    color: var(--light-green);
+  }
+}

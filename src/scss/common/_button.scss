@@ -1,0 +1,27 @@
+.btn {
+  appearance: none;
+  font-size: 0.857rem;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: transparent;
+  color: var(--color);
+  padding: 15px 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+  color: var(--light-green);
+  &:before{
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background-color: var(--green);
+    margin-right: 15px;
+    display: block;
+    content: "";
+  }
+
+}

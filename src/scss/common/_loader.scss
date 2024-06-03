@@ -1,0 +1,20 @@
+[data-barba-introductionscreen] {
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  background-color: var(--color);
+  color: var(--bg-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--margin);
+  padding-right: calc(var(--margin) + 4px);
+  padding-top: var(--header-height);
+  padding-bottom: calc(var(--margin)* .5);
+
+}
+  

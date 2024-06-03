@@ -1,0 +1,47 @@
+.container__inner.home-introduction {
+  width: 100%;
+  display: flex;
+  padding-bottom: calc(var(--margin) * 0.5);
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--purple);
+  .inner{
+    flex: 0 0 50%;
+    max-width: 50%;
+    @include mq('laptop'){
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+    @include mq('tablet'){
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .header{
+      margin-bottom:calc(var(--margin));
+    }
+    .wide-title,.medium-title{
+      color: var(--green);
+      a,span{
+        text-decoration: none;
+        color: var(--purple);
+        background-color: var(--green);
+        padding: 5px 10px;
+        border-radius: 4px;
+        font: inherit;
+      }
+    }
+    .body{
+      width: 75%;
+      @include mq('desktop'){
+        width: 100%;
+      }
+    }
+    p{
+      color: var(--light-green);
+    }
+
+    .footer{
+      margin-top: calc(var(--margin)*2);
+    }
+  }
+}

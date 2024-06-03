@@ -1,0 +1,403 @@
+[data-form-message-success] {
+  border: solid 1px var(--color);
+  padding: calc((var(--margin) * 1));
+  display: block;
+  text-align: center;
+  display: none;
+  background-color: var(--color);
+  color: var(--bg-color);
+  margin-top: 10px;
+  p {
+    margin: 0;
+    padding: 0;
+    color: var(--bg-color);
+  }
+}
+ul.parsley-errors-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: block;
+    font-size: 10px;
+    font-size: 10px;
+    line-height: 110%;
+    font-weight: 300;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: red;
+    margin-top: 5px;
+  }
+}
+
+form {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  border: solid 1px var(--color);
+  padding: 20px;
+  font-size: 1rem;
+  letter-spacing: 0.075rem;
+  line-height: 125%;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  resize: none;
+  width: 100%;
+  &::placeholder {
+    font: inherit;
+    opacity: 1;
+    color: var(--color);
+  }
+}
+
+.form-row {
+  label {
+    text-align: right;
+    opacity: 1;
+    font-size: 1rem;
+    font-weight: 300;
+    font-variation-settings: "wght" 500;
+    font-style: Italic;
+    letter-spacing: .5rem;
+    text-align: right;
+    text-transform: lowercase;
+    display: block;
+    margin: 5px 0;
+    abbr {
+      text-decoration: none;
+    }
+  }
+  .row {
+    margin-left: calc(var(--margin) * -0.5);
+    margin-right: calc(var(--margin) * -0.5);
+    display: flex;
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+  &--half {
+    .form-row__field {
+      padding-left: calc(var(--margin) * 0.5);
+      padding-right: calc(var(--margin) * 0.5);
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include mq("laptop") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  &--tier {
+    .form-row__field {
+      padding-left: calc(var(--margin) * 0.5);
+      padding-right: calc(var(--margin) * 0.5);
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      @include mq("laptop") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+[data-barba-namespace="checkoutIndex"],
+.woocommerce-shipping-methods {
+  li {
+    display: flex;
+    margin-bottom: 5px;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
+    + label {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0px;
+
+      text-align: left;
+      position: relative;
+      padding: 5px;
+      padding-left: 25px;
+      display: flex;
+      font-weight: 300;
+      font-variation-settings: "wght" 300;
+      margin-right: 0;
+      margin-left: auto;
+      &:hover {
+        cursor: pointer;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+        a {
+          font: inherit;
+          color: var(--color);
+          text-decoration: underline;
+        }
+      }
+      &:before {
+        width: 15px;
+        height: 15px;
+        border: solid 1px var(--color);
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        transform: translateY(-50%);
+        top: 50%;
+        transition: background-color 0.15s ease-in-out;
+      }
+    }
+    &:checked {
+      + label {
+        &::before {
+          background-color: var(--color);
+        }
+      }
+    }
+  }
+  input[type="radio"] {
+    + label {
+      &:before {
+        border-radius: 100%;
+      }
+    }
+  }
+}
+textarea {
+  font-family: "gal-gothic-variable", sans-serif;
+}
+.newsletter-form {
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"] {
+    font-family: "gal-gothic-variable", sans-serif;
+
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    color: rgba(0, 0, 0, 1);
+    background-color: transparent;
+    font-weight: 100;
+    font-style: normal;
+    font-weight: 200;
+    text-align: right;
+    font-size: 200px;
+    @include fluid-type(768px, 1440px, 90px, 200px);
+    font-weight: 300;
+    font-variation-settings: "wght" 300;
+    appearance: none;
+    border: none;
+    width: 100%;
+    outline: none;
+
+    @include fluid-type(768px, 1440px, 42px, 120px);
+    line-height: 76.7%;
+    padding-top: calc(var(--margin) * 2);
+    letter-spacing: -8px;
+    @include mq("laptop") {
+      letter-spacing: -4px;
+    }
+    @include mq("tablet") {
+      letter-spacing: -2px;
+    }
+    &::placeholder {
+      color: var(--color);
+      opacity: 1;
+      line-height: 100%;
+      font: inherit;
+      font-weight: 100;
+      text-transform: uppercase;
+      font-family: smoosh-2, "Palatino", serif;
+
+      letter-spacing: 0px;
+
+      font-size: 250px;
+      @include fluid-type(768px, 1440px, 100px, 250px);
+      transition: font-size 0.15s ease-in-out;
+    }
+    &:focus {
+      &::placeholder {
+        font-size: 120px;
+        @include fluid-type(768px, 1440px, 42px, 120px);
+      }
+    }
+  }
+}
+
+input[type="number"] {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  color: var(--color);
+  opacity: 1;
+  line-height: 100%;
+  font: inherit;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-family: smoosh-2, "Palatino", serif;
+
+  letter-spacing: 0px;
+  font-size: 250px;
+  @include fluid-type(768px, 1440px, 48px, 80px);
+  transition: font-size 0.15s ease-in-out;
+  text-align: center;
+  max-width: 100px;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+}
+
+.gdpr {
+  padding: 15px;
+  input {
+    display: none;
+    + label {
+      font-size: 1.68rem;
+      font-weight: 300;
+      letter-spacing: 0px;
+      text-align: left;
+      position: relative;
+      padding-left: 35px;
+      display: flex;
+      font-weight: 300;
+      font-variation-settings: "wght" 300;
+      p {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+        a {
+          font: inherit;
+          color: var(--color);
+          text-decoration: underline;
+        }
+      }
+      &:before {
+        width: 25px;
+        height: 25px;
+        border: solid 1px var(--color);
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        transform: translateY(-50%);
+        top: 50%;
+        transition: background-color 0.15s ease-in-out;
+      }
+    }
+    &:checked {
+      + label {
+        &::before {
+          background-color: var(--color);
+        }
+      }
+    }
+  }
+}
+
+.coupon input[type="text"] {
+  border: solid 1px var(--color);
+  padding: 20px;
+  font-size: 1rem;
+  letter-spacing: 0.075rem;
+  line-height: 125%;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+
+  &::placeholder {
+    font: inherit;
+    opacity: 1;
+    color: var(--color);
+  }
+}
+
+.form-login,
+.form-register {
+  .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+  a.lost {
+    display: inline-block;
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+    opacity: 1;
+    color: var(--color);
+    font-size: 12px;
+    font-weight: 300;
+    font-variation-settings: "wght" 300;
+    letter-spacing: normal;
+    text-decoration: underline !important;
+    padding: 10px 0 !important;
+  }
+
+  a.register {
+    padding: 0 !important;
+    display: block;
+    margin-top: calc(var(--margin) * -1);
+    color: var(--color);
+    @include mq("laptop") {
+      margin-top: var(--margin);
+    }
+  }
+  a .title {
+    font-size: 12vw;
+  }
+  a .cta-customize {
+    display: block;
+    text-align: right;
+    @include mq("laptop") {
+      text-align: left;
+    }
+  }
+  button[type="submit"] {
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: var(--margin);
+    z-index: 4;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 110%;
+    font-weight: 400;
+    font-variation-settings: "wght" 400;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+}
+.form-register {
+  display: none;
+}
+
+.contact-form {
+  .container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .gdpr {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: calc(var(--margin) * 2);
+    }
+  }
+}
