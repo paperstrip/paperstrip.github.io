@@ -76,14 +76,24 @@ window.initView = function () {
 
 
 // Promise pour charger Barba.js
-const barbaJsPromise = new Promise((resolve) => {
-    import(/*webpackMode:"lazy"*/ /*eagger*/ /* webpackChunkName: "barbaSysthem" */ "./_barba/barba.js").then(({ default: BarbaJs }) => {
-        window.barba = new BarbaJs();
-        window.barba.setDefaultTransition();
-        window.barba.addTransition(window.thematiquesTransition);
-
-        resolve(true);
-    });
+const barbaJsPromise = new Promise((resolve, reject) => {
+    import(/* webpackMode: "lazy" */ /* webpackChunkName: "barbaSysthem" */ "./_barba/barba.js")
+        .then(module => {
+            console.log(module);
+            const BarbaJs = module.default;
+            if (BarbaJs) {
+                window.barba = new BarbaJs();
+                window.barba.setDefaultTransition();
+                window.barba.addTransition(window.thematiquesTransition);
+                resolve(true);
+            } else {
+                reject(new Error("Failed to load BarbaJs"));
+            }
+        })
+        .catch(error => {
+            console.error('Error loading BarbaJs module:', error);
+            reject(error);
+        });
 });
 
 // Promise pour charger ScrollAnimation

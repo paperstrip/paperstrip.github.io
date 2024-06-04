@@ -25,7 +25,7 @@ console.info("%c HANDMADED WITH ❤ BY WIBICOM ", styles);
  ****************************************************/
 window.isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0) ? true : false;
 
-window.dev = false;
+window.dev = true;
 async function lazyLoadJQuery() {
   if (typeof jQuery !== "undefined") {
     // If jQuery is already loaded, resolve immediately
@@ -56,7 +56,7 @@ const lazyLoadInitScript = () => {
 
 // Call the lazy load function when needed
 lazyLoadJQuery();
-let DEBUG = process.env.NODE_ENV == "development" ? true : false;
+let DEBUG = window.dev;
 if (!DEBUG) {
   if (!window.console) window.console = {};
   var methods = ["log", "debug", "warn", "info"];
