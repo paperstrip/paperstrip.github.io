@@ -1,0 +1,1 @@
+(self.webpackChunkwibicom_stater_pack=self.webpackChunkwibicom_stater_pack||[]).push([[623],{3623:()=>{window.home=new function(){this.index=function(){alert("Home")}}}}]);

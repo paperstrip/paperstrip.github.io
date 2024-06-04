@@ -1,0 +1,1 @@
+(self.webpackChunkwibicom_stater_pack=self.webpackChunkwibicom_stater_pack||[]).push([[783],{6783:()=>{window.about=new function(){this.index=function(){}}}}]);
