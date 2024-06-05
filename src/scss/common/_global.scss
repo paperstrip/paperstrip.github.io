@@ -17,6 +17,7 @@ body::-webkit-scrollbar {
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG);
+
 }
 * {
   &::-webkit-scrollbar {
@@ -105,7 +106,7 @@ html {
   color: var(--color);
   background-color: var(--bg-color);
   height: auto;
-  font-family: 'Supreme-Variable';
+  font-family: 'Supreme-Variable', sans-serif;
   font-weight: 400;
 
   font-style: normal;

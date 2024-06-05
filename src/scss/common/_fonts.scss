@@ -182,32 +182,28 @@
   line-height: 90%;
   text-align: left;
   font-weight: 700;
-  //@include fluid-type(768px, 1440px, 48px, 72px);
-
-
+  @include fluid-type(768px, 1440px, 48px, 72px);
 }
 
 .big-title {
   margin: 0;
   padding: 0;
   font-size: 52px;
- // @include fluid-type(768px, 1440px, 32px, 52px);
+  @include fluid-type(768px, 1440px, 32px, 52px);
   letter-spacing: -1.36px;
-  line-height: 90%;
-
+  line-height: 120%;
   color: #3EFA94;
 }
 
 .medium-title{
-
   margin: 0;
   padding: 0;
   font-weight: 300;
   font-size: 24px;
-  //@include fluid-type(768px, 1440px, 18pxx, 24px);
+  @include fluid-type(768px, 1440px, 18px, 24px);
   font-weight: 300;
   letter-spacing: 3px;
-  line-height: 120%;
+  line-height: 150%;
   text-transform: uppercase;
 }
 

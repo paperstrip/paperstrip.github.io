@@ -70,6 +70,7 @@ window.initGlobal = function () {
 };
 window.initView = function () {
     window.menuNav.updateCurrentLink();
+
 };
 
 
@@ -131,7 +132,10 @@ const initializeApp = () => {
         window.barba.init();
         window.globalScroll.init().then(() => {
             window.scrollAnimation.init();
+
             window.scrollAnimation.initGlobal();
+            window.scrollAnimation.initView()
+
             window.scrollAnimation.lazyload();
             window.landingLoader.init();
         });

@@ -28,7 +28,8 @@
         "html-webpack-plugin": "^5.6.0",
         "jquery": "^3.7.1",
         "lenis": "^1.1.1",
-        "parsleyjs": "^2.9.2"
+        "parsleyjs": "^2.9.2",
+        "splitting": "^1.1.0"
     },
     "devDependencies": {
         "@babel/core": "^7.20.12",

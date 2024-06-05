@@ -21,13 +21,22 @@
     }
     .wide-title,.medium-title{
       color: var(--green);
-      a,span{
+      span{
+        color: #FFF;
+      }
+      a{
         text-decoration: none;
         color: var(--purple);
         background-color: var(--green);
+        border: solid 2px var(--green);
         padding: 5px 10px;
         border-radius: 4px;
         font: inherit;
+        transition: background-color .15s $authenticMotion,color .15s $authenticMotion;
+        &:hover{
+          color: var(--green);
+          background-color: transparent;
+        }
       }
     }
     .body{

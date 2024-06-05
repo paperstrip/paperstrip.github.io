@@ -1,0 +1,34 @@
+.container__inner.home-about {
+    width: 100%;
+    display: flex;
+    padding-bottom: calc(var(--margin) * 0.5);
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--purple);
+    .inner{
+        padding: calc(var(--margin)*2) calc(var(--margin)*6);
+     
+        .big-title{
+            text-align: center;
+            color: white;
+            span{
+                color: white;
+            }
+            strong{
+                color: var(--green);
+                
+            }
+
+        }
+     
+      
+    }
+    .footer{
+        margin-top: calc(var(--margin)*2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+  }
+  
