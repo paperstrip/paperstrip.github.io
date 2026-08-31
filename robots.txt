@@ -1,0 +1,5 @@
+# https://paperstrip.github.io/
+User-agent: *
+Allow: /
+
+Sitemap: https://paperstrip.github.io/sitemap.xml

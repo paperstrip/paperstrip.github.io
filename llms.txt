@@ -1,0 +1,46 @@
+# Arnaud Herr
+
+> Basé en Belgique. J'intègre des agents IA dans les outils métier qui tournent
+> déjà : ERP, CRM, boutique en ligne. Je construis aussi des sites web et des
+> logiciels métier sur mesure, produits avec l'IA puis repris à la main.
+
+Basé en Belgique, j'interviens en Wallonie et à Bruxelles, en français.
+Dix ans passés à connecter des systèmes qui n'avaient pas prévu de se parler.
+
+Ce qui me distingue : l'IA produit vite, et produit donc vite du médiocre quand
+personne ne la tient. Mon travail commence après la génération, au moment où il
+faut décider, vérifier et couper.
+
+## Ce que je fais
+
+- [Agents IA branchés sur vos outils métier](https://paperstrip.github.io/) : tri documentaire automatisé, réponses client assistées, extensions de navigateur qui ajoutent une fonction à une interface existante, croisement de données et tableau de bord de pilotage, ponts entre boutique en ligne et outil de gestion. La logique agentique est livrée en API et branchée par l'équipe ou l'intégrateur déjà en place. L'intelligence arrive le plus souvent dans le logiciel que les équipes ouvrent déjà ; quand un écran supplémentaire est nécessaire, il est annoncé au départ.
+- [Pilotage par les données et tableau de bord](https://paperstrip.github.io/pilotage-donnees/) : plateforme adaptée au métier du client, pas un logiciel en abonnement. Les sources internes (ERP, CRM, boutique en ligne, caisse, comptabilité) sont rassemblées puis croisées avec des données de contexte extérieur : météo, jours fériés et vacances scolaires, fréquentation, mouvements sociaux et grèves, cours des matières premières, recherches et positions. Un modèle d'IA intégré permet d'interroger l'ensemble en français, avec citation des chiffres utilisés. Modules activables selon le besoin, dont un module de référencement croisant recherches, positions et ventes réelles. Le modèle économique combine une adaptation initiale au métier du client et un abonnement couvrant la plateforme, l'hébergement, les mises à jour et l'accès aux données de contexte. Le socle et les modules sont développés en collaboration avec Wecocoon (https://www.wecocoon.com/), agence d'intelligence artificielle basée à Bruxelles ; l'adaptation et le suivi passent par Arnaud Herr.
+- [Sites web sur mesure conçus avec l'IA](https://paperstrip.github.io/sites-web-ia/) : statiques ou WordPress. Rendu non générique, structure HTML sémantique, Core Web Vitals tenus, référencement naturel et GEO travaillés.
+- [Logiciels métier sur mesure](https://paperstrip.github.io/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités et des tests là où une erreur coûte de l'argent. Hébergement possible sur mes serveurs en Belgique.
+- [Sous-traitance technique pour agences](https://paperstrip.github.io/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, clause de non-sollicitation acceptée.
+- [SEO, GEO et contenu généré par IA](https://paperstrip.github.io/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
+- [Qui je suis](https://paperstrip.github.io/a-propos/) : Arnaud Herr, dix ans à connecter des systèmes métier en Belgique. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, Wecocoon pour la plateforme de pilotage, et les intégrateurs déjà en place chez le client.
+- [Contact](https://paperstrip.github.io/contact/) : arnaudherr@gmail.com, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement. Sont gratuits : la réponse écrite, l'appel et la proposition chiffrée. Tout ce qui commence ensuite est facturé, y compris le cadrage sur place, et chaque montant est annoncé avant que l'étape commence.
+
+## Cadre
+
+- [Mentions légales](https://paperstrip.github.io/mentions-legales/) : éditeur, hébergement, données personnelles. Le site n'utilise aucun cookie, aucun traceur et aucun outil de mesure d'audience.
+
+## Comment je travaille
+
+1. On identifie ensemble les tâches qui reviennent tous les jours, avec les personnes qui les font. On isole deux ou trois gestes répétitifs et on met un chiffre dessus.
+2. Un seul cas d'usage mis en production vite, jugé en conditions réelles avant d'engager plus large.
+3. Ce qui a fait ses preuves se réplique. Le reste s'arrête.
+
+## Ce que je refuse
+
+- Lancer une automatisation sans avoir chiffré au préalable le temps réellement passé sur le geste. Sans point de départ, personne ne peut dire si ça a servi.
+- Faire passer un logiciel sur mesure quand un produit du marché fait le travail pour moins cher.
+- Promettre un rang en GEO : les moteurs génératifs ne publient pas de position, on peut réunir les conditions d'être cité, pas garantir la citation.
+
+## Cadre sur les données
+
+Anonymisation des données personnelles avant traitement. Hébergement applicatif
+sur mes serveurs en Belgique quand le projet en demande un. Validation humaine
+partout où la décision engage l'entreprise vis-à-vis d'un client. Traçabilité de
+bout en bout. Exigences RGPD prises comme point de départ.
