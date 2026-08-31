@@ -43,6 +43,99 @@
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
+  /* ---------- ACCORDÉONS ----------
+     <details> bascule en display:none : l'ouverture est un à-coup. On garde
+     l'élément natif (clavier, recherche dans la page, sans JS il fonctionne)
+     et on anime sa hauteur autour du changement d'état. */
+  if(!reduce){
+    Array.prototype.forEach.call(document.querySelectorAll('.faq details'), function(d){
+      var sum = d.querySelector('summary');
+      if(!sum) return;
+      var anim = null;
+
+      function hauteurOuverte(){
+        var h = sum.offsetHeight;
+        Array.prototype.forEach.call(d.children, function(c){
+          if(c !== sum) h += c.offsetHeight + parseFloat(getComputedStyle(c).marginTop || 0);
+        });
+        return h;
+      }
+
+      function joue(de, vers, ferme){
+        if(anim) anim.cancel();
+        anim = d.animate({height:[de + 'px', vers + 'px']},
+                         {duration:320, easing:'cubic-bezier(.215,.61,.355,1)'});
+        anim.onfinish = function(){
+          anim = null;
+          d.style.height = '';
+          if(ferme) d.open = false;
+        };
+        anim.oncancel = function(){ anim = null; };
+      }
+
+      sum.addEventListener('click', function(e){
+        e.preventDefault();
+        var depart = d.offsetHeight;
+        if(d.open){
+          joue(depart, sum.offsetHeight, true);
+        } else {
+          d.open = true;
+          joue(depart, hauteurOuverte(), false);
+        }
+      });
+    });
+  }
+
+  /* ---------- DÉFILEMENT ADOUCI ----------
+     Interpolation du défilement à chaque image, façon Lenis. Uniquement sur
+     pointeur fin : le tactile a déjà son inertie native, et la lui reprendre
+     donne toujours quelque chose de moins bon que ce que fait le système. */
+  (function(){
+    if(reduce) return;
+    if(!window.matchMedia('(pointer:fine)').matches) return;
+
+    var cible = window.scrollY, courant = cible, actif = false;
+
+    function max(){
+      return document.documentElement.scrollHeight - window.innerHeight;
+    }
+    function boucle(){
+      var reste = cible - courant;
+      if(Math.abs(reste) < 0.4){
+        courant = cible;
+        window.scrollTo({top:courant, behavior:'instant'});
+        actif = false; return;
+      }
+      courant += reste * 0.12;
+      /* 'instant' est indispensable : html porte scroll-behavior:smooth, et
+         sans lui le navigateur relance sa propre animation à chaque image,
+         par-dessus la nôtre. Les deux se battent et le défilement traîne. */
+      window.scrollTo({top:courant, behavior:'instant'});
+      requestAnimationFrame(boucle);
+    }
+    function pousse(delta){
+      cible = Math.max(0, Math.min(max(), cible + delta));
+      if(!actif){ actif = true; requestAnimationFrame(boucle); }
+    }
+
+    window.addEventListener('wheel', function(e){
+      /* le menu plein écran défile pour son propre compte */
+      if(document.body.classList.contains('menu-open')) return;
+      if(e.ctrlKey) return;                       /* zoom du navigateur */
+      if(e.deltaMode !== 0) return;               /* défilement par ligne ou par page */
+      e.preventDefault();
+      if(!actif) courant = cible = window.scrollY;
+      pousse(e.deltaY);
+    }, {passive:false});
+
+    /* toute autre cause de défilement reprend la main : barre, clavier,
+       ancre, retour arrière. Sans ça la cible reste sur l'ancienne valeur
+       et la molette suivante ramène la page en arrière d'un bond. */
+    window.addEventListener('scroll', function(){
+      if(!actif) courant = cible = window.scrollY;
+    }, {passive:true});
+  })();
+
   /* ---------- MEGA MENU PLEIN ÉCRAN ---------- */
   var burger = document.getElementById('burger');
   var menu = document.getElementById('megaMenu');
