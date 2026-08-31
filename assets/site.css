@@ -431,8 +431,10 @@
   .sec-head + .lead{margin-top:16px}
 
   .subline{padding-block:clamp(52px,10vw,78px) 0}
+  /* 30ch découpait cette phrase en sept lignes dans une colonne étroite
+     alors qu'elle a toute la largeur pour elle. */
   .subline p{
-    font-size:var(--t-h3);font-weight:400;line-height:1.44;max-width:30ch;
+    font-size:var(--t-h3);font-weight:400;line-height:1.44;
   }
   .subline b{color:var(--violet);font-weight:600}
 
@@ -441,7 +443,18 @@
   .prose .res{color:var(--ink);margin-top:22px}
   .prose .res b{font-weight:700;color:var(--coral-t)}
 
-  .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center;margin-top:clamp(30px,4vw,44px)}
+  /* Centrer verticalement laissait le texte flotter au milieu d'une image
+     bien plus haute que lui. Les deux colonnes partent du haut. */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:start;margin-top:clamp(30px,4vw,44px)}
+  /* le titre passé dans la colonne de contenu collait au premier paragraphe */
+  .duo .prose .sec-head{margin-bottom:clamp(20px,2vw,28px)}
+  /* Dans une colonne, le titre n'a pas à être plus étroit que ses propres
+     paragraphes : la colonne fait déjà la mise en page. Le resserrement ne
+     venait pas du max-width mais de text-wrap:balance, qui rééquilibre les
+     lignes en réduisant la largeur ; ici on veut qu'il remplisse. */
+  .duo .prose .sec-head{max-width:none;text-wrap:pretty}
+  /* 4/5 rendait le bloc beaucoup plus haut que son texte */
+  .duo .shot-4x5{aspect-ratio:1/1}
   @media(max-width:900px){.duo{grid-template-columns:1fr}}
 
   .shot{border-radius:var(--r);overflow:hidden;background:var(--ink)}
@@ -572,8 +585,8 @@
   .cta{position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;display:flex;align-items:center;background:var(--ink)}
   .cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
   .cta::after{content:'';position:absolute;inset:0;background:linear-gradient(30deg,color-mix(in srgb,var(--brand-shade) 85%,transparent),color-mix(in srgb,var(--brand-shade) 0%,transparent) 60%)}
-  .cta-in{position:relative;z-index:4;padding:clamp(28px,6vw,68px);max-width:660px}
-  .cta-in h2{color:var(--on-dark);margin-bottom:16px;max-width:17ch}
+  .cta-in{position:relative;z-index:4;padding:clamp(28px,6vw,68px);max-width:760px}
+  .cta-in h2{color:var(--on-dark);margin-bottom:16px;max-width:24ch}
   .cta-in p{color:var(--on-dark-80);font-size:var(--t-body);line-height:1.44;margin-bottom:30px;max-width:46ch}
 
   .site-footer{padding-block:clamp(40px,6vw,56px) clamp(44px,7vw,68px)}
@@ -711,7 +724,7 @@
     background:var(--coral);color:var(--on-coral);padding:clamp(28px,4vw,52px);
     display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
   }
-  .band h2{color:var(--on-coral);max-width:20ch;font-size:var(--t-h2)}
+  .band h2{color:var(--on-coral);max-width:26ch;font-size:var(--t-h2)}
   .band p{color:var(--on-coral-88);font-size:var(--t-sm);margin-top:10px;max-width:46ch}
   /* sur fond corail, un bouton corail disparaîtrait */
   .band .btn{background:var(--ink);color:var(--on-dark)}
