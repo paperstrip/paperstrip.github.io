@@ -56,8 +56,8 @@
    "@type": "Person",
    "@id": "https://paperstrip.github.io/#person",
    "name": "Arnaud Herr",
-   "jobTitle": "Intégrateur d'agents IA et de systèmes métier",
-   "description": "Basé en Belgique, dix ans à connecter des systèmes métier. Construit la logique agentique et la livre en API, que l'équipe ou l'intégrateur en place branche sur l'ERP, le CRM ou la boutique en ligne. Croise les données et les remonte sur un tableau de bord. Intervient en Wallonie et à Bruxelles.",
+   "jobTitle": "CTO et intégrateur d'agents IA",
+   "description": "Basé en Belgique, dix ans à connecter des systèmes métier. CTO de trois structures aux positionnements complémentaires (développement sur mesure, IA, marketing digital). Construit la logique agentique et la livre en API, que l'équipe ou l'intégrateur en place branche sur l'ERP, le CRM ou la boutique en ligne. Croise les données et les remonte sur un tableau de bord. Intervient en Wallonie et à Bruxelles.",
    "url": "https://paperstrip.github.io/",
    "email": "mailto:arnaudherr@gmail.com",
    "image": {
@@ -141,6 +141,32 @@
     "@type": "OfferCatalog",
     "name": "Domaines d'intervention",
     "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Consultance IA et architecture technique",
+       "description": "Cartographie des processus, identification des chantiers où l'IA a un vrai retour, architecture technique et forfait annoncé d'avance.",
+       "url": "https://paperstrip.github.io/consultance/",
+       "areaServed": [
+        {
+         "@type": "Country",
+         "name": "Belgique"
+        },
+        {
+         "@type": "AdministrativeArea",
+         "name": "Wallonie"
+        },
+        {
+         "@type": "AdministrativeArea",
+         "name": "Région de Bruxelles-Capitale"
+        }
+       ],
+       "provider": {
+        "@id": "https://paperstrip.github.io/#person"
+       }
+      }
+     },
      {
       "@type": "Offer",
       "itemOffered": {
@@ -307,11 +333,11 @@
       <a href="" class="logo">Arnaud Herr<span>.</span></a>
       <div class="nav-right">
         <nav class="nav-links" aria-label="Navigation principale">
-          <a href="./" aria-current="page">Agents métier</a>
+          <a href="" aria-current="page">Agents métier</a>
+          <a href="consultance/">Consultance</a>
           <a href="sites-web-ia/">Sites web</a>
           <a href="saas-sur-mesure/">SaaS sur mesure</a>
           <a href="sous-traitance/">Sous-traitance</a>
-          <a href="ia-maitrisee/">La méthode</a>
         </nav>
         <a href="contact/" class="btn btn-sm">Parlons-en</a>
         <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="megaMenu" aria-label="Ouvrir le menu">
@@ -323,23 +349,28 @@
       <div class="wrap">
         <nav class="mega-nav" aria-label="Offres">
           <span class="lbl">Ce que je fais</span>
-          <a href="./" class="mega-anim" aria-current="page">
+          <a href="" class="mega-anim" aria-current="page">
             <span class="i">01</span>
             <span class="t">Agents métier</span>
             <span class="d">La logique agentique livrée en API, branchée sur vos outils métier.</span>
           </a>
-          <a href="sites-web-ia/" class="mega-anim">
+          <a href="consultance/" class="mega-anim">
             <span class="i">02</span>
+            <span class="t">Consultance</span>
+            <span class="d">Cadrer avant de construire : architecture et priorités, en amont du code.</span>
+          </a>
+          <a href="sites-web-ia/" class="mega-anim">
+            <span class="i">03</span>
             <span class="t">Sites web</span>
             <span class="d">Statiques ou WordPress. Générés avec l'IA, puis repris à la main.</span>
           </a>
           <a href="saas-sur-mesure/" class="mega-anim">
-            <span class="i">03</span>
+            <span class="i">04</span>
             <span class="t">SaaS sur mesure</span>
             <span class="d">Un outil taillé sur votre processus, construit en semaines.</span>
           </a>
           <a href="sous-traitance/" class="mega-anim">
-            <span class="i">04</span>
+            <span class="i">05</span>
             <span class="t">Sous-traitance</span>
             <span class="d">Renfort technique en marque blanche pour agences et sociétés de services.</span>
           </a>
@@ -402,8 +433,38 @@
   </section>
 
   <div class="wrap subline">
-    <p data-rv>Je construis la logique, je la livre en <b>API</b>, et elle se branche sur votre ERP, votre CRM ou votre boutique en ligne. Elle travaille sur vos données réelles, recoupe ce qui ne se recoupait pas, et ressort là où vos équipes regardent déjà.</p>
+    <p data-rv>Trois façons d'intervenir chez vous, selon où vous en êtes : décider avant de construire, faire
+    tourner l'IA dans les outils que vos équipes utilisent déjà, ou construire ce qui manque encore.</p>
   </div>
+
+  <section class="sec-soft" id="paliers" aria-labelledby="paliers-title">
+    <div class="wrap">
+      <h2 class="sec-head" id="paliers-title" data-rv>Trois niveaux d'intervention</h2>
+      <div class="g3">
+        <a class="card offer" href="consultance/" data-rv>
+          <p class="n" aria-hidden="true">1</p>
+          <h3>Consultance</h3>
+          <p>Avant de coder, j'audite vos processus, je chiffre où l'IA a un vrai retour et je vous évite de
+          développer un outil inutile. On décide avant de construire.</p>
+          <span class="go">Voir la consultance</span>
+        </a>
+        <a class="card offer" href="#faire" data-rv>
+          <p class="n" aria-hidden="true">2</p>
+          <h3>Agents métier</h3>
+          <p>La logique agentique livrée en API, branchée sur votre ERP ou votre CRM. Pas de gadgets, des flux qui
+          tournent en production.</p>
+          <span class="go">Voir les agents métier</span>
+        </a>
+        <a class="card offer" href="sites-web-ia/" data-rv>
+          <p class="n" aria-hidden="true">3</p>
+          <h3>Production sur mesure</h3>
+          <p>Sites web et logiciels métier construits avec l'IA puis repris à la main, pour un résultat sécurisé et
+          tenable dans deux ans.</p>
+          <span class="go">Voir la production</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section id="constat" aria-labelledby="constat-title">
     <div class="wrap">
@@ -640,27 +701,12 @@
 
   <section id="methode" aria-labelledby="methode-title">
     <div class="wrap">
-      <h2 class="sec-head" id="methode-title" data-rv>Trois étapes, chacune chiffrée avant d'être lancée</h2>
+      <h2 class="sec-head" id="methode-title" data-rv>Le cadrage vient toujours avant le reste</h2>
       <p class="lead" data-rv>Le premier appel est gratuit et dure trente minutes : il sert à savoir si on travaille
-      ensemble. Tout ce qui vient après est du travail, donc facturé. Vous connaissez le montant de chaque étape
-      avant qu'elle commence, et vous décidez à la fin de chacune si on continue.</p>
-      <ol class="rail">
-        <li class="step" data-rv>
-          <p class="n" aria-hidden="true">1</p>
-          <h3>Le cadrage</h3>
-          <p>On identifie ensemble les tâches qui reviennent tous les jours, avec les personnes qui les font. Vous n'aurez pas un audit de quarante pages. Vous aurez deux ou trois gestes isolés, chiffrés en heures, et ce que leur automatisation demanderait. Forfait annoncé d'avance. Si vous vous arrêtez là, ce document est à vous et vous pouvez le confier à quelqu'un d'autre.</p>
-        </li>
-        <li class="step" data-rv>
-          <p class="n" aria-hidden="true">2</p>
-          <h3>La mise en production</h3>
-          <p>Un seul cas d'usage, sur un périmètre volontairement étroit, en conditions réelles. Prix fixé au départ à partir du cadrage. Vous voyez ce que ça donne chez vous avant d'engager la suite.</p>
-        </li>
-        <li class="step" data-rv>
-          <p class="n" aria-hidden="true">3</p>
-          <h3>L'extension</h3>
-          <p>Ce qui a fait ses preuves se réplique ailleurs, cas par cas, chacun chiffré comme le premier. Ce qui n'a pas tenu s'arrête, et on compare au chiffre du départ plutôt qu'à une impression.</p>
-        </li>
-      </ol>
+      ensemble. Tout ce qui vient après, y compris le cadrage, est du travail facturé, avec un montant connu avant
+      qu'il ne commence. C'est la première des trois étapes de la <a class="lnk" href="consultance/">consultance</a>,
+      et c'est là que se joue si un chantier vaut la peine.</p>
+      <p data-rv><a href="consultance/" class="lnk">Voir les trois étapes du cadrage au déploiement</a></p>
     </div>
   </section>
 
@@ -744,6 +790,7 @@
         <div class="foot-col">
           <p class="foot-lbl">Ce que je fais</p>
           <a href="./">Agents métier</a><br>
+          <a href="consultance/">Consultance</a><br>
           <a href="pilotage-donnees/">Pilotage par les données</a><br>
           <a href="sites-web-ia/">Sites web conçus avec l'IA</a><br>
           <a href="saas-sur-mesure/">SaaS sur mesure</a><br>
