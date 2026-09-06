@@ -18,6 +18,7 @@ PAGES = [
     ("",                 "index.html"),
     ("consultance/",     "consultance/index.html"),
     ("articles/",        "articles/index.html"),
+    ("articles/brancher-un-mcp-sur-wordpress/", "articles/brancher-un-mcp-sur-wordpress/index.html"),
     ("articles/combien-coute-une-automatisation-ia/", "articles/combien-coute-une-automatisation-ia/index.html"),
     ("articles/pourquoi-une-automatisation-plante-en-production/", "articles/pourquoi-une-automatisation-plante-en-production/index.html"),
     ("agents-metier/",   "agents-metier/index.html"),

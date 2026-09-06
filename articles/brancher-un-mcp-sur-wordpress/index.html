@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#1B1B19">
+
+<title>Brancher un MCP sur WordPress : pourquoi et comment</title>
+<meta name="description" content="Créer et modifier des pages sans jamais ouvrir l'administration WordPress, en restant dans la charte du site. Le principe, ce que ça débloque, et la limite à ne pas franchir.">
+<meta name="author" content="Arnaud Herr">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Arnaud Herr">
+<meta property="og:url" content="https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/">
+<meta property="og:title" content="Brancher un MCP sur WordPress : pourquoi et comment">
+<meta property="og:description" content="Créer et modifier des pages sans jamais ouvrir l'administration WordPress, en restant dans la charte du site. Le principe, ce que ça débloque, et la limite à ne pas franchir.">
+<meta property="og:image" content="https://arnaudherr.be/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brancher un MCP sur WordPress : pourquoi et comment">
+<meta name="twitter:description" content="Créer et modifier des pages sans jamais ouvrir l'administration WordPress, en restant dans la charte du site. Le principe, ce que ça débloque, et la limite à ne pas franchir.">
+<meta name="twitter:image" content="https://arnaudherr.be/assets/og.jpg">
+
+<link rel="preload" href="../../assets/fonts/sg-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#webpage",
+   "url": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/",
+   "name": "Brancher un MCP sur WordPress : pourquoi et comment",
+   "description": "Créer et modifier des pages sans jamais ouvrir l'administration WordPress, en restant dans la charte du site. Le principe, ce que ça débloque, et la limite à ne pas franchir.",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/#website"
+   },
+   "inLanguage": "fr-BE",
+   "breadcrumb": {
+    "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#breadcrumb"
+   },
+   "about": {
+    "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#article"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Accueil",
+     "item": "https://arnaudherr.be/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Articles",
+     "item": "https://arnaudherr.be/articles/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Brancher un MCP sur WordPress : pourquoi et comment",
+     "item": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/"
+    }
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#article",
+   "headline": "Brancher un MCP sur WordPress : pourquoi et comment",
+   "description": "Créer et modifier des pages sans jamais ouvrir l'administration WordPress, en restant dans la charte du site. Le principe, ce que ça débloque, et la limite à ne pas franchir.",
+   "inLanguage": "fr-BE",
+   "author": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "publisher": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://arnaudherr.be/assets/og.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "Model Context Protocol"
+    },
+    {
+     "@type": "Thing",
+     "name": "Automatisation de la publication WordPress"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#faq",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/articles/brancher-un-mcp-sur-wordpress/#webpage"
+   },
+   "inLanguage": "fr-BE",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Qu'est-ce qu'un MCP, dans ce contexte ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Un serveur qui expose des actions à un programme extérieur selon un contrat défini : ici créer, modifier ou supprimer une page. L'intérêt par rapport à une automatisation qui simulerait des clics dans l'administration, c'est qu'il ne dépend pas de l'interface. Il continue de fonctionner quand celle-ci change, et n'importe quel outil capable d'appeler le serveur peut s'en servir."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Une page générée peut-elle casser le design du site ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non, et pas parce qu'on lui demande d'être sage. Le contenu est assemblé à partir des blocs qui composent déjà la charte du site : grille, couleurs, typographie. Le générateur n'a rien d'autre à sa disposition, donc il ne peut pas sortir de la direction artistique. C'est une contrainte matérielle, pas une consigne qu'il pourrait mal interpréter."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Les pages sont-elles publiées automatiquement ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non, jamais. Elles arrivent en brouillon et attendent une relecture humaine. Publier sans relire reviendrait à mettre en ligne du contenu qui ne tranche rien et ne se classe nulle part, c'est-à-dire exactement le défaut que ce travail cherche à éviter. Le traitement fait le travail ingrat, le jugement reste humain."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Faut-il un modèle d'IA pour s'en servir ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pas nécessairement. Le serveur expose des actions, il ne présuppose rien de ce qui les appelle. Un workflow d'automatisation, une interface interne ou un formulaire feraient l'affaire. Un modèle de langage est simplement le client le plus commode quand il s'agit de rédiger, mais l'architecture ne l'impose pas."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="nav-in">
+      <a href="../../" class="logo">Arnaud Herr<span>.</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="../../consultance/">Consultance</a>
+          <a href="../../agents-metier/">Agents métier</a>
+          <a href="../../sites-web-ia/">Sites web</a>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+          <a href="../../sous-traitance/">Sous-traitance</a>
+        </nav>
+        <a href="../../contact/" class="btn btn-sm">Parlons-en</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="megaMenu" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="megamenu" id="megaMenu" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+      <div class="wrap">
+        <nav class="mega-nav" aria-label="Offres">
+          <span class="lbl">Pour les entreprises</span>
+          <a href="../../consultance/" class="mega-anim">
+            <span class="i">01</span>
+            <span class="t">Consultance</span>
+            <span class="d">Cadrer avant de construire : architecture et priorités, en amont du code.</span>
+          </a>
+          <a href="../../agents-metier/" class="mega-anim">
+            <span class="i">02</span>
+            <span class="t">Agents métier</span>
+            <span class="d">La logique agentique livrée en API, branchée sur vos outils métier.</span>
+          </a>
+          <div class="mega-palier mega-anim">
+            <span class="i">03</span>
+            <span class="t">Production sur mesure</span>
+            <span class="d">Ce qui n'existe pas encore, construit avec l'IA puis repris à la main.</span>
+            <div class="mega-sub">
+              <a href="../../sites-web-ia/">Sites web</a>
+              <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+            </div>
+          </div>
+          <span class="lbl lbl-suite">Pour les agences</span>
+          <a href="../../sous-traitance/" class="mega-anim">
+            <span class="i" aria-hidden="true"></span>
+            <span class="t">Sous-traitance</span>
+            <span class="d">Renfort technique en marque blanche, sans contact avec le client final.</span>
+          </a>
+        </nav>
+        <div class="mega-apart">
+          <span class="lbl">Notre produit</span>
+          <a href="../../pilotage-donnees/" class="mega-anim">
+            <span class="t">Pilotage par les données</span>
+            <span class="d">Vos chiffres croisés avec le contexte extérieur, interrogeables en français.</span>
+          </a>
+        </div>
+        <nav class="mega-plus" aria-label="Pages complémentaires">
+          <span class="lbl">En savoir plus</span>
+          <a href="../../ia-maitrisee/" class="mega-anim"><span class="t">La méthode</span></a>
+          <a href="../" class="mega-anim" aria-current="page"><span class="t">Articles</span></a>
+          <a href="../../a-propos/" class="mega-anim"><span class="t">Qui je suis</span></a>
+          <a href="../../contact/" class="mega-anim"><span class="t">Parlons-en</span></a>
+        </nav>
+<div class="mega-foot">
+          <div>
+            <p class="lbl">Écrire</p>
+            <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          </div>
+          <div>
+            <p class="lbl">Appeler</p>
+            <a href="tel:+32477672928">+32 477 67 29 28</a>
+          </div>
+          <div>
+            <p class="lbl">Suivre</p>
+            <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+          </div>
+          <div>
+            <p class="lbl">Basé en</p>
+            <span>Belgique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="h1">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="../../">Accueil</a></li>
+          <li><a href="../">Articles</a></li>
+          <li><span aria-current="page">Brancher un MCP sur WordPress</span></li>
+        </ol>
+      </nav>
+      <h1 id="h1" data-rv>J'ai branché un MCP sur WordPress pour ne plus jamais <em>l'ouvrir</em>.</h1>
+      <p class="lead" data-rv>Créer, modifier et retirer des pages sans passer par l'administration, en
+      restant dans la charte du site. Voici le principe, ce que ça débloque, et la limite que je refuse
+      de franchir.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="s1">
+    <div class="wrap">
+      <div class="article" data-rv>
+        <h2 id="s1">Le back-office est une impasse</h2>
+        <p>Deux constats, et le second est plus embêtant que le premier.</p>
+        <p>Le premier, c'est que <b>presque personne ne va dans son back-office</b>. Les clients à qui on a
+        livré un site avec la promesse de l'autonomie éditoriale n'y touchent pas. Les pages qu'on devait
+        ajouter attendent des mois, et le site se fige le jour de la livraison.</p>
+        <p>Le second, c'est que l'administration WordPress est pensée pour un humain avec une souris.
+        Automatiser à travers elle, c'est simuler des clics ou bricoler dans des écrans qui n'ont pas été
+        conçus pour ça. Tout ce qu'on construit ainsi casse à la première mise à jour.</p>
+
+        <h2 id="s2">Un contrat plutôt qu'un contournement</h2>
+        <p>La réponse a été de sortir complètement de l'interface. Un serveur MCP expose ce qu'on veut
+        pouvoir faire au site : créer une page, la modifier, la supprimer. Le contenu, lui, est assemblé
+        par un page builder à partir de blocs qui appartiennent à la charte du site.</p>
+        <p>Ce détail décide de tout. Le générateur ne dispose que des blocs existants, donc <b>il ne peut
+        pas dénaturer le design</b>. Ce n'est pas une consigne qu'on lui donne et qu'il pourrait mal
+        suivre, c'est une contrainte matérielle : il n'a rien d'autre sous la main.</p>
+        <p class="cle">Une instruction se contourne, <b>une contrainte non</b>. C'est toute la différence
+        entre demander à un modèle de respecter votre charte et lui retirer les moyens d'y déroger.</p>
+
+        <h2 id="s3">Ce que ça débloque</h2>
+        <p>À partir du moment où le site s'adresse par un contrat propre, tout ce qui sait parler ce
+        contrat peut l'alimenter. Concrètement, chez nous, un workflow de référencement repère une
+        thématique à traiter, produit la page correspondante dans la charte du client, avec ses
+        métadonnées et un contenu écrit dans son ton, puis la pousse en brouillon.</p>
+        <p>Le client ne voit jamais WordPress. Il relit un brouillon, il valide ou il refuse.</p>
+        <p>Et comme c'est un contrat et non un bricolage, la source n'a aucune importance. Un modèle de
+        langage, un workflow d'automatisation, une interface interne, un fil de discussion sur une
+        messagerie : tout ce qui peut appeler le serveur peut produire une page. C'est le signe qu'une
+        architecture est correcte, elle accepte des branchements auxquels on n'avait pas pensé.</p>
+
+        <h2 id="s4">La limite : brouillon, jamais publication</h2>
+        <p>Rien ne se publie tout seul, et ce n'est pas une précaution ajoutée après coup.</p>
+        <p>Un texte généré puis mis en ligne sans relecture se reconnaît. Il ne tranche rien, ne refuse
+        rien, ressemble à tout ce que produisent les concurrents avec les mêmes outils, et ne se classe
+        nulle part. Automatiser la publication reviendrait à industrialiser exactement ce que je passe
+        mon temps à corriger chez les autres.</p>
+        <p>La bonne répartition est celle-ci : <b>le traitement fait le travail ingrat</b>, chercher le
+        sujet, respecter la structure, remplir les métadonnées, poser la page au bon format. <b>Le
+        jugement reste humain</b> : est-ce que ce texte dit quelque chose, est-ce qu'il est juste, est-ce
+        qu'on le signe.</p>
+
+        <h2 id="s5">Pourquoi ça intéresse une agence</h2>
+        <p>Le problème que ça règle n'est pas technique, il est économique. Pour une agence, ajouter trois
+        pages sur un site client est une tâche à faible marge que personne n'a envie de planifier, et qui
+        finit par être facturée à perte ou repoussée.</p>
+        <p>Quand la production passe par un contrat programmable et que le design est garanti par
+        construction, cette tâche cesse d'être un chantier. Elle devient une relecture.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-soft" aria-labelledby="s-faq">
+    <div class="wrap">
+      <h2 class="sec-head" id="s-faq" data-rv>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Qu'est-ce qu'un MCP, dans ce contexte ?</summary>
+          <p>Un serveur qui expose des actions à un programme extérieur selon un contrat défini : ici créer, modifier ou supprimer une page. L'intérêt par rapport à une automatisation qui simulerait des clics dans l'administration, c'est qu'il ne dépend pas de l'interface. Il continue de fonctionner quand celle-ci change, et n'importe quel outil capable d'appeler le serveur peut s'en servir.</p>
+        </details>
+        <details>
+          <summary>Une page générée peut-elle casser le design du site ?</summary>
+          <p>Non, et pas parce qu'on lui demande d'être sage. Le contenu est assemblé à partir des blocs qui composent déjà la charte du site : grille, couleurs, typographie. Le générateur n'a rien d'autre à sa disposition, donc il ne peut pas sortir de la direction artistique. C'est une contrainte matérielle, pas une consigne qu'il pourrait mal interpréter.</p>
+        </details>
+        <details>
+          <summary>Les pages sont-elles publiées automatiquement ?</summary>
+          <p>Non, jamais. Elles arrivent en brouillon et attendent une relecture humaine. Publier sans relire reviendrait à mettre en ligne du contenu qui ne tranche rien et ne se classe nulle part, c'est-à-dire exactement le défaut que ce travail cherche à éviter. Le traitement fait le travail ingrat, le jugement reste humain.</p>
+        </details>
+        <details>
+          <summary>Faut-il un modèle d'IA pour s'en servir ?</summary>
+          <p>Pas nécessairement. Le serveur expose des actions, il ne présuppose rien de ce qui les appelle. Un workflow d'automatisation, une interface interne ou un formulaire feraient l'affaire. Un modèle de langage est simplement le client le plus commode quand il s'agit de rédiger, mais l'architecture ne l'impose pas.</p>
+        </details>
+      </div>
+      <div class="band" data-rv>
+        <div>
+          <h2>Votre site est figé depuis sa mise en ligne</h2>
+          <p>Si les pages que vous vouliez ajouter attendent depuis des mois, le problème n'est
+          probablement pas votre motivation. En trente minutes, on regarde ce qui bloque.</p>
+        </div>
+        <a href="../../contact/" class="btn btn-block">En parler trente minutes</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="../../" class="foot-logo">Arnaud Herr<span>.</span></a>
+        <p>Agents IA branchés sur vos outils métier, sites web et logiciels sur mesure.
+        J'interviens en Wallonie et à Bruxelles.</p>
+        <div class="foot-contact">
+          <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          <a href="tel:+32477672928">+32 477 67 29 28</a>
+        </div>
+      </div>
+
+      <nav class="foot-cols" aria-label="Plan du site">
+        <div class="foot-col">
+          <p class="foot-lbl">Ce que je fais</p>
+          <a href="../../agents-metier/">Agents métier</a><br>
+          <a href="../../consultance/">Consultance</a><br>
+          <a href="../../pilotage-donnees/">Pilotage par les données</a><br>
+          <a href="../../sites-web-ia/">Sites web conçus avec l'IA</a><br>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a><br>
+          <a href="../../sous-traitance/">Sous-traitance pour agences</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-lbl">Comment je travaille</p>
+          <a href="../../a-propos/">Qui je suis</a><br>
+          <a href="../../ia-maitrisee/">La méthode</a><br>
+          <a href="../">Articles</a><br>
+          <a href="../../contact/">Parlons-en</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="foot-end">
+      <p>Arnaud Herr, Belgique</p>
+      <p class="r">
+        <a href="../../mentions-legales/">Mentions légales</a>
+        <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+<!-- Mesure d'audience sans cookie : Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0c1669a3a52143498f9e2b6c22cc6e0b"}'></script>
+
+</body>
+</html>
