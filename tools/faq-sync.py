@@ -27,7 +27,11 @@ def texte(fragment):
 def main():
     verifie = '--verifie' in sys.argv
     souci = 0
-    for page in sorted(RACINE.glob('*/index.html')) + [RACINE / 'index.html']:
+    # rglob et non glob : les articles vivent deux niveaux plus bas, et un
+    # glob a un seul niveau les avait silencieusement ignores.
+    for page in sorted(RACINE.rglob('index.html')):
+        if '.git' in page.parts or 'node_modules' in page.parts:
+            continue
         s = page.read_text(encoding='utf-8')
         m = RX_LD.search(s)
         if not m or '"FAQPage"' not in s:
