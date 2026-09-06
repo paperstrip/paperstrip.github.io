@@ -219,9 +219,11 @@ en cours de lancement. Il manquera le **numéro d'entreprise BCE** dès
 l'inscription. Un paragraphe l'annonce explicitement plutôt que de laisser un
 vide.
 
-Le site n'utilise aucun cookie ni outil de mesure d'audience, donc aucun
-bandeau de consentement n'est nécessaire. **Si un jour vous ajoutez une mesure
-d'audience, cette page devient fausse et un bandeau devient obligatoire.**
+La fréquentation est mesurée par Cloudflare Web Analytics, sans cookie ni
+identifiant déposé sur l'appareil : aucun bandeau de consentement n'est donc
+nécessaire. La balise est posée avant `</body>` sur les douze pages, 404
+comprise. **Si vous ajoutez un jour un outil qui pose un cookie, la page des
+mentions légales devient fausse et un bandeau devient obligatoire.**
 
 ## Formulaire de contact
 
