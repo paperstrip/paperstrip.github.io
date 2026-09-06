@@ -509,6 +509,11 @@
 
   /* ---------- RAIL ---------- */
   .rail{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(30px,4vw,44px)}
+  /* Le deroule de la consultance compte quatre etapes depuis que le devis
+     y figure : sur trois colonnes, la quatrieme restait seule. */
+  .rail--4{grid-template-columns:repeat(4,1fr)}
+  /* Un paragraphe qui suit un chapo se collait a lui. */
+  .lead + p{margin-top:clamp(14px,1.6vw,20px)}
   @media(max-width:1000px){
     .rail{
       display:flex;gap:12px;overflow-x:auto;
