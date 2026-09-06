@@ -168,6 +168,48 @@
     }
   }
 
+  /* ---------------------------------------------------------------
+     Formulaire de contact : envoi en arriere-plan.
+
+     Le champ cache _next devait renvoyer vers la page de remerciement du
+     site, mais Formspree l'a ignore et affichait sa propre page de fin.
+     On envoie donc la requete nous-memes et on redirige a la main.
+
+     Sans JavaScript, le formulaire reste un POST classique : _next est
+     conserve au cas ou, et au pire l'envoi aboutit quand meme.
+     --------------------------------------------------------------- */
+  var contact = document.getElementById('contactForm');
+  if(contact && window.fetch && window.FormData){
+    var bouton = contact.querySelector('button[type="submit"]');
+    var erreur = contact.querySelector('.form-erreur');
+    var suite = contact.querySelector('input[name="_next"]');
+    suite = suite ? suite.value : 'merci/';
+    /* _next doit etre absolu pour Formspree ; on n'en garde que le chemin,
+       sinon une previsualisation locale part sur le domaine de production. */
+    try { suite = new URL(suite, window.location.href).pathname; } catch(e){}
+
+    contact.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(erreur) erreur.hidden = true;
+      var texte = bouton ? bouton.textContent : '';
+      if(bouton){ bouton.disabled = true; bouton.textContent = 'Envoi...'; }
+
+      fetch(contact.action, {
+        method: 'POST',
+        body: new FormData(contact),
+        headers: {'Accept': 'application/json'}
+      }).then(function(r){
+        if(!r.ok) throw new Error(r.status);
+        window.location.href = suite;
+      }).catch(function(){
+        /* On ne fait pas disparaitre le message ecrit : l'adresse directe
+           est rappelee pour que rien ne soit perdu. */
+        if(bouton){ bouton.disabled = false; bouton.textContent = texte; }
+        if(erreur) erreur.hidden = false;
+      });
+    });
+  }
+
   function isOpen(){ return burger.getAttribute('aria-expanded') === 'true'; }
 
   burger.addEventListener('click', function(){ setMenu(!isOpen()); });
