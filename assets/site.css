@@ -263,12 +263,40 @@
   .megamenu > .wrap{margin-block:auto}
 
   .mega-nav{display:grid;margin-top:clamp(18px,3vw,26px)}
-  .mega-nav a{
+  /* Une rangée par palier. Un palier peut être une page unique (donc un lien)
+     ou un regroupement qui porte ses livrables (donc un bloc non cliquable) :
+     les deux partagent la même grille pour que la numérotation reste alignée. */
+  .mega-nav > a,.mega-nav > .mega-palier{
     display:grid;grid-template-columns:auto 1fr;align-items:baseline;
     gap:0 clamp(12px,2vw,20px);padding:clamp(15px,2.4vw,22px) 0;
     border-top:1px solid var(--on-dark-12);
   }
-  .mega-nav a:last-child{border-bottom:1px solid var(--on-dark-12)}
+  .mega-nav > *:last-child{border-bottom:1px solid var(--on-dark-12)}
+
+  /* Deuxième niveau : les livrables d'un palier. Deux fois plus petits que le
+     titre du palier, décalés sous lui et amorcés d'un tiret. La subordination
+     doit se voir avant d'être lue. */
+  .mega-sub{
+    grid-column:2 / -1;display:flex;flex-wrap:wrap;
+    gap:4px clamp(18px,2.6vw,30px);margin-top:clamp(12px,1.6vw,17px);
+  }
+  .mega-sub a{
+    display:inline-flex;align-items:baseline;gap:10px;padding:3px 0;
+    /* 20 → 28 : il faut rester nettement sous le titre du palier (28 → 44) et
+       nettement au-dessus des pages d'appui (17 → 22), sinon les deux niveaux
+       se confondent. */
+    font-size:clamp(1.25rem,1rem + 1.05vw,1.75rem);
+    line-height:1.3;letter-spacing:-.012em;font-weight:600;color:var(--on-dark-80);
+    transition:color .25s var(--ease);
+  }
+  .mega-sub a::before{
+    content:'';flex:none;width:15px;height:1.5px;background:var(--on-dark-40);
+    transition:background-color .25s var(--ease);
+  }
+  .mega-sub a:hover,.mega-sub a:focus-visible,
+  .mega-sub a[aria-current="page"]{color:var(--coral)}
+  .mega-sub a:hover::before,.mega-sub a:focus-visible::before,
+  .mega-sub a[aria-current="page"]::before{background:var(--coral)}
 
   /* Le produit n'est pas une prestation : il sort de la liste numérotée et
      porte sa propre couleur, celle de la plateforme. */
@@ -303,6 +331,9 @@
   .mega-nav .i{
     font-size:var(--t-xs);font-weight:700;letter-spacing:.1em;
     color:var(--on-dark-40);font-variant-numeric:tabular-nums;
+    /* Largeur figee a celle d'un numero : la ligne qui n'en porte pas garde
+       son titre aligne sur les autres. */
+    display:inline-block;min-width:1.45em;
   }
   .mega-nav .t{
     font-size:clamp(1.75rem,1.19rem + 2.35vw,2.75rem);/* 28 → 44 */
@@ -313,9 +344,12 @@
     grid-column:2;margin-top:7px;max-width:46ch;
     font-size:var(--t-sm);line-height:1.45;color:var(--on-dark-55);
   }
-  .mega-nav a:hover .t,.mega-nav a:focus-visible .t{color:var(--coral)}
-  .mega-nav a[aria-current="page"] .i{color:var(--coral)}
-  .mega-nav a[aria-current="page"] .t{color:var(--coral)}
+  .mega-nav > a:hover .t,.mega-nav > a:focus-visible .t{color:var(--coral)}
+  .mega-nav > a[aria-current="page"] .i{color:var(--coral)}
+  .mega-nav > a[aria-current="page"] .t{color:var(--coral)}
+  /* Palier dont un livrable est la page courante : le numéro s'allume, le
+     titre non, sinon on ne saurait plus lequel des deux enfants est ouvert. */
+  .mega-palier:has(.mega-sub a[aria-current="page"]) .i{color:var(--coral)}
 
   /* Second niveau : pages d'appui. Ni numérotées ni décrites, deux tiers
      plus petites que les offres, posées en rangée. La hiérarchie se lit
@@ -328,6 +362,9 @@
     border-top:1px solid var(--on-dark-12);
   }
   .mega-plus > .lbl{flex-basis:100%;margin-bottom:13px}
+  /* Deuxieme intertitre dans la meme liste : change d'audience, pas de rang.
+     La sous-traitance garde donc la typographie des autres services. */
+  .mega-nav > .lbl-suite{margin-top:clamp(26px,3.6vw,36px)}
   .mega-plus a{padding:5px 0}
   .mega-plus .t{
     font-size:clamp(1.0625rem,.92rem + .55vw,1.375rem);/* 17 → 22 */
@@ -352,18 +389,22 @@
   /* entrée décalée, pilotée par la classe d'ouverture */
   .mega-anim{opacity:0;transform:translate3d(0,14px,0);transition:opacity .5s var(--ease),transform .5s var(--ease)}
   .megamenu.is-open .mega-anim{opacity:1;transform:none}
-  .megamenu.is-open .mega-nav a:nth-of-type(1){transition-delay:.06s}
-  .megamenu.is-open .mega-nav a:nth-of-type(2){transition-delay:.12s}
-  .megamenu.is-open .mega-nav a:nth-of-type(3){transition-delay:.18s}
-  .megamenu.is-open .mega-nav a:nth-of-type(4){transition-delay:.24s}
-  .megamenu.is-open .mega-apart a{transition-delay:.30s}
-  .megamenu.is-open .mega-plus a:nth-of-type(1){transition-delay:.36s}
-  .megamenu.is-open .mega-plus a:nth-of-type(2){transition-delay:.40s}
-  .megamenu.is-open .mega-plus a:nth-of-type(3){transition-delay:.44s}
-  .megamenu.is-open .mega-foot{transition-delay:.50s}
+  .megamenu.is-open .mega-nav > a:nth-of-type(1){transition-delay:.06s}
+  .megamenu.is-open .mega-nav > a:nth-of-type(2){transition-delay:.12s}
+  .megamenu.is-open .mega-palier{transition-delay:.18s}
+  .megamenu.is-open .mega-sub a:nth-of-type(1){transition-delay:.23s}
+  .megamenu.is-open .mega-sub a:nth-of-type(2){transition-delay:.27s}
+  .megamenu.is-open .mega-nav > a:nth-of-type(3){transition-delay:.33s}
+  .megamenu.is-open .mega-apart a{transition-delay:.39s}
+  .megamenu.is-open .mega-plus a:nth-of-type(1){transition-delay:.45s}
+  .megamenu.is-open .mega-plus a:nth-of-type(2){transition-delay:.49s}
+  .megamenu.is-open .mega-plus a:nth-of-type(3){transition-delay:.53s}
+  .megamenu.is-open .mega-foot{transition-delay:.59s}
 
   @media(min-width:900px){
-    .mega-nav a{grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);align-items:center}
+    .mega-nav > a,.mega-nav > .mega-palier{
+      grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);align-items:center;
+    }
     .mega-nav .d{grid-column:3;margin-top:0;text-align:left}
   }
   @media(max-width:960px){.nav-links{display:none}}
@@ -742,6 +783,17 @@
   .offer:hover{border-color:var(--coral)}
   .offer h3{margin-bottom:8px}
   .offer p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5;flex:1}
+  /* La pastille numérotée est un <p> : sans ça le flex:1 ci-dessus lui mange
+     sa hauteur fixe et le rond devient un ovale. */
+  .offer .n{flex:none}
+  /* Quand la carte porte une liste à coches, c'est elle qui absorbe la place
+     libre, pas le paragraphe : les liens de bas de carte s'alignent alors
+     d'une colonne à l'autre. */
+  .offer:has(.checks) p{flex:none}
+  .offer .checks{flex:1;align-content:start;margin-top:clamp(20px,2.2vw,26px)}
+  /* Un palier qui porte deux livrables ne peut pas être un lien unique : ses
+     deux pages sont citées côte à côte à la place de la flèche habituelle. */
+  .offer .go-duo{display:flex;flex-wrap:wrap;gap:6px clamp(16px,1.7vw,24px);margin-top:20px;flex:none}
   .offer .go{
     display:inline-flex;align-items:center;gap:8px;margin-top:20px;
     font-size:var(--t-sm);font-weight:600;color:var(--coral-t);

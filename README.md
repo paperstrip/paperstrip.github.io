@@ -1,22 +1,33 @@
-# Site de présentation — Arnaud Herr
+# Site de présentation, Arnaud Herr
 
 Site statique servi par GitHub Pages. Aucune étape de build : les pages sont
 du HTML écrit tel quel, avec une feuille de style et un script partagés.
 
 ```
-index.html            accueil — positionnement principal (agents dans les outils métier)
-sites-web-ia/         sites statiques et WordPress conçus avec l'IA
-saas-sur-mesure/      applications métier et SaaS sur mesure
+index.html            accueil : les trois niveaux d'intervention, rien de plus
+consultance/          palier 1, cadrage et architecture avant de coder
+agents-metier/        palier 2, agents IA branchés sur les outils existants
+sites-web-ia/         palier 3, sites statiques et WordPress conçus avec l'IA
+saas-sur-mesure/      palier 3, applications métier et SaaS sur mesure
+sous-traitance/       renfort en marque blanche, pour les agences
+pilotage-donnees/     le produit : tableau de bord et croisement de données
 ia-maitrisee/         page pilier : sortir du générique, performance, SEO et GEO
+a-propos/             parcours, façon de travailler, ce qui est refusé
 contact/              contact
 mentions-legales/     éditeur, hébergement, données personnelles
 404.html              page d'erreur (autonome, styles en ligne)
 robots.txt            indexation + déclaration du sitemap
-sitemap.xml           généré, ne pas éditer à la main (6 URL)
+sitemap.xml           généré, ne pas éditer à la main (11 URL)
 llms.txt              résumé du site pour les moteurs génératifs
 tools/sitemap.py      régénère sitemap.xml depuis les dates git
+tools/faq-sync.py     recopie les questions visibles dans le balisage FAQPage
+tools/interdits.py    traque les formulations écartées, tous formats confondus
+tools/contraste.js    audit de contraste sur toutes les pages
+tools/set-domain.py   bascule l'URL de base vers un domaine propre
+tools/theme.py        applique une palette enregistrée
+tools/images.js       recadre et réencode les images sources
 assets/site.css       styles partagés par toutes les pages
-assets/site.js        révélation au scroll, en-tête au scroll, menu mobile
+assets/site.js        révélation au scroll, en-tête, méga-menu, accordéons
 assets/og.jpg         image de partage Open Graph (1200×630)
 assets/fonts/         Schibsted Grotesk (variable, woff2, latin + latin-ext)
 .nojekyll             désactive le traitement Jekyll de GitHub Pages
@@ -24,26 +35,38 @@ assets/fonts/         Schibsted Grotesk (variable, woff2, latin + latin-ext)
 
 ## Architecture éditoriale
 
-Deux niveaux de positionnement.
+L'offre est rangée en **trois paliers**, qui décrivent un parcours et non un
+catalogue : on décide avant de construire, on fait tourner l'IA dans les outils
+existants, on construit ce qui manque encore.
 
-1. **L'accueil** porte l'offre principale : la logique agentique construite
-   puis livrée en API, branchée sur l'ERP, le CRM ou la boutique par l'équipe
-   ou l'intégrateur déjà en place. Le site ne prétend pas faire l'intégration
-   lui-même, c'était faux et c'est corrigé.
-2. **Les quatre pages d'offre** déclinent ce principe : `pilotage-donnees/`
-   pour le croisement de données et le tableau de bord, `sites-web-ia/`,
-   `saas-sur-mesure/` et `sous-traitance/`. `ia-maitrisee/` n'est pas une
-   offre mais la méthode qui vaut pour toutes, d'où son type `Article` et non
-   `Service`, et les liens qui pointent vers elle depuis les pages d'offre.
+1. **L'accueil** ne vend aucun palier en particulier. Il pose le positionnement,
+   présente les trois niveaux avec de la matière (trois points concrets et un
+   lien chacun) et porte ce qui vaut pour les trois : les garanties sur les
+   données, le cadre commercial, le manifeste. Il a longtemps fait doublon avec
+   la page agents ; c'est corrigé.
+2. **Les pages de palier** portent le détail : `consultance/` (palier 1),
+   `agents-metier/` (palier 2), puis `sites-web-ia/` et `saas-sur-mesure/`, qui
+   sont les deux livrables du palier 3.
+3. **Hors paliers** : `sous-traitance/` s'adresse aux agences et non au client
+   final, donc même rang commercial mais pas de numéro. `pilotage-donnees/` est
+   un produit et non une prestation. `ia-maitrisee/` n'est pas une offre mais la
+   méthode qui vaut pour toutes, d'où son type `Article` et non `Service`.
 
-Trois niveaux dans la navigation. La barre du haut ne porte que les offres.
-Le mega menu porte les pages du site, numérotées, dans l'ordre de la
-définition unique de `nav.py`. `a-propos/` y figure sans être dans la barre.
+La navigation reflète cette distinction. Le méga-menu sépare deux audiences sous
+deux intertitres, « Pour les entreprises » et « Pour les agences », au lieu d'une
+liste unique qui laissait croire à quatre paliers. Le palier 3 n'a pas de page à
+lui : sa ligne n'est donc pas cliquable et porte ses deux livrables en retrait,
+dans un `.mega-sub`. Le créneau du numéro a une largeur figée pour que la ligne
+sans numéro garde son titre aligné sur les autres.
 
-`pilotage-donnees/` en est sorti : c'est un produit, pas une prestation. Il
-occupe un bloc `.mega-apart` sous la liste, avec son propre intitulé « Notre
-produit », sans numéro, et une pastille à la couleur de la plateforme. Le
-générateur `nav.py` traite ce bloc à part, dans `APART`.
+L'échelle typographique du menu encode la profondeur : 44 px pour un palier,
+28 px pour un livrable, 22 px pour une page d'appui. Ne la resserrez pas sans
+raison, c'est elle qui rend la hiérarchie lisible avant lecture.
+
+`pilotage-donnees/` occupe un bloc `.mega-apart` avec son propre intitulé
+« Notre produit », sans numéro, et une pastille à la couleur de la plateforme.
+Cette pastille verte est le code couleur du produit : ne la réutilisez pas
+ailleurs.
 
 `a-propos/` est balisée `AboutPage` et pointe vers `#person`, défini une seule
 fois sur l'accueil. C'est la page qui consolide l'entité aux yeux des moteurs :
@@ -107,13 +130,13 @@ Les palettes complètes sont stockées dans `tools/palettes.json`, dont celle en
 place. `tools/theme.py` les applique sans toucher au CSS à la main :
 
 ```
-python3 tools/theme.py --liste      # les six, et celle en place
+python3 tools/theme.py --liste      # toutes, et celle en place
 python3 tools/theme.py --actuelle   # les huit couleurs du moment
 python3 tools/theme.py coolors-brut # appliquer
 python3 tools/theme.py corail       # revenir à l'ancienne palette
 ```
 
-Trente et une palettes sont enregistrées. `craie` est celle en place. Toutes
+Trente-deux palettes sont enregistrées. `craie` est celle en place. Toutes
 passent l'audit de contraste sauf `coolors-brut`, gardée telle quelle parce
 que c'est la palette d'origine. Pour en ajouter une, copiez un bloc dans
 `tools/palettes.json`.
@@ -130,7 +153,7 @@ npx http-server . -p 8099 -s &
 node tools/contraste.js
 ```
 
-Le script parcourt les sept pages, composite les textes semi-transparents sur
+Le script parcourt les onze pages, composite les textes semi-transparents sur
 leur fond réel et signale tout rapport inférieur au niveau AA (4,5 pour le
 texte courant, 3 pour le texte large). Il sort en code d'erreur s'il trouve
 quelque chose, ce qui permet de le brancher sur une intégration continue.
@@ -227,11 +250,13 @@ Bing fait de même. Seul `lastmod` est exploité, et uniquement s'il est exact.
 ## Ajouter une page
 
 1. Copier une page interne existante et adapter le contenu.
-2. Mettre à jour la navigation dans **chaque** page (`nav-links` et `m-menu`)
-   ainsi que le pied de page — il n'y a pas de gabarit partagé.
-3. Ajouter l'URL dans `tools/sitemap.py`, puis relancer le script.
+2. Mettre à jour la navigation dans **chaque** page : la barre du haut
+   (`nav-links`), le méga-menu (`mega-nav`, et `mega-sub` s'il s'agit d'un
+   livrable de palier) et le pied de page. Il n'y a pas de gabarit partagé.
+3. Ajouter l'URL dans `tools/sitemap.py` et dans `tools/contraste.js`, puis
+   relancer le script de sitemap.
 4. Ajouter l'entrée dans `llms.txt`.
-4. Renseigner `title`, `meta description`, `link canonical`, les balises
+5. Renseigner `title`, `meta description`, `link canonical`, les balises
    Open Graph et le JSON-LD (`BreadcrumbList` au minimum).
 
 L'en-tête et le pied de page sont dupliqués dans chaque fichier. C'est
