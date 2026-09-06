@@ -472,7 +472,10 @@
   .sec-head{max-width:28ch}
   .sec-head + .lead{margin-top:16px}
 
-  .subline{padding-block:clamp(52px,10vw,78px) 0}
+  /* Marge basse indispensable : tant que la section suivante etait blanche,
+     un padding-bottom nul passait inapercu. Des qu'elle est teintee, le fond
+     vient mordre sur la derniere ligne du texte. */
+  .subline{padding-block:clamp(52px,10vw,78px) clamp(46px,6.5vw,64px)}
   /* 30ch découpait cette phrase en sept lignes dans une colonne étroite
      alors qu'elle a toute la largeur pour elle. */
   .subline p{
