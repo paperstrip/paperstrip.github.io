@@ -46,6 +46,11 @@ def main():
     liste = pages()
     internes = [p for p in liste if p != "404.html"]
     contenus = {p: open(os.path.join(RACINE, p), encoding="utf-8").read() for p in liste}
+    # Une page en noindex est hors index volontairement : elle n'a pas a
+    # figurer dans le sitemap, et elle peut n'etre atteinte que par un
+    # formulaire. Le reste des controles s'y applique normalement.
+    hors_index = {p for p in internes
+                  if re.search(r'name="robots"[^>]*content="[^"]*noindex', contenus[p])}
 
     titres, descriptions = {}, {}
     atteintes = set()
@@ -118,9 +123,12 @@ def main():
             probleme(p, "canonique %s au lieu de %s" % (c.group(1), urljoin(BASE, url_de(p))))
 
         # --- JSON-LD ---
+        # Sans objet sur une page en noindex : les donnees structurees ne
+        # servent que les moteurs, dont la page est exclue.
         m = re.search(r'<script type="application/ld\+json">\n(.*?)\n</script>', s, re.S)
         if not m:
-            probleme(p, "pas de balisage JSON-LD")
+            if p not in hors_index:
+                probleme(p, "pas de balisage JSON-LD")
         else:
             try:
                 g = json.loads(m.group(1))
@@ -146,14 +154,14 @@ def main():
 
     # --- pages orphelines : joignables depuis l'accueil ---
     for p in internes:
-        if p != "index.html" and p not in atteintes:
+        if p != "index.html" and p not in atteintes and p not in hors_index:
             probleme(p, "page orpheline, aucun lien interne n'y mene")
 
     # --- sitemap en phase avec les pages reelles ---
     chemin_sitemap = os.path.join(RACINE, "sitemap.xml")
     if os.path.isfile(chemin_sitemap):
         dedans = set(re.findall(r"<loc>(.*?)</loc>", open(chemin_sitemap, encoding="utf-8").read()))
-        attendues = {urljoin(BASE, url_de(p)) for p in internes}
+        attendues = {urljoin(BASE, url_de(p)) for p in internes if p not in hors_index}
         for manque in sorted(attendues - dedans):
             probleme("sitemap.xml", "n'annonce pas %s" % manque)
         for trop in sorted(dedans - attendues):
