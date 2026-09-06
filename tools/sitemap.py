@@ -17,6 +17,8 @@ BASE = "https://arnaudherr.be/"
 PAGES = [
     ("",                 "index.html"),
     ("consultance/",     "consultance/index.html"),
+    ("articles/",        "articles/index.html"),
+    ("articles/combien-coute-une-automatisation-ia/", "articles/combien-coute-une-automatisation-ia/index.html"),
     ("agents-metier/",   "agents-metier/index.html"),
     ("pilotage-donnees/","pilotage-donnees/index.html"),
     ("sites-web-ia/",    "sites-web-ia/index.html"),
