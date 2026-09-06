@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#1B1B19">
+
+<title>Pourquoi une automatisation IA plante en production</title>
+<meta name="description" content="Un analyseur de documents qui passait tous les tests et qui a caché en conditions réelles. Ce qui a cassé, pourquoi le jeu de test mentait, et le principe qui a permis de le réparer.">
+<meta name="author" content="Arnaud Herr">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Arnaud Herr">
+<meta property="og:url" content="https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/">
+<meta property="og:title" content="Pourquoi une automatisation IA plante en production">
+<meta property="og:description" content="Un analyseur de documents qui passait tous les tests et qui a caché en conditions réelles. Ce qui a cassé, pourquoi le jeu de test mentait, et le principe qui a permis de le réparer.">
+<meta property="og:image" content="https://arnaudherr.be/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pourquoi une automatisation IA plante en production">
+<meta name="twitter:description" content="Un analyseur de documents qui passait tous les tests et qui a caché en conditions réelles. Ce qui a cassé, pourquoi le jeu de test mentait, et le principe qui a permis de le réparer.">
+<meta name="twitter:image" content="https://arnaudherr.be/assets/og.jpg">
+
+<link rel="preload" href="../../assets/fonts/sg-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#webpage",
+   "url": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/",
+   "name": "Pourquoi une automatisation IA plante en production",
+   "description": "Un analyseur de documents qui passait tous les tests et qui a caché en conditions réelles. Ce qui a cassé, pourquoi le jeu de test mentait, et le principe qui a permis de le réparer.",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/#website"
+   },
+   "inLanguage": "fr-BE",
+   "breadcrumb": {
+    "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#breadcrumb"
+   },
+   "about": {
+    "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#article"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Accueil",
+     "item": "https://arnaudherr.be/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Articles",
+     "item": "https://arnaudherr.be/articles/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Pourquoi une automatisation IA plante en production",
+     "item": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/"
+    }
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#article",
+   "headline": "Pourquoi une automatisation IA plante en production",
+   "description": "Un analyseur de documents qui passait tous les tests et qui a caché en conditions réelles. Ce qui a cassé, pourquoi le jeu de test mentait, et le principe qui a permis de le réparer.",
+   "inLanguage": "fr-BE",
+   "author": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "publisher": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://arnaudherr.be/assets/og.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "Extraction et classement automatisés de documents"
+    },
+    {
+     "@type": "Thing",
+     "name": "Mise en production d'une automatisation"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#faq",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/articles/pourquoi-une-automatisation-plante-en-production/#webpage"
+   },
+   "inLanguage": "fr-BE",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Pourquoi une automatisation qui passe les tests échoue-t-elle en production ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le plus souvent parce que le jeu de test est trop propre. Il contient des cas clairs, un sujet par document, des informations complètes. Les documents réels arrivent mal cadrés, incomplets, avec plusieurs personnes citées au même niveau et des intervenants qui n'ont rien à voir avec le dossier. Le mécanisme fonctionne, c'est la matière qui n'est pas celle qu'on avait prévue."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Que faire quand l'information n'est pas dans le document ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Aller la chercher là où elle existe. Dans le cas décrit ici, l'ERP du client savait de quel dossier il s'agissait et qui en était le demandeur : le traitement interroge son API et croise le document avec le dossier récupéré. Reformuler les instructions du modèle n'aurait rien donné, puisqu'aucune formulation ne fait apparaître une donnée absente."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Faut-il que l'automatisation traite absolument tous les cas ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non, et c'est même à éviter. Un système qui tranche systématiquement produit des erreurs silencieuses qu'on découvre des mois plus tard. Mieux vaut une catégorie pour les cas non identifiés, avec une notification à un humain. Le peu de travail manuel que ça laisse coûte bien moins cher que les erreurs qu'on ne voit pas passer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Comment mesurer qu'une automatisation s'améliore ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "En journalisant chaque décision et sa vérification dans une base : ce qui a été proposé, ce qui a été retenu. On compare alors les taux de réussite et d'échec dans le temps, et on sait si une modification a servi. Sans ces journaux, l'amélioration reste une impression, et personne ne peut dire si le système va mieux ou moins bien."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="nav-in">
+      <a href="../../" class="logo">Arnaud Herr<span>.</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="../../consultance/">Consultance</a>
+          <a href="../../agents-metier/">Agents métier</a>
+          <a href="../../sites-web-ia/">Sites web</a>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+          <a href="../../sous-traitance/">Sous-traitance</a>
+        </nav>
+        <a href="../../contact/" class="btn btn-sm">Parlons-en</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="megaMenu" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="megamenu" id="megaMenu" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+      <div class="wrap">
+        <nav class="mega-nav" aria-label="Offres">
+          <span class="lbl">Pour les entreprises</span>
+          <a href="../../consultance/" class="mega-anim">
+            <span class="i">01</span>
+            <span class="t">Consultance</span>
+            <span class="d">Cadrer avant de construire : architecture et priorités, en amont du code.</span>
+          </a>
+          <a href="../../agents-metier/" class="mega-anim">
+            <span class="i">02</span>
+            <span class="t">Agents métier</span>
+            <span class="d">La logique agentique livrée en API, branchée sur vos outils métier.</span>
+          </a>
+          <div class="mega-palier mega-anim">
+            <span class="i">03</span>
+            <span class="t">Production sur mesure</span>
+            <span class="d">Ce qui n'existe pas encore, construit avec l'IA puis repris à la main.</span>
+            <div class="mega-sub">
+              <a href="../../sites-web-ia/">Sites web</a>
+              <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+            </div>
+          </div>
+          <span class="lbl lbl-suite">Pour les agences</span>
+          <a href="../../sous-traitance/" class="mega-anim">
+            <span class="i" aria-hidden="true"></span>
+            <span class="t">Sous-traitance</span>
+            <span class="d">Renfort technique en marque blanche, sans contact avec le client final.</span>
+          </a>
+        </nav>
+        <div class="mega-apart">
+          <span class="lbl">Notre produit</span>
+          <a href="../../pilotage-donnees/" class="mega-anim">
+            <span class="t">Pilotage par les données</span>
+            <span class="d">Vos chiffres croisés avec le contexte extérieur, interrogeables en français.</span>
+          </a>
+        </div>
+        <nav class="mega-plus" aria-label="Pages complémentaires">
+          <span class="lbl">En savoir plus</span>
+          <a href="../../ia-maitrisee/" class="mega-anim"><span class="t">La méthode</span></a>
+          <a href="../" class="mega-anim" aria-current="page"><span class="t">Articles</span></a>
+          <a href="../../a-propos/" class="mega-anim"><span class="t">Qui je suis</span></a>
+          <a href="../../contact/" class="mega-anim"><span class="t">Parlons-en</span></a>
+        </nav>
+<div class="mega-foot">
+          <div>
+            <p class="lbl">Écrire</p>
+            <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          </div>
+          <div>
+            <p class="lbl">Appeler</p>
+            <a href="tel:+32477672928">+32 477 67 29 28</a>
+          </div>
+          <div>
+            <p class="lbl">Suivre</p>
+            <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+          </div>
+          <div>
+            <p class="lbl">Basé en</p>
+            <span>Belgique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="h1">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="../../">Accueil</a></li>
+          <li><a href="../">Articles</a></li>
+          <li><span aria-current="page">Pourquoi une automatisation plante en production</span></li>
+        </ol>
+      </nav>
+      <h1 id="h1" data-rv>La démonstration marchait. <em>La production, non.</em></h1>
+      <p class="lead" data-rv>Un analyseur de documents qui passait tous mes tests, et qui s'est mis à
+      classer de travers dès qu'il a vu de vrais dossiers. Voici ce qui avait cassé, et pourquoi ce
+      n'était pas un problème de modèle.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="s1">
+    <div class="wrap">
+      <div class="article" data-rv>
+        <h2 id="s1">Le jeu de test était une fiction</h2>
+        <p>L'automatisation devait lire des documents entrants, les classer et en extraire les
+        informations utiles. Sur mon jeu de test, elle avait un comportement irréprochable. En
+        conditions réelles, elle s'est mise à se tromper de personne.</p>
+        <p>La raison n'avait rien de technique. <b>Mon jeu de test était pauvre par rapport à ce qui
+        arrive vraiment.</b> J'avais des documents propres, avec un cas par document et une personne
+        clairement identifiable. La réalité m'a envoyé autre chose.</p>
+        <ul>
+          <li>Des documents où <b>deux personnes figurent au même niveau</b>, sans que rien n'indique
+          laquelle est concernée</li>
+          <li>Des <b>notaires</b> et des <b>responsables</b> mentionnés dans le document, aussi
+          visibles que la personne dont il est réellement question</li>
+        </ul>
+        <p>Un humain qui lit ces documents tranche sans y penser : il sait qu'un notaire n'est pas le
+        demandeur. Le modèle, lui, voit deux noms de même importance et en choisit un. Il ne se trompe
+        pas par incompétence, il tranche une question à laquelle le document ne répond pas.</p>
+        <p class="cle"><b>Un jeu de test propre ne teste rien.</b> Il valide que le mécanisme
+        fonctionne, pas qu'il survivra au désordre du réel. Et le désordre est la règle, pas
+        l'exception.</p>
+
+        <h2 id="s2">La mauvaise réponse : mieux demander au modèle</h2>
+        <p>Le réflexe, à ce stade, est de retoucher les instructions. Expliquer ce qu'est un notaire,
+        détailler les cas, ajouter des exemples. Ça améliore les statistiques et ça ne règle rien,
+        parce que le problème n'est pas la formulation de la question.</p>
+        <p>L'information n'était pas dans le document. Aucune reformulation ne fait apparaître une
+        donnée absente. Demander à un modèle de deviner mieux, c'est lui demander d'inventer avec plus
+        d'assurance.</p>
+
+        <h2 id="s3">Ce que j'ai fait : aller chercher la vérité ailleurs</h2>
+        <p>Le client dispose d'un ERP qui sait, lui, de quel dossier il s'agit et qui en est le
+        demandeur. Cette information existait, elle n'était simplement pas dans le document que je
+        donnais à lire.</p>
+        <p>Le traitement interroge donc l'API de l'ERP et récupère le dossier sous forme d'objet JSON.
+        À partir de là, le croisement fait ce que le document seul ne permettait pas :</p>
+        <ul>
+          <li>identifier le <b>demandeur réel</b> parmi les personnes citées</li>
+          <li>rattacher le document au <b>bon dossier client</b></li>
+          <li><b>écarter les notaires</b> et les intervenants qui ne sont pas parties au dossier</li>
+          <li><b>lier les personnes entre elles</b> quand elles doivent l'être, les conjoints
+          notamment</li>
+        </ul>
+        <p>Le tout tourne dans un workflow n8n, qui orchestre la lecture, l'appel à l'ERP et le
+        classement.</p>
+        <p class="cle">Le principe est général : <b>ne demandez jamais au modèle ce qu'il ne peut pas
+        savoir.</b> Quand une information manque, elle se récupère dans le système qui la détient. Un
+        modèle n'est pas là pour combler les trous, il est là pour traiter ce qu'on lui donne.</p>
+
+        <h2 id="s4">Ce qui reste ambigu ne doit pas être tranché</h2>
+        <p>Même avec le croisement, certains cas restent indécidables. Ils tombent dans une catégorie
+        <b>« unclassified »</b>, et quelqu'un est prévenu.</p>
+        <p>Ce n'est pas un aveu de faiblesse, c'est la fonctionnalité la plus importante du système.
+        Une automatisation qui classe tout, tout le temps, ne vous dit jamais qu'elle a eu un doute :
+        elle produit des erreurs silencieuses que vous découvrez des mois plus tard, quand un client
+        vous appelle. Celle qui lève la main sur trois pour cent des cas vous coûte trois pour cent de
+        travail manuel et vous épargne les quelques erreurs qui font mal.</p>
+
+        <h2 id="s5">Comment on sait qu'elle s'améliore</h2>
+        <p>Chaque vérification laisse une trace, stockée en base : ce qui a été proposé, ce qui a été
+        retenu. Ce qui permet de comparer les taux de réussite et d'échec dans le temps, et de voir si
+        une modification a servi ou pas.</p>
+        <p>Sans ces journaux, l'amélioration est une impression. Avec eux, c'est une mesure. Un
+        apprentissage automatique plus lourd est envisagé sur cette base, mais il n'aurait aucun sens
+        avant d'avoir accumulé assez de décisions vérifiées.</p>
+
+        <h2 id="s6">Ce qu'il faut en retenir</h2>
+        <p>Une démonstration réussie ne prouve qu'une chose : que le mécanisme fonctionne sur les cas
+        que vous avez choisis. C'est utile et c'est très loin d'être suffisant.</p>
+        <ul>
+          <li><b>Testez sur vos vrais documents</b>, y compris les moches, les ambigus et ceux dont
+          personne ne veut s'occuper. Ce sont eux qui décident du résultat.</li>
+          <li><b>Cherchez ce que le document ne dit pas.</b> Si l'information manque, un autre de vos
+          systèmes la détient probablement.</li>
+          <li><b>Exigez une catégorie pour le doute.</b> Une automatisation sans porte de sortie
+          produit des erreurs invisibles.</li>
+          <li><b>Demandez comment on saura que ça s'améliore.</b> Sans journal des décisions, personne
+          ne pourra vous le dire.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-soft" aria-labelledby="s-faq">
+    <div class="wrap">
+      <h2 class="sec-head" id="s-faq" data-rv>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Pourquoi une automatisation qui passe les tests échoue-t-elle en production ?</summary>
+          <p>Le plus souvent parce que le jeu de test est trop propre. Il contient des cas clairs, un sujet par document, des informations complètes. Les documents réels arrivent mal cadrés, incomplets, avec plusieurs personnes citées au même niveau et des intervenants qui n'ont rien à voir avec le dossier. Le mécanisme fonctionne, c'est la matière qui n'est pas celle qu'on avait prévue.</p>
+        </details>
+        <details>
+          <summary>Que faire quand l'information n'est pas dans le document ?</summary>
+          <p>Aller la chercher là où elle existe. Dans le cas décrit ici, l'ERP du client savait de quel dossier il s'agissait et qui en était le demandeur : le traitement interroge son API et croise le document avec le dossier récupéré. Reformuler les instructions du modèle n'aurait rien donné, puisqu'aucune formulation ne fait apparaître une donnée absente.</p>
+        </details>
+        <details>
+          <summary>Faut-il que l'automatisation traite absolument tous les cas ?</summary>
+          <p>Non, et c'est même à éviter. Un système qui tranche systématiquement produit des erreurs silencieuses qu'on découvre des mois plus tard. Mieux vaut une catégorie pour les cas non identifiés, avec une notification à un humain. Le peu de travail manuel que ça laisse coûte bien moins cher que les erreurs qu'on ne voit pas passer.</p>
+        </details>
+        <details>
+          <summary>Comment mesurer qu'une automatisation s'améliore ?</summary>
+          <p>En journalisant chaque décision et sa vérification dans une base : ce qui a été proposé, ce qui a été retenu. On compare alors les taux de réussite et d'échec dans le temps, et on sait si une modification a servi. Sans ces journaux, l'amélioration reste une impression, et personne ne peut dire si le système va mieux ou moins bien.</p>
+        </details>
+      </div>
+      <div class="band" data-rv>
+        <div>
+          <h2>Une automatisation qui marchait, et qui ne marche plus</h2>
+          <p>Décrivez-moi ce qu'elle rate et sur quels cas. En trente minutes je vous dis si c'est le
+          jeu de test, une information manquante, ou autre chose.</p>
+        </div>
+        <a href="../../contact/" class="btn btn-block">En parler trente minutes</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="../../" class="foot-logo">Arnaud Herr<span>.</span></a>
+        <p>Agents IA branchés sur vos outils métier, sites web et logiciels sur mesure.
+        J'interviens en Wallonie et à Bruxelles.</p>
+        <div class="foot-contact">
+          <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          <a href="tel:+32477672928">+32 477 67 29 28</a>
+        </div>
+      </div>
+
+      <nav class="foot-cols" aria-label="Plan du site">
+        <div class="foot-col">
+          <p class="foot-lbl">Ce que je fais</p>
+          <a href="../../agents-metier/">Agents métier</a><br>
+          <a href="../../consultance/">Consultance</a><br>
+          <a href="../../pilotage-donnees/">Pilotage par les données</a><br>
+          <a href="../../sites-web-ia/">Sites web conçus avec l'IA</a><br>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a><br>
+          <a href="../../sous-traitance/">Sous-traitance pour agences</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-lbl">Comment je travaille</p>
+          <a href="../../a-propos/">Qui je suis</a><br>
+          <a href="../../ia-maitrisee/">La méthode</a><br>
+          <a href="../">Articles</a><br>
+          <a href="../../contact/">Parlons-en</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="foot-end">
+      <p>Arnaud Herr, Belgique</p>
+      <p class="r">
+        <a href="../../mentions-legales/">Mentions légales</a>
+        <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+<!-- Mesure d'audience sans cookie : Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0c1669a3a52143498f9e2b6c22cc6e0b"}'></script>
+
+</body>
+</html>
