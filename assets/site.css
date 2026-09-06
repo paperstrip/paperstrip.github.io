@@ -775,6 +775,13 @@
      meme quand les descriptions n'ont pas la meme longueur */
   .cas .card{display:flex;flex-direction:column}
   .cas .desc{flex:1}
+  .cas .chiffre{background:var(--lavender);justify-content:center}
+  .cas .chiffre .big{
+    font-size:var(--t-h1);font-weight:400;letter-spacing:-.02em;line-height:1;
+    color:var(--ink);margin-bottom:14px;
+  }
+  .cas .chiffre .desc{color:var(--on-accent-88);flex:none}
+
   .cas .lbl-cas{
     display:block;font-size:var(--t-xs);font-weight:700;letter-spacing:.12em;
     text-transform:uppercase;color:var(--ink-45);margin-bottom:11px;
