@@ -6,7 +6,8 @@
 > repris à la main.
 
 Basé en Belgique, j'interviens en Wallonie et à Bruxelles, en français.
-Dix ans passés à connecter des systèmes qui n'avaient pas prévu de se parler.
+Dix ans de développement web : front-end, développement créatif, back-end, puis
+direction technique. Profil full stack.
 Je pilote par ailleurs la technique de trois structures aux positionnements
 différents : Clevermint (développement sur mesure), Wecocoon (IA) et Wibicom
 (marketing digital).
@@ -25,7 +26,7 @@ faut décider, vérifier et couper.
 - [Logiciels métier sur mesure](https://paperstrip.github.io/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités et des tests là où une erreur coûte de l'argent. Hébergement possible sur mes serveurs en Belgique.
 - [Sous-traitance technique pour agences](https://paperstrip.github.io/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, clause de non-sollicitation acceptée.
 - [SEO, GEO et contenu généré par IA](https://paperstrip.github.io/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
-- [Qui je suis](https://paperstrip.github.io/a-propos/) : Arnaud Herr, dix ans à connecter des systèmes métier en Belgique, CTO de Clevermint, Wecocoon et Wibicom. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, et les intégrateurs déjà en place chez le client.
+- [Qui je suis](https://paperstrip.github.io/a-propos/) : Arnaud Herr, développeur full stack et CTO en Belgique, dix ans du front-end à l'architecture, CTO de Clevermint, Wecocoon et Wibicom. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, et les intégrateurs déjà en place chez le client.
 - [Contact](https://paperstrip.github.io/contact/) : arnaudherr@gmail.com, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement. Sont gratuits : la réponse écrite, l'appel et la proposition chiffrée. Tout ce qui commence ensuite est facturé, y compris le cadrage sur place, et chaque montant est annoncé avant que l'étape commence.
 
 ## Cadre
