@@ -18,7 +18,7 @@ import sys
 from urllib.parse import urljoin
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = "https://paperstrip.github.io/"
+BASE = "https://arnaudherr.be/"
 
 soucis = []
 

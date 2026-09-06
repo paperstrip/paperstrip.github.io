@@ -12,7 +12,7 @@ qu'une valeur ecrite a la main.
 """
 import io, subprocess, datetime, sys
 
-BASE = "https://paperstrip.github.io/"
+BASE = "https://arnaudherr.be/"
 
 PAGES = [
     ("",                 "index.html"),

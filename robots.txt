@@ -1,5 +1,5 @@
-# https://paperstrip.github.io/
+# https://arnaudherr.be/
 User-agent: *
 Allow: /
 
-Sitemap: https://paperstrip.github.io/sitemap.xml
+Sitemap: https://arnaudherr.be/sitemap.xml

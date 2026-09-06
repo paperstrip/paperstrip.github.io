@@ -296,12 +296,11 @@ propriété.
 
 L'URL du site apparaît dans chaque page (canonical, Open Graph, JSON-LD),
 dans `sitemap.xml` et dans `robots.txt`. En cas de changement de domaine,
-remplacer partout `https://paperstrip.github.io/`.
+remplacer partout `https://arnaudherr.be/`.
 
-⚠️ Sur un site de projet GitHub Pages, `robots.txt` n'est lu par les moteurs
-qu'à la racine du domaine (`paperstrip.github.io/robots.txt`), pas dans le
-sous-dossier. Tant qu'il n'y a pas de domaine propre, déclarer le sitemap
-directement dans la Search Console.
+Depuis la bascule sur `arnaudherr.be`, `robots.txt` est servi à la racine du
+domaine et donc lu normalement par les moteurs. La réserve qui valait du temps
+de `paperstrip.github.io` ne s'applique plus.
 
 ## Développement
 
