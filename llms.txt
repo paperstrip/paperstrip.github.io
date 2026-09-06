@@ -31,7 +31,7 @@ faut décider, vérifier et couper.
 
 ## Cadre
 
-- [Mentions légales](https://arnaudherr.be/mentions-legales/) : éditeur, hébergement, données personnelles. Le site n'utilise aucun cookie, aucun traceur et aucun outil de mesure d'audience.
+- [Mentions légales](https://arnaudherr.be/mentions-legales/) : éditeur, hébergement, données personnelles. Le site n'utilise aucun cookie ; la fréquentation est mesurée sans cookie ni identifiant par Cloudflare Web Analytics, donc sans bandeau de consentement.
 
 ## Comment je travaille
 

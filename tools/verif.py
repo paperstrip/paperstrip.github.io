@@ -59,6 +59,13 @@ def main():
         if n != 1:
             probleme(p, "%d balise h1 au lieu d'une" % n)
 
+        # --- balises de structure en double : pilotage-donnees portait deux
+        #     </body> sans que rien ne le signale ---
+        for balise, attendu in (("</body>", 1), ("</html>", 1), ("<head>", 1)):
+            if s.count(balise) != attendu:
+                probleme(p, "%s apparait %d fois au lieu de %d"
+                         % (balise, s.count(balise), attendu))
+
         # --- ancres imbriquees : HTML invalide, casse la mise en page ---
         if re.search(r"<a\b[^>]*>(?:(?!</a>).)*?<a\b", s, re.S):
             probleme(p, "ancre imbriquee dans une autre ancre")
