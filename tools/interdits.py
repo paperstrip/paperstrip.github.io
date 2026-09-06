@@ -39,15 +39,15 @@ INTERDITS = [
      "tout travail merite salaire : seul le premier appel est gratuit"),
     # Le sujet d'une phrase n'est jamais l'auteur en train de raconter ses
     # exploits. Le sujet, c'est le travail, le parcours ou le client.
-    (r"\bj'ai\b|\bj'avais\b|\bje\s+suis\s+parvenu|\bj'ai\s+r[ée]ussi",
+    (r"\bj'(ai|avais|en\s+ai|y\s+ai)\b|\bje\s+suis\s+parvenu",
      "narration a la premiere personne du passe : reformuler autour du travail"),
     # « Ce que je fais », « Comment je travaille », « Qui je suis » : des
     # intitules qui parlent de l'auteur au lieu de parler du travail. C'est
     # par la que la tournure revenait, sous forme de titre et de libelle de
     # navigation plutot que de phrase.
-    (r"<(?:h[1-4]|title)[^>]*>[^<]*\bje\b"
-     r"|class=\"(?:lbl|foot-lbl|kicker|sec-head)\"[^>]*>[^<]*\bje\b"
-     r"|\n#{2,} [^\n]*\bje\b",
+    (r"<(?:h[1-4]|title)[^>]*>[^<]*(?:\bje\b|\bj'[a-zé])"
+     r"|class=\"(?:lbl|foot-lbl|kicker|sec-head)\"[^>]*>[^<]*(?:\bje\b|\bj'[a-zé])"
+     r"|\n#{2,} [^\n]*(?:\bje\b|\bj'[a-zé])",
      "intitule centre sur l'auteur : nommer le travail, pas celui qui le fait"),
 ]
 
