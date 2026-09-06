@@ -770,6 +770,11 @@
     font-weight:700;font-size:var(--t-xs);line-height:1;margin-bottom:16px;
   }
 
+  /* Second chemin, sous l'appel a l'action principal : le visiteur qui
+     n'est pas pret a telephoner avait le choix entre partir et rien. */
+  .apres-cta{margin-top:14px;font-size:var(--t-body)}
+  .band .apres-cta{margin-top:16px}
+
   /* --- cartes de preuve (accueil) --- */
   /* colonne : les traits de separation s'alignent d'une carte a l'autre
      meme quand les descriptions n'ont pas la meme longueur */
@@ -809,6 +814,8 @@
     transform:rotate(-45deg);
   }
   .checks b{color:var(--ink);font-weight:600}
+  /* Un paragraphe qui suit une liste a coches se collait au dernier item. */
+  .checks + p{margin-top:clamp(22px,2.6vw,30px)}
 
   /* --- opposition en deux colonnes --- */
   .versus{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:clamp(30px,4vw,44px)}
