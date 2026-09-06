@@ -100,7 +100,7 @@ def main():
         print("  3. GitHub : Settings > Pages > Custom domain, puis Enforce HTTPS")
         print("  4. registrar : ALIAS/ANAME a l'apex vers paperstrip.github.io")
         print("  5. Search Console : nouvelle propriete, deposer le sitemap")
-        print("  6. remplacer arnaudherr@gmail.com par une adresse au domaine")
+        print("  6. verifier que l adresse de contact est bien au domaine")
 
 
 if __name__ == "__main__":

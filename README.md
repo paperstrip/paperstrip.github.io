@@ -279,14 +279,20 @@ Le script lit l'URL actuelle dans l'adresse canonique de l'accueil, il reste
 donc utilisable pour un changement ultérieur.
 
 Ensuite, côté GitHub : Settings, Pages, Custom domain, puis Enforce HTTPS une
-fois le certificat émis. Côté registrar : un ALIAS ou ANAME à l'apex vers
-`paperstrip.github.io`, ou les quatre enregistrements A publiés par GitHub.
+fois le certificat émis.
 
-Deux choses à ne pas oublier après la bascule :
+Côté registrar : **OVH n'implémente ni ALIAS ni ANAME**, il faut donc les quatre
+enregistrements A publiés par GitHub sur l'apex, plus un CNAME sur `www` vers
+`paperstrip.github.io.` Penser à supprimer d'abord l'enregistrement A que OVH
+crée par défaut vers sa page de parking (`213.186.33.5`) : laissé en place, il
+cohabite avec les quatre autres et une visite sur cinq atterrit sur le parking.
+Ne jamais toucher aux NS ni aux MX, ces derniers portant l'adresse de contact.
 
-- déclarer la nouvelle propriété dans la Search Console et y déposer le sitemap ;
-- remplacer `arnaudherr@gmail.com` par une adresse au domaine. Une adresse Gmail
-  sur un site qui vend de la rigueur technique coûte plus qu'elle ne rapporte.
+Après la bascule, déclarer la nouvelle propriété dans la Search Console (type
+Domaine, vérification par TXT) et y déposer le sitemap.
+
+L'adresse de contact est `contact@arnaudherr.be` : le domaine portant déjà le
+nom, le répéter devant l'arobase ne rachetait rien.
 
 GitHub Pages ne permet pas de rediriger les anciennes URL en 301. Si elles ont
 été indexées, demander leur retrait depuis la Search Console de l'ancienne

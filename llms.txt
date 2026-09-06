@@ -27,7 +27,7 @@ faut décider, vérifier et couper.
 - [Sous-traitance technique pour agences](https://arnaudherr.be/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, clause de non-sollicitation acceptée.
 - [SEO, GEO et contenu généré par IA](https://arnaudherr.be/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
 - [Qui je suis](https://arnaudherr.be/a-propos/) : Arnaud Herr, développeur full stack et CTO en Belgique, dix ans du front-end à l'architecture, CTO de Clevermint, Wecocoon et Wibicom. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, et les intégrateurs déjà en place chez le client.
-- [Contact](https://arnaudherr.be/contact/) : arnaudherr@gmail.com, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement. Sont gratuits : la réponse écrite, l'appel et la proposition chiffrée. Tout ce qui commence ensuite est facturé, y compris le cadrage sur place, et chaque montant est annoncé avant que l'étape commence.
+- [Contact](https://arnaudherr.be/contact/) : contact@arnaudherr.be, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement. Sont gratuits : la réponse écrite, l'appel et la proposition chiffrée. Tout ce qui commence ensuite est facturé, y compris le cadrage sur place, et chaque montant est annoncé avant que l'étape commence.
 
 ## Cadre
 
