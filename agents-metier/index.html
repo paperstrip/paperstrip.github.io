@@ -102,6 +102,64 @@
     "@type": "BusinessAudience",
     "name": "Entreprises en Belgique"
    }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://paperstrip.github.io/agents-metier/#faq",
+   "isPartOf": {
+    "@id": "https://paperstrip.github.io/agents-metier/#webpage"
+   },
+   "inLanguage": "fr-BE",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Faut-il remplacer notre ERP ou notre CRM ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non, et c'est même le contraire. La logique est construite puis livrée en API, et elle se branche sur les outils qui tournent déjà chez vous. Un agent nourri de vos données réelles vaut mieux qu'un outil neuf que personne n'ouvre au bout de trois semaines."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Qui branche l'agent sur nos outils ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Votre équipe, ou l'intégrateur qui s'occupe déjà de votre plateforme, avec ses conventions et ses accès. Je livre la logique en API et je ne réclame pas les clés de votre système. Personne n'a à me les donner."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Nos équipes vont-elles devoir apprendre un nouvel outil ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le plus souvent non : l'intelligence arrive dans le logiciel qu'elles ouvrent déjà le matin. Quand ce n'est pas possible et qu'il faut un écran supplémentaire, c'est annoncé au cadrage plutôt que découvert en cours de route."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Que deviennent nos données personnelles ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Elles sont retirées ou masquées avant d'entrer dans la chaîne, jamais après coup. Quand le projet demande un serveur, applicatif ou base de données, il tourne sur mes machines en Belgique. Et chaque traitement laisse une trace : ce qui est entré, ce qui en est sorti, et quand."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Et quand l'agent se trompe ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Les cas ambigus ne sont pas tranchés en silence : ils remontent à quelqu'un, avec le motif du doute. Partout où la décision engage l'entreprise vis-à-vis d'un client, c'est un humain qui valide. Comme tout est tracé, vous pouvez remonter le fil d'une décision automatisée sans dépendre de moi pour le faire."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Est-ce qu'il faut vraiment de l'IA pour tout ça ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pas toujours, et autant le dire. Un pont entre votre boutique en ligne et votre outil de gestion ne contient pas une ligne d'IA : ce sont des API et une architecture qui encaisse la panne du voisin au lieu de la propager. Ça n'a pas besoin d'être intelligent pour vous faire gagner des heures."
+     }
+    }
+   ]
   }
  ]
 }
@@ -348,6 +406,40 @@
           <p>Des flux documentaires entrants à traiter, classer et rattacher, sans que quelqu'un y passe ses matinées.</p>
         </li>
       </ul>
+    </div>
+  </section>
+
+
+  <section aria-labelledby="s-faq">
+    <div class="wrap">
+      <h2 class="sec-head" id="s-faq" data-rv>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Faut-il remplacer notre ERP ou notre CRM ?</summary>
+          <p>Non, et c'est même le contraire. La logique est construite puis livrée en API, et elle se branche sur les outils qui tournent déjà chez vous. Un agent nourri de vos données réelles vaut mieux qu'un outil neuf que personne n'ouvre au bout de trois semaines.</p>
+        </details>
+        <details>
+          <summary>Qui branche l'agent sur nos outils ?</summary>
+          <p>Votre équipe, ou l'intégrateur qui s'occupe déjà de votre plateforme, avec ses conventions et ses accès. Je livre la logique en API et je ne réclame pas les clés de votre système. Personne n'a à me les donner.</p>
+        </details>
+        <details>
+          <summary>Nos équipes vont-elles devoir apprendre un nouvel outil ?</summary>
+          <p>Le plus souvent non : l'intelligence arrive dans le logiciel qu'elles ouvrent déjà le matin. Quand ce n'est pas possible et qu'il faut un écran supplémentaire, c'est annoncé au cadrage plutôt que découvert en cours de route.</p>
+        </details>
+        <details>
+          <summary>Que deviennent nos données personnelles ?</summary>
+          <p>Elles sont retirées ou masquées avant d'entrer dans la chaîne, jamais après coup. Quand le projet demande un serveur, applicatif ou base de données, il tourne sur mes machines en Belgique. Et chaque traitement laisse une trace : ce qui est entré, ce qui en est sorti, et quand.</p>
+        </details>
+        <details>
+          <summary>Et quand l'agent se trompe ?</summary>
+          <p>Les cas ambigus ne sont pas tranchés en silence : ils remontent à quelqu'un, avec le motif du doute. Partout où la décision engage l'entreprise vis-à-vis d'un client, c'est un humain qui valide. Comme tout est tracé, vous pouvez remonter le fil d'une décision automatisée sans dépendre de moi pour le faire.</p>
+        </details>
+        <details>
+          <summary>Est-ce qu'il faut vraiment de l'IA pour tout ça ?</summary>
+          <p>Pas toujours, et autant le dire. Un pont entre votre boutique en ligne et votre outil de gestion ne contient pas une ligne d'IA : ce sont des API et une architecture qui encaisse la panne du voisin au lieu de la propager. Ça n'a pas besoin d'être intelligent pour vous faire gagner des heures.</p>
+        </details>
+      </div>
+
       <div class="band" data-rv>
         <div>
           <h2>Il y a une tâche qui revient tous les jours chez vous</h2>
