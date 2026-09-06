@@ -37,6 +37,10 @@ INTERDITS = [
      "gain de temps chiffre au doigt mouille"),
     (r"audit\s+gratuit|cadrage\s+gratuit|diagnostic\s+gratuit|audit\s+offert",
      "tout travail merite salaire : seul le premier appel est gratuit"),
+    # Le sujet d'une phrase n'est jamais l'auteur en train de raconter ses
+    # exploits. Le sujet, c'est le travail, le parcours ou le client.
+    (r"\bj'ai\b|\bj'avais\b|\bje\s+suis\s+parvenu|\bj'ai\s+r[ée]ussi",
+     "narration a la premiere personne du passe : reformuler autour du travail"),
 ]
 
 VIGILANCE = [
