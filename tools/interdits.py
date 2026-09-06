@@ -36,7 +36,16 @@ INTERDITS = [
     (r"divis[ée]\w*\s+(ses\s+|les\s+|mes\s+)?temps|temps\s+de\s+production\s+par\s+trois",
      "gain de temps chiffre au doigt mouille"),
     (r"audit\s+gratuit|cadrage\s+gratuit|diagnostic\s+gratuit|audit\s+offert",
-     "tout travail merite salaire : seul le premier appel est gratuit"),
+     "formulation de vendeur : dire que ce n'est pas facture suffit"),
+    # Le processus commercial a ete invente une fois, decrit a l'envers de la
+    # realite, et publie sur cinq fichiers. Ces regles gardent les faits.
+    (r"trente\s+minutes|30\s+minutes",
+     "aucune duree n'est annoncee : l'echange dure ce qu'il doit durer"),
+    (r"forfait\s+annonc[ée]"
+     r"|cadrage[^.]{0,60}(?:est|sont)\s+(?:une?\s+\w+\s+)?factur"
+     r"|le\s+cadrage[^.]{0,40}est\s+une\s+prestation"
+     r"|tout\s+ce\s+qui\s+(?:vient|commence)\s+apr[eè]s[^.]{0,40}factur",
+     "cadrage et devis font partie de l'avant-vente : ils ne sont pas factures"),
     # Le sujet d'une phrase n'est jamais l'auteur en train de raconter ses
     # exploits. Le sujet, c'est le travail, le parcours ou le client.
     (r"\bj'(ai|avais|en\s+ai|y\s+ai)\b|\bje\s+suis\s+parvenu",
