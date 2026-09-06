@@ -770,6 +770,22 @@
     font-weight:700;font-size:var(--t-xs);line-height:1;margin-bottom:16px;
   }
 
+  /* --- cartes de preuve (accueil) --- */
+  /* colonne : les traits de separation s'alignent d'une carte a l'autre
+     meme quand les descriptions n'ont pas la meme longueur */
+  .cas .card{display:flex;flex-direction:column}
+  .cas .desc{flex:1}
+  .cas .lbl-cas{
+    display:block;font-size:var(--t-xs);font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-45);margin-bottom:11px;
+  }
+  .cas .fait{
+    margin-top:16px;padding-top:14px;
+    border-top:1px solid color-mix(in srgb,var(--brand-ink) 14%,transparent);
+    color:var(--ink);font-weight:600;
+  }
+  .cas .lnk{margin-top:14px;display:inline-block}
+
   /* --- liste à coches --- */
   .checks{margin-top:clamp(26px,3vw,36px);display:grid;gap:14px}
   .checks li{position:relative;padding-left:30px;color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
