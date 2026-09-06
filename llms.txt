@@ -16,7 +16,7 @@ Ce qui me distingue : l'IA produit vite, et produit donc vite du médiocre quand
 personne ne la tient. Mon travail commence après la génération, au moment où il
 faut décider, vérifier et couper.
 
-## Ce que je fais
+## Les prestations
 
 - [Articles](https://arnaudherr.be/articles/) : textes écrits depuis des projets réels. Le coût de fonctionnement d'une automatisation IA (exemple mesuré à 80 000 tokens), pourquoi une automatisation qui passe les tests échoue en production (jeu de test trop propre, information absente du document, catégorie pour le doute), et comment brancher un serveur MCP sur WordPress pour produire des pages en restant dans la charte, sans jamais ouvrir l'administration.
 - [Accueil](https://arnaudherr.be/) : les trois niveaux d'intervention (consultance, agents métier, production sur mesure), ce qui vaut pour les trois, et le cadre commercial : premier appel de trente minutes gratuit, tout ce qui suit facturé avec le montant annoncé d'avance.
@@ -27,20 +27,20 @@ faut décider, vérifier et couper.
 - [Logiciels métier sur mesure](https://arnaudherr.be/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités et des tests là où une erreur coûte de l'argent. Hébergement possible sur mes serveurs en Belgique.
 - [Sous-traitance technique pour agences](https://arnaudherr.be/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, clause de non-sollicitation acceptée.
 - [SEO, GEO et contenu généré par IA](https://arnaudherr.be/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
-- [Qui je suis](https://arnaudherr.be/a-propos/) : Arnaud Herr, développeur full stack et CTO en Belgique, dix ans du front-end à l'architecture, CTO de Clevermint, Wecocoon et Wibicom. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, et les intégrateurs déjà en place chez le client.
+- [Parcours](https://arnaudherr.be/a-propos/) : Arnaud Herr, développeur full stack et CTO en Belgique, dix ans du front-end à l'architecture, CTO de Clevermint, Wecocoon et Wibicom. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, et les intégrateurs déjà en place chez le client.
 - [Contact](https://arnaudherr.be/contact/) : contact@arnaudherr.be, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement. Sont gratuits : la réponse écrite, l'appel et la proposition chiffrée. Tout ce qui commence ensuite est facturé, y compris le cadrage sur place, et chaque montant est annoncé avant que l'étape commence.
 
 ## Cadre
 
 - [Mentions légales](https://arnaudherr.be/mentions-legales/) : éditeur, hébergement, données personnelles. Le site n'utilise aucun cookie ; la fréquentation est mesurée sans cookie ni identifiant par Cloudflare Web Analytics, donc sans bandeau de consentement.
 
-## Comment je travaille
+## La méthode
 
 1. Le cadrage : on identifie ensemble les tâches qui reviennent tous les jours, avec les personnes qui les font. On isole deux ou trois gestes répétitifs et on met un chiffre dessus. Voir [la consultance](https://arnaudherr.be/consultance/).
 2. Le POC : un seul cas d'usage mis en production vite, jugé en conditions réelles avant d'engager plus large.
 3. Le déploiement : ce qui a fait ses preuves se réplique. Le reste s'arrête.
 
-## Ce que je refuse
+## Les limites posées
 
 - Lancer une automatisation sans avoir chiffré au préalable le temps réellement passé sur le geste. Sans point de départ, personne ne peut dire si ça a servi.
 - Faire passer un logiciel sur mesure quand un produit du marché fait le travail pour moins cher.
