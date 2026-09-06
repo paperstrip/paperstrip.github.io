@@ -47,7 +47,8 @@ faut décider, vérifier et couper.
 
 ## Cadre sur les données
 
-Anonymisation des données personnelles avant traitement. Hébergement applicatif
-sur mes serveurs en Belgique quand le projet en demande un. Validation humaine
+Anonymisation des données personnelles avant traitement. Les sites, interfaces
+et applications livrées, bases de données comprises, sont hébergés sur notre
+infrastructure en Belgique. Validation humaine
 partout où la décision engage l'entreprise vis-à-vis d'un client. Traçabilité de
 bout en bout. Exigences RGPD prises comme point de départ.
