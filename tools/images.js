@@ -42,6 +42,8 @@ const CIBLES = {
   'cta':                   [1800, 1200],
   /* carre egalement : meme conteneur .duo sur a-propos */
   'portrait':              [1100, 1100],
+  /* bloc « Vos donnees ne partent pas en promenade », .duo lui aussi */
+  'cadre-donnees':         [1100, 1100],
   'og':                    [1200, 630],
 };
 
