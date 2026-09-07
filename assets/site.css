@@ -976,14 +976,6 @@
   .lnk{border-bottom:1px solid var(--line-2);transition:color .25s var(--ease),border-color .25s var(--ease)}
   .lnk:hover{color:var(--coral-t);border-color:var(--coral-t)}
 
-  /* Listes à puces avec descriptions gras */
-  .bullet-list{
-    list-style:none;padding:0;margin:clamp(24px,3vw,32px) 0;
-    display:grid;gap:clamp(18px,2vw,24px);
-  }
-  .bullet-list li{font-size:var(--t-body);line-height:1.6;color:var(--ink-70)}
-  .bullet-list strong{color:var(--ink)}
-
   /* ---------- PIED DE PAGE ---------- */
   .site-footer{
     background:var(--ink);color:var(--on-dark);
