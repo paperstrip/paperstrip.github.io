@@ -553,7 +553,13 @@
   .pcard-panel .out{
     margin-top:18px;font-size:var(--t-xs);font-weight:700;color:var(--coral-t);
     letter-spacing:.06em;text-transform:uppercase;
+    /* seule la description absorbe la hauteur libre : sans ce flex:none,
+       la mention et le lien grandissaient eux aussi */
+    flex:none;
   }
+  /* la carte « croisement de donnees » porte un lien sous la mention, il y
+     etait colle */
+  .pcard-panel .out + p{margin-top:12px;flex:none}
 
   /* ---------- BENTO ---------- */
   .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:clamp(30px,4vw,44px)}
