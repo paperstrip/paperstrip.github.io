@@ -573,6 +573,12 @@
      etait colle */
   .pcard-panel .out + p{margin-top:12px;flex:none}
 
+  /* Derniere carte du rail : appel a l'action pour le besoin hors case */
+  .pcard--cta{background:var(--lavender);border-color:transparent}
+  .pcard--cta .pcard-panel h3{color:var(--ink)}
+  .pcard--cta .pcard-panel p{color:var(--on-accent-88)}
+  .pcard--cta .pcard-panel p:last-child{flex:none;margin-top:18px}
+
   /* ---------- BENTO ---------- */
   .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:clamp(30px,4vw,44px)}
   .b{
