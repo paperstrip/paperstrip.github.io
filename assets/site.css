@@ -573,11 +573,18 @@
      etait colle */
   .pcard-panel .out + p{margin-top:12px;flex:none}
 
-  /* Derniere carte du rail : appel a l'action pour le besoin hors case */
-  .pcard--cta{background:var(--lavender);border-color:transparent}
-  .pcard--cta .pcard-panel h3{color:var(--ink)}
-  .pcard--cta .pcard-panel p{color:var(--on-accent-88)}
-  .pcard--cta .pcard-panel p:last-child{flex:none;margin-top:18px}
+  /* Derniere carte du rail : bandeau plein-largeur en mauve, meme forme
+     que le bandeau de rappel (.band) mais sans reprendre le corail. */
+  .pcard.pcard--band{
+    grid-column:1 / -1;background:var(--lavender);border-color:transparent;
+    padding:clamp(28px,4vw,52px);
+    flex-direction:row;align-items:center;align-content:center;
+    justify-content:space-between;gap:24px;flex-wrap:wrap;
+  }
+  .pcard--band h3{color:var(--ink);max-width:26ch;font-size:var(--t-h2);margin:0}
+  .pcard--band p{color:var(--on-accent-88);font-size:var(--t-sm);margin-top:10px;max-width:46ch;flex:none}
+  .pcard--band .btn{flex:none}
+  @media(max-width:1000px){.pcard--band{flex:0 0 100%}}
 
   /* ---------- BENTO ---------- */
   .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:clamp(30px,4vw,44px)}
