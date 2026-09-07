@@ -6,6 +6,8 @@
 
     NODE_PATH=/opt/node22/lib/node_modules node tools/images.js
     NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --jpeg
+    NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --bichromie
+    NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --bichromie --dose 55
     NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --qualite 85
 
   Chaque fichier de assets/img-src/ doit porter un nom de la table ci-dessous,
@@ -42,6 +44,18 @@ const CIBLES = {
 
 const args = process.argv.slice(2);
 const jpeg = args.includes('--jpeg');
+/* --bichromie : projette la luminance sur la rampe de marque. Sans ce
+   drapeau, les couleurs d'origine sont conservees. */
+const bichromie = args.includes('--bichromie');
+/* Rampe derivee de :root dans assets/site.css. Les extremes sont
+   --brand-ink et --brand-tint-2. Le point median n'est pas --brand-accent
+   pur : a pleine saturation, toute photo virait au violet. C'est un lavande
+   rompu de gris, qui donne un monochrome teinte plutot qu'une couleur. */
+const RAMPE = [[0x17, 0x16, 0x1C], [0x85, 0x79, 0xB0], [0xF6, 0xF5, 0xFA]];
+/* --dose 0 a 100 : melange entre l'image d'origine et le traitement.
+   100 par defaut, 50 donne une teinte legere. */
+const idose = args.indexOf('--dose');
+const dose = idose !== -1 ? Math.max(0, Math.min(100, Number(args[idose + 1]))) / 100 : 1;
 const iq = args.indexOf('--qualite');
 const qualite = iq !== -1 ? Number(args[iq + 1]) / 100 : 0.78;
 const ext = jpeg ? 'jpg' : 'webp';
@@ -70,7 +84,7 @@ const ko = o => (o / 1024).toFixed(0).padStart(5) + ' Ko';
     const dataUri = 'data:image/' + (path.extname(f).slice(1).toLowerCase().replace('jpg', 'jpeg'))
                     + ';base64,' + brut.toString('base64');
 
-    const sortie = await p.evaluate(async ({ uri, w, h, mime, q }) => {
+    const sortie = await p.evaluate(async ({ uri, w, h, mime, q, rampe, dose }) => {
       const img = new Image();
       img.src = uri;
       await img.decode();
@@ -93,10 +107,31 @@ const ko = o => (o / 1024).toFixed(0).padStart(5) + ' Ko';
       const fin = document.createElement('canvas'); fin.width = w; fin.height = h;
       const g = fin.getContext('2d'); g.imageSmoothingQuality = 'high';
       g.drawImage(c, 0, 0, w, h);
+      if (rampe && dose > 0) {
+        /* Table de correspondance sur 256 niveaux : deux segments lineaires
+           entre les trois teintes de la rampe, calculee une fois plutot que
+           par pixel. */
+        const lut = new Uint8Array(256 * 3);
+        for (let i = 0; i < 256; i++) {
+          const x = i / 255, seg = x < 0.5 ? 0 : 1, k = (x - seg * 0.5) * 2;
+          for (let c = 0; c < 3; c++)
+            lut[i * 3 + c] = Math.round(rampe[seg][c] + (rampe[seg + 1][c] - rampe[seg][c]) * k);
+        }
+        const d = g.getImageData(0, 0, w, h), px = d.data;
+        for (let i = 0; i < px.length; i += 4) {
+          /* luminance perceptuelle, pas la moyenne des canaux */
+          const l = (0.2126 * px[i] + 0.7152 * px[i + 1] + 0.0722 * px[i + 2]) | 0;
+          px[i] += (lut[l * 3] - px[i]) * dose;
+          px[i + 1] += (lut[l * 3 + 1] - px[i + 1]) * dose;
+          px[i + 2] += (lut[l * 3 + 2] - px[i + 2]) * dose;
+        }
+        g.putImageData(d, 0, 0);
+      }
       const blob = await new Promise(r => fin.toBlob(r, mime, q));
       const buf = new Uint8Array(await blob.arrayBuffer());
       return { octets: Array.from(buf), source: img.naturalWidth + 'x' + img.naturalHeight };
-    }, { uri: dataUri, w: cible[0], h: cible[1], mime, q: qualite });
+    }, { uri: dataUri, w: cible[0], h: cible[1], mime, q: qualite,
+         rampe: bichromie ? RAMPE : null, dose });
 
     const out = Buffer.from(sortie.octets);
     fs.writeFileSync(path.join(DST, nom + '.' + ext), out);
