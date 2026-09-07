@@ -29,7 +29,9 @@ INTERDITS = [
      "le choix du modele IA n'est pas un sujet commercial"),
     (r"demi[-\s]journ[ée]e",
      "observation sur place d'une demi-journee : pas dans le processus"),
-    (r"—",
+    # Ecrit en echappement pour que le depot ne contienne aucun tiret
+    # cadratin litteral, pas meme dans l'outil qui les traque.
+    (r"\u2014",
      "tiret cadratin : proscrit sur tout le site"),
     (r"\bfran[cç]ais[e]?\b(?=[^.]*\b(march[ée]|client|entreprise|PME|soci[ée]t[ée])\b)|\bFrance\b",
      "la zone couverte est la Wallonie et Bruxelles, pas la France"),

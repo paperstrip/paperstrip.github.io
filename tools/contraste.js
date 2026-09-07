@@ -80,7 +80,7 @@ function lum(c){const [r,g,b]=c.slice(0,3).map(v=>{v/=255;return v<=0.03928?v/12
       if(exception(fg,bg) && ratio>=2) continue;
       const cle=x.fg+x.bg+x.size;
       if(ratio<need&&!vus.has(cle)){vus.add(cle);
-        echecs.push(`  ${ratio.toFixed(2)} au lieu de ${need} — ${x.size}px "${x.t}" ${x.fg} sur ${x.bg}`);}
+        echecs.push(`  ${ratio.toFixed(2)} au lieu de ${need} : ${x.size}px "${x.t}" ${x.fg} sur ${x.bg}`);}
     }
     total+=echecs.length;
     console.log('/'+path+(echecs.length?'\n'+echecs.join('\n'):'  tous les contrastes passent'));
