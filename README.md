@@ -324,7 +324,8 @@ sur la police système.
 
 ## Points ouverts
 
-- Les photos sont en hotlink Unsplash : à rapatrier dans `assets/` en WebP
+- Les images sont générées, traitées en bichromie par `tools/images.js` et servies
+  depuis `assets/img/` en WebP. Les sources restent dans `assets/img-src/`.
   redimensionné avant une mise en ligne durable (perf + LCP).
 - Les pages internes n'ont aucune image ; en ajouter une par page aiderait au
   partage social et à la lecture.
