@@ -25,20 +25,23 @@ const DST = path.join(RACINE, 'assets', 'img');
 /* nom : [largeur, hauteur] telles que declarees dans le HTML */
 const CIBLES = {
   'hero':                  [1900, 1267],
-  'constat-equipe':        [1000, 1250],
+  /* carre : .duo .shot-4x5 impose aspect-ratio 1/1 */
+  'constat-equipe':        [1100, 1100],
   'cas-tri-documentaire':  [900, 1200],
   'cas-reponses':          [900, 1200],
   'cas-extensions':        [900, 1200],
   'cas-pilotage':          [900, 1200],
   'cas-ponts':             [900, 1200],
-  'bento-code':            [800, 1000],
+  /* paysage : la cellule .b-photo du bento est large, pas haute */
+  'bento-code':            [1200, 760],
   'bento-atelier':         [1200, 800],
   'manifeste':             [1800, 1200],
   'terrain-distribution':  [900, 720],
   'terrain-relation':      [900, 720],
   'terrain-administratif': [900, 720],
   'cta':                   [1800, 1200],
-  'portrait':              [1000, 1250],
+  /* carre egalement : meme conteneur .duo sur a-propos */
+  'portrait':              [1100, 1100],
   'og':                    [1200, 630],
 };
 
