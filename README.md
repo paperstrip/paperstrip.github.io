@@ -26,6 +26,7 @@ tools/contraste.js    audit de contraste sur toutes les pages
 tools/set-domain.py   bascule l'URL de base vers un domaine propre
 tools/theme.py        applique une palette enregistrée
 tools/images.js       recadre et réencode les images sources
+tools/og.js           régénère l'image de partage assets/og.jpg
 assets/site.css       styles partagés par toutes les pages
 assets/site.js        révélation au scroll, en-tête, méga-menu, accordéons
 assets/og.jpg         image de partage Open Graph (1200×630)
