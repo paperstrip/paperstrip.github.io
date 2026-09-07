@@ -586,6 +586,77 @@
   .pcard--band .btn{flex:none}
   @media(max-width:1000px){.pcard--band{flex:0 0 100%}}
 
+  /* ---------- SCHEMA TECHNIQUE ----------
+     Une feuille posee sur la section : le schema se lit comme un document,
+     pas comme une illustration. Typo, filets et palette du site, aucune
+     image importee. Le rail se rompt et passe en pointille a l'endroit ou
+     la chaine sort de l'infrastructure : c'est l'information que le
+     schema porte. */
+  .schema{
+    margin-top:clamp(30px,4vw,44px);
+    background:var(--brand-page);border-radius:var(--r);
+    padding:clamp(24px,3vw,44px);
+  }
+  .schema-cap{
+    font-size:var(--t-h3);line-height:1.25;color:var(--ink);
+    margin-bottom:clamp(24px,3vw,36px);
+  }
+  .schema-lbl{
+    display:block;font-size:var(--t-xs);font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-45);margin-bottom:10px;
+  }
+
+  .sc-flow{list-style:none;padding:0;margin:0}
+  .sc-row{
+    position:relative;display:flex;gap:20px;align-items:flex-start;
+    padding-bottom:clamp(24px,2.6vw,32px);
+  }
+  .sc-step:last-child .sc-row{padding-bottom:0}
+  /* le rail descend du bas d'une pastille jusqu'a la suivante */
+  .sc-row::before{
+    content:'';position:absolute;left:15px;top:32px;bottom:0;
+    border-left:1px solid var(--line-2);
+  }
+  .sc-step:last-child .sc-row::before{display:none}
+  /* les deux segments qui franchissent la frontiere */
+  .sc-cross .sc-row::before{border-left-style:dashed;border-left-color:var(--coral-t)}
+
+  .sc-n{
+    flex:none;width:32px;height:32px;border-radius:var(--pill);
+    background:var(--brand-page);border:1px solid var(--line-2);
+    display:flex;align-items:center;justify-content:center;
+    font-size:var(--t-xs);font-weight:700;color:var(--ink-45);
+  }
+  .sc-step--ext .sc-n{border-color:var(--coral-t);color:var(--coral-t)}
+  .sc-txt{flex:1;min-width:0}
+  .sc-txt h4{font-size:var(--t-body);margin-bottom:6px;color:var(--ink)}
+  .sc-d{color:var(--ink-70);font-size:var(--t-body);line-height:1.55;max-width:58ch}
+
+  /* libelle de zone : la frontiere entre ce qui reste chez vous et ce qui sort */
+  .sc-zone{
+    padding-top:clamp(20px,2.4vw,28px);margin-bottom:18px;
+    border-top:1px solid var(--line);
+    font-size:var(--t-xs);font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-45);
+  }
+  .sc-flow > li:first-child .sc-zone{padding-top:0;border-top:none}
+  .sc-step--ext .sc-zone{color:var(--coral-t)}
+
+  /* les deux issues possibles */
+  .sc-out{
+    display:grid;gap:14px;margin-top:clamp(24px,3vw,32px);
+    padding-top:clamp(24px,3vw,32px);border-top:1px solid var(--line);
+  }
+  @media(min-width:700px){.sc-out{grid-template-columns:1fr 1fr;gap:20px}}
+  .sc-o{background:var(--chablis);border-radius:var(--r-sm);padding:clamp(18px,2vw,24px)}
+  .sc-o p{color:var(--ink-70);font-size:var(--t-body);line-height:1.55}
+  .sc-o .sc-o-lbl{
+    font-size:var(--t-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-45);margin-bottom:8px;
+  }
+  .sc-o--doute{background:var(--soft)}
+  .sc-o--doute .sc-o-lbl{color:var(--coral-t)}
+
   /* ---------- BENTO ---------- */
   .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:clamp(30px,4vw,44px)}
   .b{
