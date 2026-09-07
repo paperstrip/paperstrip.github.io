@@ -471,6 +471,9 @@
      déjà. Relevée, elle ne borne plus que les vrais cas longs. */
   .sec-head{max-width:28ch}
   .sec-head + .lead{margin-top:16px}
+  /* un chapo qui reprend sous une grille de cartes n'avait aucune marge :
+     il se collait au bas des cartes */
+  .g2 + .lead,.g3 + .lead,.rail + .lead,.bento + .lead{margin-top:clamp(28px,3.4vw,40px)}
 
   /* Marge basse indispensable : tant que la section suivante etait blanche,
      un padding-bottom nul passait inapercu. Des qu'elle est teintee, le fond
@@ -514,6 +517,15 @@
   .rail--4{grid-template-columns:repeat(4,1fr)}
   /* Un paragraphe qui suit un chapo se collait a lui. */
   .lead + p{margin-top:clamp(14px,1.6vw,20px)}
+  /* Mesure par defaut d'un paragraphe pose directement dans une section.
+     :where() ne pese rien en specificite, donc .lead, .mention et .cle
+     gardent la leur. Un :not([class]) ne marcherait pas : le script
+     d'apparition ajoute la classe « in » a ces paragraphes. */
+  :where(.wrap > p){max-width:62ch}
+  /* et il leur faut une marge quand ils reprennent sous une grille */
+  .g2 + p,.g3 + p,.rail + p,.bento + p{margin-top:clamp(28px,3.4vw,40px)}
+  /* deux paragraphes qui se suivent : ils etaient colles */
+  .wrap > p + p{margin-top:clamp(14px,1.6vw,20px)}
   @media(max-width:1000px){
     .rail{
       display:flex;gap:12px;overflow-x:auto;
@@ -605,7 +617,9 @@
      Colonne de lecture, rythmee par ses intertitres. Les h2 y sont bien plus
      petits que les .sec-head des pages de service : dans un texte suivi, un
      titre de 64px casserait la lecture au lieu de la guider. */
-  .article{max-width:68ch;margin-top:clamp(28px,3.6vw,40px)}
+  /* centre dans la colonne : sans margin-inline, le texte restait cale a
+     gauche d'un conteneur deux fois plus large que lui */
+  .article{max-width:68ch;margin-inline:auto;margin-top:clamp(28px,3.6vw,40px)}
   .article > * + *{margin-top:18px}
   .article h2{
     font-size:var(--t-h3);font-weight:600;letter-spacing:-.012em;line-height:1.28;
@@ -623,15 +637,23 @@
     content:'';position:absolute;left:0;top:.7em;width:8px;height:1.5px;background:var(--coral);
   }
   /* Constat detache du fil : ce que le lecteur doit retenir s'il ne lit rien d'autre. */
-  .article .cle{
+  /* Encadre de synthese. La regle etait limitee a .article : posee
+     ailleurs, la classe ne produisait plus rien du tout, ni marge ni fond. */
+  .cle{
     margin-top:clamp(30px,3.4vw,40px);padding:clamp(20px,2.2vw,28px);
     border-radius:var(--r);background:var(--soft);color:var(--ink);
-    font-size:var(--t-lead);line-height:1.5;
+    font-size:var(--t-lead);line-height:1.5;max-width:68ch;
   }
-  .article .cle b{color:var(--coral-t)}
+  .sec-soft .cle{background:var(--brand-page)}
+  .cle b{color:var(--coral-t)}
 
   /* Liste des articles */
-  .posts{display:grid;gap:14px;margin-top:clamp(30px,4vw,44px)}
+  /* une seule colonne pleine largeur se lisait comme un tableau ; en
+     cartes, chaque article existe pour lui-meme */
+  .posts{
+    display:grid;gap:16px;margin-top:clamp(30px,4vw,44px);
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  }
   .post{
     display:block;background:var(--brand-page);border:1px solid var(--line);
     border-radius:var(--r);padding:clamp(22px,2.2vw,30px);
