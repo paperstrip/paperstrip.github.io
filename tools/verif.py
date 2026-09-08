@@ -86,7 +86,12 @@ def main():
         for href in re.findall(r'href="([^"]+)"', s):
             if href.startswith(("http", "mailto:", "tel:", "#")):
                 continue
-            cible = os.path.normpath(os.path.join(base, href.split("#")[0]))
+            # Les icones et le manifeste sont declares en absolu depuis la
+            # racine : c'est la convention pour /favicon.ico, que le
+            # navigateur va chercher la de toute facon. Le site etant servi
+            # a la racine du domaine, le point de depart est RACINE.
+            depart = "" if href.startswith("/") else base
+            cible = os.path.normpath(os.path.join(depart, href.lstrip("/").split("#")[0]))
             plein = os.path.join(RACINE, cible)
             if not (os.path.isfile(plein) or os.path.isfile(os.path.join(plein, "index.html"))):
                 probleme(p, "lien mort vers %s" % href)
