@@ -35,7 +35,13 @@ def _empreinte_corps(rev, chemin):
     if r.returncode:
         return None
     m = re.search(r"<main.*?</main>", r.stdout, re.S)
-    return hashlib.sha1(m.group(0).encode()).hexdigest() if m else None
+    if not m:
+        return None
+    # La ligne de date est ecrite par cet outil, a l'interieur de <main>. Sans
+    # l'exclure, le commit qui la pose passe pour une modification du texte,
+    # et chaque execution repousserait dateModified a sa propre date.
+    corps = re.sub(r'\s*<p class="date-art".*?</p>', "", m.group(0), flags=re.S)
+    return hashlib.sha1(corps.encode()).hexdigest()
 
 
 def dates(chemin):
