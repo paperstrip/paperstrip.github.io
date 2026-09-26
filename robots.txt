@@ -10,12 +10,20 @@
 # PerplexityBot). Les bloquer reviendrait a se retirer des reponses
 # generatives, ce qui irait contre le travail de referencement fait ici.
 #
-# Deux precisions qui evitent les contresens :
-#   - Google-Extended ne concerne QUE l'entrainement de Gemini. Le bloquer
-#     n'a aucun effet sur l'indexation ni sur le classement dans Google.
-#   - Applebot-Extended, pareil : Applebot, qui sert Siri et Spotlight,
-#     n'est pas concerne et reste autorise.
-#   - Bloquer ClaudeBot ne bloque ni Claude-User ni Claude-SearchBot.
+# La regle qui decide : ne bloquer un fournisseur que s'il publie un jeton
+# SEPARE pour ses reponses. Sinon on se retire de ses reponses en croyant
+# ne refuser que l'entrainement.
+#
+#   OpenAI    GPTBot (entrainement) / OAI-SearchBot / ChatGPT-User   separe
+#   Anthropic ClaudeBot / Claude-User / Claude-SearchBot             separe
+#   Apple     Applebot-Extended (entrainement) / Applebot (Siri)     separe
+#   Google    Google-Extended : PAS de jeton separe                  melange
+#
+# Google-Extended ne se bloque donc pas. Il ne touche effectivement ni a
+# l'indexation ni au classement dans Google Search, mais il pilote aussi le
+# grounding de Gemini, c'est-a-dire sa capacite a lire la page pour repondre.
+# Constate en direct : Gemini refusait d'ouvrir le site tant qu'il figurait
+# dans la liste ci-dessous.
 #
 # Un robot suit le groupe qui le nomme, et celui-la seulement : ceux qui ne
 # sont pas listes ci-dessous relevent de User-agent: * et passent.
@@ -29,9 +37,6 @@ User-agent: GPTBot
 Disallow: /
 
 User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Google-Extended
 Disallow: /
 
 User-agent: Applebot-Extended
