@@ -1067,3 +1067,11 @@
   .benefit__illu svg{width:28px;height:28px;display:block}
   .benefit h3{margin:20px 0 8px}
   .benefit p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5;max-width:38ch}
+
+  /* Date d'article. Visible et pas seulement dans le balisage : Google le
+     demande, et un lecteur veut savoir s'il lit quelque chose de perime. */
+  .date-art{
+    margin-top:clamp(14px,1.6vw,18px);
+    font-size:var(--t-sm);color:var(--ink-45);
+  }
+  .date-art time{color:var(--ink-70)}
