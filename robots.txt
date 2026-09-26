@@ -1,4 +1,76 @@
 # https://arnaudherr.be/
+#
+# Deux familles de robots d'IA, deux traitements.
+#
+# Bloques : ceux qui aspirent pour entrainer des modeles. Ils ne renvoient
+# ni visite ni citation, le site n'a rien a y gagner.
+#
+# Laisses passer : ceux qui vont chercher une page pour repondre a quelqu'un
+# et la citent (OAI-SearchBot, ChatGPT-User, Claude-User, Claude-SearchBot,
+# PerplexityBot). Les bloquer reviendrait a se retirer des reponses
+# generatives, ce qui irait contre le travail de referencement fait ici.
+#
+# Deux precisions qui evitent les contresens :
+#   - Google-Extended ne concerne QUE l'entrainement de Gemini. Le bloquer
+#     n'a aucun effet sur l'indexation ni sur le classement dans Google.
+#   - Applebot-Extended, pareil : Applebot, qui sert Siri et Spotlight,
+#     n'est pas concerne et reste autorise.
+#   - Bloquer ClaudeBot ne bloque ni Claude-User ni Claude-SearchBot.
+#
+# Un robot suit le groupe qui le nomme, et celui-la seulement : ceux qui ne
+# sont pas listes ci-dessous relevent de User-agent: * et passent.
+#
+# Rappel : robots.txt est declaratif. Il est respecte par les robots serieux
+# et ignore par les aspirateurs. Sans serveur, GitHub Pages ne permet aucun
+# blocage reel.
+
+# --- entrainement de modeles : refuse ---
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+# --- tout le reste, moteurs de recherche et moteurs de reponse compris ---
 User-agent: *
 Allow: /
 
