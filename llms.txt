@@ -33,7 +33,7 @@ faut décider, vérifier et couper.
 
 ## Cadre
 
-- [Mentions légales](https://arnaudherr.be/mentions-legales/) : éditeur, hébergement, données personnelles. Le site n'utilise aucun cookie ; la fréquentation est mesurée sans cookie ni identifiant par Cloudflare Web Analytics, donc sans bandeau de consentement.
+- [Mentions légales](https://arnaudherr.be/mentions-legales/) : éditeur, hébergement, données personnelles. La fréquentation est mesurée par Google Analytics, avec cookies déposés uniquement après consentement.
 
 ## La méthode
 

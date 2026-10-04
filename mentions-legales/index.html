@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#17161C">
 
 <title>Mentions légales | Arnaud Herr</title>
-<meta name="description" content="Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles. Aucun cookie, aucun traceur.">
+<meta name="description" content="Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles, mesure d'audience et cookies.">
 <meta name="author" content="Arnaud Herr">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://arnaudherr.be/mentions-legales/">
@@ -17,14 +17,14 @@
 <meta property="og:site_name" content="Arnaud Herr">
 <meta property="og:url" content="https://arnaudherr.be/mentions-legales/">
 <meta property="og:title" content="Mentions légales | Arnaud Herr">
-<meta property="og:description" content="Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles. Aucun cookie, aucun traceur.">
+<meta property="og:description" content="Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles, mesure d'audience et cookies.">
 <meta property="og:image" content="https://arnaudherr.be/assets/og.jpg">
 <meta property="og:image:alt" content="Arnaud Herr. Avant de vous vendre de l'IA, on regarde si vous en avez besoin. Consultance, agents IA, sites et logiciels sur mesure, en Wallonie et à Bruxelles.">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mentions légales | Arnaud Herr">
-<meta name="twitter:description" content="Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles. Aucun cookie, aucun traceur.">
+<meta name="twitter:description" content="Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles, mesure d'audience et cookies.">
 <meta name="twitter:image" content="https://arnaudherr.be/assets/og.jpg">
 
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -43,7 +43,7 @@
    "@id": "https://arnaudherr.be/mentions-legales/#webpage",
    "url": "https://arnaudherr.be/mentions-legales/",
    "name": "Mentions légales",
-   "description": "Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles. Aucun cookie, aucun traceur.",
+   "description": "Éditeur du site, hébergement, propriété intellectuelle et traitement des données personnelles, mesure d'audience et cookies.",
    "isPartOf": {
     "@id": "https://arnaudherr.be/#website"
    },
@@ -76,6 +76,9 @@
  ]
 }
 </script>
+<!-- Mesure d'audience : Google Tag Manager, différé et soumis au consentement.
+     Tout se règle dans assets/mesure.js, commun à toutes les pages. -->
+<script src="/assets/mesure.js" defer></script>
 </head>
 <body>
 
@@ -210,18 +213,21 @@
   <section aria-labelledby="s3">
     <div class="wrap">
       <h2 class="sec-head" id="s3" data-rv>Données personnelles</h2>
-      <p class="lead" data-rv>Ce site n'utilise <b>aucun cookie</b> et ne vous suit pas d'un site à
-      l'autre. Rien n'est déposé sur votre appareil, et il n'y a donc pas de bandeau à accepter.</p>
-      <p data-rv>La fréquentation est mesurée par <b>Cloudflare Web Analytics</b>, un outil qui compte
-      les pages vues sans cookie et sans identifiant enregistré sur votre appareil. Il ne permet donc
-      pas de vous reconnaître d'une visite à l'autre, ni de savoir ce que vous faites ailleurs.</p>
-      <p class="mention" data-rv>Une réserve, par souci d'exactitude. Cloudflare reçoit votre adresse
-      IP le temps de la requête, comme tout serveur à qui votre navigateur s'adresse, et s'en sert pour
-      déduire un pays. C'est le seul tiers sollicité pendant votre visite : les images, les polices de
-      caractères et le code sont hébergés avec le site, et les afficher ne fait appel à personne
-      d'autre.</p>
+      <p class="lead" data-rv>Ce site ne dépose <b>aucun cookie sans votre accord</b>. Un bandeau vous
+      le demande à la première visite, et refuser ne change rien à ce que vous pouvez lire.</p>
+      <p data-rv>La fréquentation est mesurée par <b>Google Analytics</b>, chargé via Google Tag Manager.
+      Si vous acceptez, il dépose des cookies qui permettent de compter les visites et de reconnaître
+      un navigateur d'une visite à l'autre, sur ce site seulement. Aucun usage publicitaire n'est
+      activé. Si vous refusez, aucun cookie n'est déposé et Google ne reçoit que des signaux anonymes,
+      sans identifiant. Votre choix est gardé dans votre navigateur et vous pouvez le
+      <a class="lnk" href="#s3" data-consentement>modifier à tout moment</a>.</p>
+      <p class="mention" data-rv>Google reçoit votre adresse IP le temps de la requête, comme tout
+      serveur à qui votre navigateur s'adresse, et peut traiter ces données hors de l'Union européenne.
+      Base légale : votre consentement, au sens de l'article 6.1.a du RGPD. C'est le seul tiers
+      sollicité pendant votre visite : les images, les polices de caractères et le code sont hébergés
+      avec le site.</p>
       <ul class="checks" data-rv>
-        <li><b>Ce qui est collecté</b> : uniquement ce que vous écrivez vous-même dans le formulaire de
+        <li><b>Ce qui est collecté</b> : en dehors de la mesure d'audience, uniquement ce que vous écrivez vous-même dans le formulaire de
         contact ou dans un courriel, à savoir votre nom, votre adresse électronique et votre message.</li>
         <li><b>Pourquoi</b> : pour répondre à votre demande. Rien d'autre.</li>
         <li><b>Base légale</b> : votre démarche vers moi, au sens de l'article 6.1.b du RGPD.</li>
@@ -312,9 +318,6 @@
 </footer>
 
 <script src="../assets/site.js" defer></script>
-
-<!-- Mesure d'audience sans cookie : Cloudflare Web Analytics -->
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0c1669a3a52143498f9e2b6c22cc6e0b"}'></script>
 
 </body>
 </html>

@@ -29,19 +29,15 @@
 <meta name="twitter:title" content="Consultant IA et développeur sur mesure à Bruxelles">
 <meta name="twitter:description" content="Consultance IA, agents branchés sur vos outils métier et développement sur mesure. Pour les entreprises de Bruxelles et de Wallonie.">
 <meta name="twitter:image" content="https://arnaudherr.be/assets/og.jpg">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PJQDG24R');</script>
-<!-- End Google Tag Manager -->
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
 
 <link rel="preload" href="assets/fonts/sg-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="preload" as="image" href="assets/img/hero-1200.webp" media="(max-width:640px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero.webp" media="(min-width:641px)" fetchpriority="high">
 
 <link rel="stylesheet" href="assets/site.css">
 
@@ -363,12 +359,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  ]
 }
 </script>
+<!-- Mesure d'audience : Google Tag Manager, différé et soumis au consentement.
+     Tout se règle dans assets/mesure.js, commun à toutes les pages. -->
+<script src="/assets/mesure.js" defer></script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJQDG24R"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#main">Aller au contenu</a>
 
 <header class="site-header" id="siteHeader">
@@ -461,8 +456,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-bg">
-      <img src="assets/img/hero.webp"
-           width="1900" height="1267" fetchpriority="high" decoding="async" alt="">
+      <!-- Sur téléphone la photo est rognée en hauteur et voilée : la 1200 suffit
+           quelle que soit la densité d'écran, et pèse quatre fois moins. -->
+      <picture>
+        <source media="(max-width:640px)" srcset="assets/img/hero-1200.webp">
+        <img src="assets/img/hero.webp" width="1900" height="1267" fetchpriority="high" alt="">
+      </picture>
     </div>
 
     <div class="hero-content">
@@ -551,6 +550,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="shot shot-4x5" data-rv="img">
           <img src="assets/img/constat-equipe.webp"
+               srcset="assets/img/constat-equipe-800.webp 800w, assets/img/constat-equipe.webp 1100w"
+               sizes="(max-width:900px) 100vw, 50vw"
                width="1100" height="1100" loading="lazy" decoding="async"
                alt="Pile de dossiers papier vus par la tranche, en lumière rasante">
         </div>
@@ -646,6 +647,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="b b-photo b-2" data-rv="img">
           <img src="assets/img/bento-code.webp"
+               srcset="assets/img/bento-code-800.webp 800w, assets/img/bento-code.webp 1200w"
+               sizes="(max-width:900px) 100vw, 50vw"
                width="1200" height="760" loading="lazy" decoding="async"
                alt="Surface métallique brossée traversée par un reflet lumineux">
         </div>
@@ -673,6 +676,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="b b-photo b-2" data-rv="img">
           <img src="assets/img/bento-atelier.webp"
+               srcset="assets/img/bento-atelier-800.webp 800w, assets/img/bento-atelier.webp 1200w"
+               sizes="(max-width:900px) 100vw, 50vw"
                width="1200" height="800" loading="lazy" decoding="async"
                alt="Établi d'atelier usé, traversé par la lumière d'une fenêtre">
         </div>
@@ -687,6 +692,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap">
       <figure class="mani" data-rv>
         <img src="assets/img/manifeste.webp"
+             srcset="assets/img/manifeste-800.webp 800w, assets/img/manifeste-1200.webp 1200w, assets/img/manifeste.webp 1800w"
+             sizes="100vw"
              width="1800" height="1200" loading="lazy" decoding="async"
              alt="Tour isolée émergeant d'une nappe de brouillard">
         <blockquote>
@@ -748,6 +755,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="shot shot-4x5" data-rv="img">
           <img src="assets/img/cadre-donnees.webp"
+               srcset="assets/img/cadre-donnees-800.webp 800w, assets/img/cadre-donnees.webp 1100w"
+               sizes="(max-width:900px) 100vw, 50vw"
                width="1100" height="1100" loading="lazy" decoding="async"
                alt="Faisceaux de câbles réseau rangés le long d'un mur technique">
         </div>
@@ -759,6 +768,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap">
       <div class="cta" data-rv>
         <img src="assets/img/cta.webp"
+             srcset="assets/img/cta-800.webp 800w, assets/img/cta-1200.webp 1200w, assets/img/cta.webp 1800w"
+             sizes="100vw"
              width="1800" height="1200" loading="lazy" decoding="async"
              alt="Passage étroit entre deux murs de béton, ouvert sur la lumière">
         <div class="cta-in">
@@ -819,9 +830,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script src="assets/site.js" defer></script>
-
-<!-- Mesure d'audience sans cookie : Cloudflare Web Analytics -->
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0c1669a3a52143498f9e2b6c22cc6e0b"}'></script>
 
 </body>
 </html>
