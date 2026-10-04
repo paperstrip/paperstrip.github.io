@@ -28,8 +28,10 @@ tools/theme.py        applique une palette enregistrée
 tools/images.js       recadre, réencode et traite les images sources
                       (--bichromie applique la palette, --dose 0-100 la nuance)
 tools/og.js           régénère l'image de partage assets/og.jpg
+tools/variantes.js    déclinaisons 800 et 1200 px des images, pour srcset
 assets/site.css       styles partagés par toutes les pages
 assets/site.js        révélation au scroll, en-tête, méga-menu, accordéons
+assets/mesure.js      Google Tag Manager différé, consentement, bandeau
 assets/og.jpg         image de partage Open Graph (1200×630)
 assets/fonts/         Schibsted Grotesk (variable, woff2, latin + latin-ext)
 .nojekyll             désactive le traitement Jekyll de GitHub Pages
@@ -84,7 +86,14 @@ dépôt pour pouvoir tout regénérer sans repasser par le générateur d'images
 NODE_PATH=/opt/node22/lib/node_modules node tools/images.js
 NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --jpeg
 NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --qualite 85
+NODE_PATH=/opt/node22/lib/node_modules node tools/variantes.js
 ```
+
+`tools/variantes.js` décline ensuite chaque image en 800 et 1200 px de large,
+servies par `srcset` et `sizes`. Le hero de l'accueil n'a que la 1200, servie
+aux écrans de 640 px et moins par un `<picture>` et préchargée dans le
+`<head>` : sur téléphone la photo est rognée et voilée, la 1900 n'apporte rien
+et pesait quatre fois plus. À relancer après chaque passage de `images.js`.
 
 Aucun utilitaire d'image n'est installé sur la machine, l'outil passe donc par
 le moteur de rendu de Chromium : recadrage centré au rapport attendu, réduction
@@ -221,11 +230,31 @@ en cours de lancement. Il manquera le **numéro d'entreprise BCE** dès
 l'inscription. Un paragraphe l'annonce explicitement plutôt que de laisser un
 vide.
 
-La fréquentation est mesurée par Cloudflare Web Analytics, sans cookie ni
-identifiant déposé sur l'appareil : aucun bandeau de consentement n'est donc
-nécessaire. La balise est posée avant `</body>` sur les douze pages, 404
-comprise. **Si vous ajoutez un jour un outil qui pose un cookie, la page des
-mentions légales devient fausse et un bandeau devient obligatoire.**
+## Mesure d'audience
+
+La fréquentation est mesurée par Google Analytics via Google Tag Manager
+(`GTM-PJQDG24R`). Tout passe par `assets/mesure.js`, appelé dans le `<head>`
+de chaque page, 404 comprise. **Ne recollez pas l'extrait GTM fourni par
+Google dans une page** : il chargerait le conteneur avant le consentement et
+avant l'affichage, et ferait doublon avec le script.
+
+- **Consentement.** GA dépose des cookies, un accord préalable est donc
+  obligatoire. Le mode consentement de Google démarre sur « refusé »
+  (`analytics_storage` et les trois signaux publicitaires). Le bandeau
+  propose Accepter et Refuser au même niveau ; le choix est gardé dans
+  `localStorage` (`consentement-mesure`). Les signaux publicitaires restent
+  refusés dans tous les cas. Un lien portant `data-consentement` rouvre le
+  bandeau : c'est le cas dans les mentions légales.
+- **Chargement différé.** gtm.js est chargé au premier geste du visiteur
+  (défilement, toucher, clic, touche) ou quatre secondes après la fin du
+  chargement. Chargé dans le `<head>`, il était le premier poste perdu dans
+  PageSpeed sur mobile (temps de blocage, « ancien JavaScript »).
+- **Pas de `<noscript>`.** L'iframe GTM sans JavaScript contournerait le
+  consentement et GA4 n'y fonctionne pas.
+
+Dans GTM, les balises GA4 n'ont rien de particulier à faire : elles lisent
+l'état du consentement. Tout nouvel outil qui pose un cookie doit être
+mentionné dans les mentions légales.
 
 ## Formulaire de contact
 
@@ -324,8 +353,8 @@ sur la police système.
 
 ## Points ouverts
 
-- Les images sont générées, traitées en bichromie par `tools/images.js` et servies
-  depuis `assets/img/` en WebP. Les sources restent dans `assets/img-src/`.
-  redimensionné avant une mise en ligne durable (perf + LCP).
+- GitHub Pages impose un cache de dix minutes sur tous les fichiers, et
+  PageSpeed le signale. Seul un CDN devant le site (Cloudflare en proxy, par
+  exemple) permettrait d'allonger cette durée.
 - Les pages internes n'ont aucune image ; en ajouter une par page aiderait au
   partage social et à la lecture.

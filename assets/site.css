@@ -767,6 +767,16 @@
   [data-rv="img"] img{transform:scale(1.05);transition:transform 1s var(--ease);transition-delay:var(--d,0s)}
   [data-rv].in{opacity:1;transform:none}
   [data-rv="img"].in img{transform:scale(1)}
+  /* Le titre de tête est l'élément LCP sur mobile. Révélé par site.js, il
+     restait à opacité nulle jusqu'à l'exécution du script, et le LCP
+     attendait d'autant. Il entre donc par une animation CSS qui part dès le
+     premier rendu, depuis une opacité infime mais non nulle : le navigateur
+     le compte comme affiché, le visiteur le voit toujours arriver. */
+  @keyframes rv-titre{from{opacity:.01;transform:translate3d(0,30px,0)}to{opacity:1;transform:none}}
+  .hero h1[data-rv],.page-hero h1[data-rv]{
+    opacity:1;transform:none;transition:none;
+    animation:rv-titre .62s var(--ease) .1s both;
+  }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *,*::before,*::after{animation:none!important;transition:none!important}
