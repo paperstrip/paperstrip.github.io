@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#17161C">
+
+<title>IA en entreprise : RGPD, AI Act et entraînement des modèles | Arnaud Herr</title>
+<meta name="description" content="Où vos données sont traitées quand une IA est branchée sur vos outils, pourquoi elles ne doivent entraîner aucun modèle, et ce que l'AI Act impose réellement à une entreprise.">
+<meta name="author" content="Arnaud Herr">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Arnaud Herr">
+<meta property="og:url" content="https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/">
+<meta property="og:title" content="IA en entreprise : RGPD, AI Act et entraînement des modèles | Arnaud Herr">
+<meta property="og:description" content="Où vos données sont traitées quand une IA est branchée sur vos outils, pourquoi elles ne doivent entraîner aucun modèle, et ce que l'AI Act impose réellement à une entreprise.">
+<meta property="og:image" content="https://arnaudherr.be/assets/og.jpg">
+<meta property="og:image:alt" content="Arnaud Herr. Avant de vous vendre de l'IA, on regarde si vous en avez besoin. Consultance, agents IA, sites et logiciels sur mesure, en Wallonie et à Bruxelles.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IA en entreprise : RGPD, AI Act et entraînement des modèles | Arnaud Herr">
+<meta name="twitter:description" content="Où vos données sont traitées quand une IA est branchée sur vos outils, pourquoi elles ne doivent entraîner aucun modèle, et ce que l'AI Act impose réellement à une entreprise.">
+<meta name="twitter:image" content="https://arnaudherr.be/assets/og.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="../../assets/fonts/sg-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#webpage",
+   "url": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/",
+   "name": "IA en entreprise : RGPD, AI Act et entraînement des modèles | Arnaud Herr",
+   "description": "Où vos données sont traitées quand une IA est branchée sur vos outils, pourquoi elles ne doivent entraîner aucun modèle, et ce que l'AI Act impose réellement à une entreprise.",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/#website"
+   },
+   "inLanguage": "fr-BE",
+   "breadcrumb": {
+    "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#breadcrumb"
+   },
+   "about": {
+    "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#article"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Accueil",
+     "item": "https://arnaudherr.be/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Articles",
+     "item": "https://arnaudherr.be/articles/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "RGPD, AI Act et données",
+     "item": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/"
+    }
+   ]
+  },
+  {
+   "@type": "Article",
+   "dateModified": "2026-10-30T09:00:00+00:00",
+   "datePublished": "2026-10-30T09:00:00+00:00",
+   "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#article",
+   "headline": "IA en entreprise : RGPD, AI Act et données qui n'entraînent aucun modèle",
+   "description": "Où vos données sont traitées quand une IA est branchée sur vos outils, pourquoi elles ne doivent entraîner aucun modèle, et ce que l'AI Act impose réellement à une entreprise.",
+   "inLanguage": "fr-BE",
+   "author": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "publisher": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://arnaudherr.be/assets/og.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "Règlement général sur la protection des données"
+    },
+    {
+     "@type": "Thing",
+     "name": "Règlement européen sur l'intelligence artificielle (AI Act)"
+    },
+    {
+     "@type": "Thing",
+     "name": "Intégration de l'intelligence artificielle en entreprise"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#faq",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/articles/ia-rgpd-ai-act-donnees-entreprise/#webpage"
+   },
+   "inLanguage": "fr-BE",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Mes données peuvent-elles servir à entraîner un modèle d'IA ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pas dans les projets décrits ici. Les modèles sont appelés par une plateforme européenne sur laquelle l'apprentissage à partir des données clients est bloqué. Ce qui est envoyé au modèle sert à traiter la demande, puis s'arrête là. Le risque existe en revanche avec un compte d'IA grand public utilisé par un salarié, où ce sont les réglages du compte qui décident."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Où sont traitées les données quand une IA est branchée sur mon ERP ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "À deux endroits, qu'il faut distinguer. Les sites, interfaces, plateformes et bases de données livrés tournent sur une infrastructure en Belgique. Les modèles d'IA, eux, tournent sur des serveurs situés en Europe. Dans les deux cas, les données personnelles sont anonymisées avant d'entrer dans la chaîne."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L'AI Act s'applique-t-il à une entreprise qui utilise un agent IA ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui, en tant qu'utilisateur du système, que le règlement appelle déployeur. Les obligations dépendent du niveau de risque de l'usage. Le tri documentaire, les réponses assistées ou un tableau de bord relèvent en général du risque limité ou minimal : l'essentiel est d'informer les personnes qui interagissent avec l'IA ou lisent un contenu qu'elle a produit, et de veiller à ce que les équipes qui l'utilisent en comprennent le fonctionnement."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Un agent IA peut-il être classé à haut risque ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui, selon ce qu'il décide. Trier des candidatures, évaluer la solvabilité d'un client ou conditionner l'accès à un service essentiel fait partie des usages à haut risque, avec des obligations lourdes de documentation, de contrôle humain et de gestion des risques. C'est pour cette raison que le classement se fait au cadrage, avant tout développement, et pas une fois l'outil livré."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Mesure d'audience : Google Tag Manager, différé et soumis au consentement.
+     Tout se règle dans assets/mesure.js, commun à toutes les pages. -->
+<script src="/assets/mesure.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="nav-in">
+      <a href="../../" class="logo">Arnaud Herr<span>.</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="../../consultance/">Consultance</a>
+          <a href="../../agents-metier/">Agents métier</a>
+          <a href="../../sites-web-ia/">Sites web</a>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+          <a href="../../sous-traitance/">Sous-traitance</a>
+        </nav>
+        <a href="../../contact/" class="btn btn-sm">Parlons-en</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="megaMenu" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="megamenu" id="megaMenu" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+      <div class="wrap">
+        <nav class="mega-nav" aria-label="Offres">
+          <span class="lbl">Pour les entreprises</span>
+          <a href="../../consultance/" class="mega-anim">
+            <span class="i">01</span>
+            <span class="t">Consultance</span>
+            <span class="d">Cadrer avant de construire : architecture et priorités, en amont du code.</span>
+          </a>
+          <a href="../../agents-metier/" class="mega-anim">
+            <span class="i">02</span>
+            <span class="t">Agents métier</span>
+            <span class="d">Des agents IA livrés en API, branchés sur vos outils métier.</span>
+          </a>
+          <div class="mega-palier mega-anim">
+            <span class="i">03</span>
+            <span class="t">Production sur mesure</span>
+            <span class="d">Ce qui n'existe pas encore, construit avec l'IA puis repris à la main.</span>
+            <div class="mega-sub">
+              <a href="../../sites-web-ia/">Sites web</a>
+              <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+            </div>
+          </div>
+          <span class="lbl lbl-suite">Pour les agences</span>
+          <a href="../../sous-traitance/" class="mega-anim">
+            <span class="i" aria-hidden="true"></span>
+            <span class="t">Sous-traitance</span>
+            <span class="d">Renfort technique en marque blanche, sans contact avec le client final.</span>
+          </a>
+        </nav>
+        <div class="mega-apart">
+          <span class="lbl">Notre produit</span>
+          <a href="../../pilotage-donnees/" class="mega-anim">
+            <span class="t">Pilotage par les données</span>
+            <span class="d">Vos chiffres croisés avec le contexte extérieur, interrogeables en français.</span>
+          </a>
+        </div>
+        <nav class="mega-plus" aria-label="Pages complémentaires">
+          <span class="lbl">En savoir plus</span>
+          <a href="../../ia-maitrisee/" class="mega-anim"><span class="t">La méthode</span></a>
+          <a href="../" class="mega-anim" aria-current="page"><span class="t">Articles</span></a>
+          <a href="../../a-propos/" class="mega-anim"><span class="t">Parcours</span></a>
+          <a href="../../questions-a-poser/" class="mega-anim"><span class="t">Les questions à poser</span></a>
+          <a href="../../contact/" class="mega-anim"><span class="t">Parlons-en</span></a>
+        </nav>
+<div class="mega-foot">
+          <div>
+            <p class="lbl">Écrire</p>
+            <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          </div>
+          <div>
+            <p class="lbl">Appeler</p>
+            <a href="tel:+32477672928">+32 477 67 29 28</a>
+          </div>
+          <div>
+            <p class="lbl">Suivre</p>
+            <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+          </div>
+          <div>
+            <p class="lbl">Basé en</p>
+            <span>Belgique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="h1">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="../../">Accueil</a></li>
+          <li><a href="../">Articles</a></li>
+          <li><span aria-current="page">RGPD, AI Act et données</span></li>
+        </ol>
+      </nav>
+      <h1 id="h1" data-rv>IA en entreprise : RGPD, AI Act et données qui <em>n'entraînent aucun modèle</em>.</h1>
+      <p class="date-art" data-rv>Publié le <time datetime="2026-10-30">30 octobre 2026</time></p>
+      <p class="lead" data-rv>Avant de brancher une IA sur vos dossiers clients, trois questions méritent une
+      réponse écrite : où les données sont traitées, si elles servent à entraîner un modèle, et ce que le
+      règlement européen sur l'IA vous impose. Voici les réponses appliquées à chaque projet.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="s1">
+    <div class="wrap">
+      <div class="article" data-rv>
+        <h2 id="s1">Deux lieux de traitement, à ne pas confondre</h2>
+        <p>Quand un <a class="lnk" href="../../agents-metier/">agent IA est branché sur vos outils
+        métier</a>, vos données passent par deux endroits distincts, et la question « où sont mes données ? »
+        n'a de sens que si on les sépare.</p>
+        <p>Le premier, ce sont <b>les sites, interfaces, plateformes et bases de données</b> livrés. Ils
+        tournent sur une infrastructure en Belgique. C'est là que vivent vos données dans la durée.</p>
+        <p>Le second, c'est <b>le modèle d'IA</b> lui-même, celui qui lit un document ou rédige une
+        proposition de réponse. Il tourne sur des serveurs situés en Europe, appelés par une plateforme
+        européenne soumise au RGPD et encadrée par un contrat de sous-traitance des données. Le modèle ne
+        stocke pas votre base : il reçoit ce qu'il faut pour traiter une demande, et rend un résultat.</p>
+        <p class="cle"><b>Aucun projet ne passe par un compte d'IA grand public.</b> L'abonnement personnel d'un
+        salarié à un assistant conversationnel n'offre ni contrat de sous-traitance ni garantie sur
+        l'usage des conversations : ce sont les réglages du compte qui décident.</p>
+
+        <h2 id="s2">L'entraînement, la question qui compte vraiment</h2>
+        <p>Un modèle entraîné sur vos données peut, en théorie, en restituer des fragments à quelqu'un d'autre.
+        C'est la crainte la plus fréquente, et elle est légitime.</p>
+        <p>La réponse tient en une ligne : <b>l'apprentissage à partir des données clients est bloqué</b> sur la
+        plateforme utilisée. Ce que vous envoyez au modèle sert à traiter votre demande, puis s'arrête là. Vos
+        factures, vos échanges clients et vos chiffres n'alimentent l'entraînement d'aucun modèle, ni chez le
+        fournisseur ni ailleurs.</p>
+        <p>S'y ajoute une règle de conception : seul le nécessaire est envoyé au modèle. C'est bon pour la
+        confidentialité, et c'est aussi ce qui fait baisser la facture, comme le détaille l'article sur
+        <a class="lnk" href="../combien-coute-une-automatisation-ia/">le coût d'une automatisation IA</a>.</p>
+
+        <h2 id="s3">Anonymiser avant, jamais après</h2>
+        <p>Les données personnelles sont retirées ou masquées <b>avant</b> d'entrer dans la chaîne de
+        traitement. Nettoyer après coup revient à les avoir déjà fait circuler.</p>
+        <p>Dans la plupart des cas, l'identité n'apporte rien à la tâche. Un
+        <a class="lnk" href="../../pilotage-donnees/">tableau de bord de pilotage</a> a besoin de volumes, de
+        dates et de montants, pas de savoir qui est le client. Un classement de documents a besoin de savoir à
+        quel dossier rattacher une pièce, ce qui se fait par un identifiant plutôt que par un nom.</p>
+
+        <h2 id="s4">Ce que l'AI Act change pour une entreprise qui utilise l'IA</h2>
+        <p>Le règlement européen sur l'intelligence artificielle, l'AI Act, s'applique par étapes depuis
+        février 2025. Il ne vise pas seulement les éditeurs de modèles : une entreprise qui utilise un système
+        d'IA est un <b>déployeur</b>, avec ses propres obligations.</p>
+        <p>Ces obligations dépendent du niveau de risque de l'usage, pas de la technologie :</p>
+        <ul>
+          <li><b>Pratiques interdites</b> : notation sociale, manipulation, certaines formes de reconnaissance
+          des émotions au travail. Hors de question, quel que soit le projet.</li>
+          <li><b>Haut risque</b> : recrutement, évaluation de la solvabilité, accès à des services essentiels.
+          Documentation, gestion des risques et contrôle humain renforcés.</li>
+          <li><b>Risque limité</b> : un agent qui converse avec vos clients ou produit du texte. L'obligation
+          principale est la transparence : les personnes concernées savent qu'elles ont affaire à une IA.</li>
+          <li><b>Risque minimal</b> : un tri interne, un rapprochement de données. Pas d'obligation
+          spécifique au-delà des règles générales.</li>
+        </ul>
+        <p>Le tri documentaire, les réponses assistées et le pilotage par les données relèvent en général du
+        risque limité ou minimal. Une obligation vaut pour tous les déployeurs depuis février 2025 : veiller à
+        ce que les personnes qui utilisent l'IA en comprennent suffisamment le fonctionnement et les limites.</p>
+        <p class="cle"><b>Le classement se fait au cadrage, pas après la livraison.</b> Si un projet relevait du
+        haut risque, vous le sauriez avant de signer, avec ce que ça implique.</p>
+
+        <h2 id="s5">Ce qui est vérifié sur chaque projet</h2>
+        <ul>
+          <li>Le lieu de traitement : infrastructure en Belgique pour les plateformes et les bases, serveurs
+          européens pour les modèles.</li>
+          <li>Le contrat de sous-traitance des données avec chaque fournisseur qui touche à vos données.</li>
+          <li>Le blocage de l'apprentissage sur les données envoyées aux modèles.</li>
+          <li>L'anonymisation des données personnelles avant traitement.</li>
+          <li>Le classement du cas d'usage selon l'AI Act, et les obligations qui en découlent.</li>
+          <li>Les points où un humain valide, partout où la décision engage l'entreprise vis-à-vis d'un client.</li>
+          <li>La traçabilité : ce qui est entré, ce qui en est sorti, et quand.</li>
+        </ul>
+
+        <h2 id="s6">Les questions à poser à n'importe quel prestataire</h2>
+        <p>Moi compris. Les réponses devraient être écrites, et précises.</p>
+        <ul>
+          <li><b>Dans quel pays tourne le modèle d'IA</b>, et dans quel pays sont stockées mes données ?</li>
+          <li><b>Mes données servent-elles à entraîner un modèle</b>, et qu'est-ce qui l'empêche concrètement ?</li>
+          <li><b>Qui sont les sous-traitants</b>, et existe-t-il un contrat avec chacun ?</li>
+          <li><b>Dans quelle catégorie de l'AI Act</b> tombe mon cas d'usage, et pourquoi ?</li>
+          <li><b>Où un humain valide-t-il</b>, et comment remonter le fil d'une décision automatisée ?</li>
+        </ul>
+        <p>D'autres questions, sur le cadrage et la mise en production, sont rassemblées dans
+        <a class="lnk" href="../../questions-a-poser/">la grille à utiliser avant de signer</a>.</p>
+        <p class="mention">Cet article décrit un cadre de travail, il ne remplace pas l'avis de votre délégué à
+        la protection des données ou d'un juriste sur votre situation particulière.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-soft" aria-labelledby="s-faq">
+    <div class="wrap">
+      <h2 class="sec-head" id="s-faq" data-rv>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Mes données peuvent-elles servir à entraîner un modèle d'IA ?</summary>
+          <p>Pas dans les projets décrits ici. Les modèles sont appelés par une plateforme européenne sur laquelle l'apprentissage à partir des données clients est bloqué. Ce qui est envoyé au modèle sert à traiter la demande, puis s'arrête là. Le risque existe en revanche avec un compte d'IA grand public utilisé par un salarié, où ce sont les réglages du compte qui décident.</p>
+        </details>
+        <details>
+          <summary>Où sont traitées les données quand une IA est branchée sur mon ERP ?</summary>
+          <p>À deux endroits, qu'il faut distinguer. Les sites, interfaces, plateformes et bases de données livrés tournent sur une infrastructure en Belgique. Les modèles d'IA, eux, tournent sur des serveurs situés en Europe. Dans les deux cas, les données personnelles sont anonymisées avant d'entrer dans la chaîne.</p>
+        </details>
+        <details>
+          <summary>L'AI Act s'applique-t-il à une entreprise qui utilise un agent IA ?</summary>
+          <p>Oui, en tant qu'utilisateur du système, que le règlement appelle déployeur. Les obligations dépendent du niveau de risque de l'usage. Le tri documentaire, les réponses assistées ou un tableau de bord relèvent en général du risque limité ou minimal : l'essentiel est d'informer les personnes qui interagissent avec l'IA ou lisent un contenu qu'elle a produit, et de veiller à ce que les équipes qui l'utilisent en comprennent le fonctionnement.</p>
+        </details>
+        <details>
+          <summary>Un agent IA peut-il être classé à haut risque ?</summary>
+          <p>Oui, selon ce qu'il décide. Trier des candidatures, évaluer la solvabilité d'un client ou conditionner l'accès à un service essentiel fait partie des usages à haut risque, avec des obligations lourdes de documentation, de contrôle humain et de gestion des risques. C'est pour cette raison que le classement se fait au cadrage, avant tout développement, et pas une fois l'outil livré.</p>
+        </details>
+      </div>
+      <div class="band" data-rv>
+        <div>
+          <h2>Un projet IA à faire valider par votre DPO ?</h2>
+          <p>Décrivez-moi la tâche que vous voulez automatiser. Vous recevez par écrit où les données seront
+          traitées, comment elles sont protégées et dans quelle catégorie de l'AI Act le projet tombe.</p>
+        </div>
+        <a href="../../contact/" class="btn btn-block">En parler</a>
+        <p class="apres-cta"><a class="lnk" href="../../questions-a-poser/">Pas encore prêt ? Les questions à poser avant de signer</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="../../" class="foot-logo">Arnaud Herr<span>.</span></a>
+        <p>Agents IA branchés sur vos outils métier, sites web et logiciels sur mesure.
+        J'interviens en Wallonie et à Bruxelles.</p>
+        <div class="foot-contact">
+          <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          <a href="tel:+32477672928">+32 477 67 29 28</a>
+        </div>
+      </div>
+
+      <nav class="foot-cols" aria-label="Plan du site">
+        <div class="foot-col">
+          <p class="foot-lbl">Les prestations</p>
+          <a href="../../agents-metier/">Agents métier</a><br>
+          <a href="../../consultance/">Consultance</a><br>
+          <a href="../../pilotage-donnees/">Pilotage par les données</a><br>
+          <a href="../../sites-web-ia/">Sites web conçus avec l'IA</a><br>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a><br>
+          <a href="../../sous-traitance/">Sous-traitance pour agences</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-lbl">En savoir plus</p>
+          <a href="../../a-propos/">Parcours</a><br>
+          <a href="../../ia-maitrisee/">La méthode</a><br>
+          <a href="../">Articles</a><br>
+          <a href="../../questions-a-poser/">Les questions à poser</a><br>
+          <a href="../../contact/">Parlons-en</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="foot-end">
+      <p>Arnaud Herr, Belgique</p>
+      <p class="r">
+        <a href="../../mentions-legales/">Mentions légales</a>
+        <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+
+</body>
+</html>
