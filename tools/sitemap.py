@@ -19,6 +19,8 @@ PAGES = [
     ("consultance/",     "consultance/index.html"),
     ("questions-a-poser/", "questions-a-poser/index.html"),
     ("articles/",        "articles/index.html"),
+    ("articles/automatiser-reponses-clients-ia/", "articles/automatiser-reponses-clients-ia/index.html"),
+    ("articles/logiciel-metier-sur-mesure-ou-logiciel-du-marche/", "articles/logiciel-metier-sur-mesure-ou-logiciel-du-marche/index.html"),
     ("articles/ia-rgpd-ai-act-donnees-entreprise/", "articles/ia-rgpd-ai-act-donnees-entreprise/index.html"),
     ("articles/brancher-un-mcp-sur-wordpress/", "articles/brancher-un-mcp-sur-wordpress/index.html"),
     ("articles/combien-coute-une-automatisation-ia/", "articles/combien-coute-une-automatisation-ia/index.html"),
