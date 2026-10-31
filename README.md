@@ -14,6 +14,7 @@ pilotage-donnees/     le produit : tableau de bord et croisement de données
 ia-maitrisee/         page pilier : sortir du générique, performance, SEO et GEO
 a-propos/             parcours, façon de travailler, ce qui est refusé
 contact/              contact
+consultant-ia-*/      pages locales : Bruxelles, Brabant wallon, Liège, Namur
 mentions-legales/     éditeur, hébergement, données personnelles
 404.html              page d'erreur (autonome, styles en ligne)
 robots.txt            indexation + déclaration du sitemap
@@ -55,6 +56,14 @@ existants, on construit ce qui manque encore.
    final, donc même rang commercial mais pas de numéro. `pilotage-donnees/` est
    un produit et non une prestation. `ia-maitrisee/` n'est pas une offre mais la
    méthode qui vaut pour toutes, d'où son type `Article` et non `Service`.
+
+Les **pages locales** (`consultant-ia-bruxelles/`, `-brabant-wallon/`,
+`-liege/`, `-namur/`) visent les recherches « consultant IA + zone ». Elles ne
+sont pas dans la barre ni dans le méga-menu, seulement dans la colonne « Zones
+d'intervention » du pied de page de chaque page. Chacune a un paragraphe et
+deux questions propres à sa zone ; les prix et le cadre sur les données sont
+communs. Elles sont produites à partir de la page consultance, dont elles
+gardent l'en-tête et le pied de page.
 
 La navigation reflète cette distinction. Le méga-menu sépare deux audiences sous
 deux intertitres, « Pour les entreprises » et « Pour les agences », au lieu d'une

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#17161C">
+
+<title>Intégrer l'IA dans Odoo : ce qu'un agent IA peut faire | Arnaud Herr</title>
+<meta name="description" content="Brancher un agent IA sur Odoo : factures fournisseurs, mails clients, devis, questions en langage naturel. Comment ça se connecte, ce qui reste sous contrôle humain, et par où commencer.">
+<meta name="author" content="Arnaud Herr">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://arnaudherr.be/articles/agent-ia-odoo/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Arnaud Herr">
+<meta property="og:url" content="https://arnaudherr.be/articles/agent-ia-odoo/">
+<meta property="og:title" content="Intégrer l'IA dans Odoo : ce qu'un agent IA peut faire | Arnaud Herr">
+<meta property="og:description" content="Brancher un agent IA sur Odoo : factures fournisseurs, mails clients, devis, questions en langage naturel. Comment ça se connecte, ce qui reste sous contrôle humain, et par où commencer.">
+<meta property="og:image" content="https://arnaudherr.be/assets/og.jpg">
+<meta property="og:image:alt" content="Arnaud Herr. Avant de vous vendre de l'IA, on regarde si vous en avez besoin. Consultance, agents IA, sites et logiciels sur mesure, en Wallonie et à Bruxelles.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Intégrer l'IA dans Odoo : ce qu'un agent IA peut faire | Arnaud Herr">
+<meta name="twitter:description" content="Brancher un agent IA sur Odoo : factures fournisseurs, mails clients, devis, questions en langage naturel. Comment ça se connecte, ce qui reste sous contrôle humain, et par où commencer.">
+<meta name="twitter:image" content="https://arnaudherr.be/assets/og.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="../../assets/fonts/sg-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#webpage",
+   "url": "https://arnaudherr.be/articles/agent-ia-odoo/",
+   "name": "Intégrer l'IA dans Odoo : ce qu'un agent IA peut faire | Arnaud Herr",
+   "description": "Brancher un agent IA sur Odoo : factures fournisseurs, mails clients, devis, questions en langage naturel. Comment ça se connecte, ce qui reste sous contrôle humain, et par où commencer.",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/#website"
+   },
+   "inLanguage": "fr-BE",
+   "breadcrumb": {
+    "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#breadcrumb"
+   },
+   "about": {
+    "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#article"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Accueil",
+     "item": "https://arnaudherr.be/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Articles",
+     "item": "https://arnaudherr.be/articles/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "IA et Odoo",
+     "item": "https://arnaudherr.be/articles/agent-ia-odoo/"
+    }
+   ]
+  },
+  {
+   "@type": "Article",
+   "dateModified": "2026-10-31T11:00:00+00:00",
+   "datePublished": "2026-10-31T11:00:00+00:00",
+   "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#article",
+   "headline": "Intégrer l'IA dans Odoo : ce qu'un agent IA peut faire",
+   "description": "Brancher un agent IA sur Odoo : factures fournisseurs, mails clients, devis, questions en langage naturel. Comment ça se connecte, ce qui reste sous contrôle humain, et par où commencer.",
+   "inLanguage": "fr-BE",
+   "author": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "publisher": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://arnaudherr.be/assets/og.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "Odoo"
+    },
+    {
+     "@type": "Thing",
+     "name": "Agent IA"
+    },
+    {
+     "@type": "Thing",
+     "name": "Intégration de l'intelligence artificielle dans un ERP"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#faq",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/articles/agent-ia-odoo/#webpage"
+   },
+   "inLanguage": "fr-BE",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Peut-on connecter un agent IA à Odoo ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. Odoo expose une API externe qui permet de lire et d'écrire dans ses modules. Un agent IA s'y connecte avec un compte aux droits limités. L'accès à l'API dépend de votre formule et de votre hébergement, ce qui se vérifie au cadrage."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Faut-il changer de version ou de formule Odoo ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pas nécessairement. Cela dépend de l'accès à l'API dans votre formule et votre hébergement actuels. C'est vérifié au cadrage, avec votre intégrateur Odoo si vous en avez un, avant tout développement."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L'agent peut-il valider des factures ou envoyer des devis seul ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. Ce que l'agent prépare reste en brouillon dans Odoo jusqu'à ce qu'un humain le confirme. Les cas ambigus sont signalés plutôt que tranchés."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Combien coûte un agent IA pour Odoo ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "À partir de 500 € HTVA pour un agent simple sur un périmètre étroit, comme le traitement d'un type de document. Le montant monte avec le nombre d'étapes et de modules concernés. La consommation des modèles d'IA s'ajoute, facturée à l'usage."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Mesure d'audience : Google Tag Manager, différé et soumis au consentement.
+     Tout se règle dans assets/mesure.js, commun à toutes les pages. -->
+<script src="/assets/mesure.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="nav-in">
+      <a href="../../" class="logo">Arnaud Herr<span>.</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="../../consultance/">Consultance</a>
+          <a href="../../agents-metier/">Agents métier</a>
+          <a href="../../sites-web-ia/">Sites web</a>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+          <a href="../../sous-traitance/">Sous-traitance</a>
+        </nav>
+        <a href="../../contact/" class="btn btn-sm">Parlons-en</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="megaMenu" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="megamenu" id="megaMenu" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+      <div class="wrap">
+        <nav class="mega-nav" aria-label="Offres">
+          <span class="lbl">Pour les entreprises</span>
+          <a href="../../consultance/" class="mega-anim">
+            <span class="i">01</span>
+            <span class="t">Consultance</span>
+            <span class="d">Cadrer avant de construire : architecture et priorités, en amont du code.</span>
+          </a>
+          <a href="../../agents-metier/" class="mega-anim">
+            <span class="i">02</span>
+            <span class="t">Agents métier</span>
+            <span class="d">Des agents IA livrés en API, branchés sur vos outils métier.</span>
+          </a>
+          <div class="mega-palier mega-anim">
+            <span class="i">03</span>
+            <span class="t">Production sur mesure</span>
+            <span class="d">Ce qui n'existe pas encore, construit avec l'IA puis repris à la main.</span>
+            <div class="mega-sub">
+              <a href="../../sites-web-ia/">Sites web</a>
+              <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+            </div>
+          </div>
+          <span class="lbl lbl-suite">Pour les agences</span>
+          <a href="../../sous-traitance/" class="mega-anim">
+            <span class="i" aria-hidden="true"></span>
+            <span class="t">Sous-traitance</span>
+            <span class="d">Renfort technique en marque blanche, sans contact avec le client final.</span>
+          </a>
+        </nav>
+        <div class="mega-apart">
+          <span class="lbl">Notre produit</span>
+          <a href="../../pilotage-donnees/" class="mega-anim">
+            <span class="t">Pilotage par les données</span>
+            <span class="d">Vos chiffres croisés avec le contexte extérieur, interrogeables en français.</span>
+          </a>
+        </div>
+        <nav class="mega-plus" aria-label="Pages complémentaires">
+          <span class="lbl">En savoir plus</span>
+          <a href="../../ia-maitrisee/" class="mega-anim"><span class="t">La méthode</span></a>
+          <a href="../" class="mega-anim" aria-current="page"><span class="t">Articles</span></a>
+          <a href="../../a-propos/" class="mega-anim"><span class="t">Parcours</span></a>
+          <a href="../../questions-a-poser/" class="mega-anim"><span class="t">Les questions à poser</span></a>
+          <a href="../../contact/" class="mega-anim"><span class="t">Parlons-en</span></a>
+        </nav>
+<div class="mega-foot">
+          <div>
+            <p class="lbl">Écrire</p>
+            <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          </div>
+          <div>
+            <p class="lbl">Appeler</p>
+            <a href="tel:+32477672928">+32 477 67 29 28</a>
+          </div>
+          <div>
+            <p class="lbl">Suivre</p>
+            <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+          </div>
+          <div>
+            <p class="lbl">Basé en</p>
+            <span>Belgique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="h1">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="../../">Accueil</a></li>
+          <li><a href="../">Articles</a></li>
+          <li><span aria-current="page">IA et Odoo</span></li>
+        </ol>
+      </nav>
+      <h1 id="h1" data-rv>Intégrer l'IA dans Odoo&nbsp;: <em>ce qu'un agent peut faire</em>.</h1>
+      <p class="date-art" data-rv>Publié le <time datetime="2026-10-31">31 octobre 2026</time></p>
+      <p class="lead" data-rv>Odoo centralise déjà vos ventes, vos achats, votre comptabilité et vos stocks. Un agent IA branché dessus peut traiter une partie du travail répétitif qui l'alimente, sans changer d'ERP ni d'habitudes.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="s1">
+    <div class="wrap">
+      <div class="article" data-rv>
+        <h2 id="s1">Comment un agent se branche sur Odoo</h2>
+        <p>Odoo expose une API externe qui permet de lire et d'écrire dans ses modules : contacts, ventes,
+        achats, factures, stocks. Un agent IA s'y connecte comme n'importe quel autre outil, avec un compte et
+        des droits limités à ce dont il a besoin.</p>
+        <p>L'accès à cette API dépend de votre formule et de votre hébergement (Odoo Online, Odoo.sh ou serveur
+        dédié). C'est l'une des premières choses vérifiées au cadrage, avec votre intégrateur Odoo si vous en
+        avez un : la logique est livrée en API, et c'est lui qui la branche s'il gère déjà votre plateforme.</p>
+
+        <h2 id="s2">Ce qu'un agent peut prendre en charge</h2>
+        <h3>Les factures et documents fournisseurs</h3>
+        <p>L'agent lit les factures et bons de livraison qui arrivent par mail, reconnaît le fournisseur et la
+        commande d'achat correspondante, et prépare la pièce dans Odoo. Les cas ambigus sont mis de côté pour
+        quelqu'un, avec le motif du doute.</p>
+        <h3>Les mails clients</h3>
+        <p>Une demande arrive : l'agent retrouve le client dans Odoo, son historique de commandes, et prépare une
+        proposition de réponse ou une opportunité dans le CRM.</p>
+        <h3>Les devis</h3>
+        <p>À partir d'une demande écrite, l'agent prépare un brouillon de devis avec les bons articles et les
+        tarifs du client, que le commercial relit avant envoi.</p>
+        <h3>Les questions en français</h3>
+        <p>« Qu'est-ce qui est en rupture la semaine prochaine ? » « Quels clients n'ont pas commandé depuis trois
+        mois ? » L'agent interroge Odoo et répond en citant les chiffres sur lesquels il s'appuie.</p>
+
+        <h2 id="s3">Tout arrive en brouillon</h2>
+        <p class="cle"><b>L'agent prépare, un humain valide.</b> Une facture, un devis ou une écriture préparés
+        par l'agent restent en brouillon jusqu'à ce que quelqu'un les confirme.</p>
+        <p>Le même principe vaut pour les données : les données personnelles sont anonymisées avant d'entrer dans
+        la chaîne, les modèles d'IA sont appelés via une plateforme européenne qui ne s'en sert pas pour
+        l'entraînement, et chaque traitement est tracé. Le détail est dans l'article sur
+        <a class="lnk" href="../ia-rgpd-ai-act-donnees-entreprise/">le RGPD et l'AI Act</a>.</p>
+
+        <h2 id="s4">Par où commencer</h2>
+        <p>Par la tâche qui prend le plus de temps aujourd'hui, mesurée avant le projet : souvent l'encodage des
+        factures fournisseurs ou les réponses aux mêmes demandes clients. Un premier agent sur un périmètre étroit
+        démarre à partir de 500 € HTVA, consommation des modèles en plus. On compare ensuite au temps mesuré au
+        départ avant d'étendre.</p>
+        <p>Odoo n'est qu'un exemple : la même approche vaut pour d'autres ERP et CRM, y compris des outils
+        développés sur mesure. Les autres usages sont sur la page
+        <a class="lnk" href="../../agents-metier/">agents IA branchés sur vos outils métier</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-soft" aria-labelledby="s-faq">
+    <div class="wrap">
+      <h2 class="sec-head" id="s-faq" data-rv>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Peut-on connecter un agent IA à Odoo ?</summary>
+          <p>Oui. Odoo expose une API externe qui permet de lire et d'écrire dans ses modules. Un agent IA s'y connecte avec un compte aux droits limités. L'accès à l'API dépend de votre formule et de votre hébergement, ce qui se vérifie au cadrage.</p>
+        </details>
+        <details>
+          <summary>Faut-il changer de version ou de formule Odoo ?</summary>
+          <p>Pas nécessairement. Cela dépend de l'accès à l'API dans votre formule et votre hébergement actuels. C'est vérifié au cadrage, avec votre intégrateur Odoo si vous en avez un, avant tout développement.</p>
+        </details>
+        <details>
+          <summary>L'agent peut-il valider des factures ou envoyer des devis seul ?</summary>
+          <p>Non. Ce que l'agent prépare reste en brouillon dans Odoo jusqu'à ce qu'un humain le confirme. Les cas ambigus sont signalés plutôt que tranchés.</p>
+        </details>
+        <details>
+          <summary>Combien coûte un agent IA pour Odoo ?</summary>
+          <p>À partir de 500 € HTVA pour un agent simple sur un périmètre étroit, comme le traitement d'un type de document. Le montant monte avec le nombre d'étapes et de modules concernés. La consommation des modèles d'IA s'ajoute, facturée à l'usage.</p>
+        </details>
+      </div>
+      <div class="band" data-rv>
+        <div>
+          <h2>Vous travaillez avec Odoo ?</h2>
+          <p>Dites-moi quelle tâche revient tous les jours autour de votre ERP. Vous saurez ce qu'un agent peut en prendre en charge, et comment il se brancherait.</p>
+        </div>
+        <a href="../../contact/" class="btn btn-block">En parler</a>
+        <p class="apres-cta"><a class="lnk" href="../../questions-a-poser/">Pas encore prêt ? Les questions à poser avant de signer</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="../../" class="foot-logo">Arnaud Herr<span>.</span></a>
+        <p>Agents IA branchés sur vos outils métier, sites web et logiciels sur mesure.
+        J'interviens en Wallonie et à Bruxelles.</p>
+        <div class="foot-contact">
+          <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          <a href="tel:+32477672928">+32 477 67 29 28</a>
+        </div>
+      </div>
+
+      <nav class="foot-cols" aria-label="Plan du site">
+        <div class="foot-col">
+          <p class="foot-lbl">Les prestations</p>
+          <a href="../../agents-metier/">Agents métier</a><br>
+          <a href="../../consultance/">Consultance</a><br>
+          <a href="../../pilotage-donnees/">Pilotage par les données</a><br>
+          <a href="../../sites-web-ia/">Sites web conçus avec l'IA</a><br>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a><br>
+          <a href="../../sous-traitance/">Sous-traitance pour agences</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-lbl">En savoir plus</p>
+          <a href="../../a-propos/">Parcours</a><br>
+          <a href="../../ia-maitrisee/">La méthode</a><br>
+          <a href="../">Articles</a><br>
+          <a href="../../questions-a-poser/">Les questions à poser</a><br>
+          <a href="../../contact/">Parlons-en</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-lbl">Zones d'intervention</p>
+          <a href="../../consultant-ia-bruxelles/">Bruxelles</a><br>
+          <a href="../../consultant-ia-brabant-wallon/">Brabant wallon</a><br>
+          <a href="../../consultant-ia-liege/">Liège</a><br>
+          <a href="../../consultant-ia-namur/">Namur</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="foot-end">
+      <p>Arnaud Herr, Belgique</p>
+      <p class="r">
+        <a href="../../mentions-legales/">Mentions légales</a>
+        <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+
+</body>
+</html>
