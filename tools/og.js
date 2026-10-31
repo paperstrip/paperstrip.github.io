@@ -42,11 +42,11 @@ const HTML = `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><style>
   <p class="marque">Arnaud Herr<i>.</i></p>
   <div>
     <div class="trait"></div>
-    <h1>Avant de vous vendre de l'IA, on regarde si vous <em>en avez besoin</em>.</h1>
+    <h1>Intégration IA en entreprise&nbsp;: on commence par <em>ce qui rapporte</em>.</h1>
   </div>
   <div class="bas">
-    <span>Consultance &middot; Agents IA &middot; Sites et logiciels sur mesure</span>
-    <span>Wallonie et Bruxelles</span>
+    <span>Agents IA &middot; Logiciels sur mesure &middot; Consultance &middot; Prix publiés</span>
+    <span>Bruxelles et Wallonie</span>
   </div>
 </body></html>`;
 
