@@ -1,0 +1,37 @@
+# Signale a IndexNow (Bing, Yandex, Seznam...) les pages modifiees a chaque
+# publication sur gh-pages, la branche servie par GitHub Pages.
+# Lancement manuel possible depuis l'onglet Actions, pour tout resoumettre.
+name: IndexNow
+
+on:
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+    inputs:
+      tout:
+        description: "Soumettre toutes les URL du sitemap"
+        type: boolean
+        default: true
+
+jobs:
+  signaler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+
+      # Laisser a GitHub Pages le temps de publier avant d'appeler les moteurs.
+      - name: Attendre la mise en ligne
+        run: sleep 120
+
+      - name: Signaler les pages
+        env:
+          AVANT: ${{ github.event.before }}
+          TOUT: ${{ github.event_name == 'workflow_dispatch' && inputs.tout }}
+        run: |
+          if [ "$TOUT" = "true" ] || [ -z "$AVANT" ] || ! git cat-file -e "$AVANT" 2>/dev/null; then
+            python3 tools/indexnow.py --tout
+          else
+            python3 tools/indexnow.py --depuis "$AVANT"
+          fi
