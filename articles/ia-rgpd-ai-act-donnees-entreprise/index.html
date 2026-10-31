@@ -130,7 +130,7 @@
      "name": "Mes données peuvent-elles servir à entraîner un modèle d'IA ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Pas dans les projets décrits ici. Les modèles sont appelés via une plateforme européenne qui ne conserve pas les données clients et ne s'en sert pas pour entraîner des modèles. Ce qui est envoyé au modèle sert à traiter la demande, puis s'arrête là. Le risque existe en revanche avec un compte d'IA grand public utilisé par un salarié, où ce sont les réglages du compte qui décident."
+      "text": "Pas dans les projets décrits ici. Les modèles tournent sur des serveurs européens, et seuls des fournisseurs à rétention nulle sont utilisés : ni la plateforme ni le fournisseur du modèle ne conservent les données clients, et elles n'entraînent aucun modèle. Ce qui est envoyé au modèle sert à traiter la demande, puis s'arrête là. Le risque existe en revanche avec un compte d'IA grand public utilisé par un salarié, où ce sont les réglages du compte qui décident."
      }
     },
     {
@@ -138,7 +138,7 @@
      "name": "Où sont traitées les données quand une IA est branchée sur mon ERP ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "À deux endroits, qu'il faut distinguer. Les sites, interfaces, plateformes et bases de données livrés tournent sur une infrastructure en Belgique. Les modèles d'IA, eux, sont appelés via une plateforme européenne hébergée dans l'Union européenne. Dans les deux cas, les données personnelles sont anonymisées avant d'entrer dans la chaîne."
+      "text": "À deux endroits, qu'il faut distinguer. Les sites, interfaces, plateformes et bases de données livrés tournent sur une infrastructure en Belgique. Les modèles d'IA, eux, tournent sur des serveurs situés en Europe. Dans les deux cas, les données personnelles sont anonymisées avant d'entrer dans la chaîne."
      }
     },
     {
@@ -284,7 +284,7 @@
         <p>Le premier, ce sont <b>les sites, interfaces, plateformes et bases de données</b> livrés. Ils
         tournent sur une infrastructure en Belgique. C'est là que vivent vos données dans la durée.</p>
         <p>Le second, c'est <b>le modèle d'IA</b> lui-même, celui qui lit un document ou rédige une
-        proposition de réponse. Il est appelé par API professionnelle via une plateforme européenne, hébergée dans l'Union européenne, soumise au RGPD et encadrée par un contrat de sous-traitance des données. Le modèle ne
+        proposition de réponse. Il tourne sur des serveurs situés en Europe : la plateforme qui l'appelle, européenne, soumise au RGPD et encadrée par un contrat de sous-traitance des données, refuse tout modèle hébergé hors d'Europe. Le modèle ne
         stocke pas votre base : il reçoit ce qu'il faut pour traiter une demande, et rend un résultat.</p>
         <p class="cle"><b>Aucun projet ne passe par un compte d'IA grand public.</b> L'abonnement personnel d'un
         salarié à un assistant conversationnel n'offre ni contrat de sous-traitance ni garantie sur
@@ -293,7 +293,7 @@
         <h2 id="s2">L'entraînement, la question qui compte vraiment</h2>
         <p>Un modèle entraîné sur vos données peut, en théorie, en restituer des fragments à quelqu'un d'autre.
         C'est la crainte la plus fréquente, et elle est légitime.</p>
-        <p>La plateforme utilisée <b>ne conserve pas vos demandes et ne s'en sert pas pour entraîner des modèles</b>. Ce que vous envoyez au modèle sert à traiter votre demande, puis s'arrête là. Et les modèles sont appelés par API professionnelle, dont les conditions d'usage des données n'ont rien à voir avec celles d'un service grand public.</p>
+        <p>La réponse tient en une ligne : <b>rétention nulle de bout en bout</b>. Seuls des fournisseurs de modèles qui ne conservent pas les données sont utilisés, et la plateforme elle-même ne garde rien. Ce que vous envoyez au modèle sert à traiter votre demande, puis s'arrête là : vos factures, vos échanges clients et vos chiffres n'alimentent l'entraînement d'aucun modèle, ni chez la plateforme ni chez le fournisseur.</p>
         <p>S'y ajoute une règle de conception : seul le nécessaire est envoyé au modèle. C'est bon pour la
         confidentialité, et c'est aussi ce qui fait baisser la facture, comme le détaille l'article sur
         <a class="lnk" href="../combien-coute-une-automatisation-ia/">le coût d'une automatisation IA</a>.</p>
@@ -329,9 +329,9 @@
 
         <h2 id="s5">Ce qui est vérifié sur chaque projet</h2>
         <ul>
-          <li>Le lieu de traitement : infrastructure en Belgique pour les plateformes et les bases, plateforme d'IA européenne pour l'appel aux modèles.</li>
+          <li>Le lieu de traitement : infrastructure en Belgique pour les plateformes et les bases, serveurs européens pour les modèles.</li>
           <li>Le contrat de sous-traitance des données avec chaque fournisseur qui touche à vos données.</li>
-          <li>L'absence de conservation et d'entraînement sur les données envoyées aux modèles.</li>
+          <li>La rétention nulle chez la plateforme et chez le fournisseur du modèle : aucune conservation, aucun entraînement.</li>
           <li>L'anonymisation des données personnelles avant traitement.</li>
           <li>Le classement du cas d'usage selon l'AI Act, et les obligations qui en découlent.</li>
           <li>Les points où un humain valide, partout où la décision engage l'entreprise vis-à-vis d'un client.</li>
@@ -361,11 +361,11 @@
       <div class="faq">
         <details>
           <summary>Mes données peuvent-elles servir à entraîner un modèle d'IA ?</summary>
-          <p>Pas dans les projets décrits ici. Les modèles sont appelés via une plateforme européenne qui ne conserve pas les données clients et ne s'en sert pas pour entraîner des modèles. Ce qui est envoyé au modèle sert à traiter la demande, puis s'arrête là. Le risque existe en revanche avec un compte d'IA grand public utilisé par un salarié, où ce sont les réglages du compte qui décident.</p>
+          <p>Pas dans les projets décrits ici. Les modèles tournent sur des serveurs européens, et seuls des fournisseurs à rétention nulle sont utilisés : ni la plateforme ni le fournisseur du modèle ne conservent les données clients, et elles n'entraînent aucun modèle. Ce qui est envoyé au modèle sert à traiter la demande, puis s'arrête là. Le risque existe en revanche avec un compte d'IA grand public utilisé par un salarié, où ce sont les réglages du compte qui décident.</p>
         </details>
         <details>
           <summary>Où sont traitées les données quand une IA est branchée sur mon ERP ?</summary>
-          <p>À deux endroits, qu'il faut distinguer. Les sites, interfaces, plateformes et bases de données livrés tournent sur une infrastructure en Belgique. Les modèles d'IA, eux, sont appelés via une plateforme européenne hébergée dans l'Union européenne. Dans les deux cas, les données personnelles sont anonymisées avant d'entrer dans la chaîne.</p>
+          <p>À deux endroits, qu'il faut distinguer. Les sites, interfaces, plateformes et bases de données livrés tournent sur une infrastructure en Belgique. Les modèles d'IA, eux, tournent sur des serveurs situés en Europe. Dans les deux cas, les données personnelles sont anonymisées avant d'entrer dans la chaîne.</p>
         </details>
         <details>
           <summary>L'AI Act s'applique-t-il à une entreprise qui utilise un agent IA ?</summary>
