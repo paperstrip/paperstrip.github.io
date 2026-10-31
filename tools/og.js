@@ -45,7 +45,7 @@ const HTML = `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><style>
     <h1>Intégration IA en entreprise&nbsp;: on commence par <em>ce qui rapporte</em>.</h1>
   </div>
   <div class="bas">
-    <span>Agents IA &middot; Logiciels sur mesure &middot; Consultance &middot; Prix publiés</span>
+    <span>Agents IA &middot; Logiciels sur mesure &middot; Consultance</span>
     <span>Bruxelles et Wallonie</span>
   </div>
 </body></html>`;
