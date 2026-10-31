@@ -111,7 +111,8 @@
      "@type": "Thing",
      "name": "Mise en production d'une automatisation"
     }
-   ]
+   ],
+   "abstract": "Une automatisation plante souvent en production parce que son jeu de test était trop propre : les vrais documents contiennent des cas que le test ne prévoyait pas. La correction consiste à aller chercher l'information manquante dans le système qui la détient, l'ERP par exemple, et à laisser les cas ambigus à un humain."
   },
   {
    "@type": "FAQPage",
@@ -263,7 +264,7 @@
         </ol>
       </nav>
       <h1 id="h1" data-rv>La démonstration marchait. <em>La production, non.</em></h1>
-      <p class="date-art" data-rv>Publié le <time datetime="2026-09-06">6 septembre 2026</time></p>
+      <p class="date-art" data-rv>Par <a href="../../a-propos/">Arnaud Herr</a> · Publié le <time datetime="2026-09-06">6 septembre 2026</time></p>
       <p class="lead" data-rv>Un analyseur de documents qui passait tous les tests, et qui s'est mis à
       classer de travers dès qu'il a vu de vrais dossiers. Voici ce qui avait cassé, et pourquoi ce
       n'était pas un problème de modèle.</p>
@@ -273,6 +274,8 @@
   <section aria-labelledby="s1">
     <div class="wrap">
       <div class="article" data-rv>
+        <p class="cle bref"><b>En bref.</b> Une automatisation plante souvent en production parce que son jeu de test était trop propre : les vrais documents contiennent des cas que le test ne prévoyait pas. La correction consiste à aller chercher l'information manquante dans le système qui la détient, l'ERP par exemple, et à laisser les cas ambigus à un humain.</p>
+
         <h2 id="s1">Le jeu de test était une fiction</h2>
         <p>L'automatisation devait <a class="lnk" href="../../agents-metier/">lire des documents
         entrants, les classer et en extraire les informations utiles</a>, à raison de cent à deux cents
@@ -354,6 +357,12 @@
         </ul>
         <p>Ces quatre exigences sont exactement ce qu'on passe en revue pendant le
         <a class="lnk" href="../../consultance/">cadrage</a>, avant d'écrire la première ligne.</p>
+        <aside class="auteur" aria-label="L'auteur">
+          <p><b>Arnaud Herr</b> est consultant IA indépendant à Bruxelles et en Wallonie. Dix ans de
+          développement web, du front-end au poste de CTO de trois structures : développement sur mesure,
+          intelligence artificielle et marketing digital. <a class="lnk" href="../../a-propos/">Son
+          parcours</a>.</p>
+        </aside>
       </div>
     </div>
   </section>

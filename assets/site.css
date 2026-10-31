@@ -659,6 +659,16 @@
   }
   .sec-soft .cle{background:var(--brand-page)}
   .cle b{color:var(--coral-t)}
+  /* En bref : la reponse directe en tete d'article, celle que les moteurs
+     generatifs reprennent. Premiere chose lue, donc pas de marge au-dessus. */
+  .article > .bref:first-child{margin-top:0}
+  /* Signature en fin d'article : qui ecrit, et d'ou vient l'experience. */
+  .auteur{
+    margin-top:clamp(36px,4vw,48px);padding-top:clamp(18px,2vw,24px);
+    border-top:1px solid var(--line);max-width:68ch;
+    font-size:var(--t-sm);line-height:1.6;color:var(--ink-70);
+  }
+  .auteur b{color:var(--ink);font-weight:600}
 
   /* Liste des articles */
   /* une seule colonne pleine largeur se lisait comme un tableau ; en
@@ -1085,3 +1095,8 @@
     font-size:var(--t-sm);color:var(--ink-45);
   }
   .date-art time{color:var(--ink-70)}
+  .date-art a{color:inherit;font-size:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  /* Dans l'en-tete sombre des articles, la date restait en encre sombre et
+     ne se lisait pas. */
+  .page-hero .date-art{color:var(--on-dark-70)}
+  .page-hero .date-art time{color:var(--on-dark-88)}
