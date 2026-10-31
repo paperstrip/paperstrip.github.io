@@ -63,8 +63,8 @@ INTERDITS = [
 ]
 
 VIGILANCE = [
-    (r"\bPME\b",
-     "legitime pour decrire Clevermint, a bannir dans le ciblage commercial"),
+    # « PME » etait banni du ciblage commercial. Arnaud l'a autorise : c'est le
+    # terme que tapent les dirigeants, et tous les concurrents le travaillent.
     (r"\bgratuit\w*\b",
      "acceptable pour l'appel de trente minutes uniquement"),
     (r"\bgarantit?\b|\bgarantissons\b",
