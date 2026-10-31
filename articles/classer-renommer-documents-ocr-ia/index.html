@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#17161C">
+
+<title>Classer et renommer des documents avec l'OCR et l'IA | Arnaud Herr</title>
+<meta name="description" content="Classer, renommer et rattacher au bon dossier les documents entrants grâce à l'OCR et à l'IA : le cas réel d'un courtier en crédit, 100 à 200 documents par mois, croisés avec son ERP.">
+<meta name="author" content="Arnaud Herr">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Arnaud Herr">
+<meta property="og:url" content="https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/">
+<meta property="og:title" content="Classer et renommer des documents avec l'OCR et l'IA | Arnaud Herr">
+<meta property="og:description" content="Classer, renommer et rattacher au bon dossier les documents entrants grâce à l'OCR et à l'IA : le cas réel d'un courtier en crédit, 100 à 200 documents par mois, croisés avec son ERP.">
+<meta property="og:image" content="https://arnaudherr.be/assets/og.jpg">
+<meta property="og:image:alt" content="Arnaud Herr. Intégration IA en entreprise : on commence par ce qui rapporte. Agents IA, logiciels sur mesure et consultance, à Bruxelles et en Wallonie.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Classer et renommer des documents avec l'OCR et l'IA | Arnaud Herr">
+<meta name="twitter:description" content="Classer, renommer et rattacher au bon dossier les documents entrants grâce à l'OCR et à l'IA : le cas réel d'un courtier en crédit, 100 à 200 documents par mois, croisés avec son ERP.">
+<meta name="twitter:image" content="https://arnaudherr.be/assets/og.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preload" href="../../assets/fonts/sg-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#webpage",
+   "url": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/",
+   "name": "Classer et renommer des documents avec l'OCR et l'IA | Arnaud Herr",
+   "description": "Classer, renommer et rattacher au bon dossier les documents entrants grâce à l'OCR et à l'IA : le cas réel d'un courtier en crédit, 100 à 200 documents par mois, croisés avec son ERP.",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/#website"
+   },
+   "inLanguage": "fr-BE",
+   "breadcrumb": {
+    "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#breadcrumb"
+   },
+   "about": {
+    "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#article"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Accueil",
+     "item": "https://arnaudherr.be/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Articles",
+     "item": "https://arnaudherr.be/articles/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Classer et renommer des documents",
+     "item": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/"
+    }
+   ]
+  },
+  {
+   "@type": "Article",
+   "dateModified": "2026-10-31T14:00:00+00:00",
+   "datePublished": "2026-10-31T14:00:00+00:00",
+   "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#article",
+   "headline": "Classer et renommer automatiquement des documents : le cas d'un courtier en crédit",
+   "description": "Classer, renommer et rattacher au bon dossier les documents entrants grâce à l'OCR et à l'IA : le cas réel d'un courtier en crédit, 100 à 200 documents par mois, croisés avec son ERP.",
+   "inLanguage": "fr-BE",
+   "author": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "publisher": {
+    "@id": "https://arnaudherr.be/#person"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://arnaudherr.be/assets/og.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "Classement automatique de documents"
+    },
+    {
+     "@type": "Thing",
+     "name": "Reconnaissance optique de caractères (OCR)"
+    },
+    {
+     "@type": "Thing",
+     "name": "Intelligence artificielle"
+    },
+    {
+     "@type": "Thing",
+     "name": "Courtage en crédit"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#faq",
+   "isPartOf": {
+    "@id": "https://arnaudherr.be/articles/classer-renommer-documents-ocr-ia/#webpage"
+   },
+   "inLanguage": "fr-BE",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Peut-on renommer automatiquement des documents scannés ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. L'OCR extrait le texte du document, même scanné, puis l'IA en tire les informations utiles (type de document, personnes, dates, références) pour le renommer selon la nomenclature de l'entreprise et le ranger dans le bon dossier."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Que se passe-t-il quand l'IA ne sait pas à quel dossier rattacher un document ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Elle ne tranche pas. Le document tombe dans une catégorie « non classé » et quelqu'un est prévenu. Les erreurs silencieuses coûtent bien plus cher que quelques documents à classer à la main."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Est-ce compatible avec le RGPD pour des documents de crédit ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui, avec un cadre strict : modèles d'IA sur serveurs européens, fournisseurs à rétention nulle, aucune utilisation des documents pour l'entraînement, et traçabilité de chaque traitement. Classer des documents n'est pas évaluer la solvabilité : ce n'est pas un usage à haut risque au sens de l'AI Act."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Faut-il changer d'outil de gestion ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. L'agent se branche sur l'outil existant par son API, pour récupérer les dossiers en cours et y déposer les documents. C'est ce croisement qui lui permet de trouver le bon dossier."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Mesure d'audience : Google Tag Manager, différé et soumis au consentement.
+     Tout se règle dans assets/mesure.js, commun à toutes les pages. -->
+<script src="/assets/mesure.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="nav-in">
+      <a href="../../" class="logo">Arnaud Herr<span>.</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="../../consultance/">Consultance</a>
+          <a href="../../agents-metier/">Agents métier</a>
+          <a href="../../sites-web-ia/">Sites web</a>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+          <a href="../../sous-traitance/">Sous-traitance</a>
+        </nav>
+        <a href="../../contact/" class="btn btn-sm">Parlons-en</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="megaMenu" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="megamenu" id="megaMenu" role="dialog" aria-modal="true" aria-label="Menu principal" aria-hidden="true">
+      <div class="wrap">
+        <nav class="mega-nav" aria-label="Offres">
+          <span class="lbl">Pour les entreprises</span>
+          <a href="../../consultance/" class="mega-anim">
+            <span class="i">01</span>
+            <span class="t">Consultance</span>
+            <span class="d">Cadrer avant de construire : architecture et priorités, en amont du code.</span>
+          </a>
+          <a href="../../agents-metier/" class="mega-anim">
+            <span class="i">02</span>
+            <span class="t">Agents métier</span>
+            <span class="d">Des agents IA livrés en API, branchés sur vos outils métier.</span>
+          </a>
+          <div class="mega-palier mega-anim">
+            <span class="i">03</span>
+            <span class="t">Production sur mesure</span>
+            <span class="d">Ce qui n'existe pas encore, construit avec l'IA puis repris à la main.</span>
+            <div class="mega-sub">
+              <a href="../../sites-web-ia/">Sites web</a>
+              <a href="../../saas-sur-mesure/">SaaS sur mesure</a>
+            </div>
+          </div>
+          <span class="lbl lbl-suite">Pour les agences</span>
+          <a href="../../sous-traitance/" class="mega-anim">
+            <span class="i" aria-hidden="true"></span>
+            <span class="t">Sous-traitance</span>
+            <span class="d">Renfort technique en marque blanche, sans contact avec le client final.</span>
+          </a>
+        </nav>
+        <div class="mega-apart">
+          <span class="lbl">Notre produit</span>
+          <a href="../../pilotage-donnees/" class="mega-anim">
+            <span class="t">Pilotage par les données</span>
+            <span class="d">Vos chiffres croisés avec le contexte extérieur, interrogeables en français.</span>
+          </a>
+        </div>
+        <nav class="mega-plus" aria-label="Pages complémentaires">
+          <span class="lbl">En savoir plus</span>
+          <a href="../../ia-maitrisee/" class="mega-anim"><span class="t">La méthode</span></a>
+          <a href="../" class="mega-anim" aria-current="page"><span class="t">Articles</span></a>
+          <a href="../../a-propos/" class="mega-anim"><span class="t">Parcours</span></a>
+          <a href="../../questions-a-poser/" class="mega-anim"><span class="t">Les questions à poser</span></a>
+          <a href="../../contact/" class="mega-anim"><span class="t">Parlons-en</span></a>
+        </nav>
+<div class="mega-foot">
+          <div>
+            <p class="lbl">Écrire</p>
+            <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          </div>
+          <div>
+            <p class="lbl">Appeler</p>
+            <a href="tel:+32477672928">+32 477 67 29 28</a>
+          </div>
+          <div>
+            <p class="lbl">Suivre</p>
+            <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+          </div>
+          <div>
+            <p class="lbl">Basé en</p>
+            <span>Belgique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="h1">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="../../">Accueil</a></li>
+          <li><a href="../">Articles</a></li>
+          <li><span aria-current="page">Classer et renommer des documents</span></li>
+        </ol>
+      </nav>
+      <h1 id="h1" data-rv>Classer et renommer automatiquement des documents&nbsp;: <em>le cas d'un courtier en crédit</em>.</h1>
+      <p class="date-art" data-rv>Publié le <time datetime="2026-10-31">31 octobre 2026</time></p>
+      <p class="lead" data-rv>Chaque document reçu doit être ouvert, identifié, renommé selon la nomenclature du cabinet et rangé dans le bon dossier. Chez un courtier en crédit, cent à deux cents documents par mois passent maintenant par un agent qui fait ce travail, et qui signale ce qu'il ne peut pas trancher.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="s1">
+    <div class="wrap">
+      <div class="article" data-rv>
+        <h2 id="s1">Le travail invisible d'un dossier de crédit</h2>
+        <p>Un dossier de crédit se constitue de pièces qui arrivent au fil de l'eau, par mail ou par dépôt :
+        documents d'identité, revenus, pièces liées au bien, échanges avec le notaire. Chacune doit être
+        ouverte, reconnue, renommée selon la convention du cabinet, puis rangée dans le dossier du bon
+        client.</p>
+        <p>Rien de compliqué, mais un geste répété des dizaines de fois par semaine, et une erreur de
+        rangement coûte cher : une pièce introuvable au moment de déposer le dossier à la banque, ou pire,
+        rangée chez un autre client.</p>
+
+        <h2 id="s2">Comment l'agent traite un document</h2>
+        <ol>
+          <li><b>Lecture par OCR.</b> Le texte est extrait du document, y compris quand il s'agit d'un
+          scan.</li>
+          <li><b>Reconnaissance.</b> L'IA identifie le type de document et les informations utiles : les
+          personnes citées, les dates, les références.</li>
+          <li><b>Croisement avec l'ERP.</b> Le traitement interroge l'API de l'outil de gestion du courtier
+          et récupère les dossiers en cours. C'est là que se décide à quel dossier appartient le document.</li>
+          <li><b>Renommage</b> selon la nomenclature du cabinet, à partir des informations extraites.</li>
+          <li><b>Classement</b> dans le bon dossier.</li>
+        </ol>
+        <p>L'ensemble est orchestré dans un workflow n8n, qui enchaîne la lecture, l'appel à l'ERP et le
+        classement.</p>
+
+        <h2 id="s3">Ce que le document ne dit pas</h2>
+        <p>Un document de crédit cite souvent plusieurs personnes au même niveau : les co-emprunteurs, le
+        notaire, parfois d'autres intervenants. Un humain sait sans y penser qu'un notaire n'est pas le
+        demandeur. Un modèle, lui, voit des noms d'importance égale.</p>
+        <p>La solution n'a pas été de mieux formuler la consigne, mais d'aller chercher l'information là où
+        elle existe : dans l'ERP. Le croisement permet d'identifier le demandeur réel, d'écarter les notaires
+        et les intervenants qui ne sont pas parties au dossier, et de lier entre elles les personnes qui
+        doivent l'être, les conjoints notamment. L'histoire complète, avec ce qui avait cassé en production,
+        est racontée dans <a class="lnk" href="../pourquoi-une-automatisation-plante-en-production/">cet
+        article</a>.</p>
+
+        <h2 id="s4">Le doute, une fonctionnalité</h2>
+        <p class="cle"><b>Ce que l'agent ne peut pas trancher, il ne le tranche pas.</b> Les cas ambigus
+        tombent dans une catégorie « non classé », et quelqu'un est prévenu.</p>
+        <p>Une automatisation qui classe tout, tout le temps, produit des erreurs silencieuses qu'on découvre
+        des semaines plus tard. Celle qui lève la main sur une petite part des documents coûte un peu de
+        travail manuel, et évite les erreurs qui font mal. Chaque décision est en outre tracée en base : ce
+        qui a été proposé, ce qui a été retenu. On peut ainsi suivre les taux de réussite dans le temps.</p>
+
+        <h2 id="s5">Données de crédit, RGPD et AI Act</h2>
+        <p>Les documents d'un dossier de crédit contiennent des données personnelles et financières
+        sensibles. Les modèles d'IA tournent sur des serveurs situés en Europe, chez des fournisseurs à
+        rétention nulle : les documents ne sont ni conservés ni utilisés pour entraîner un modèle, et chaque
+        traitement est tracé.</p>
+        <p>Côté AI Act, la frontière est nette. Évaluer la solvabilité d'une personne fait partie des usages
+        à <b>haut risque</b>. Classer et renommer des documents n'en fait pas partie : l'agent ne décide rien
+        de l'octroi du crédit, il range des pièces. Ce classement se vérifie au cadrage, pour chaque projet.
+        Le détail est dans <a class="lnk" href="../ia-rgpd-ai-act-donnees-entreprise/">l'article sur le RGPD
+        et l'AI Act</a>.</p>
+
+        <h2 id="s6">Pour quels métiers</h2>
+        <p>Le même mécanisme vaut pour tout cabinet qui reçoit des documents à rattacher à des dossiers :
+        courtiers en crédit ou en assurance, fiduciaires et bureaux comptables, agences immobilières,
+        services RH. Il se branche sur l'outil de gestion existant par son API, quel qu'il soit.</p>
+        <p>Un agent simple démarre à partir de 500 € HTVA. Un cas comme celui-ci, avec le croisement d'un ERP
+        et la gestion des cas ambigus, demande davantage : il est chiffré au cadrage. Les fourchettes sont
+        dans <a class="lnk" href="../combien-coute-une-automatisation-ia/">l'article sur le coût</a>, et les
+        autres usages sur la page <a class="lnk" href="../../agents-metier/">agents IA</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-soft" aria-labelledby="s-faq">
+    <div class="wrap">
+      <h2 class="sec-head" id="s-faq" data-rv>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Peut-on renommer automatiquement des documents scannés ?</summary>
+          <p>Oui. L'OCR extrait le texte du document, même scanné, puis l'IA en tire les informations utiles (type de document, personnes, dates, références) pour le renommer selon la nomenclature de l'entreprise et le ranger dans le bon dossier.</p>
+        </details>
+        <details>
+          <summary>Que se passe-t-il quand l'IA ne sait pas à quel dossier rattacher un document ?</summary>
+          <p>Elle ne tranche pas. Le document tombe dans une catégorie « non classé » et quelqu'un est prévenu. Les erreurs silencieuses coûtent bien plus cher que quelques documents à classer à la main.</p>
+        </details>
+        <details>
+          <summary>Est-ce compatible avec le RGPD pour des documents de crédit ?</summary>
+          <p>Oui, avec un cadre strict : modèles d'IA sur serveurs européens, fournisseurs à rétention nulle, aucune utilisation des documents pour l'entraînement, et traçabilité de chaque traitement. Classer des documents n'est pas évaluer la solvabilité : ce n'est pas un usage à haut risque au sens de l'AI Act.</p>
+        </details>
+        <details>
+          <summary>Faut-il changer d'outil de gestion ?</summary>
+          <p>Non. L'agent se branche sur l'outil existant par son API, pour récupérer les dossiers en cours et y déposer les documents. C'est ce croisement qui lui permet de trouver le bon dossier.</p>
+        </details>
+      </div>
+      <div class="band" data-rv>
+        <div>
+          <h2>Vos équipes classent des documents à la main ?</h2>
+          <p>Décrivez le type de documents que vous recevez, leur volume et l'outil où ils doivent arriver. Vous saurez ce qui peut être classé et renommé automatiquement.</p>
+        </div>
+        <a href="../../contact/" class="btn btn-block">En parler</a>
+        <p class="apres-cta"><a class="lnk" href="../../questions-a-poser/">Pas encore prêt ? Les questions à poser avant de signer</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="../../" class="foot-logo">Arnaud Herr<span>.</span></a>
+        <p>Agents IA branchés sur vos outils métier, sites web et logiciels sur mesure.
+        J'interviens en Wallonie et à Bruxelles.</p>
+        <div class="foot-contact">
+          <a href="mailto:contact@arnaudherr.be">contact@arnaudherr.be</a>
+          <a href="tel:+32477672928">+32 477 67 29 28</a>
+        </div>
+      </div>
+
+      <nav class="foot-cols" aria-label="Plan du site">
+        <div class="foot-col">
+          <p class="foot-lbl">Les prestations</p>
+          <a href="../../agents-metier/">Agents métier</a><br>
+          <a href="../../consultance/">Consultance</a><br>
+          <a href="../../pilotage-donnees/">Pilotage par les données</a><br>
+          <a href="../../sites-web-ia/">Sites web conçus avec l'IA</a><br>
+          <a href="../../saas-sur-mesure/">SaaS sur mesure</a><br>
+          <a href="../../sous-traitance/">Sous-traitance pour agences</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-lbl">En savoir plus</p>
+          <a href="../../a-propos/">Parcours</a><br>
+          <a href="../../ia-maitrisee/">La méthode</a><br>
+          <a href="../">Articles</a><br>
+          <a href="../../questions-a-poser/">Les questions à poser</a><br>
+          <a href="../../contact/">Parlons-en</a>
+        </div>
+        <div class="foot-col">
+          <p class="foot-lbl">Zones d'intervention</p>
+          <a href="../../consultant-ia-bruxelles/">Bruxelles</a><br>
+          <a href="../../consultant-ia-brabant-wallon/">Brabant wallon</a><br>
+          <a href="../../consultant-ia-liege/">Liège</a><br>
+          <a href="../../consultant-ia-namur/">Namur</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="foot-end">
+      <p>Arnaud Herr, Belgique</p>
+      <p class="r">
+        <a href="../../mentions-legales/">Mentions légales</a>
+        <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="../../assets/site.js" defer></script>
+
+</body>
+</html>

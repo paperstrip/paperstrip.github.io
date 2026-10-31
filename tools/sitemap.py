@@ -23,6 +23,7 @@ PAGES = [
     ("consultant-ia-namur/", "consultant-ia-namur/index.html"),
     ("questions-a-poser/", "questions-a-poser/index.html"),
     ("articles/",        "articles/index.html"),
+    ("articles/classer-renommer-documents-ocr-ia/", "articles/classer-renommer-documents-ocr-ia/index.html"),
     ("articles/agent-ia-chatbot-ou-automatisation/", "articles/agent-ia-chatbot-ou-automatisation/index.html"),
     ("articles/agence-ia-ou-consultant-independant/", "articles/agence-ia-ou-consultant-independant/index.html"),
     ("articles/agent-ia-odoo/", "articles/agent-ia-odoo/index.html"),
