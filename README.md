@@ -25,6 +25,7 @@ tools/faq-sync.py     recopie les questions visibles dans le balisage FAQPage
 tools/interdits.py    traque les formulations écartées, tous formats confondus
 tools/contraste.js    audit de contraste sur toutes les pages
 tools/set-domain.py   bascule l'URL de base vers un domaine propre
+tools/indexnow.py     signale les pages modifiees a IndexNow (Bing et autres)
 tools/theme.py        applique une palette enregistrée
 tools/images.js       recadre, réencode et traite les images sources
                       (--bichromie applique la palette, --dose 0-100 la nuance)
@@ -275,6 +276,28 @@ rempli par les robots, ce qui permet au service de rejeter l'envoi.
 Le premier envoi demande une confirmation par mail côté Formspree. Le plan
 gratuit est limité à quelques dizaines d'envois par mois ; au-delà, les
 messages sont retenus jusqu'au mois suivant.
+
+## IndexNow
+
+`tools/indexnow.py` signale les pages modifiées à IndexNow, le protocole
+commun à Bing, Yandex, Seznam et quelques autres. Bing alimente aussi les
+réponses de ChatGPT et de Copilot. Google ne l'utilise pas : pour lui, c'est le
+sitemap et la Search Console.
+
+Le workflow `.github/workflows/indexnow.yml` le lance à chaque publication sur
+`gh-pages`, deux minutes après le push pour laisser Pages publier. Il ne signale
+que les pages dont le `index.html` a changé depuis la publication précédente.
+Depuis l'onglet Actions, « Run workflow » resoumet tout le sitemap.
+
+```
+python3 tools/indexnow.py --depuis HEAD~1 --essai   liste sans envoyer
+python3 tools/indexnow.py --tout                    tout le sitemap
+```
+
+Le fichier `244006c990804a8bd334c15eb1f93118.txt` à la racine est la clé : son
+contenu est son propre nom. Les moteurs le lisent sur le site pour vérifier
+que la notification vient du propriétaire du domaine. **Ne pas le supprimer
+ni le renommer.**
 
 ## Sitemap
 
