@@ -277,6 +277,17 @@ Le premier envoi demande une confirmation par mail côté Formspree. Le plan
 gratuit est limité à quelques dizaines d'envois par mois ; au-delà, les
 messages sont retenus jusqu'au mois suivant.
 
+## Articles : réponse directe et auteur
+
+Chaque article commence par un encadré `<p class="cle bref"><b>En bref.</b> …</p>`
+qui répond à la question du titre en deux ou trois phrases autonomes, avec les
+chiffres. C'est le passage que les moteurs génératifs reprennent en priorité ;
+le même texte est recopié dans le champ `abstract` du nœud `Article`.
+
+La signature (« Par Arnaud Herr ») suit la date sous le titre, et un encadré
+`.auteur` clôt le corps de l'article. Les deux renvoient vers `a-propos/`, la
+page qui consolide l'entité. Un nouvel article doit reprendre les trois.
+
 ## IndexNow
 
 `tools/indexnow.py` signale les pages modifiées à IndexNow, le protocole
