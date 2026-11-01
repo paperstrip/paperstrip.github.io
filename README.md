@@ -15,6 +15,7 @@ ia-maitrisee/         page pilier : sortir du générique, performance, SEO et G
 a-propos/             parcours, façon de travailler, ce qui est refusé
 contact/              contact
 consultant-ia-*/      pages locales : Bruxelles, Brabant wallon, Liège, Namur
+medecins-esthetiques/ page sectorielle, cible du QR code de la pub magazine
 mentions-legales/     éditeur, hébergement, données personnelles
 404.html              page d'erreur (autonome, styles en ligne)
 robots.txt            indexation + déclaration du sitemap
