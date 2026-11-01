@@ -20,6 +20,10 @@ import sys
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXTENSIONS = (".html", ".txt", ".xml", ".md", ".json")
 IGNORES = {".git", "node_modules", "tools"}
+# La page medecins-esthetiques/ vise un public international (magazine diffuse
+# a l'IMCAS Paris) : elle seule peut parler de la France. La regle de zone ne
+# s'y applique pas, toutes les autres regles si.
+EXCEPTIONS_ZONE = ("medecins-esthetiques" + os.sep,)
 
 # (motif, explication). Le motif est cherche sans tenir compte de la casse.
 INTERDITS = [
@@ -104,7 +108,10 @@ def main():
     vigilances = 0
     for chemin in fichiers():
         contenu = open(chemin, encoding="utf-8").read()
-        bloquants += signale(chemin, contenu, INTERDITS, "INTERDIT")
+        regles = INTERDITS
+        if any(e in chemin for e in EXCEPTIONS_ZONE):
+            regles = [r for r in INTERDITS if not r[1].startswith("la zone couverte")]
+        bloquants += signale(chemin, contenu, regles, "INTERDIT")
         if tout:
             vigilances += signale(chemin, contenu, VIGILANCE, "vigilance")
 
