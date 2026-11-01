@@ -31,6 +31,10 @@ faut décider, vérifier et couper.
 - [Les questions à poser avant de signer](https://arnaudherr.be/questions-a-poser/) : une grille pour juger n'importe quel prestataire en intelligence artificielle, Arnaud Herr compris. Ce qu'il faut demander avant de lancer un chantier (temps réellement passé aujourd'hui, ce qui se passe si on ne fait rien, alternative du marché chiffrée, répartition du travail pendant le cadrage, neutralité de celui qui cadre), sur un agent branché sur des outils métier (données de test réelles, comportement en cas de doute, points de validation humaine, journal des décisions, changement d'écran, livraison en API), et sur un site ou un logiciel sur mesure (qui écrit le code, hébergement et base de données, ce qu'on récupère en partant, cas limites et tests, délai de réponse en cas de panne). Trois réponses qui doivent alerter : un montant sans ses conditions, un rang promis dans les moteurs, et le report des décisions structurantes après la mise en ligne.
 - [Contact](https://arnaudherr.be/contact/) : contact@arnaudherr.be, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis un échange sans engagement, sans durée annoncée. La réponse écrite, l'échange, le cadrage et le devis font partie de l'avant-vente et ne sont pas facturés. Ce qui est facturé commence une fois le devis accepté.
 
+## Secteurs
+
+- [IA pour cabinets de médecine esthétique](https://arnaudherr.be/medecins-esthetiques/) : réponses préparées aux demandes de patients, demandes de rendez-vous qualifiées, consignes et rappels, documents classés par OCR, fin des ressaisies entre agenda et facturation. L'IA ne pose aucun diagnostic et ne donne aucun conseil médical ; chaque réponse est relue par l'équipe du cabinet. Données de santé traitées sur serveurs européens à rétention nulle. Pas encore de client dans ce secteur : les mécanismes tournent en production ailleurs.
+
 ## Zones d'intervention
 
 - [Consultant IA à Bruxelles](https://arnaudherr.be/consultant-ia-bruxelles/) : les dix-neuf communes et la périphérie.
