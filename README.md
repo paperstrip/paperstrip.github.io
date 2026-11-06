@@ -92,6 +92,13 @@ un nom, une zone, un métier, des partenaires nommés.
 
 ## Images
 
+**Les photos ne sont plus servies.** Les en-têtes et les panneaux qui en
+portaient (accueil, parcours) affichent un dégradé choisi par l'attribut
+`data-fond="v1"` à `"v6"` (voir « Dégradé des en-têtes »). Les fichiers de
+`assets/img/` et les outils ci-dessous restent dans le dépôt au cas où une photo
+reviendrait.
+
+
 Les images servies par le site vivent dans `assets/img/`. Elles sont produites
 à partir des fichiers bruts déposés dans `assets/img-src/`, qui restent dans le
 dépôt pour pouvoir tout regénérer sans repasser par le générateur d'images.
@@ -202,7 +209,13 @@ fond, l'accent des titres passe en `--brand-second`, plus clair : le lavande
 `--brand-accent` ne tient pas le contraste sur le haut violet. Le fond uni de
 l'en-tête est `--brand-hero-top`, la teinte la plus claire du dégradé, parce que
 l'audit de contraste ne lit que les couleurs unies : il mesure ainsi le pire
-cas. La page `pilotage-donnees/` garde l'encre unie, pour son vert. L'accueil
+cas. La page `pilotage-donnees/` garde l'encre unie, pour son vert.
+
+Six variantes, `data-fond="v1"` à `"v6"`, toutes faites des quatre mêmes
+teintes (`--v-clair`, `--v-moyen`, `--v-sombre`, `--v-nuit`) : seule la forme
+change, halos placés à des endroits différents, pour un rendu organique. Chaque
+page et chaque panneau a la sienne, et deux voisins n'ont jamais la même.
+`v1` est le dégradé vertical de la publicité. L'accueil
 porte le même dégradé à la place de l'ancienne photo de hero.
 
 ### Accent propre à une page
