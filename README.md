@@ -36,6 +36,8 @@ assets/site.css       styles partagés par toutes les pages
 assets/site.js        révélation au scroll, en-tête, méga-menu, accordéons
 assets/mesure.js      Google Tag Manager différé, consentement, bandeau
 assets/og.jpg         image de partage Open Graph (1200×630)
+assets/logo.svg       logo « Arnaud Herr. » vectorisé, encre sur fond clair
+assets/logo-blanc.svg le même, blanc pour fond sombre ; PNG 3000 px transparents à côté
 assets/fonts/         Schibsted Grotesk (variable, woff2, latin + latin-ext)
 .nojekyll             désactive le traitement Jekyll de GitHub Pages
 ```
