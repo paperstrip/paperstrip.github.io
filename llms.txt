@@ -35,6 +35,8 @@ faut décider, vérifier et couper.
 
 - [IA pour cabinets de médecine esthétique](https://arnaudherr.be/medecins-esthetiques/) : seule offre ouverte au-delà de la Belgique, à distance pour les cabinets français et européens ; réponses préparées aux demandes de patients, demandes de rendez-vous qualifiées, consignes et rappels, documents classés par OCR, fin des ressaisies entre agenda et facturation. L'IA ne pose aucun diagnostic et ne donne aucun conseil médical ; chaque réponse est relue par l'équipe du cabinet. Données de santé traitées sur serveurs européens à rétention nulle. Pas encore de client dans ce secteur : les mécanismes tournent en production ailleurs.
 
+- [AI for aesthetic medicine clinics (English)](https://arnaudherr.be/en/aesthetic-clinics/) : version anglaise de la page médecine esthétique, pour le public international de l'IMCAS Paris.
+
 ## Zones d'intervention
 
 - [Consultant IA à Bruxelles](https://arnaudherr.be/consultant-ia-bruxelles/) : les dix-neuf communes et la périphérie.

@@ -23,7 +23,7 @@ IGNORES = {".git", "node_modules", "tools"}
 # La page medecins-esthetiques/ vise un public international (magazine diffuse
 # a l'IMCAS Paris) : elle seule peut parler de la France. La regle de zone ne
 # s'y applique pas, toutes les autres regles si.
-EXCEPTIONS_ZONE = ("medecins-esthetiques" + os.sep,)
+EXCEPTIONS_ZONE = ("medecins-esthetiques" + os.sep, os.path.join("en", "aesthetic-clinics") + os.sep)
 
 # (motif, explication). Le motif est cherche sans tenir compte de la casse.
 INTERDITS = [

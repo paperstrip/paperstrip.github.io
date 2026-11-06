@@ -30,6 +30,13 @@
     --brand-light:#FFFFFF;    /* texte et éléments sur fond sombre */
     --brand-on-accent:var(--brand-light); /* texte posé sur l'accent, à passer en sombre si l'accent est clair */
     --brand-shade:#201F27;    /* voile posé sur les photos */
+    /* dégradé des en-têtes de page, repris de la publicité magazine :
+       violet en haut, encre en bas, deux reflets verticaux discrets.
+       --brand-hero-top est sa teinte la plus claire : l'audit de contraste
+       ne lit que les couleurs unies, il mesure donc contre celle-ci. */
+    --brand-hero-top:#5F5396;
+    --brand-hero:linear-gradient(90deg,transparent 0%,rgb(255 255 255/.045) 38%,transparent 50%,rgb(0 0 0/.07) 62%,rgb(255 255 255/.04) 84%,transparent 100%),
+                 linear-gradient(180deg,var(--brand-hero-top) 0%,#4C4278 42%,#2F2A49 78%,#28243D 100%);
     /* dégradé du bas de hero, repris tel quel de la référence.
        Remplacer #000 par une autre teinte pour le colorer. */
     --hero-overlay:linear-gradient(to top,#000,#000000fa 9.99%,#000000ec 19.07%,#000000d7 27.44%,#000000bd 35.26%,#0000009f 42.72%,#00000080,#00000060 57.28%,#00000042 64.74%,#00000028 72.56%,#00000013 80.93%,#00000005 90.01%,#0000);
@@ -122,7 +129,10 @@
     background:var(--brand-page);color:var(--ink);
     font-family:var(--face);font-size:var(--t-body);font-weight:400;
     line-height:1.44;letter-spacing:0;
-    font-variant-numeric:tabular-nums;
+    /* Pas de chiffres tabulaires sur le texte courant : dans Schibsted
+       Grotesk, tnum elargit aussi la virgule, le point et les deux-points,
+       ce qui laissait une espace visible avant chaque ponctuation. Les
+       chiffres a aligner (numeros d'etape, gros chiffres) le gardent. */
     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
     overflow-x:hidden;
   }
@@ -717,6 +727,7 @@
   /* ---------- MÉTHODE ---------- */
   .step{background:var(--brand-page);border-radius:var(--r);padding:clamp(24px,2.3vw,30px);border:1px solid var(--line)}
   .sec-soft .step{border-color:transparent}
+  .step .n,.card .n,.offer .n,.big{font-variant-numeric:tabular-nums}
   .step .n{
     width:38px;height:38px;border-radius:var(--pill);background:var(--coral);color:var(--on-coral);
     display:flex;align-items:center;justify-content:center;
@@ -803,15 +814,20 @@
 
   /* --- en-tête de page interne : pas de photo, on va droit au sujet --- */
   .page-hero{
-    position:relative;background:var(--ink);
+    position:relative;background-color:var(--brand-hero-top);background-image:var(--brand-hero);
     padding-block:clamp(116px,26vw,168px) clamp(48px,8vw,80px);
   }
   /* même remarque que sur le hero de l'accueil : 16ch empilait des titres de
      soixante caractères sur quatre lignes. */
   .page-hero h1{color:var(--on-dark);max-width:20ch;margin-bottom:20px}
   @media(min-width:1024px){.page-hero h1{max-width:24ch}}
-  .page-hero h1 em{font-style:normal;color:var(--coral)}
-  .page-hero .lead{color:var(--on-dark-80);max-width:52ch;margin-bottom:32px}
+  /* l'accent ne tient pas sur le haut violet du degrade : teinte claire,
+     comme sur la publicite */
+  .page-hero h1 em{font-style:normal;color:var(--brand-second)}
+  .page-hero .crumb{color:var(--on-dark-80)}
+  .page-hero .crumb a{color:var(--on-dark-88)}
+  .page-hero .crumb [aria-current]{color:var(--on-dark-80)}
+  .page-hero .lead{color:var(--on-dark-88);max-width:52ch;margin-bottom:32px}
 
   .crumb{margin-bottom:22px;font-size:var(--t-xs);color:var(--on-dark-55)}
   .crumb ol{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -1098,5 +1114,5 @@
   .date-art a{color:inherit;font-size:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
   /* Dans l'en-tete sombre des articles, la date restait en encre sombre et
      ne se lisait pas. */
-  .page-hero .date-art{color:var(--on-dark-70)}
+  .page-hero .date-art{color:var(--on-dark-88)}
   .page-hero .date-art time{color:var(--on-dark-88)}
