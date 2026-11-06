@@ -122,6 +122,14 @@ Les fichiers bruts restent dans l'historique git une fois commités. Si le poids
 du dépôt devient gênant, c'est `assets/img-src/` qu'il faut sortir, pas
 `assets/img/`.
 
+## Version des fichiers partagés
+
+Chaque page appelle `assets/site.css?v=AAAA-MM-JJ` et `assets/site.js?v=…`.
+GitHub Pages et les navigateurs gardent ces fichiers en cache : sans ce
+numéro, un visiteur peut voir l'ancienne mise en forme plusieurs minutes, voire
+plus. **Après toute modification de `site.css` ou `site.js`, changer la date sur
+toutes les pages** (un remplacement global suffit).
+
 ## Changer les couleurs
 
 Toute la palette découle de **huit variables** groupées en haut de
@@ -194,7 +202,8 @@ fond, l'accent des titres passe en `--brand-second`, plus clair : le lavande
 `--brand-accent` ne tient pas le contraste sur le haut violet. Le fond uni de
 l'en-tête est `--brand-hero-top`, la teinte la plus claire du dégradé, parce que
 l'audit de contraste ne lit que les couleurs unies : il mesure ainsi le pire
-cas. La page `pilotage-donnees/` garde l'encre unie, pour son vert.
+cas. La page `pilotage-donnees/` garde l'encre unie, pour son vert. L'accueil
+porte le même dégradé à la place de l'ancienne photo de hero.
 
 ### Accent propre à une page
 

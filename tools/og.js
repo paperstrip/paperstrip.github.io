@@ -28,14 +28,17 @@ const HTML = `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><style>
   @font-face{font-family:'SGx';font-weight:400 700;font-display:block;
     src:url(data:font/woff2;base64,${policeExt}) format('woff2');}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{width:1200px;height:630px;background:${INK};color:${CLAIR};
+  body{width:1200px;height:630px;color:${CLAIR};
+    background-color:#5F5396;background-image:
+      linear-gradient(90deg,transparent 0%,rgb(255 255 255/.045) 38%,transparent 50%,rgb(0 0 0/.07) 62%,rgb(255 255 255/.04) 84%,transparent 100%),
+      linear-gradient(180deg,#5F5396 0%,#4C4278 42%,#2F2A49 78%,#28243D 100%);
     font-family:'SG','SGx',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
     display:flex;flex-direction:column;justify-content:space-between;padding:74px 84px;}
   .marque{font-size:30px;font-weight:700;letter-spacing:-.015em}
   .marque i{color:${ACCENT};font-style:normal}
   .trait{width:64px;height:3px;background:${ACCENT};margin-bottom:34px}
   h1{font-size:64px;font-weight:400;line-height:1.1;letter-spacing:-.025em;max-width:17ch}
-  h1 em{color:${ACCENT};font-style:normal}
+  h1 em{color:#DAD1F2;font-style:normal}
   .bas{display:flex;justify-content:space-between;align-items:flex-end;
     font-size:23px;color:rgba(255,255,255,.66);letter-spacing:.005em}
 </style></head><body>
