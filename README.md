@@ -16,6 +16,7 @@ a-propos/             parcours, façon de travailler, ce qui est refusé
 contact/              contact
 consultant-ia-*/      pages locales : Bruxelles, Brabant wallon, Liège, Namur
 medecins-esthetiques/ page sectorielle, cible du QR code de la pub magazine
+en/aesthetic-clinics/ sa version anglaise (IMCAS Paris), reliée par hreflang
 mentions-legales/     éditeur, hébergement, données personnelles
 404.html              page d'erreur (autonome, styles en ligne)
 robots.txt            indexation + déclaration du sitemap
@@ -184,6 +185,16 @@ quelque chose, ce qui permet de le brancher sur une intégration continue.
 
 Une exception est volontairement ignorée : le blanc sur l'accent, qui plafonne
 vers 2,7. C'est le parti pris de la référence, assumé.
+
+### Dégradé des en-têtes
+
+Les en-têtes des pages internes (`.page-hero`) portent le dégradé violet de la
+publicité magazine : `--brand-hero`, défini avec les variables de marque. Sur ce
+fond, l'accent des titres passe en `--brand-second`, plus clair : le lavande
+`--brand-accent` ne tient pas le contraste sur le haut violet. Le fond uni de
+l'en-tête est `--brand-hero-top`, la teinte la plus claire du dégradé, parce que
+l'audit de contraste ne lit que les couleurs unies : il mesure ainsi le pire
+cas. La page `pilotage-donnees/` garde l'encre unie, pour son vert.
 
 ### Accent propre à une page
 

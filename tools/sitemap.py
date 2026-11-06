@@ -18,6 +18,7 @@ PAGES = [
     ("",                 "index.html"),
     ("consultance/",     "consultance/index.html"),
     ("medecins-esthetiques/", "medecins-esthetiques/index.html"),
+    ("en/aesthetic-clinics/", "en/aesthetic-clinics/index.html"),
     ("consultant-ia-bruxelles/", "consultant-ia-bruxelles/index.html"),
     ("consultant-ia-brabant-wallon/", "consultant-ia-brabant-wallon/index.html"),
     ("consultant-ia-liege/", "consultant-ia-liege/index.html"),
