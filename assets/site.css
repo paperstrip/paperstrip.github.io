@@ -35,8 +35,26 @@
        --brand-hero-top est sa teinte la plus claire : l'audit de contraste
        ne lit que les couleurs unies, il mesure donc contre celle-ci. */
     --brand-hero-top:#5F5396;
-    --brand-hero:linear-gradient(90deg,transparent 0%,rgb(255 255 255/.045) 38%,transparent 50%,rgb(0 0 0/.07) 62%,rgb(255 255 255/.04) 84%,transparent 100%),
-                 linear-gradient(180deg,var(--brand-hero-top) 0%,#4C4278 42%,#2F2A49 78%,#28243D 100%);
+    --grad-reflets:linear-gradient(90deg,transparent 0%,rgb(255 255 255/.045) 38%,transparent 50%,rgb(0 0 0/.07) 62%,rgb(255 255 255/.04) 84%,transparent 100%);
+    /* v1 : vertical, celui de la publicite */
+    --brand-hero:var(--grad-reflets),linear-gradient(180deg,var(--brand-hero-top) 0%,#4C4278 42%,#2F2A49 78%,#28243D 100%);
+    /* Variantes : les quatre teintes de la publicite, rien d'autre. Seule
+       la forme change (halos places differemment) pour que le fond ait l'air
+       organique d'un endroit a l'autre. Aucune ne monte plus clair que
+       --brand-hero-top, ce qui garde les contrastes. */
+    --v-clair:var(--brand-hero-top);--v-moyen:#4C4278;--v-sombre:#2F2A49;--v-nuit:#28243D;
+    --grad-v2:var(--grad-reflets),radial-gradient(70% 60% at 15% 8%,var(--v-clair),transparent 70%),
+              linear-gradient(135deg,var(--v-moyen) 0%,var(--v-sombre) 55%,var(--v-nuit) 100%);
+    --grad-v3:radial-gradient(80% 90% at 92% 0%,var(--v-clair),transparent 66%),
+              radial-gradient(60% 50% at 6% 100%,var(--v-moyen),transparent 70%),
+              linear-gradient(180deg,var(--v-sombre),var(--v-nuit));
+    --grad-v4:radial-gradient(55% 70% at 0% 100%,var(--v-clair),transparent 70%),
+              radial-gradient(50% 45% at 86% 12%,var(--v-moyen),transparent 72%),
+              linear-gradient(160deg,var(--v-sombre),var(--v-nuit));
+    --grad-v5:var(--grad-reflets),linear-gradient(0deg,var(--v-clair) 0%,var(--v-moyen) 40%,var(--v-sombre) 76%,var(--v-nuit) 100%);
+    --grad-v6:radial-gradient(85% 70% at 34% 46%,var(--v-clair),transparent 70%),
+              radial-gradient(42% 42% at 92% 92%,var(--v-moyen),transparent 72%),
+              linear-gradient(200deg,var(--v-sombre),var(--v-nuit));
     /* dégradé du bas de hero, repris tel quel de la référence.
        Remplacer #000 par une autre teinte pour le colorer. */
     --hero-overlay:linear-gradient(to top,#000,#000000fa 9.99%,#000000ec 19.07%,#000000d7 27.44%,#000000bd 35.26%,#0000009f 42.72%,#00000080,#00000060 57.28%,#00000042 64.74%,#00000028 72.56%,#00000013 80.93%,#00000005 90.01%,#0000);
@@ -1098,3 +1116,20 @@
      ne se lisait pas. */
   .page-hero .date-art{color:var(--on-dark-88)}
   .page-hero .date-art time{color:var(--on-dark-88)}
+
+  /* ---------- FONDS EN DEGRADE ----------
+     data-fond choisit la variante d'un en-tete ou d'un panneau. Les photos
+     ont ete retirees : ces panneaux les remplacent. Memes couleurs
+     partout, seule la forme varie. Le fond uni reste
+     --brand-hero-top sur les variantes sombres, pour que l'audit de
+     contraste mesure le pire cas. */
+  [data-fond]{background-color:var(--brand-hero-top)}
+  [data-fond="v1"]{background-image:var(--brand-hero)}
+  [data-fond="v2"]{background-image:var(--grad-v2)}
+  [data-fond="v3"]{background-image:var(--grad-v3)}
+  [data-fond="v4"]{background-image:var(--grad-v4)}
+  [data-fond="v5"]{background-image:var(--grad-v5)}
+  [data-fond="v6"]{background-image:var(--grad-v6)}
+  /* Sur les panneaux en degrade, les textes secondaires passent a 88 % :
+     a 70 %, ils ne tenaient pas le contraste sur la teinte la plus claire. */
+  .mani footer,.mani footer a,.cta-in p{color:var(--on-dark-88)}
