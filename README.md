@@ -92,9 +92,13 @@ un nom, une zone, un métier, des partenaires nommés.
 
 ## Images
 
-**Les photos ne sont plus servies.** Les en-têtes et les panneaux qui en
-portaient (accueil, parcours) affichent un dégradé choisi par l'attribut
-`data-fond="v1"` à `"v6"` (voir « Dégradé des en-têtes »). Les fichiers de
+**Les photos ne sont plus servies.** Les en-têtes affichent un dégradé choisi
+par `data-fond="v1"` à `"v6"` (voir « Dégradé des en-têtes »). Les panneaux
+décoratifs qui portaient une photo à côté d'un texte ont été retirés : ces
+sections passent en pleine largeur (constat en trois colonnes `.prose--cols`,
+garanties sur trois colonnes `.benefits--large`). Dans la grille « Ce qui ne
+change pas », les deux tuiles photo sont devenues des tuiles d'information sur
+dégradé (`.b-fond`) : le prix de départ et les données en Europe. Les fichiers de
 `assets/img/` et les outils ci-dessous restent dans le dépôt au cas où une photo
 reviendrait.
 
