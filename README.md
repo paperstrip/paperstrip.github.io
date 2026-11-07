@@ -203,20 +203,29 @@ vers 2,7. C'est le parti pris de la référence, assumé.
 
 ### Dégradé des en-têtes
 
-Les en-têtes des pages internes (`.page-hero`) portent le dégradé violet de la
-publicité magazine : `--brand-hero`, défini avec les variables de marque. Sur ce
-fond, l'accent des titres passe en `--brand-second`, plus clair : le lavande
-`--brand-accent` ne tient pas le contraste sur le haut violet. Le fond uni de
-l'en-tête est `--brand-hero-top`, la teinte la plus claire du dégradé, parce que
-l'audit de contraste ne lit que les couleurs unies : il mesure ainsi le pire
-cas. La page `pilotage-donnees/` garde l'encre unie, pour son vert.
+Les en-têtes, le hero de l'accueil et les panneaux qui portaient des photos
+reprennent le dégradé de la publicité magazine, recette exacte : une lueur
+lavande, un assombrissement vers le bas, des bandes violettes verticales
+(`--brand-hero`, et la règle `[data-fond]` en fin de `site.css`).
 
-Six variantes, `data-fond="v1"` à `"v6"`, toutes faites des quatre mêmes
-teintes (`--v-clair`, `--v-moyen`, `--v-sombre`, `--v-nuit`) : seule la forme
-change, halos placés à des endroits différents, pour un rendu organique. Chaque
-page et chaque panneau a la sienne, et deux voisins n'ont jamais la même.
-`v1` est le dégradé vertical de la publicité. L'accueil
-porte le même dégradé à la place de l'ancienne photo de hero.
+Six variantes, `data-fond="v1"` à `"v6"`. Mêmes couleurs partout : seules la
+position de la lueur, l'angle et le décalage des bandes changent, pour un rendu
+organique. Chaque page et chaque panneau a la sienne, deux voisins n'ont jamais
+la même, et `v1` est le dégradé exact de la pub. La page `pilotage-donnees/`
+garde l'encre unie, pour son vert.
+
+Sur ces fonds, l'accent des titres passe en `--brand-second` et les textes
+secondaires à 88 % de blanc. `tools/contraste.js` ne lit que les couleurs unies
+et ne voit pas les dégradés : `tools/contraste-degrades.js` mesure les vrais
+pixels derrière chaque texte (pire cas, pixel le plus clair).
+
+```
+npx http-server . -p 8099 -s &
+NODE_PATH=/opt/node22/lib/node_modules node tools/contraste-degrades.js
+```
+
+Il a besoin du paquet `pngjs`. À relancer après toute modification d'un
+dégradé ou d'une couleur de texte posée dessus.
 
 ### Accent propre à une page
 

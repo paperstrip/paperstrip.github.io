@@ -29,9 +29,10 @@ const HTML = `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><style>
     src:url(data:font/woff2;base64,${policeExt}) format('woff2');}
   *{margin:0;padding:0;box-sizing:border-box}
   body{width:1200px;height:630px;color:${CLAIR};
-    background-color:#5F5396;background-image:
-      linear-gradient(90deg,transparent 0%,rgb(255 255 255/.045) 38%,transparent 50%,rgb(0 0 0/.07) 62%,rgb(255 255 255/.04) 84%,transparent 100%),
-      linear-gradient(180deg,#5F5396 0%,#4C4278 42%,#2F2A49 78%,#28243D 100%);
+    background-color:#2F2950;background-image:
+      radial-gradient(ellipse at 25% 15%,rgb(155 135 224/.45),rgb(155 135 224/0) 60%),
+      linear-gradient(180deg,rgb(23 22 28/0) 0%,rgb(23 22 28/.25) 50%,rgb(23 22 28/.6) 100%),
+      linear-gradient(90deg,#4A3F7A 0%,#3B3360 20%,#5B4D96 42%,#2F2950 64%,#6B5BAE 84%,#433A70 100%);
     font-family:'SG','SGx',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
     display:flex;flex-direction:column;justify-content:space-between;padding:74px 84px;}
   .marque{font-size:30px;font-weight:700;letter-spacing:-.015em}
