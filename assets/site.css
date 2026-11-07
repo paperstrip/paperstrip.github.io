@@ -1127,3 +1127,19 @@
   /* Sur les panneaux en degrade, les textes secondaires passent a 88 % :
      a 70 %, ils ne tenaient pas le contraste sur la teinte la plus claire. */
   .mani footer,.mani footer a,.cta-in p{color:var(--on-dark-88)}
+
+  /* Les panneaux qui remplacaient les photos sont retires : ces sections
+     passent en pleine largeur. Le constat se lit en trois colonnes, les
+     garanties sur trois colonnes en grand ecran. */
+  @media(min-width:900px){
+    .prose--cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px);align-items:start}
+    .prose--cols p,.prose--cols .res{margin:0;max-width:none}
+  }
+  @media(min-width:1000px){.benefits--large{grid-template-columns:repeat(3,1fr)}}
+  /* Tuiles d'information sur degrade, a la place des anciennes photos du bento. */
+  .b-fond h3,.b-fond .big{color:var(--on-dark)}
+  .b-fond p{color:var(--on-dark-88)}
+  .b-fond .big{font-size:var(--t-h2);font-weight:400;letter-spacing:0;line-height:1.1;margin-bottom:10px}
+  /* Hors de .duo, ces blocs perdaient la marge qui les separait de leur titre. */
+  .prose--cols{margin-top:clamp(24px,3vw,36px)}
+  .prose .sec-head{margin-bottom:clamp(20px,2vw,28px)}
