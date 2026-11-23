@@ -8,9 +8,9 @@
 Basé en Belgique, j'interviens en Wallonie et à Bruxelles, en français.
 Dix ans de développement web : front-end, développement créatif, back-end, puis
 direction technique. Profil full stack.
-Je pilote par ailleurs la technique de trois structures aux positionnements
-différents : Clevermint (développement sur mesure), Wecocoon (IA) et Wibicom
-(marketing digital).
+Freelance depuis fin novembre 2026, après plus de sept ans chez Wibicom
+(marketing digital), de développeur à responsable technique. Collaboration
+continue, en freelance, avec Clevermint (développement sur mesure) et Wecocoon (IA).
 
 Ce qui me distingue : l'IA produit vite, et produit donc vite du médiocre quand
 personne ne la tient. Mon travail commence après la génération, au moment où il
@@ -27,7 +27,7 @@ faut décider, vérifier et couper.
 - [Logiciels métier sur mesure](https://arnaudherr.be/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités et des tests là où une erreur coûte de l'argent. Hébergement possible sur mes serveurs en Belgique.
 - [Sous-traitance technique pour agences](https://arnaudherr.be/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, clause de non-sollicitation acceptée.
 - [SEO, GEO et contenu généré par IA](https://arnaudherr.be/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
-- [Parcours](https://arnaudherr.be/a-propos/) : Arnaud Herr, développeur full stack et CTO en Belgique, dix ans du front-end à l'architecture, CTO de Clevermint, Wecocoon et Wibicom. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, et les intégrateurs déjà en place chez le client.
+- [Parcours](https://arnaudherr.be/a-propos/) : Arnaud Herr, consultant IA et développeur full stack freelance en Belgique, dix ans du front-end à l'architecture, plus de sept ans chez Wibicom jusqu'au poste de responsable technique, en collaboration freelance avec Clevermint et Wecocoon. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : entreprises de Wallonie et de Bruxelles, agences en marque blanche, et les intégrateurs déjà en place chez le client.
 - [Les questions à poser avant de signer](https://arnaudherr.be/questions-a-poser/) : une grille pour juger n'importe quel prestataire en intelligence artificielle, Arnaud Herr compris. Ce qu'il faut demander avant de lancer un chantier (temps réellement passé aujourd'hui, ce qui se passe si on ne fait rien, alternative du marché chiffrée, répartition du travail pendant le cadrage, neutralité de celui qui cadre), sur un agent branché sur des outils métier (données de test réelles, comportement en cas de doute, points de validation humaine, journal des décisions, changement d'écran, livraison en API), et sur un site ou un logiciel sur mesure (qui écrit le code, hébergement et base de données, ce qu'on récupère en partant, cas limites et tests, délai de réponse en cas de panne). Trois réponses qui doivent alerter : un montant sans ses conditions, un rang promis dans les moteurs, et le report des décisions structurantes après la mise en ligne.
 - [Contact](https://arnaudherr.be/contact/) : contact@arnaudherr.be, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis un échange sans engagement, sans durée annoncée. La réponse écrite, l'échange, le cadrage et le devis font partie de l'avant-vente et ne sont pas facturés. Ce qui est facturé commence une fois le devis accepté.
 
